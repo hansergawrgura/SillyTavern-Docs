@@ -9,7 +9,7 @@ branding:
   title: SillyTavern Documentation
   label:
 # edit:
-#   repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit"
+#   repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit" # 等待更改
 links:
 - text: GitHub
   link: https://github.com/SillyTavern/SillyTavern

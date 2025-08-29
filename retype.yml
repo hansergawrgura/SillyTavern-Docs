@@ -1,6 +1,6 @@
 input: .
 output: .retype
-url: docs.sillytavern.app
+url: hansergawrgura.github.io
 meta:
   title: " | docs.ST.app"
 branding:
@@ -8,8 +8,8 @@ branding:
   logoDark: static/logo.png
   title: SillyTavern Documentation
   label:
-edit:
-  repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit"
+# edit:
+#   repo: "https://github.com/SillyTavern/SillyTavern-Docs/edit"
 links:
 - text: GitHub
   link: https://github.com/SillyTavern/SillyTavern

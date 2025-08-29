@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>1.12.0 Migration Guide | docs.ST.app</title>
-    <meta name="title" content="1.12.0 Migration Guide | docs.ST.app">
-    <meta name="description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+    <title>&#128640; 1.12.0 迁移指南 | docs.ST.app</title>
+    <meta name="title" content="🚀 1.12.0 迁移指南 | docs.ST.app">
+    <meta name="description" content="SillyTavern 1.12.0（代号「Neo Server」更新）包含多项重要变更，可能影响您的使用体验。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/installation/st-1.12.0-migration-guide/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/installation/st-1.12.0-migration-guide/">
-    <meta property="og:title" content="1.12.0 Migration Guide | docs.ST.app">
-    <meta property="og:description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+    <meta property="og:title" content="🚀 1.12.0 迁移指南 | docs.ST.app">
+    <meta property="og:description" content="SillyTavern 1.12.0（代号「Neo Server」更新）包含多项重要变更，可能影响您的使用体验。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/installation/st-1.12.0-migration-guide/">
-    <meta property="twitter:title" content="1.12.0 Migration Guide | docs.ST.app">
-    <meta property="twitter:description" content="SillyTavern 1.12.0 (codename the \"Neo Server\" update) includes several critical changes that may affect the way you use SillyTavern.">
+    <meta property="twitter:title" content="🚀 1.12.0 迁移指南 | docs.ST.app">
+    <meta property="twitter:description" content="SillyTavern 1.12.0（代号「Neo Server」更新）包含多项重要变更，可能影响您的使用体验。">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809777878686" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809795799056" defer></script>
 
     <style>
         a {
@@ -225,53 +225,54 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="1120-migration-guide" class="break-words">
+<doc-anchor-target id="-1120-迁移指南" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1120-migration-guide">#</doc-anchor-trigger>
-        <span>1.12.0 Migration Guide</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-1120-迁移指南">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F680;</span> 1.12.0 迁移指南</span>
     </h1>
 </doc-anchor-target>
-<p>SillyTavern 1.12.0 (codename the &quot;Neo Server&quot; update) includes several critical changes that may affect the way you use SillyTavern.</p>
-<p>This guide will prepare you for the update and provide some further guidance.</p>
-<doc-anchor-target id="data-storage-update">
+<p>SillyTavern 1.12.0（代号「Neo Server」更新）包含多项重要变更，可能影响您的使用体验。</p>
+<p>本指南将帮助您做好准备，并提供详细操作说明。</p>
+<hr>
+<doc-anchor-target id="-数据存储更新">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-storage-update">#</doc-anchor-trigger>
-        <span>Data storage update</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-数据存储更新">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4E6;</span> 数据存储更新</span>
     </h2>
 </doc-anchor-target>
-<p>1.12.0 changes the way SillyTavern handles the user data.</p>
-<p>Previously, all of the persistent data was stored together with the frontend part in the <code v-pre>/public</code> directory, which created confusion and potential points of failure, as well as making containerization and system-wide app installation quite challenging.</p>
-<doc-anchor-target id="whats-changed">
+<p>1.12.0 版本改变了用户数据的处理方式。</p>
+<p>此前，所有持久化数据都与前端文件一同存储在 <code v-pre>/public</code> 目录中，这导致了混淆和潜在的故障点，同时也使容器化和系统级应用安装变得复杂。</p>
+<doc-anchor-target id="变更内容">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#whats-changed">#</doc-anchor-trigger>
-        <span>What&#x27;s changed?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#变更内容">#</doc-anchor-trigger>
+        <span>变更内容</span>
     </h3>
 </doc-anchor-target>
-<p>All persistent information from <code v-pre>/public</code> such as settings and chats (full list below) was moved into a separate directory with the configurable path, making it portable and independent from the web server itself. When needed for compatibility purposes, for example, for hosting extensions, full-size character cards, user image uploads, etc. a smart redirect has been set up to automatically host user files from the data directory.</p>
-<doc-anchor-target id="setting-a-data-root">
+<p>所有来自 <code v-pre>/public</code> 的持久化信息（完整列表见下文）现已移至可配置路径的独立目录，使其可移植且独立于 Web 服务器本身。为兼容性考虑（例如托管扩展、完整角色卡、用户图片上传等），已设置智能重定向，自动从数据目录提供用户文件。</p>
+<doc-anchor-target id="设置数据根目录">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setting-a-data-root">#</doc-anchor-trigger>
-        <span>Setting a data root</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#设置数据根目录">#</doc-anchor-trigger>
+        <span>设置数据根目录</span>
     </h3>
 </doc-anchor-target>
-<p>You can provide either an absolute or a relative (to the ST repository directory) path to the data root either by <code v-pre>config.yaml</code> or by starting the server with the <code v-pre>--dataRoot</code> console argument.</p>
+<p>您可以通过 <code v-pre>config.yaml</code> 或启动服务器时使用 <code v-pre>--dataRoot</code> 控制台参数，指定数据根目录的绝对路径或相对路径（相对于 ST 代码库目录）。</p>
 <blockquote>
-<p>YAML example</p>
+<p>YAML 示例</p>
 </blockquote>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-yaml"><code v-pre class="language-yaml"># -- DATA CONFIGURATION --
-# Root directory for user data storage
+<pre translate="no" class="language-yaml"><code v-pre class="language-yaml"># -- 数据配置 --
+# 用户数据存储的根目录
 dataRoot: C:\Users\Harry\Documents\ST-Data</code></pre>
 </doc-codeblock></div>
 <blockquote>
-<p>Console example</p>
+<p>控制台示例</p>
 </blockquote>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">node server.js --dataRoot=&quot;/Users/harry/ST-Data&quot;
-# OR
+# 或
 npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 </doc-codeblock></div>
-<p>The default data root path is <code v-pre>./data</code>, which means the <code v-pre>data</code> directory in SillyTavern&#x27;s repository.</p>
+<p>默认数据根目录路径为 <code v-pre>./data</code>，即 SillyTavern 代码库中的 <code v-pre>data</code> 目录。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -285,50 +286,52 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>The data root path should be either a <strong>full absolute</strong> or a <strong>full relative</strong> path. You <em>can&#x27;t</em> use path shortcuts like <code v-pre>~</code> or <code v-pre>%APP_DATA%</code>, as these are resolved by a shell, not the operating system.</p>
+            <h5>注意</h5>
+<p>数据根目录路径应为<strong>完整绝对路径</strong>或<strong>完整相对路径</strong>。不能使用 <code v-pre>~</code> 或 <code v-pre>%APP_DATA%</code> 等路径快捷方式，因为这些由 shell 解析，而非操作系统。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="migration">
+<doc-anchor-target id="迁移操作">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#migration">#</doc-anchor-trigger>
-        <span>Migration</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#迁移操作">#</doc-anchor-trigger>
+        <span>迁移操作</span>
     </h3>
 </doc-anchor-target>
-<doc-anchor-target id="important-before-we-begin">
+<doc-anchor-target id="-重要开始前的准备">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#important-before-we-begin">#</doc-anchor-trigger>
-        <span><strong>IMPORTANT!</strong> Before we begin</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-重要开始前的准备">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>重要！开始前的准备</strong></span>
     </h4>
 </doc-anchor-target>
 <ol>
-<li><strong>Only if you want to move dataRoot from the default location. Otherwise, skip this part.</strong> Set the data root <em>before</em> first running the server after pulling an update. Run <code v-pre>npm install</code> for the <code v-pre>config.yaml</code> to populate with a new value, or pass a console argument.</li>
-<li>All data will be migrated into a <code v-pre>default-user</code> account. See more on <doc-anchor-trigger to="#users">Users</doc-anchor-trigger> below.</li>
+<li><p><strong>仅当需要从默认位置移动 dataRoot 时执行此步骤，否则请跳过。</strong> 在首次运行更新后的服务器之前设置数据根目录。运行 <code v-pre>npm install</code> 以使 <code v-pre>config.yaml</code> 填充新值，或传递控制台参数。</p>
+</li>
+<li><p>所有数据将迁移至 <code v-pre>default-user</code> 账户。详见下文<doc-anchor-trigger to="#-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86">用户管理</doc-anchor-trigger>部分。</p>
+</li>
 </ol>
-<doc-anchor-target id="containerless-bare-metal-installs">
+<doc-anchor-target id="无容器裸机安装">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#containerless-bare-metal-installs">#</doc-anchor-trigger>
-        <span>Containerless (bare metal) installs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#无容器裸机安装">#</doc-anchor-trigger>
+        <span>无容器（裸机）安装</span>
     </h4>
 </doc-anchor-target>
-<p>You don&#x27;t have to do anything! An automatic migration should handle everything for you when you start the ST server and it detects the old storage format (by checking the existence of the <code v-pre>/public/characters</code> directory).</p>
-<p>Upon moving any files, an automatic backup will be created in the <code v-pre>/backups/_migration/YYYY-MM-DD</code> (resolved to the current date) directory, but it is always a good practice to make a full manual backup before running the migration.</p>
-<doc-anchor-target id="containerized-docker-installs">
+<p>您无需任何操作！当 ST 服务器检测到旧存储格式（通过检查 <code v-pre>/public/characters</code> 目录是否存在）时，自动迁移将处理所有事宜。</p>
+<p>移动任何文件前，系统会在 <code v-pre>/backups/_migration/YYYY-MM-DD</code>（解析为当前日期）目录中创建自动备份，但在运行迁移前手动完整备份仍是良好实践。</p>
+<doc-anchor-target id="容器化docker安装">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#containerized-docker-installs">#</doc-anchor-trigger>
-        <span>Containerized (Docker) installs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#容器化docker安装">#</doc-anchor-trigger>
+        <span>容器化（Docker）安装</span>
     </h4>
 </doc-anchor-target>
-<p>Migrating the data in Docker volumes is a bit trickier but pretty straightforward. While <code v-pre>docker-compose.yml</code> provided with the repo was updated to reflect the changes, you may need to adjust your custom workflows/deployments.</p>
-<p><strong>Step 1.</strong> Create a new volume, and mount it to the &quot;/home/node/app/data&quot; path within the container. Don&#x27;t remove the <code v-pre>config</code> volume.</p>
+<p>迁移 Docker 卷中的数据稍复杂但操作直接。虽然代码库提供的 <code v-pre>docker-compose.yml</code> 已更新以反映变更，但您可能需要调整自定义工作流/部署。</p>
+<p><strong>步骤 1.</strong> 创建新卷，并将其挂载到容器内的 &quot;/home/node/app/data&quot; 路径。不要移除 <code v-pre>config</code> 卷。</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-yaml"><code v-pre class="language-yaml">volumes:
-    - &quot;./config:/home/node/app/config&quot;
-    - &quot;./data:/home/node/app/data&quot;</code></pre>
+  - &quot;./config:/home/node/app/config&quot;
+  - &quot;./data:/home/node/app/data&quot;</code></pre>
 </doc-codeblock></div>
-<p><strong>Step 2.</strong> Move everything but the <code v-pre>config.yaml</code> file from the <code v-pre>config</code> volume into the <code v-pre>default-user</code> subdirectory of the <code v-pre>data</code> volume.</p>
-<p><strong>Step 3.</strong> Rebuild the container and start it up.</p>
+<p><strong>步骤 2.</strong> 将 <code v-pre>config</code> 卷中除 <code v-pre>config.yaml</code> 文件外的所有内容移至 <code v-pre>data</code> 卷的 <code v-pre>default-user</code> 子目录。</p>
+<p><strong>步骤 3.</strong> 重新构建容器并启动。</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
     <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
@@ -342,24 +345,24 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Note</h5>
-<p>Soft links between the <code v-pre>/public</code> directory and the <code v-pre>config</code> volume are no longer needed and are not built into the Docker container!</p>
+            <h5>注意</h5>
+<p>不再需要 <code v-pre>/public</code> 目录与 <code v-pre>config</code> 卷之间的软链接，Docker 容器中也不再构建此链接！</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="what-to-migrate">
+<doc-anchor-target id="需要迁移哪些内容">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#what-to-migrate">#</doc-anchor-trigger>
-        <span>What to migrate?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#需要迁移哪些内容">#</doc-anchor-trigger>
+        <span>需要迁移哪些内容？</span>
     </h4>
 </doc-anchor-target>
-<p>The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.</p>
+<p>以下文件和目录属于数据迁移范围。假设为默认配置，下表中提供了迁移前后的路径对照。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Before</th>
-<th>After</th>
+<th>迁移前路径</th>
+<th>迁移后路径</th>
 </tr>
 </thead>
 <tbody>
@@ -458,14 +461,15 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="users">
+<hr>
+<doc-anchor-target id="-用户管理">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#users">#</doc-anchor-trigger>
-        <span>Users</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-用户管理">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F465;</span> 用户管理</span>
     </h2>
 </doc-anchor-target>
-<p>1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.</p>
-<p>Please refer to the <a href="../../administration/multi-user/">Users</a> documentation for more information.</p>
+<p>1.12.0 新增了（完全可选的）在同一服务器上创建多用户设置的功能，允许多个用户使用自己完全隔离的 SillyTavern 实例，甚至可以同时使用。用户账户还可设置密码保护，增加隐私层。</p>
+<p>更多信息请参阅<a href="../../administration/multi-user/">用户管理</a>文档。</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -485,7 +489,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Updating</span>
+                                                <span class="block mt-1">更新指南</span>
                                             </span>
                                         </a>
                                     </div>
@@ -494,7 +498,7 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../installation/updating/migration-guide-1-09/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">1.​9.​0 Migration Guide</span>
+                                                <span class="block mt-1">🚀 1.​9.​0 迁移指南</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -538,6 +542,6 @@ npm run start -- --dataRoot=&quot;/Users/harry/ST-Data&quot;</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "1.12.0 Migration Guide", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "🚀 1.12.0 迁移指南", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

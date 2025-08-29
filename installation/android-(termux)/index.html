@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Android (Termux) Installation | docs.ST.app</title>
-    <meta name="title" content="Android (Termux) Installation | docs.ST.app">
-    <meta name="description" content="SillyTavern can be run natively on Android devices using Termux.">
+    <title>&#128241; Android (Termux) 安装指南 | docs.ST.app</title>
+    <meta name="title" content="📱 Android (Termux) 安装指南 | docs.ST.app">
+    <meta name="description" content="SillyTavern 可通过 Termux 在 Android 设备上原生运行。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/installation/android-(termux)/">
@@ -19,23 +19,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/installation/android-(termux)/">
-    <meta property="og:title" content="Android (Termux) Installation | docs.ST.app">
-    <meta property="og:description" content="SillyTavern can be run natively on Android devices using Termux.">
+    <meta property="og:title" content="📱 Android (Termux) 安装指南 | docs.ST.app">
+    <meta property="og:description" content="SillyTavern 可通过 Termux 在 Android 设备上原生运行。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/installation/android-(termux)/">
-    <meta property="twitter:title" content="Android (Termux) Installation | docs.ST.app">
-    <meta property="twitter:description" content="SillyTavern can be run natively on Android devices using Termux.">
+    <meta property="twitter:title" content="📱 Android (Termux) 安装指南 | docs.ST.app">
+    <meta property="twitter:description" content="SillyTavern 可通过 Termux 在 Android 设备上原生运行。">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809777878686" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809795799056" defer></script>
 
     <style>
         a {
@@ -225,17 +225,18 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="android-termux-installation" class="break-words">
+<doc-anchor-target id="-android-termux-安装指南" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#android-termux-installation">#</doc-anchor-trigger>
-        <span>Android (Termux) Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-android-termux-安装指南">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4F1;</span> Android (Termux) 安装指南</span>
     </h1>
 </doc-anchor-target>
-<p>SillyTavern can be run natively on Android devices using Termux.</p>
-<doc-anchor-target id="installing-termux">
+<p>SillyTavern 可通过 Termux 在 Android 设备上原生运行。</p>
+<hr>
+<doc-anchor-target id="-安装-termux">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-termux">#</doc-anchor-trigger>
-        <span>Installing Termux</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-安装-termux">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F527;</span> 安装 Termux</span>
     </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -249,33 +250,35 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Avoid installing Termux from the Google Play Store, that version is no longer maintained.
-Instead, use F-Droid (recommended) or GitHub releases to get the latest version.</p>
+            <h5>提示</h5>
+<p>请避免从 Google Play 商店安装 Termux，该版本已停止维护。
+建议从 F-Droid（推荐）或 GitHub releases 获取最新版本。</p>
         </div>
     </div>
 </div>
 <ol>
-<li>Download Termux from <a href="https://f-droid.org/en/packages/com.termux/">F-Droid</a> or <a href="https://github.com/termux/termux-app/releases">GitHub releases</a>.</li>
-<li>Install the downloaded APK file.</li>
-<li><p>Open Termux and run your first command:</p>
+<li>从 <a href="https://f-droid.org/en/packages/com.termux/">F-Droid</a> 或 <a href="https://github.com/termux/termux-app/releases">GitHub releases</a> 下载 Termux</li>
+<li>安装下载的 APK 文件</li>
+<li><p>打开 Termux 并运行第一条命令：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">termux-change-repo</code></pre>
 </doc-codeblock></div>
 </li>
-<li>Select &quot;Mirror group&quot; and choose your closest servers. You can touch the screen or use swipe gestures with <a href="https://play.google.com/store/apps/details?id=juloo.keyboard2&amp;hl=en">Unexpected Keyboard</a>.</li>
-<li><p>Update Termux:</p>
+<li>选择「Mirror group」并选择最近的服务器。可通过触摸屏幕或使用 <a href="https://play.google.com/store/apps/details?id=juloo.keyboard2&amp;hl=en">Unexpected Keyboard</a> 的手势操作</li>
+<li><p>更新 Termux：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pkg update &amp;&amp; pkg upgrade</code></pre>
 </doc-codeblock></div>
 </li>
 </ol>
-<doc-anchor-target id="installing-dependencies">
+<hr>
+<doc-anchor-target id="-安装依赖项">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-dependencies">#</doc-anchor-trigger>
-        <span>Installing Dependencies</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-安装依赖项">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4E6;</span> 安装依赖项</span>
     </h2>
 </doc-anchor-target>
-<p>Install the required packages:</p>
+<p>安装所需软件包：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pkg install git nodejs-lts nano</code></pre>
 </doc-codeblock></div>
@@ -291,105 +294,111 @@ Instead, use F-Droid (recommended) or GitHub releases to get the latest version.
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>If you&#x27;re running 32-bit Android, see the <doc-anchor-trigger to="#common-errors">Common Errors</doc-anchor-trigger> section below for additional steps.</p>
+            <h5>注意</h5>
+<p>若您运行的是 32 位 Android 系统，请参阅下方的<doc-anchor-trigger to="#-%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF">常见错误</doc-anchor-trigger>章节获取额外步骤。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="installing-sillytavern">
+<hr>
+<doc-anchor-target id="-安装-sillytavern">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-sillytavern">#</doc-anchor-trigger>
-        <span>Installing SillyTavern</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-安装-sillytavern">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F680;</span> 安装 SillyTavern</span>
     </h2>
 </doc-anchor-target>
-<p>Clone the SillyTavern repository (<a href="../#branches">How to Choose a Branch</a>):</p>
+<p>克隆 SillyTavern 代码库（<a href="../#-%E5%88%86%E6%94%AF%E8%AF%B4%E6%98%8E">如何选择分支</a>）：</p>
 <ul>
-<li><p><strong>Release Branch:</strong></p>
+<li><p><strong>发布分支：</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b release</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p><strong>Staging Branch:</strong></p>
+<li><p><strong>开发分支：</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern -b staging</code></pre>
 </doc-codeblock></div>
 </li>
 </ul>
-<doc-anchor-target id="running-sillytavern">
+<hr>
+<doc-anchor-target id="-运行-sillytavern">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#running-sillytavern">#</doc-anchor-trigger>
-        <span>Running SillyTavern</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-运行-sillytavern">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A1;</span> 运行 SillyTavern</span>
     </h2>
 </doc-anchor-target>
-<p>To run SillyTavern, navigate to the cloned directory and run the start script:</p>
+<p>运行 SillyTavern 请进入克隆目录并执行启动脚本：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd ~/SillyTavern
 bash start.sh</code></pre>
 </doc-codeblock></div>
-<p>To update SillyTavern, navigate to the SillyTavern directory and run:</p>
+<p>更新 SillyTavern 请进入目录并执行：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cd ~/SillyTavern
 git pull --rebase --autostash</code></pre>
 </doc-codeblock></div>
-<p>See the <doc-anchor-trigger to="#optional-create-aliases">Aliases</doc-anchor-trigger> section below for creating shortcuts to simplify this process.</p>
-<doc-anchor-target id="common-errors">
+<p>可参阅下方的<doc-anchor-trigger to="#-%E5%8F%AF%E9%80%89%E5%88%9B%E5%BB%BA%E5%88%AB%E5%90%8D">别名设置</doc-anchor-trigger>章节创建快捷命令简化此过程。</p>
+<hr>
+<doc-anchor-target id="-常见错误">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common-errors">#</doc-anchor-trigger>
-        <span>Common Errors</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-常见错误">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x274C;</span> 常见错误</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="unsupported-platform-android-arm-letime-web">
+<doc-anchor-target id="平台不支持android-arm-letime-web">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#unsupported-platform-android-arm-letime-web">#</doc-anchor-trigger>
-        <span>Unsupported platform: android arm LEtime-web</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#平台不支持android-arm-letime-web">#</doc-anchor-trigger>
+        <span>平台不支持：android arm LEtime-web</span>
     </h3>
 </doc-anchor-target>
-<p>32-bit Android requires an external dependency that can&#x27;t be installed with npm.</p>
-<p>Use the following command to install it:</p>
+<p>32 位 Android 系统需要无法通过 npm 安装的外部依赖。</p>
+<p>使用以下命令安装：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">pkg install esbuild</code></pre>
 </doc-codeblock></div>
-<p>Then proceed with the installation steps above.</p>
-<doc-anchor-target id="optional-create-aliases">
+<p>然后继续执行上述安装步骤。</p>
+<hr>
+<doc-anchor-target id="-可选创建别名">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#optional-create-aliases">#</doc-anchor-trigger>
-        <span>Optional: Create Aliases</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-可选创建别名">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F3AF;</span> 可选：创建别名</span>
     </h2>
 </doc-anchor-target>
-<p>You can create shortcuts for common commands to make your workflow easier.</p>
+<p>您可为常用命令创建快捷方式以简化操作流程。</p>
 <ol>
-<li><p>Open an editor to modify your <code v-pre>.bashrc</code> file:</p>
+<li><p>打开编辑器修改 <code v-pre>.bashrc</code> 文件：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">nano ~/.bashrc</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Add the following lines to create aliases:</p>
+<li><p>添加以下行创建别名：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash"># Update Termux packages
+<pre translate="no" class="language-bash"><code v-pre class="language-bash"># 更新 Termux 软件包
 alias pkgup=&quot;pkg update &amp;&amp; pkg upgrade&quot;
-#Start SillyTavern
+# 启动 SillyTavern
 alias st='cd ~/SillyTavern &amp;&amp; bash start.sh'
-# Update SillyTavern
+# 更新 SillyTavern
 alias stup='cd ~/SillyTavern &amp;&amp; git pull --rebase --autostash'</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>Save the file and exit the editor (in nano, press <code v-pre>CTRL + X</code>, then <code v-pre>Y</code>, then <code v-pre>Enter</code>).</p>
+<li><p>保存文件并退出编辑器（在 nano 中按 <code v-pre>CTRL + X</code>，然后按 <code v-pre>Y</code>，最后按 <code v-pre>Enter</code>）</p>
 </li>
-<li><p>To apply the changes, run:</p>
+<li><p>运行以下命令使更改生效：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">source ~/.bashrc</code></pre>
 </doc-codeblock></div>
 </li>
 </ol>
-<p>Now you can use the following commands:</p>
+<p>现在您可以使用以下命令：</p>
 <ul>
-<li><code v-pre>st</code> to start SillyTavern</li>
-<li><code v-pre>stup</code> to update SillyTavern</li>
-<li><code v-pre>pkgup</code> to update Termux packages</li>
+<li><code v-pre>st</code> 启动 SillyTavern</li>
+<li><code v-pre>stup</code> 更新 SillyTavern</li>
+<li><code v-pre>pkgup</code> 更新 Termux 软件包</li>
 </ul>
-<doc-anchor-target id="further-reading">
+<hr>
+<doc-anchor-target id="-扩展阅读">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#further-reading">#</doc-anchor-trigger>
-        <span>Further Reading</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-扩展阅读">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4DA;</span> 扩展阅读</span>
     </h2>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -405,15 +414,17 @@ alias stup='cd ~/SillyTavern &amp;&amp; git pull --rebase --autostash'</code></p
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>The guides linked below are not maintained by the SillyTavern team.</p>
+            <h5>说明</h5>
+<p>以下指南并非由 SillyTavern 团队维护。</p>
         </div>
     </div>
 </div>
 <ul>
-<li>SillyTavern in Termux guide by ArroganceComplex#2659: <a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a></li>
-<li>Accessing Termux files with Material Files: <a href="https://www.learntermux.tech/2020/10/Termux-File-Manager.html">https://www.learntermux.tech/2020/10/Termux-File-Manager.html</a></li>
-<li>Prevent Termux process deep sleep: <a href="https://wiki.termux.com/wiki/Termux-wake-lock">https://wiki.termux.com/wiki/Termux-wake-lock</a></li>
+<li>ArroganceComplex#2659 提供的 Termux 使用指南：<a href="https://rentry.org/STAI-Termux">https://rentry.org/STAI-Termux</a></li>
+<li>使用 Material Files 访问 Termux 文件：<a href="https://www.learntermux.tech/2020/10/Termux-File-Manager.html">https://www.learntermux.tech/2020/10/Termux-File-Manager.html</a></li>
+<li>防止 Termux 进程深度休眠：<a href="https://wiki.termux.com/wiki/Termux-wake-lock">https://wiki.termux.com/wiki/Termux-wake-lock</a></li>
 </ul>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->

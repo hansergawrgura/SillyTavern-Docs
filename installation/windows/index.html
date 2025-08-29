@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Windows Installation | docs.ST.app</title>
-    <meta name="title" content="Windows Installation | docs.ST.app">
-    <meta name="description" content="DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).">
+    <title>&#129695; Windows 系统安装指南 | docs.ST.app</title>
+    <meta name="title" content="🪟 Windows 系统安装指南 | docs.ST.app">
+    <meta name="description" content="请勿安装在任何受 Windows 保护的文件夹内（如 Program Files、System32 等）">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/installation/windows/">
@@ -19,25 +19,25 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/installation/windows/">
-    <meta property="og:title" content="Windows Installation | docs.ST.app">
-    <meta property="og:description" content="DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).">
+    <meta property="og:title" content="🪟 Windows 系统安装指南 | docs.ST.app">
+    <meta property="og:description" content="请勿安装在任何受 Windows 保护的文件夹内（如 Program Files、System32 等）">
     <meta property="og:image" content="https://hansergawrgura.github.io/static/windows-1.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/installation/windows/">
-    <meta property="twitter:title" content="Windows Installation | docs.ST.app">
-    <meta property="twitter:description" content="DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).">
+    <meta property="twitter:title" content="🪟 Windows 系统安装指南 | docs.ST.app">
+    <meta property="twitter:description" content="请勿安装在任何受 Windows 保护的文件夹内（如 Program Files、System32 等）">
     <meta property="twitter:image" content="https://hansergawrgura.github.io/static/windows-1.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809777878686" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.11.0.809795799056" defer></script>
 
     <style>
         a {
@@ -227,10 +227,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="windows-installation" class="break-words">
+<doc-anchor-target id="-windows-系统安装指南" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#windows-installation">#</doc-anchor-trigger>
-        <span>Windows Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-windows-系统安装指南">#</doc-anchor-trigger>
+        <span>🪟 Windows 系统安装指南</span>
     </h1>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -245,76 +245,71 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>DO NOT INSTALL INTO ANY WINDOWS CONTROLLED FOLDER (Program Files, System32, etc).</p>
-<p>DO NOT RUN START.BAT WITH ADMIN PERMISSIONS</p>
-<p>INSTALLATION ON WINDOWS 7 IS IMPOSSIBLE AS IT CAN NOT RUN NODEJS 18.16</p>
+<p>请勿安装在任何受 Windows 保护的文件夹内（如 Program Files、System32 等）</p>
+<p>切勿使用管理员权限运行 Start.bat</p>
+<p>Windows 7 无法运行 NodeJS 18.16，故不支持安装</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="installing-via-git">
+<hr>
+<doc-anchor-target id="-通过-git-安装">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-git">#</doc-anchor-trigger>
-        <span>Installing via Git</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-通过-git-安装">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4E6;</span> 通过 Git 安装</span>
     </h2>
 </doc-anchor-target>
 <ol>
-<li>Install <a href="https://nodejs.org/en">NodeJS</a> (latest LTS version is recommended)</li>
-<li>Install <a href="https://gitforwindows.org/">Git for Windows</a></li>
-<li>Open Windows Explorer (<code v-pre>Win+E</code>)</li>
-<li>Browse to or Create a folder that is not controlled or monitored by Windows. (ex: C:\MySpecialFolder)</li>
-<li>Open a Command Prompt inside that folder by clicking in the &#x27;Address Bar&#x27; at the top, typing <code v-pre>cmd</code>, and pressing Enter.</li>
-<li>Once the black box (Command Prompt) pops up, type ONE of the following into it and press Enter:
+<li>安装 <a href="https://nodejs.org/en">NodeJS</a>（推荐最新 LTS 版本）</li>
+<li>安装 <a href="https://gitforwindows.org/">Git for Windows</a></li>
+<li>打开文件资源管理器（<code v-pre>Win+E</code>）</li>
+<li>浏览或创建一个不受 Windows 管控的文件夹（例如：<code v-pre>C:\MySpecialFolder\</code>)</li>
+<li>点击顶部地址栏，输入 <code v-pre>cmd</code> 并按回车，在该文件夹内打开命令提示符</li>
+<li>在命令提示符窗口中输入以下命令之一并按回车：
 <ul>
-<li>for Release Branch: <code v-pre>git clone https://github.com/SillyTavern/SillyTavern -b release</code></li>
-<li>for Staging Branch: <code v-pre>git clone https://github.com/SillyTavern/SillyTavern -b staging</code></li>
+<li>发布分支：<code v-pre>git clone https://github.com/SillyTavern/SillyTavern -b release</code></li>
+<li>开发分支：<code v-pre>git clone https://github.com/SillyTavern/SillyTavern -b staging</code></li>
 </ul>
 </li>
-<li>Once everything is cloned, double-click <code v-pre>Start.bat</code> to make NodeJS install its requirements.</li>
-<li>The server will then start, and SillyTavern will pop up in your browser.</li>
+<li>克隆完成后，双击 <code v-pre>Start.bat</code>，NodeJS 将自动安装依赖</li>
+<li>服务器启动后，SillyTavern 将在浏览器中打开</li>
 </ol>
-<doc-anchor-target id="installing-via-sillytavern-launcher">
+<hr>
+<doc-anchor-target id="-通过启动器安装">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-sillytavern-launcher">#</doc-anchor-trigger>
-        <span>Installing via SillyTavern Launcher</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-通过启动器安装">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F680;</span> 通过启动器安装</span>
     </h2>
 </doc-anchor-target>
 <ol>
-<li><p>On your keyboard: press <strong><code v-pre>WINDOWS + R</code></strong> to open Run dialog box. Then, run the following command to install git:</p>
+<li><p>按下 <strong><code v-pre>Win + R</code></strong> 打开运行对话框，执行以下命令安装 Git：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-bash"><code v-pre class="language-bash">cmd /c winget install -e --id Git.Git</code></pre>
 </doc-codeblock></div>
 </li>
-<li><p>On your keyboard: press <strong><code v-pre>WINDOWS + E</code></strong> to open File Explorer, then navigate to the folder where you want to install the launcher. Once in the desired folder, type <code v-pre>cmd</code> into the address bar and press enter. Then, run the following command:</p>
+<li><p>按下 <strong><code v-pre>Win + E</code></strong> 打开文件资源管理器，进入目标安装文件夹，在地址栏输入 <code v-pre>cmd</code> 并按回车，然后执行：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-bash"><code v-pre class="language-bash"> git clone https://github.com/SillyTavern/SillyTavern-Launcher.git &amp;&amp; cd SillyTavern-Launcher &amp;&amp; start installer.bat</code></pre>
+<pre translate="no" class="language-bash"><code v-pre class="language-bash">git clone https://github.com/SillyTavern/SillyTavern-Launcher.git &amp;&amp; cd SillyTavern-Launcher &amp;&amp; start installer.bat</code></pre>
 </doc-codeblock></div>
 </li>
 </ol>
-<doc-anchor-target id="installing-via-github-desktop">
+<hr>
+<doc-anchor-target id="-通过-github-desktop-安装">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installing-via-github-desktop">#</doc-anchor-trigger>
-        <span>Installing via GitHub Desktop</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-通过-github-desktop-安装">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F5A5;&#xFE0F;</span> 通过 GitHub Desktop 安装</span>
     </h2>
 </doc-anchor-target>
-<p>(This allows git usage <strong>only</strong> in GitHub Desktop, if you want to use <code v-pre>git</code> on the command line too, you also need to install <a href="https://gitforwindows.org/">Git for Windows</a>)</p>
+<p>（此方法仅限在 GitHub Desktop 中使用 Git。如需在命令行使用 Git，仍需安装 <a href="https://gitforwindows.org/">Git for Windows</a>）</p>
 <ol>
-<li>Install <a href="https://nodejs.org/en">NodeJS</a> (latest LTS version is recommended)</li>
-<li>Install <a href="https://central.github.com/deployments/desktop/desktop/latest/win32">GitHub Desktop</a></li>
-<li><p>After installing GitHub Desktop, click on <code v-pre>Clone a repository from the internet....</code> (Note: You <strong>do NOT need</strong> to create a GitHub account for this step)</p>
-<p><img src="../../static/windows-1.png" alt="image" /></p>
-</li>
-<li><p>On the menu, click the URL tab, enter this URL <code v-pre>https://github.com/SillyTavern/SillyTavern</code>, and click Clone. You can change the Local path to change where SillyTavern is going to be downloaded.</p>
-<p><img src="../../static/windows-2.png" alt="image" /></p>
-</li>
-<li>To open SillyTavern, use Windows Explorer to browse into the folder where you cloned the repository. By default, the repository will be cloned here: <code v-pre>C:\Users\[Your Windows Username]\Documents\GitHub\SillyTavern</code></li>
-<li><p>Double-click on the <code v-pre>start.bat</code> file. (Note: the <code v-pre>.bat</code> part of the file name might be hidden by your OS, in that case, it will look like a file called &quot;<code v-pre>Start</code>&quot;. This is what you double-click to run SillyTavern)</p>
-<p><img src="../../static/windows-3.png" alt="image" /></p>
-</li>
-<li>After double-clicking, a large black command console window should open and SillyTavern will begin to install what it needs to operate.</li>
-<li><p>After the installation process, if everything is working, the command console window should look like this and a SillyTavern tab should be open in your browser:</p>
-<p><img src="../../static/windows-4.png" alt="image" /></p>
-</li>
-<li>Connect to any of the <a href="../../usage/api-connections/">supported APIs</a> and start chatting!</li>
+<li>安装 <a href="https://nodejs.org/en">NodeJS</a>（推荐最新 LTS 版本）</li>
+<li>安装 <a href="https://central.github.com/deployments/desktop/desktop/latest/win32">GitHub Desktop</a></li>
+<li>安装后点击 <code v-pre>Clone a repository from the internet...</code>（无需 GitHub 账户）<img src="../../static/windows-1.png" alt="步骤1" /></li>
+<li>选择 URL 标签页，输入 <code v-pre>https://github.com/SillyTavern/SillyTavern</code> 并点击 Clone。可修改本地路径调整安装位置<img src="../../static/windows-2.png" alt="步骤2" /></li>
+<li>通过文件资源管理器进入克隆的仓库目录（默认路径：<code v-pre>C:\Users\[用户名]\Documents\GitHub\SillyTavern</code>）</li>
+<li>双击 <code v-pre>Start.bat</code> 文件（若系统隐藏扩展名，则显示为&quot;Start&quot;）<img src="../../static/windows-3.png" alt="步骤3" /></li>
+<li>命令提示符窗口将打开并自动安装依赖</li>
+<li>安装完成后，命令窗口将显示如下界面，浏览器自动打开 SillyTavern：<img src="../../static/windows-4.png" alt="步骤4" /></li>
+<li>连接任意<a href="../../usage/api-connections/">支持的 API</a> 即可开始聊天！</li>
 </ol>
 
                                 
@@ -335,7 +330,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Installation</span>
+                                                <span class="block mt-1">📦 安装指南</span>
                                             </span>
                                         </a>
                                     </div>

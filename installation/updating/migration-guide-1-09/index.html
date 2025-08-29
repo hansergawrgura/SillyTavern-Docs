@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>1.9.0 Migration Guide | docs.ST.app</title>
-    <meta name="title" content="1.9.0 Migration Guide | docs.ST.app">
-    <meta name="description" content="It is recommended to do a fresh install. However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.">
+    <title>&#128640; 1.9.0 迁移指南 | docs.ST.app</title>
+    <meta name="title" content="🚀 1.9.0 迁移指南 | docs.ST.app">
+    <meta name="description" content="推荐进行全新安装。 但如果您希望使用现有的 SillyTavern 副本，请按照以下说明操作。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/installation/updating/migration-guide-1-09/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/installation/updating/migration-guide-1-09/">
-    <meta property="og:title" content="1.9.0 Migration Guide | docs.ST.app">
-    <meta property="og:description" content="It is recommended to do a fresh install. However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.">
+    <meta property="og:title" content="🚀 1.9.0 迁移指南 | docs.ST.app">
+    <meta property="og:description" content="推荐进行全新安装。 但如果您希望使用现有的 SillyTavern 副本，请按照以下说明操作。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/installation/updating/migration-guide-1-09/">
-    <meta property="twitter:title" content="1.9.0 Migration Guide | docs.ST.app">
-    <meta property="twitter:description" content="It is recommended to do a fresh install. However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.">
+    <meta property="twitter:title" content="🚀 1.9.0 迁移指南 | docs.ST.app">
+    <meta property="twitter:description" content="推荐进行全新安装。 但如果您希望使用现有的 SillyTavern 副本，请按照以下说明操作。">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -224,64 +224,65 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="190-migration-guide" class="break-words">
+<doc-anchor-target id="-190-迁移指南" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#190-migration-guide">#</doc-anchor-trigger>
-        <span>1.9.0 Migration Guide</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-190-迁移指南">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F680;</span> 1.9.0 迁移指南</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="how-to-migrate-to-a-new-branch-if-i-use-maindev">
+<doc-anchor-target id="如何迁移到新分支如果您当前使用-maindev-分支">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-migrate-to-a-new-branch-if-i-use-maindev">#</doc-anchor-trigger>
-        <span>How to migrate to a new branch if I use main/dev?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何迁移到新分支如果您当前使用-maindev-分支">#</doc-anchor-trigger>
+        <span>如何迁移到新分支（如果您当前使用 main/dev 分支）？</span>
     </h2>
 </doc-anchor-target>
-<p><em><strong>It is recommended to do a fresh install.</strong></em> However, if you wish to use an existing copy of SillyTavern, please follow the instructions below.</p>
-<p><strong>IMPORTANT!</strong> Before doing anything, make <em>a complete backup</em> of your installation. You may <em>lose your data</em> in the process, so don&#x27;t ignore this warning.</p>
-<p>Not sure of which files to back up? See the list here: <a href="../#updating-from-1120-to-1120">How to Update SillyTavern</a></p>
-<doc-anchor-target id="git-installs">
+<p><em><strong>推荐进行全新安装。</strong></em> 但如果您希望使用现有的 SillyTavern 副本，请按照以下说明操作。</p>
+<p><strong>重要提示！</strong> 在进行任何操作前，请对您的安装目录进行<em>完整备份</em>。在此过程中您可能<em>丢失数据</em>，请勿忽略此警告。</p>
+<p>不确定需要备份哪些文件？请参阅：<a href="../#%E4%BB%8E-1120-%E6%9B%B4%E6%96%B0%E5%88%B0-1120-%E7%89%88%E6%9C%AC">如何更新 SillyTavern</a></p>
+<doc-anchor-target id="git-安装方式">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#git-installs">#</doc-anchor-trigger>
-        <span>git installs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#git-安装方式">#</doc-anchor-trigger>
+        <span>Git 安装方式</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li>Open a terminal prompt (cmd, PowerShell, Termux, etc) in your SillyTavern installation folder.</li>
-<li>Type <code v-pre>git fetch</code> and then <code v-pre>git pull</code> to pull the updates.</li>
-<li>You may lose your settings. Have you made a backup? <code v-pre>git switch release</code> or <code v-pre>git switch staging</code> will change your branch, respectively</li>
-<li><p>Skip to next item if you have no errors. You may have something like:</p>
+<li>在您的 SillyTavern 安装文件夹中打开终端（cmd、PowerShell、Termux 等）</li>
+<li>输入 <code v-pre>git fetch</code>，然后输入 <code v-pre>git pull</code> 拉取更新</li>
+<li>您可能会丢失设置。是否已进行备份？使用 <code v-pre>git switch release</code> 或 <code v-pre>git switch staging</code> 可分别切换分支</li>
+<li><p>如果没有错误，请跳至下一步。您可能会遇到类似如下错误：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre translate="no" class="language-none"><code v-pre class="language-none">error: Your local changes to the following files would be overwritten by checkout:
+<pre translate="no" class="language-none"><code v-pre class="language-none">error: 您的本地修改将被检出操作覆盖：
      config.conf
      public/css/bg_load.css
      public/settings.json</code></pre>
 </doc-codeblock></div>
-<p>You will see a list of files affected. If you do not care about those settings files being replaced <code v-pre>git switch -f release</code> or <code v-pre>git switch -f staging</code> will set your branch.
-If you do care to save those changes restore from backup.</p>
+<p>您将看到受影响的文件列表。如果您不介意这些设置文件被替换，可使用 <code v-pre>git switch -f release</code> 或 <code v-pre>git switch -f staging</code> 强制设置分支
+如果您希望保留这些更改，请从备份中恢复</p>
 </li>
-<li>Type <code v-pre>npm install</code> and then <code v-pre>npm run start</code> to test that everything behaves correctly.</li>
-<li>Enjoy! Restore your data from a backup if needed.</li>
+<li>输入 <code v-pre>npm install</code>，然后输入 <code v-pre>npm run start</code> 测试一切是否正常运行</li>
+<li>完成！如有需要，请从备份恢复数据</li>
 </ol>
-<doc-anchor-target id="fatal-invalid-reference-release">
+<doc-anchor-target id="错误提示fatal-invalid-reference-release">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fatal-invalid-reference-release">#</doc-anchor-trigger>
-        <span>fatal: invalid reference: release</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#错误提示fatal-invalid-reference-release">#</doc-anchor-trigger>
+        <span>错误提示：fatal: invalid reference: release</span>
     </h3>
 </doc-anchor-target>
-<p>This may happen if you cloned just a single branch from an old remote (before migration to the organization repo). To fix this, you need to add and fetch a branch from a new remote:</p>
+<p>如果您之前从旧远程仓库（迁移到组织仓库之前）仅克隆了单个分支，可能会出现此问题。修复方法是从新远程添加并获取分支：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">git remote add st https://github.com/SillyTavern/SillyTavern
 git fetch st
 git checkout -t st/release</code></pre>
 </doc-codeblock></div>
-<p>Then proceed from step 5.</p>
-<doc-anchor-target id="zip-installs">
+<p>然后从第 5 步继续操作。</p>
+<doc-anchor-target id="zip-压缩包安装方式">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#zip-installs">#</doc-anchor-trigger>
-        <span>ZIP installs</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#zip-压缩包安装方式">#</doc-anchor-trigger>
+        <span>ZIP 压缩包安装方式</span>
     </h3>
 </doc-anchor-target>
-<p>Nothing changes for you. Just download the branch/release ZIP like usual.</p>
+<p>对您来说没有任何变化。只需像往常一样下载分支/发布版本的 ZIP 包即可。</p>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -301,7 +302,7 @@ git checkout -t st/release</code></pre>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">1.​12.​0 Migration Guide</span>
+                                                <span class="block mt-1">🚀 1.​12.​0 迁移指南</span>
                                             </span>
                                         </a>
                                     </div>
@@ -310,7 +311,7 @@ git checkout -t st/release</code></pre>
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../installation/updating/node/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">How to update Node.​js</span>
+                                                <span class="block mt-1">🔄 如何更新 Node.​js</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -354,6 +355,6 @@ git checkout -t st/release</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "1.9.0 Migration Guide", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "🚀 1.9.0 迁移指南", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -236,22 +236,28 @@
 <doc-tab v-cloak id="text-completion-apis">
 <template #title>Text Completion APIs</template>
 <ul>
+<li><doc-anchor-trigger to="#advanced-formatting">Advanced Formatting</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#resetting-templates">Resetting Templates</doc-anchor-trigger>
+<ul>
+<li><doc-anchor-trigger to="#ui-reset">UI Reset</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#manual-reset">Manual Reset</doc-anchor-trigger></li>
+</ul>
+</li>
+<li><doc-anchor-trigger to="#backend-defined-templates">Backend-defined templates</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#system-prompt">System Prompt</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#context-template">Context Template</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#tokenizer">Tokenizer</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#custom-stopping-strings">Custom Stopping Strings</doc-anchor-trigger></li>
-</ul>
-</doc-tab>
-<doc-tab v-cloak id="chat-completion-apis">
-<template #title>Chat Completion APIs</template>
+<li><doc-anchor-trigger to="#start-reply-with">Start Reply With</doc-anchor-trigger>
 <ul>
-<li>System Prompt: not applicable, use <a href="../../prompts/prompt-manager/">Prompt Manager</a></li>
-<li>Context Template: not applicable, use <a href="../../prompts/prompt-manager/">Prompt Manager</a></li>
-<li><doc-anchor-trigger to="#tokenizer">Tokenizer</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#custom-stopping-strings">Custom Stopping Strings</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#text-completion-apis">Text Completion APIs</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#chat-completion-apis">Chat Completion APIs</doc-anchor-trigger></li>
 </ul>
-</doc-tab>
-</doc-tabs>
+</li>
+</ul>
+</li>
+</ul>
 <doc-anchor-target id="resetting-templates">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#resetting-templates">#</doc-anchor-trigger>
@@ -295,7 +301,7 @@
     </div>
 </div>
 <ol>
-<li>Navigate to your user data directory (see <a href="../../../installation/#data-paths">Data paths</a> for details).</li>
+<li>Navigate to your user data directory (see <a href="../../../installation/#%E6%95%B0%E6%8D%AE%E8%B7%AF%E5%BE%84%E8%AF%B4%E6%98%8E">Data paths</a> for details).</li>
 <li>Delete the <code v-pre>content.log</code> file from the root of your user data directory. This file tracks the default files copied for your user.</li>
 <li>Delete the template JSON files from the relevant subdirectories (<code v-pre>context</code>, <code v-pre>instruct</code>, <code v-pre>sysprompt</code>, etc.).</li>
 <li>Restart the SillyTavern server. The application will repopulate the default content, restoring any deleted default templates.</li>
@@ -454,6 +460,7 @@ Sure!</code></pre>
     </h3>
 </doc-anchor-target>
 <p>Adds an assistant role message to the end of the prompt. For some backend models, this is equivalent to prefilling the model response, but some may not support that at all and will fail with a validation error. If you&#x27;re unsure, leave this field empty.</p>
+</doc-tab>
 
                                 
                                 <!-- Required only on API pages -->

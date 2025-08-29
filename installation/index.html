@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Installation | docs.ST.app</title>
-    <meta name="title" content="Installation | docs.ST.app">
-    <meta name="description" content="Follow the installation guide for your platform:">
+    <title>&#128230; 安装指南 | docs.ST.app</title>
+    <meta name="title" content="📦 安装指南 | docs.ST.app">
+    <meta name="description" content="请根据您的平台选择对应的安装指南：">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/installation/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/installation/">
-    <meta property="og:title" content="Installation | docs.ST.app">
-    <meta property="og:description" content="Follow the installation guide for your platform:">
+    <meta property="og:title" content="📦 安装指南 | docs.ST.app">
+    <meta property="og:description" content="请根据您的平台选择对应的安装指南：">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/installation/">
-    <meta property="twitter:title" content="Installation | docs.ST.app">
-    <meta property="twitter:description" content="Follow the installation guide for your platform:">
+    <meta property="twitter:title" content="📦 安装指南 | docs.ST.app">
+    <meta property="twitter:description" content="请根据您的平台选择对应的安装指南：">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -224,40 +224,42 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="installation" class="break-words">
+<doc-anchor-target id="-安装指南" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#installation">#</doc-anchor-trigger>
-        <span>Installation</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-安装指南">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4E6;</span> 安装指南</span>
     </h1>
 </doc-anchor-target>
-<p>Follow the installation guide for your platform:</p>
+<p>请根据您的平台选择对应的安装指南：</p>
 <ul>
-<li><a href="windows/">Windows</a></li>
-<li><a href="linuxmacos/">Linux and Mac</a></li>
-<li><a href="android-(termux)/">Android</a></li>
-<li><a href="docker/">Docker</a></li>
+<li><a href="windows/">🪟 Windows 系统</a></li>
+<li><a href="linuxmacos/"><span class="docs-emoji">&#x1F427;</span> Linux 和 <span class="docs-emoji">&#x1F34E;</span> macOS 系统</a></li>
+<li><a href="android-(termux)/"><span class="docs-emoji">&#x1F4F1;</span> Android 系统</a></li>
+<li><a href="docker/"><span class="docs-emoji">&#x1F433;</span> Docker 容器</a></li>
 </ul>
-<doc-anchor-target id="branches">
+<hr>
+<doc-anchor-target id="-分支说明">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#branches">#</doc-anchor-trigger>
-        <span>Branches</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-分支说明">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F33F;</span> 分支说明</span>
     </h2>
 </doc-anchor-target>
-<p>SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.</p>
+<p>SillyTavern 采用双分支开发模式，确保所有用户都能获得流畅的使用体验。</p>
 <ul>
-<li><code v-pre>release</code> -<span class="docs-emoji">&#x1F31F;</span> <strong>Recommended for most users.</strong> This is the most stable and recommended branch, updated only when major releases are pushed. It&#x27;s suitable for the majority of users. Typically updated once a month.</li>
-<li><code v-pre>staging</code> - <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>Not recommended for casual use.</strong> This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.</li>
+<li><code v-pre>release</code> - <span class="docs-emoji">&#x1F31F;</span> <strong>推荐大多数用户使用</strong>。最稳定的推荐分支，仅在重大发布时更新。适合绝大多数用户。通常每月更新一次。</li>
+<li><code v-pre>staging</code> - <span class="docs-emoji">&#x26A0;&#xFE0F;</span> <strong>不推荐日常使用</strong>。此分支包含最新功能，但请注意可能随时出现故障。仅适合高级用户和爱好者。每日更新多次。</li>
 </ul>
-<doc-anchor-target id="global--standalone-mode">
+<hr>
+<doc-anchor-target id="-全局模式--独立模式">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#global--standalone-mode">#</doc-anchor-trigger>
-        <span>Global / Standalone mode</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-全局模式--独立模式">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F30D;</span> 全局模式 / 独立模式</span>
     </h2>
 </doc-anchor-target>
-<p>There are two modes of running SillyTavern that differ in how they handle the configuration and data paths.</p>
+<p>SillyTavern 有两种运行模式，区别在于配置和数据路径的处理方式：</p>
 <ul>
-<li><strong>Standalone mode</strong> (default) - uses the <code v-pre>config.yaml</code> file and <code v-pre>data</code> directory in the server directory. All data will be constrained to the installation path. This is the recommended mode for most users.</li>
-<li><strong>Global mode</strong> - uses the system-wide paths for configuration and data. This is useful for installing SillyTavern as a package or when you want to share the same configuration and data across multiple installations.</li>
+<li><strong>独立模式</strong>（默认）- 使用服务器目录中的 <code v-pre>config.yaml</code> 文件和 <code v-pre>data</code> 目录。所有数据将限制在安装路径内。推荐大多数用户使用此模式。</li>
+<li><strong>全局模式</strong> - 使用系统范围的配置和数据路径。适用于将 SillyTavern 作为软件包安装，或希望在多个安装间共享相同配置和数据的情况。</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-info"></div>
@@ -272,31 +274,32 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>Installations made by using the <a href="https://www.npmjs.com/package/sillytavern">official npm package</a> (e.g. <code v-pre>npx sillytavern@latest</code>) will run in global mode by default.</p>
+            <h5>说明</h5>
+<p>使用<a href="https://www.npmjs.com/package/sillytavern">官方 npm 包</a>（例如 <code v-pre>npx sillytavern@latest</code>）进行的安装默认使用全局模式。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="data-paths">
+<doc-anchor-target id="数据路径说明">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#data-paths">#</doc-anchor-trigger>
-        <span>Data paths</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#数据路径说明">#</doc-anchor-trigger>
+        <span>数据路径说明</span>
     </h3>
 </doc-anchor-target>
-<p><strong>Standalone mode</strong> paths are relative to the SillyTavern installation directory:</p>
+<p><strong>独立模式</strong>路径相对于 SillyTavern 安装目录：</p>
 <ul>
-<li><strong>Config path</strong>: <code v-pre>./config.yaml</code></li>
-<li><strong>Data root</strong>: <code v-pre>./data/</code></li>
+<li><strong>配置路径</strong>: <code v-pre>./config.yaml</code></li>
+<li><strong>数据根目录</strong>: <code v-pre>./data/</code></li>
 </ul>
-<p><strong>Global mode</strong> paths are OS-dependent:</p>
+<p><strong>全局模式</strong>路径取决于操作系统：</p>
 <ul>
-<li><strong>Linux</strong>: <code v-pre>~/.local/share/SillyTavern/config.yaml</code> (or <code v-pre>$XDG_DATA_HOME/SillyTavern/config.yaml</code>) and <code v-pre>~/.local/share/SillyTavern/data/</code> (or <code v-pre>$XDG_DATA_HOME/SillyTavern/data/</code>)</li>
-<li><strong>Windows</strong>: <code v-pre>%APPDATA%\SillyTavern\config.yaml</code> and <code v-pre>%APPDATA%\SillyTavern\data\</code></li>
-<li><strong>MacOS</strong>: <code v-pre>~/Library/Application Support/SillyTavern/config.yaml</code> and <code v-pre>~/Library/Application Support/SillyTavern/data/</code></li>
+<li><strong>Linux</strong>: <code v-pre>~/.local/share/SillyTavern/config.yaml</code>（或 <code v-pre>$XDG_DATA_HOME/SillyTavern/config.yaml</code>）和 <code v-pre>~/.local/share/SillyTavern/data/</code>（或 <code v-pre>$XDG_DATA_HOME/SillyTavern/data/</code>）</li>
+<li><strong>Windows</strong>: <code v-pre>%APPDATA%\SillyTavern\config.yaml</code> 和 <code v-pre>%APPDATA%\SillyTavern\data\</code></li>
+<li><strong>macOS</strong>: <code v-pre>~/Library/Application Support/SillyTavern/config.yaml</code> 和 <code v-pre>~/Library/Application Support/SillyTavern/data/</code></li>
 </ul>
-<doc-anchor-target id="how-to-run-in-global-mode">
+<doc-anchor-target id="如何运行全局模式">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#how-to-run-in-global-mode">#</doc-anchor-trigger>
-        <span>How to run in global mode</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#如何运行全局模式">#</doc-anchor-trigger>
+        <span>如何运行全局模式</span>
     </h3>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -311,15 +314,17 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><code v-pre>dataRoot</code> and <code v-pre>configPath</code> can&#x27;t be overridden with <a href="../administration/config-yaml/#command-line-arguments">CLI arguments</a> or <a href="../administration/config-yaml/">config.yaml</a> when running in global mode.</p>
+            <h5>注意</h5>
+<p>在全局模式下运行时，无法通过<a href="../administration/config-yaml/#command-line-arguments">CLI 参数</a>或<a href="../administration/config-yaml/">config.yaml</a>覆盖 <code v-pre>dataRoot</code> 和 <code v-pre>configPath</code>。</p>
         </div>
     </div>
 </div>
 <ol>
-<li>Pass the <code v-pre>--global</code> argument to the server startup command (e.g. <code v-pre>node server.js --global</code>).</li>
-<li>Pass the <code v-pre>--global</code> argument to the shell startup script (e.g. <code v-pre>Start.bat --global</code> or <code v-pre>./start.sh --global</code>).</li>
-<li>Use the <code v-pre>start:global</code> script in the <code v-pre>package.json</code> file (e.g. <code v-pre>npm run start:global</code>).</li>
+<li>向服务器启动命令传递 <code v-pre>--global</code> 参数（例如 <code v-pre>node server.js --global</code>）</li>
+<li>向 shell 启动脚本传递 <code v-pre>--global</code> 参数（例如 <code v-pre>Start.bat --global</code> 或 <code v-pre>./start.sh --global</code>）</li>
+<li>使用 <code v-pre>package.json</code> 文件中的 <code v-pre>start:global</code> 脚本（例如 <code v-pre>npm run start:global</code>）</li>
 </ol>
+<hr>
 
                                 
                                 <!-- Required only on API pages -->
@@ -339,7 +344,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">What is Silly​Tavern?</span>
+                                                <span class="block mt-1">什么是 Silly​Tavern？ 🤖</span>
                                             </span>
                                         </a>
                                     </div>
@@ -392,6 +397,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Installation", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "📦 安装指南", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

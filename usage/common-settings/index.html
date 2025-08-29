@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809777878686">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Common Settings | docs.ST.app</title>
-    <meta name="title" content="Common Settings | docs.ST.app">
-    <meta name="description" content="These settings control the sampling process when generating text using a language model.">
+    <title>⚙️ 通用设置 | docs.ST.app</title>
+    <meta name="title" content="⚙️ 通用设置 | docs.ST.app">
+    <meta name="description" content="此处设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的 后端 是通用的。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/usage/common-settings/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/usage/common-settings/">
-    <meta property="og:title" content="Common Settings | docs.ST.app">
-    <meta property="og:description" content="These settings control the sampling process when generating text using a language model.">
+    <meta property="og:title" content="⚙️ 通用设置 | docs.ST.app">
+    <meta property="og:description" content="此处设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的 后端 是通用的。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/usage/common-settings/">
-    <meta property="twitter:title" content="Common Settings | docs.ST.app">
-    <meta property="twitter:description" content="These settings control the sampling process when generating text using a language model.">
+    <meta property="twitter:title" content="⚙️ 通用设置 | docs.ST.app">
+    <meta property="twitter:description" content="此处设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的 后端 是通用的。">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809777878686" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809777878686" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -224,218 +224,218 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="common-settings" class="break-words">
+<doc-anchor-target id="-通用设置" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#common-settings">#</doc-anchor-trigger>
-        <span>Common Settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-通用设置">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2699;&#xFE0F;</span> 通用设置</span>
     </h1>
 </doc-anchor-target>
-<p>These settings control the sampling process when generating text using a language model. The meaning of these settings is universal for all the supported backends.</p>
-<doc-anchor-target id="context-settings">
+<p>此处设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的<strong>后端</strong>是通用的。</p>
+<doc-anchor-target id="-上下文设置">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-settings">#</doc-anchor-trigger>
-        <span>Context Settings</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-上下文设置">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4D6;</span> 上下文设置</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="response-tokens">
+<doc-anchor-target id="生成长度词元数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#response-tokens">#</doc-anchor-trigger>
-        <span>Response (tokens)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#生成长度词元数">#</doc-anchor-trigger>
+        <span>生成长度（词元数）</span>
     </h3>
 </doc-anchor-target>
-<p>The maximum number of tokens that the API will generate to respond.</p>
+<p>API 生成响应所使用的<strong>最大词元数</strong>。</p>
 <ul>
-<li>The higher the response length, the longer it will take to generate the response.</li>
-<li>If supported by the API, you can enable <code v-pre>Streaming</code> to display the response bit by bit as it is being generated.</li>
-<li>When <code v-pre>Streaming</code> is off, responses will be displayed all at once when they are complete.</li>
+<li>生成长度越高，生成响应所需时间越长。</li>
+<li>如果 API 支持，可启用 <code v-pre>流式传输</code>，以便在响应生成过程中逐段显示。</li>
+<li>关闭 <code v-pre>流式传输</code> 后，响应将在完成后一次性显示。</li>
 </ul>
-<doc-anchor-target id="context-tokens">
+<doc-anchor-target id="上下文长度词元数">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#context-tokens">#</doc-anchor-trigger>
-        <span>Context (tokens)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#上下文长度词元数">#</doc-anchor-trigger>
+        <span>上下文长度（词元数）</span>
     </h3>
 </doc-anchor-target>
-<p>The maximum number of tokens that SillyTavern will send to the API as the prompt, minus the response length.</p>
+<p>SillyTavern 作为提示词发送给 API 的<strong>最大词元数</strong>（需减去响应长度）。</p>
 <ul>
-<li>Context comprises character information, system prompts, chat history, etc.</li>
-<li>A dotted line between messages denotes the context range for the chat. Messages above that line are not sent to the AI.</li>
-<li>To see a composition of the context after generating the message, click on the <code v-pre>Prompt Itemization</code> message option (expand the <code v-pre>...</code> menu and click on the lined square icon).</li>
+<li>上下文包含角色信息、系统提示、聊天历史等。</li>
+<li>消息之间的虚线表示聊天的上下文范围，该线上方的消息不会发送给 AI。</li>
+<li>生成消息后，点击 <code v-pre>提示词分解</code> 消息选项（展开 <code v-pre>...</code> 菜单并点击带线方框图标）可查看上下文的组成。</li>
 </ul>
-<doc-anchor-target id="sampler-parameters">
+<doc-anchor-target id="-采样器参数">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#sampler-parameters">#</doc-anchor-trigger>
-        <span>Sampler Parameters</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-采样器参数">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F39B;&#xFE0F;</span> 采样器参数</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="temperature">
+<doc-anchor-target id="温度-temperature">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#temperature">#</doc-anchor-trigger>
-        <span>Temperature</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#温度-temperature">#</doc-anchor-trigger>
+        <span>温度 (Temperature)</span>
     </h3>
 </doc-anchor-target>
-<p>Temperature controls the randomness in token selection:</p>
+<p>控制词元选择的随机性：</p>
 <ul>
-<li>Low temperature (&lt;1.0) leads to more predictable text, favoring higher probability tokens</li>
-<li>High temperature (&gt;1.0) increases creativity and diversity in the output by giving lower probability tokens a better chance.</li>
+<li><strong>低温度</strong> (&lt;1.0) 生成更可预测的文本，偏向高概率词元。</li>
+<li><strong>高温度</strong> (&gt;1.0) 通过增加低概率词元的选择机会，提升输出的创造性和多样性。</li>
 </ul>
-<p>Set to 1 for the original probabilities.</p>
-<doc-anchor-target id="repetition-penalty">
+<p>设置为 <strong>1</strong> 可使用原始概率。</p>
+<doc-anchor-target id="重复惩罚-repetition-penalty">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty">#</doc-anchor-trigger>
-        <span>Repetition Penalty</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#重复惩罚-repetition-penalty">#</doc-anchor-trigger>
+        <span>重复惩罚 (Repetition Penalty)</span>
     </h3>
 </doc-anchor-target>
-<p>Attempts to curb repetition by penalizing tokens based on how often they occur in the context.</p>
-<p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="repetition-penalty-range">
+<p>通过根据词元在上下文中出现的频率进行惩罚，以<strong>抑制重复</strong>。</p>
+<p>设置为 <strong>1</strong> 可禁用此效果。</p>
+<doc-anchor-target id="重复惩罚范围-repetition-penalty-range">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-range">#</doc-anchor-trigger>
-        <span>Repetition Penalty Range</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#重复惩罚范围-repetition-penalty-range">#</doc-anchor-trigger>
+        <span>重复惩罚范围 (Repetition Penalty Range)</span>
     </h4>
 </doc-anchor-target>
-<p>How many tokens from the last generated token will be considered for the repetition penalty. This can break responses if set too high, as common words like &quot;the, a, and,&quot; etc. will be penalized the most.</p>
-<p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="repetition-penalty-slope">
+<p>考虑重复惩罚的、从最后一个生成词元算起的词元数量。设置过高会破坏响应，因为常见词（如 “the”、“a”、“and” 等）将受到最大惩罚。</p>
+<p>设置为 <strong>0</strong> 可禁用此效果。</p>
+<doc-anchor-target id="重复惩罚斜率-repetition-penalty-slope">
     <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#repetition-penalty-slope">#</doc-anchor-trigger>
-        <span>Repetition Penalty Slope</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#重复惩罚斜率-repetition-penalty-slope">#</doc-anchor-trigger>
+        <span>重复惩罚斜率 (Repetition Penalty Slope)</span>
     </h4>
 </doc-anchor-target>
-<p>If both this and <code v-pre>Repetition Penalty Range</code> are above 0, the repetition penalty will have a greater effect at the end of the prompt. The higher the value, the stronger the effect.</p>
-<p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="top-k">
+<p>如果此项和 <code v-pre>重复惩罚范围</code> 均大于 0，则重复惩罚在提示词末尾的效果更强。值越高，效果越强。</p>
+<p>设置为 <strong>0</strong> 可禁用此效果。</p>
+<doc-anchor-target id="前-k-采样-top-k">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-k">#</doc-anchor-trigger>
-        <span>Top K</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#前-k-采样-top-k">#</doc-anchor-trigger>
+        <span>前 K 采样 (Top K)</span>
     </h3>
 </doc-anchor-target>
-<p>Top K sets a maximum amount of top tokens that can be chosen from. For example, if Top K is 20, this means only the 20 highest ranking tokens will be kept (regardless of their probabilities being diverse or limited).</p>
-<p>Set to 0 (or -1, depending on your backend) to disable.</p>
-<doc-anchor-target id="top-p">
+<p>设置可供选择的最大顶级词元数量。例如，如果 Top K 为 20，则意味着只保留排名最高的 20 个词元（无论其概率分布广泛还是有限）。</p>
+<p>设置为 <strong>0</strong>（或根据后端设置为 -1）可禁用。</p>
+<doc-anchor-target id="前-p-采样-top-p">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-p">#</doc-anchor-trigger>
-        <span>Top P</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#前-p-采样-top-p">#</doc-anchor-trigger>
+        <span>前 P 采样 (Top P)</span>
     </h3>
 </doc-anchor-target>
-<p>Top P (a.k.a. nucleus sampling) adds up all the top tokens required to add up to the target percentage. If the Top 2 tokens are both 25%, and Top P is 0.50, only the Top 2 tokens are considered.</p>
-<p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="typical-p">
+<p>前 P 采样（又称核采样）累加顶级词元，直至达到目标百分比。如果前 2 个词元概率均为 25%，且 Top P 为 0.50，则仅考虑前 2 个词元。</p>
+<p>设置为 <strong>1</strong> 可禁用此效果。</p>
+<doc-anchor-target id="典型-p-采样-typical-p">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#typical-p">#</doc-anchor-trigger>
-        <span>Typical P</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#典型-p-采样-typical-p">#</doc-anchor-trigger>
+        <span>典型 P 采样 (Typical P)</span>
     </h3>
 </doc-anchor-target>
-<p>Typical P Sampling prioritizes tokens based on their deviation from the average entropy of the set. It maintains tokens whose cumulative probability is close to a predefined threshold (e.g., 0.5), emphasizing those with average information content.</p>
-<p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="min-p">
+<p>根据词元与集合平均熵的偏差来优先选择词元。它保留累积概率接近预定义阈值（例如 0.5）的词元，强调那些具有平均信息量的词元。</p>
+<p>设置为 <strong>1</strong> 可禁用此效果。</p>
+<doc-anchor-target id="最小-p-采样-min-p">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#min-p">#</doc-anchor-trigger>
-        <span>Min P</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#最小-p-采样-min-p">#</doc-anchor-trigger>
+        <span>最小 P 采样 (Min P)</span>
     </h3>
 </doc-anchor-target>
-<p>Limits the token pool by cutting off low-probability tokens relative to the top token. Produces more coherent responses but can also worsen repetition if set too high.</p>
+<p>通过剔除与顶级词元相比概率较低的词元来限制词元池。可生成更连贯的响应，但设置过高也可能加剧重复。</p>
 <ul>
-<li>Works best at low values such as <code v-pre>0.1-0.01</code>, but can be set higher with a high <code v-pre>Temperature</code>. For example: <code v-pre>Temperature: 5, Min P: 0.5</code></li>
+<li>在较低值（如 <code v-pre>0.1-0.01</code>）下效果最佳，但也可与高 <code v-pre>温度</code> 配合设置更高值。例如：<code v-pre>温度: 5, 最小 P: 0.5</code></li>
 </ul>
-<p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="top-a">
+<p>设置为 <strong>0</strong> 可禁用此效果。</p>
+<doc-anchor-target id="前-a-采样-top-a">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#top-a">#</doc-anchor-trigger>
-        <span>Top A</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#前-a-采样-top-a">#</doc-anchor-trigger>
+        <span>前 A 采样 (Top A)</span>
     </h3>
 </doc-anchor-target>
-<p>Top A sets a threshold for token selection based on the square of the highest token probability. For example, if the Top-A value is 0.2 and the top token&#x27;s probability is 50%, tokens with probabilities below 5% (0.2 * 0.5^2) are excluded.</p>
-<p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="tail-free-sampling">
+<p>根据最高词元概率的平方设置词元选择阈值。例如，如果 Top-A 值为 0.2，且顶级词元概率为 50%，则概率低于 5% (0.2 * 0.5^2) 的词元将被排除。</p>
+<p>设置为 <strong>0</strong> 可禁用此效果。</p>
+<doc-anchor-target id="无尾采样-tail-free-sampling-tfs">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tail-free-sampling">#</doc-anchor-trigger>
-        <span>Tail Free Sampling</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#无尾采样-tail-free-sampling-tfs">#</doc-anchor-trigger>
+        <span>无尾采样 (Tail Free Sampling, TFS)</span>
     </h3>
 </doc-anchor-target>
-<p>Tail-Free Sampling (TFS) searches for a tail of low-probability tokens in the distribution, by analyzing the rate of change in token probabilities using derivatives. It retains tokens up to a threshold (e.g., 0.3) based on the normalized second derivative. The closer to 0, the more discarded tokens.</p>
-<p>Set the value to 1 to disable its effect.</p>
-<doc-anchor-target id="smoothing-factor">
+<p>通过使用导数分析词元概率的变化率，搜索分布中的低概率词元尾。它根据归一化二阶导数保留达到阈值（例如 0.3）的词元。越接近 0，丢弃的词元越多。</p>
+<p>设置为 <strong>1</strong> 可禁用此效果。</p>
+<doc-anchor-target id="平滑因子-smoothing-factor">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#smoothing-factor">#</doc-anchor-trigger>
-        <span>Smoothing Factor</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#平滑因子-smoothing-factor">#</doc-anchor-trigger>
+        <span>平滑因子 (Smoothing Factor)</span>
     </h3>
 </doc-anchor-target>
-<p>Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a quadratic transformation. Aims to produce more creative responses regardless of <code v-pre>Temperature</code>.</p>
+<p>使用二次变换增加高概率词元的可能性，同时降低低概率词元的可能性。旨在无论 <code v-pre>温度</code> 如何，都能产生更具创造性的响应。</p>
 <ul>
-<li>Works best without truncation samplers such as <code v-pre>Top K</code>, <code v-pre>Top P</code>, <code v-pre>Min P</code>, etc.</li>
+<li>不与截断采样器（如 <code v-pre>Top K</code>、<code v-pre>Top P</code>、<code v-pre>Min P</code> 等）一起使用时效果最佳。</li>
 </ul>
-<p>Set the value to 0 to disable its effect.</p>
-<doc-anchor-target id="dynamic-temperature">
+<p>设置为 <strong>0</strong> 可禁用此效果。</p>
+<doc-anchor-target id="动态温度-dynamic-temperature">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dynamic-temperature">#</doc-anchor-trigger>
-        <span>Dynamic Temperature</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#动态温度-dynamic-temperature">#</doc-anchor-trigger>
+        <span>动态温度 (Dynamic Temperature)</span>
     </h3>
 </doc-anchor-target>
-<p>Scales temperature dynamically based on the likelihood of the top token. Aims to produce more creative outputs without sacrificing coherency.</p>
+<p>根据顶级词元的可能性动态调整温度。旨在不牺牲连贯性的前提下产生更具创造性的输出。</p>
 <ul>
-<li>Accepts a temperature range from minimum to maximum. For example: <code v-pre>Minimum Temp: 0.75</code> and <code v-pre>Minimum Temp: 1.25</code></li>
-<li><code v-pre>Exponent</code> applies an exponential curve based on the top token.</li>
+<li>接受从最小到最大的温度范围。例如：<code v-pre>最小温度: 0.75</code> 和 <code v-pre>最大温度: 1.25</code></li>
+<li><code v-pre>指数</code> 根据顶级词元应用指数曲线。</li>
 </ul>
-<p>Untick to disable its effect.</p>
-<doc-anchor-target id="epsilon-cutoff">
+<p>取消勾选可禁用此效果。</p>
+<doc-anchor-target id="epsilon-截断-epsilon-cutoff">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#epsilon-cutoff">#</doc-anchor-trigger>
-        <span>Epsilon Cutoff</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#epsilon-截断-epsilon-cutoff">#</doc-anchor-trigger>
+        <span>Epsilon 截断 (Epsilon Cutoff)</span>
     </h3>
 </doc-anchor-target>
-<p>Epsilon cutoff sets a probability floor below which tokens are excluded from being sampled. In units of 1e-4; a reasonable value is 3.</p>
-<p>Set to 0 to disable.</p>
-<doc-anchor-target id="eta-cutoff">
+<p>设置一个概率下限，低于该值的词元将被排除在采样之外。单位为 1e-4；合理值为 3。</p>
+<p>设置为 <strong>0</strong> 可禁用。</p>
+<doc-anchor-target id="eta-截断-eta-cutoff">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#eta-cutoff">#</doc-anchor-trigger>
-        <span>Eta Cutoff</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#eta-截断-eta-cutoff">#</doc-anchor-trigger>
+        <span>Eta 截断 (Eta Cutoff)</span>
     </h3>
 </doc-anchor-target>
-<p>Eta cutoff is the main parameter of the special Eta Sampling technique. In units of 1e-4; a reasonable value is 3. See the paper <a href="https://arxiv.org/abs/2210.15191">Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)</a> for details.</p>
-<p>Set to 0 to disable.</p>
-<doc-anchor-target id="dry-repetition-penalty">
+<p>特殊 Eta 采样技术的主要参数。单位为 1e-4；合理值为 3。详情参见论文 <a href="https://arxiv.org/abs/2210.15191">Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)</a>。</p>
+<p>设置为 <strong>0</strong> 可禁用。</p>
+<doc-anchor-target id="dry-重复惩罚-dry-repetition-penalty">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dry-repetition-penalty">#</doc-anchor-trigger>
-        <span>DRY Repetition Penalty</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dry-重复惩罚-dry-repetition-penalty">#</doc-anchor-trigger>
+        <span>DRY 重复惩罚 (DRY Repetition Penalty)</span>
     </h3>
 </doc-anchor-target>
-<p>DRY penalizes tokens that would extend the end of the input into a sequence that has previously occurred in the input. If you want to allow repeating certain sequences verbatim (e.g. names), you can add them to the sequence breakers list. See the Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/5677">here</a>.</p>
-<p>Set multiplier to 0 to disable.</p>
-<doc-anchor-target id="exclude-top-choices-xtc">
+<p>DRY 会惩罚那些将输入末尾扩展为输入中先前出现过的序列的词元。如果您想允许逐字重复某些序列（例如名称），可以将其添加到序列中断器列表中。参见 Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/5677">此处</a>。</p>
+<p>将乘数设置为 <strong>0</strong> 可禁用。</p>
+<doc-anchor-target id="排除顶级选择-exclude-top-choices-xtc">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#exclude-top-choices-xtc">#</doc-anchor-trigger>
-        <span>Exclude Top Choices (XTC)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#排除顶级选择-exclude-top-choices-xtc">#</doc-anchor-trigger>
+        <span>排除顶级选择 (Exclude Top Choices, XTC)</span>
     </h3>
 </doc-anchor-target>
-<p>XTC sampling algorithm removes the most likely tokens from consideration instead of pruning the least likely tokens It removes all except the least likely token meeting a given threshold, with a given probability. This ensures that at least one &quot;viable&quot; choice remains, retaining coherence. See the Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/6335">here</a>.</p>
-<p>Set probability to 0 to disable.</p>
+<p>XTC 采样算法移除最可能的词元而非修剪最不可能的词元。它以给定概率移除除符合给定阈值的最不可能词元之外的所有词元。这确保了至少有一个“可行”选择保留，从而保持连贯性。参见 Pull Request <a href="https://github.com/oobabooga/text-generation-webui/pull/6335">此处</a>。</p>
+<p>将概率设置为 <strong>0</strong> 可禁用。</p>
 <doc-anchor-target id="mirostat">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mirostat">#</doc-anchor-trigger>
         <span>Mirostat</span>
     </h3>
 </doc-anchor-target>
-<p>Mirostat matches the output perplexity to that of the input, thus avoiding the repetition trap (where, as the autoregressive inference produces text, the perplexity of the output tends toward zero) and the confusion trap (where the perplexity diverges). For details, see the paper <a href="https://arxiv.org/abs/2007.14966">Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)</a>.</p>
-<p>Mode chooses the Mirostat version.</p>
+<p>Mirostat 将输出复杂度与输入匹配，从而避免重复陷阱（自回归推理生成文本时，输出复杂度趋于零）和混淆陷阱（复杂度发散）。详情参见论文 <a href="https://arxiv.org/abs/2007.14966">Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)</a>。</p>
+<p>模式选择 Mirostat 版本。</p>
 <ul>
-<li>0 = disable,</li>
-<li>1 = Mirostat 1.0 (llama.cpp only),</li>
-<li>2 = Mirostat 2.0.</li>
+<li>0 = 禁用，</li>
+<li>1 = Mirostat 1.0（仅限 llama.cpp），</li>
+<li>2 = Mirostat 2.0。</li>
 </ul>
-<doc-anchor-target id="beam-search">
+<doc-anchor-target id="束搜索-beam-search">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#beam-search">#</doc-anchor-trigger>
-        <span>Beam Search</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#束搜索-beam-search">#</doc-anchor-trigger>
+        <span>束搜索 (Beam Search)</span>
     </h3>
 </doc-anchor-target>
-<p>A greedy, brute-force algorithm used in LLM sampling to find the most likely sequence of words or tokens. It expands multiple candidate sequences at once, maintaining a fixed number (beam width) of top sequences at each step.</p>
+<p>一种用于 LLM 采样的贪婪暴力算法，用于查找最可能的单词或词元序列。它同时扩展多个候选序列，并在每一步保留固定数量（束宽）的顶级序列。</p>
 <doc-anchor-target id="top-nsigma">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#top-nsigma">#</doc-anchor-trigger>
         <span>Top nsigma</span>
     </h3>
 </doc-anchor-target>
-<p>A sampling method that filters logits based on their statistical properties. It keeps tokens within n standard deviations of the maximum logit value, providing a simpler alternative to top-p/top-k sampling while maintaining sampling stability across different temperatures.</p>
+<p>一种基于统计特性过滤逻辑值的采样方法。它保留最大逻辑值 n 个标准偏差范围内的词元，提供了一种更简单的 top-p/top-k 采样替代方案，同时在不同温度下保持采样稳定性。</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -455,7 +455,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Hot​Keys</span>
+                                                <span class="block mt-1">🚀 快捷键指南</span>
                                             </span>
                                         </a>
                                     </div>
@@ -508,6 +508,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Common Settings", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "⚙️ 通用设置", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

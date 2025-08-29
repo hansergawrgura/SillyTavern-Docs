@@ -1,152 +1,153 @@
----
-order: 160
-icon: sliders
----
+---  
 
-# Common Settings
+order: 160  
+icon: sliders  
+---  
 
-These settings control the sampling process when generating text using a language model. The meaning of these settings is universal for all the supported backends.
+# ⚙️ 通用设置  
 
-## Context Settings
+此处设置控制使用语言模型生成文本时的采样过程。这些设置的含义对所有支持的**后端**是通用的。  
 
-### Response (tokens)
+## 📖 上下文设置  
 
-The maximum number of tokens that the API will generate to respond.
+### 生成长度（词元数）  
 
-- The higher the response length, the longer it will take to generate the response.
-- If supported by the API, you can enable `Streaming` to display the response bit by bit as it is being generated.
-- When `Streaming` is off, responses will be displayed all at once when they are complete.
+API 生成响应所使用的**最大词元数**。  
 
-### Context (tokens)
+- 生成长度越高，生成响应所需时间越长。  
+- 如果 API 支持，可启用 `流式传输`，以便在响应生成过程中逐段显示。  
+- 关闭 `流式传输` 后，响应将在完成后一次性显示。  
 
-The maximum number of tokens that SillyTavern will send to the API as the prompt, minus the response length.
+### 上下文长度（词元数）  
 
-- Context comprises character information, system prompts, chat history, etc.
-- A dotted line between messages denotes the context range for the chat. Messages above that line are not sent to the AI.
-- To see a composition of the context after generating the message, click on the `Prompt Itemization` message option (expand the `...` menu and click on the lined square icon).
+SillyTavern 作为提示词发送给 API 的**最大词元数**（需减去响应长度）。  
 
-## Sampler Parameters
+- 上下文包含角色信息、系统提示、聊天历史等。  
+- 消息之间的虚线表示聊天的上下文范围，该线上方的消息不会发送给 AI。  
+- 生成消息后，点击 `提示词分解` 消息选项（展开 `...` 菜单并点击带线方框图标）可查看上下文的组成。  
 
-### Temperature
+## 🎛️ 采样器参数  
 
-Temperature controls the randomness in token selection:
+### 温度 (Temperature)  
 
-- Low temperature (<1.0) leads to more predictable text, favoring higher probability tokens
-- High temperature (>1.0) increases creativity and diversity in the output by giving lower probability tokens a better chance.
+控制词元选择的随机性：  
 
-Set to 1 for the original probabilities.
+- **低温度** (<1.0) 生成更可预测的文本，偏向高概率词元。  
+- **高温度** (>1.0) 通过增加低概率词元的选择机会，提升输出的创造性和多样性。  
 
-### Repetition Penalty
+设置为 **1** 可使用原始概率。  
 
-Attempts to curb repetition by penalizing tokens based on how often they occur in the context.
+### 重复惩罚 (Repetition Penalty)  
 
-Set the value to 1 to disable its effect.
+通过根据词元在上下文中出现的频率进行惩罚，以**抑制重复**。  
 
-#### Repetition Penalty Range
+设置为 **1** 可禁用此效果。  
 
-How many tokens from the last generated token will be considered for the repetition penalty. This can break responses if set too high, as common words like "the, a, and," etc. will be penalized the most.
+#### 重复惩罚范围 (Repetition Penalty Range)  
 
-Set the value to 0 to disable its effect.
+考虑重复惩罚的、从最后一个生成词元算起的词元数量。设置过高会破坏响应，因为常见词（如 “the”、“a”、“and” 等）将受到最大惩罚。  
 
-#### Repetition Penalty Slope
+设置为 **0** 可禁用此效果。  
 
-If both this and `Repetition Penalty Range` are above 0, the repetition penalty will have a greater effect at the end of the prompt. The higher the value, the stronger the effect.
+#### 重复惩罚斜率 (Repetition Penalty Slope)  
 
-Set the value to 0 to disable its effect.
+如果此项和 `重复惩罚范围` 均大于 0，则重复惩罚在提示词末尾的效果更强。值越高，效果越强。  
 
-### Top K
+设置为 **0** 可禁用此效果。  
 
-Top K sets a maximum amount of top tokens that can be chosen from. For example, if Top K is 20, this means only the 20 highest ranking tokens will be kept (regardless of their probabilities being diverse or limited).
+### 前 K 采样 (Top K)  
 
-Set to 0 (or -1, depending on your backend) to disable.
+设置可供选择的最大顶级词元数量。例如，如果 Top K 为 20，则意味着只保留排名最高的 20 个词元（无论其概率分布广泛还是有限）。  
 
-### Top P
+设置为 **0**（或根据后端设置为 -1）可禁用。  
 
-Top P (a.k.a. nucleus sampling) adds up all the top tokens required to add up to the target percentage. If the Top 2 tokens are both 25%, and Top P is 0.50, only the Top 2 tokens are considered.
+### 前 P 采样 (Top P)  
 
-Set the value to 1 to disable its effect.
+前 P 采样（又称核采样）累加顶级词元，直至达到目标百分比。如果前 2 个词元概率均为 25%，且 Top P 为 0.50，则仅考虑前 2 个词元。  
 
-### Typical P
+设置为 **1** 可禁用此效果。  
 
-Typical P Sampling prioritizes tokens based on their deviation from the average entropy of the set. It maintains tokens whose cumulative probability is close to a predefined threshold (e.g., 0.5), emphasizing those with average information content.
+### 典型 P 采样 (Typical P)  
 
-Set the value to 1 to disable its effect.
+根据词元与集合平均熵的偏差来优先选择词元。它保留累积概率接近预定义阈值（例如 0.5）的词元，强调那些具有平均信息量的词元。  
 
-### Min P
+设置为 **1** 可禁用此效果。  
 
-Limits the token pool by cutting off low-probability tokens relative to the top token. Produces more coherent responses but can also worsen repetition if set too high.
+### 最小 P 采样 (Min P)  
 
-- Works best at low values such as `0.1-0.01`, but can be set higher with a high `Temperature`. For example: `Temperature: 5, Min P: 0.5`
+通过剔除与顶级词元相比概率较低的词元来限制词元池。可生成更连贯的响应，但设置过高也可能加剧重复。  
 
-Set the value to 0 to disable its effect.
+- 在较低值（如 `0.1-0.01`）下效果最佳，但也可与高 `温度` 配合设置更高值。例如：`温度: 5, 最小 P: 0.5`  
 
-### Top A
+设置为 **0** 可禁用此效果。  
 
-Top A sets a threshold for token selection based on the square of the highest token probability. For example, if the Top-A value is 0.2 and the top token's probability is 50%, tokens with probabilities below 5% (0.2 * 0.5^2) are excluded.
+### 前 A 采样 (Top A)  
 
-Set the value to 0 to disable its effect.
+根据最高词元概率的平方设置词元选择阈值。例如，如果 Top-A 值为 0.2，且顶级词元概率为 50%，则概率低于 5% (0.2 * 0.5^2) 的词元将被排除。  
 
-### Tail Free Sampling
+设置为 **0** 可禁用此效果。  
 
-Tail-Free Sampling (TFS) searches for a tail of low-probability tokens in the distribution, by analyzing the rate of change in token probabilities using derivatives. It retains tokens up to a threshold (e.g., 0.3) based on the normalized second derivative. The closer to 0, the more discarded tokens.
+### 无尾采样 (Tail Free Sampling, TFS)  
 
-Set the value to 1 to disable its effect.
+通过使用导数分析词元概率的变化率，搜索分布中的低概率词元尾。它根据归一化二阶导数保留达到阈值（例如 0.3）的词元。越接近 0，丢弃的词元越多。  
 
-### Smoothing Factor
+设置为 **1** 可禁用此效果。  
 
-Increases the likelihood of high-probability tokens while decreasing the likelihood of low-probability tokens using a quadratic transformation. Aims to produce more creative responses regardless of `Temperature`.
+### 平滑因子 (Smoothing Factor)  
 
-- Works best without truncation samplers such as `Top K`, `Top P`, `Min P`, etc.
+使用二次变换增加高概率词元的可能性，同时降低低概率词元的可能性。旨在无论 `温度` 如何，都能产生更具创造性的响应。  
 
-Set the value to 0 to disable its effect.
+- 不与截断采样器（如 `Top K`、`Top P`、`Min P` 等）一起使用时效果最佳。  
 
-### Dynamic Temperature
+设置为 **0** 可禁用此效果。  
 
-Scales temperature dynamically based on the likelihood of the top token. Aims to produce more creative outputs without sacrificing coherency.
+### 动态温度 (Dynamic Temperature)  
 
-- Accepts a temperature range from minimum to maximum. For example: `Minimum Temp: 0.75` and `Minimum Temp: 1.25`
-- `Exponent` applies an exponential curve based on the top token.
+根据顶级词元的可能性动态调整温度。旨在不牺牲连贯性的前提下产生更具创造性的输出。  
 
-Untick to disable its effect.
+- 接受从最小到最大的温度范围。例如：`最小温度: 0.75` 和 `最大温度: 1.25`  
+- `指数` 根据顶级词元应用指数曲线。  
 
-### Epsilon Cutoff
+取消勾选可禁用此效果。  
 
-Epsilon cutoff sets a probability floor below which tokens are excluded from being sampled. In units of 1e-4; a reasonable value is 3.
+### Epsilon 截断 (Epsilon Cutoff)  
 
-Set to 0 to disable.
+设置一个概率下限，低于该值的词元将被排除在采样之外。单位为 1e-4；合理值为 3。  
 
-### Eta Cutoff
+设置为 **0** 可禁用。  
 
-Eta cutoff is the main parameter of the special Eta Sampling technique. In units of 1e-4; a reasonable value is 3. See the paper [Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)](https://arxiv.org/abs/2210.15191) for details.
+### Eta 截断 (Eta Cutoff)  
 
-Set to 0 to disable.
+特殊 Eta 采样技术的主要参数。单位为 1e-4；合理值为 3。详情参见论文 [Truncation Sampling as Language Model Desmoothing by Hewitt et al. (2022)](https://arxiv.org/abs/2210.15191)。  
 
-### DRY Repetition Penalty
+设置为 **0** 可禁用。  
 
-DRY penalizes tokens that would extend the end of the input into a sequence that has previously occurred in the input. If you want to allow repeating certain sequences verbatim (e.g. names), you can add them to the sequence breakers list. See the Pull Request [here](https://github.com/oobabooga/text-generation-webui/pull/5677).
+### DRY 重复惩罚 (DRY Repetition Penalty)  
 
-Set multiplier to 0 to disable.
+DRY 会惩罚那些将输入末尾扩展为输入中先前出现过的序列的词元。如果您想允许逐字重复某些序列（例如名称），可以将其添加到序列中断器列表中。参见 Pull Request [此处](https://github.com/oobabooga/text-generation-webui/pull/5677)。  
 
-### Exclude Top Choices (XTC)
+将乘数设置为 **0** 可禁用。  
 
-XTC sampling algorithm removes the most likely tokens from consideration instead of pruning the least likely tokens It removes all except the least likely token meeting a given threshold, with a given probability. This ensures that at least one "viable" choice remains, retaining coherence. See the Pull Request [here](https://github.com/oobabooga/text-generation-webui/pull/6335).
+### 排除顶级选择 (Exclude Top Choices, XTC)  
 
-Set probability to 0 to disable.
+XTC 采样算法移除最可能的词元而非修剪最不可能的词元。它以给定概率移除除符合给定阈值的最不可能词元之外的所有词元。这确保了至少有一个“可行”选择保留，从而保持连贯性。参见 Pull Request [此处](https://github.com/oobabooga/text-generation-webui/pull/6335)。  
 
-### Mirostat
+将概率设置为 **0** 可禁用。  
 
-Mirostat matches the output perplexity to that of the input, thus avoiding the repetition trap (where, as the autoregressive inference produces text, the perplexity of the output tends toward zero) and the confusion trap (where the perplexity diverges). For details, see the paper [Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)](https://arxiv.org/abs/2007.14966).
+### Mirostat  
 
-Mode chooses the Mirostat version.
+Mirostat 将输出复杂度与输入匹配，从而避免重复陷阱（自回归推理生成文本时，输出复杂度趋于零）和混淆陷阱（复杂度发散）。详情参见论文 [Mirostat: A Neural Text Decoding Algorithm that Directly Controls Perplexity by Basu et al. (2020)](https://arxiv.org/abs/2007.14966)。  
 
-- 0 = disable,
-- 1 = Mirostat 1.0 (llama.cpp only),
-- 2 = Mirostat 2.0.
+模式选择 Mirostat 版本。  
 
-### Beam Search
+- 0 = 禁用，  
+- 1 = Mirostat 1.0（仅限 llama.cpp），  
+- 2 = Mirostat 2.0。  
 
-A greedy, brute-force algorithm used in LLM sampling to find the most likely sequence of words or tokens. It expands multiple candidate sequences at once, maintaining a fixed number (beam width) of top sequences at each step.
+### 束搜索 (Beam Search)  
 
-### Top nsigma
+一种用于 LLM 采样的贪婪暴力算法，用于查找最可能的单词或词元序列。它同时扩展多个候选序列，并在每一步保留固定数量（束宽）的顶级序列。  
 
-A sampling method that filters logits based on their statistical properties. It keeps tokens within n standard deviations of the maximum logit value, providing a simpler alternative to top-p/top-k sampling while maintaining sampling stability across different temperatures.
+### Top nsigma  
+
+一种基于统计特性过滤逻辑值的采样方法。它保留最大逻辑值 n 个标准偏差范围内的词元，提供了一种更简单的 top-p/top-k 采样替代方案，同时在不同温度下保持采样稳定性。

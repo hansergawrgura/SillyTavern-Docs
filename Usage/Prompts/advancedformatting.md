@@ -10,16 +10,18 @@ The settings provided in this section allow for more control over the [prompt-bu
 Most of the settings in this panel do not apply to Chat Completions APIs as they are governed by the prompt manager system instead.
 
 +++ Text Completion APIs
-* [System Prompt](#system-prompt)
-* [Context Template](#context-template)
-* [Tokenizer](#tokenizer)
-* [Custom Stopping Strings](#custom-stopping-strings)
-+++ Chat Completion APIs
-* System Prompt: not applicable, use [Prompt Manager](prompt-manager.md)
-* Context Template: not applicable, use [Prompt Manager](prompt-manager.md)
-* [Tokenizer](#tokenizer)
-* [Custom Stopping Strings](#custom-stopping-strings)
-+++
+- [Advanced Formatting](#advanced-formatting)
+  - [Resetting Templates](#resetting-templates)
+    - [UI Reset](#ui-reset)
+    - [Manual Reset](#manual-reset)
+  - [Backend-defined templates](#backend-defined-templates)
+  - [System Prompt](#system-prompt)
+  - [Context Template](#context-template)
+  - [Tokenizer](#tokenizer)
+  - [Custom Stopping Strings](#custom-stopping-strings)
+  - [Start Reply With](#start-reply-with)
+    - [Text Completion APIs](#text-completion-apis)
+    - [Chat Completion APIs](#chat-completion-apis)
 
 ## Resetting Templates
 
@@ -38,7 +40,7 @@ You can restore the default templates to their original state. This can be done 
 Make sure the `skipContentCheck` setting is set to `false` in [config.yaml](/Administration/config-yaml.md#data-configuration), otherwise the content check will not be triggered.
 !!!
 
-1. Navigate to your user data directory (see [Data paths](/Installation/index.md#data-paths) for details).
+1. Navigate to your user data directory (see [Data paths](/Installation/index.md#数据路径说明) for details).
 2. Delete the `content.log` file from the root of your user data directory. This file tracks the default files copied for your user.
 3. Delete the template JSON files from the relevant subdirectories (`context`, `instruct`, `sysprompt`, etc.).
 4. Restart the SillyTavern server. The application will repopulate the default content, restoring any deleted default templates.

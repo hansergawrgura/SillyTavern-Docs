@@ -1,34 +1,47 @@
+---  
+
+order: -60  
+
+icon: key-asterisk  
+
+route: /usage/hotkeys  
+
+---  
+
+# 🚀 快捷键指南  
+
+**✨ 要获取 SillyTavern 实例中最新的快捷键列表，请在任意聊天中输入 `/help hotkeys` 命令。**  
+
+**📱 移动设备禁用快捷键功能。**  
+
 ---
-order: -60
-icon: key-asterisk
-route: /usage/hotkeys
+
+## 💬 聊天快捷键  
+
+*   **↑ 上箭头** = 编辑聊天中的上一条消息  
+*   **Ctrl + ↑** = 编辑聊天中上一条用户消息  
+*   **← 左箭头** = 左滑（撤销操作）  
+*   **→ 右箭头** = 右滑（恢复操作）  
+    *   ⚠️ 输入框中有内容时，滑动快捷键禁用  
+*   **Enter**（输入框选中时）= 发送消息至 AI  
+*   **Ctrl + Enter** = 重新生成上一条 AI 回复  
+*   **Alt + Enter** = 继续生成上一条 AI 回复  
+*   **Esc**  
+    *   *（编辑消息且启用了自动保存时）* = 关闭编辑框  
+    *   *（AI 正在生成或流式输出消息时）* = 立即停止生成  
+
 ---
 
-# HotKeys
+## 📝 Markdown 快捷键  
 
-**For the most up-to-date list of HotKeys that will work in your SillyTavern instance, use the `/help hotkeys` slash command in any chat.**
+⚠️ 需在「用户设置」中启用。适用于输入框及带有 **M↓** 图标的文本区域：  
 
-**Hotkeys are disabled for mobile devices.**
+*   **Ctrl + B** = **加粗**  
+*   **Ctrl + I** = *斜体*  
+*   **Ctrl + U** = <u>下划线</u>  
+*   **Ctrl + K** = `行内代码`  
+*   **Ctrl + Shift + ~** = ~~删除线~~  
 
-## Chat Hotkeys
-
-* Up = Edit last message in chat
-* Ctrl+Up = Edit last USER message in chat
-* Left = swipe left
-* Right = swipe right (NOTE: swipe hotkeys are disabled when chatbar has something typed into it)
-* Enter (with chat bar selected) = send your message to AI
-* Ctrl+Enter = Regenerate the last AI response
-* Alt+Enter = Continue the last AI response
-* Escape
-  * *(while editing message AND Message Edit AutoSave is enabled)* = close edit box.
-  * *(while an AI message is generating or streaming)* = stop the generation immediately.
-
-## Markdown Hotkeys
-
-Needs to be enabled under the "User Settings" tab. Works in the chatbar and textareas marked with the "M↓" icon:
-
-* Ctrl+B = \*\*bold\*\*
-* Ctrl+I = \*italic\*
-* Ctrl+U = \_\_underline\_\_
-* Ctrl+K = \`inline code\`
-* Ctrl+Shift+~ = \~\~strikethrough\~\~
+!!! tip  
+    使用快捷键可快速格式化文本，提升输入效率！  
+!!!

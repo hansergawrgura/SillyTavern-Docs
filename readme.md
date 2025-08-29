@@ -1,89 +1,89 @@
-# What is SillyTavern?
+# 什么是 SillyTavern？ 🤖
 
-![SillyTavern - LLM Frontend for Power Users](/static/banner.png)
+![SillyTavern - 面向高阶用户的LLM前端界面](/static/banner.png)
 
-SillyTavern (or ST for short) is a locally installed user interface that allows you to interact with text generation LLMs, image generation engines, and TTS voice models. Our goal is to empower users with as much utility and control over their LLM prompts as possible, embracing the steep learning curve as part of the fun.
+SillyTavern（简称 ST）是一款本地安装的用户界面，可让您与文本生成大语言模型（LLM）、图像生成引擎及 TTS 语音模型互动。我们的目标是为用户提供强大的功能和对 LLM 提示词的极致控制，将陡峭的学习曲线视为乐趣的一部分。
 
-SillyTavern is a passion project brought to you by a dedicated community of LLM enthusiasts and will always be free and open-sourced. Beginning in February 2023 as a fork of TavernAI 1.2.8, SillyTavern now has over 200 contributors and 2 years of independent development under its belt, and continues to serve as a leading software for savvy AI hobbyists.
+SillyTavern 是由热情的 LLM 爱好者社区倾心打造的项目，永远免费开源。自 2023 年 2 月从 TavernAI 1.2.8 分叉而来，SillyTavern 现已汇聚 200 多位贡献者，历经 2 年独立开发，持续为资深 AI 爱好者提供领先软件体验。
 
-## Screenshots
+## 界面预览 🖼️
 
-|   [![API Connection](/static/screenshot1.jpg)](/static/screenshot1.jpg)    |  [![Chat UI](/static/screenshot2.jpg)](/static/screenshot2.jpg)   |
-|:--------------------------------------------------------------------------:|:-----------------------------------------------------------------:|
-| [![Advanced Formatting](/static/screenshot3.jpg)](/static/screenshot3.jpg) | [![World Info](/static/screenshot4.jpg)](/static/screenshot4.jpg) |
+| [![API 连接](/static/screenshot1.jpg)](/static/screenshot1.jpg) | [![聊天界面](/static/screenshot2.jpg)](/static/screenshot2.jpg) |
+|:---------------------------------------------------------------:|:-------------------------------------------------------------:|
+| [![高级格式化](/static/screenshot3.jpg)](/static/screenshot3.jpg) | [![世界背景设定](/static/screenshot4.jpg)](/static/screenshot4.jpg) |
 
-## Installation Requirements
+## 安装要求 ⚙️
 
-The hardware requirements are minimal: it will run on anything that can run NodeJS 18 or higher. If you intend to do LLM inference on your local machine, we recommend a 3000-series NVIDIA graphics card with at least 6GB of VRAM.
+硬件要求极低：可运行 NodeJS 18 及以上版本的设备皆可。若需本地运行 LLM 推理，推荐使用显存至少 6GB 的英伟达 3000 系列显卡。
 
-Follow the installation guide for your platform:
+按平台查看安装指南：
 
-* [Windows](/Installation/Windows.md)
-* [Linux and Mac](/Installation/LinuxMacOS.md)
-* [Android](/Installation/Android.md)
-* [Docker](/Installation/Docker.md)
+*   [Windows](/Installation/Windows.md) 🪟
+*   [Linux 和 Mac](/Installation/LinuxMacOS.md) 🐧🍎
+*   [Android](/Installation/Android.md) 🤖
+*   [Docker](/Installation/Docker.md) 🐳
 
-## Branches
+## 分支说明 🌿
 
-SillyTavern is being developed using a two-branch system to ensure a smooth experience for all users.
+SillyTavern 采用双分支开发模式，确保所有用户获得流畅体验。
 
-* `release` -🌟 **Recommended for most users.** This is the most stable and recommended branch, updated only when major releases are pushed. It's suitable for the majority of users. Typically updated once a month.
-* `staging` - ⚠️ **Not recommended for casual use.** This branch has the latest features, but be cautious as it may break at any time. Only for power users and enthusiasts. Updates several times daily.
+*   `release` - 🌟 **推荐大多数用户使用。** 最稳定的推荐分支，仅在有重大发布时更新。适合绝大多数用户。通常每月更新一次。
+*   `staging` - ⚠️ **不推荐日常使用。** 此分支包含最新功能，但请注意它可能随时出现故障。仅面向高阶用户和爱好者。每日更新数次。
 
-## What do I need other than SillyTavern?
+## 还需准备什么？ 🔌
 
-Since SillyTavern is only an interface, you will need access to an LLM backend to provide inference. You can use AI Horde for instant out-of-the-box chatting. Aside from that, we support many other local and cloud-based LLM backends: OpenAI-compatible API, KoboldAI, Tabby, and many more. You can read more about our supported APIs in the [API Connections](/Usage/API_Connections/index.md) section.
+SillyTavern 仅是一个界面，您需要接入一个 LLM 后端来提供推理能力。您可使用 AI Horde 实现开箱即用的聊天体验。此外，我们还支持许多其他本地及云端 LLM 后端：OpenAI 兼容 API、KoboldAI、Tabby 等。更多支持的 API 请参阅 [API 连接](/Usage/API_Connections/index.md) 章节。
 
-## Character Cards
+## 角色卡片 🃏
 
-SillyTavern is built around the concept of "character cards". A character card is a collection of prompts that set the behavior of the LLM and is required to have persistent conversations in SillyTavern. They function similarly to ChatGPT's GPTs or Poe's bots. The content of a character card can be anything: an abstract scenario, an assistant tailored for a specific task, a famous personality or a fictional character.
+SillyTavern 围绕“角色卡片”概念构建。角色卡片是一组设定 LLM 行为的提示词集合，是在 SillyTavern 中进行持续性对话所必需的。其功能类似于 ChatGPT 的 GPTs 或 Poe 的 bots。角色卡片的内容可以是任何事物：抽象场景、为特定任务定制的助手、名人或虚构角色。
 
-To have a quick conversation without selecting a character card or to just test the LLM connection, simply type your prompt input into the input bar on the [Welcome Screen](/Usage/welcome-assistants.md) after opening SillyTavern. This will create an empty "Assistant" character card that you can customize later.
+若想快速对话而无需选择角色卡片，或仅测试 LLM 连接，只需在打开 SillyTavern 后的 [欢迎屏幕](/Usage/welcome-assistants.md) 上的输入栏中输入您的提示词。这将创建一个空的“助手”角色卡片，您之后可进行自定义。
 
-To get a general idea on how to define character cards, see the default character (Seraphina) or download selected community-made cards from the "Download Extensions & Assets" menu.
+要了解如何定义角色卡片，可参考默认角色 (Seraphina) 或从“下载扩展与资源”菜单中获取精选的社区制作卡片。
 
-You can also create your own character cards from scratch. Refer to the [Character Design](/Usage/Characters/characterdesign.md) guide for more information.
+您也可以从头创建自己的角色卡片。更多信息请参阅 [角色设计](/Usage/Characters/characterdesign.md) 指南。
 
-## Key Features
+## 核心特性 ✨
 
-* Advanced [text generation settings](/Usage/Prompts/advancedformatting.md) with many community-made presets
-* [World Info support](Usage/worldinfo.md): create rich lore or save tokens on your character card
-* [Group chats](/Usage/Characters/groupchats.md): multi-bot rooms for characters to talk to you and/or each other
-* [Rich UI customization options](/Usage/User_Settings/uicustomization.md): theme colors, background images, custom CSS, and more
-* [User personas](/Usage/personas.md): let the AI know a bit about you for greater immersion
-* [Built-in RAG support](/Usage/Characters/data-bank.md): add documents to your chats for the AI to reference
-* Extensive [chat commands](/Usage/Chatting/slashcommands.md) subsystem and own [scripting engine](/For_Contributors/st-script.md)
+*   高级 [文本生成设置](/Usage/Prompts/advancedformatting.md)，包含众多社区制作的预设
+*   [世界背景信息支持](Usage/worldinfo.md)：创建丰富的背景故事或为角色卡片节省 Token
+*   [群聊功能](/Usage/Characters/groupchats.md)：多机器人房间，让角色与您和/或彼此交谈
+*   [丰富的 UI 自定义选项](/Usage/User_Settings/uicustomization.md)：主题颜色、背景图像、自定义 CSS 等
+*   [用户人设](/Usage/personas.md)：让 AI 了解您的一些信息以增强沉浸感
+*   [内置 RAG 支持](/Usage/Characters/data-bank.md)：向聊天中添加文档供 AI 参考
+*   广泛的 [聊天命令](/Usage/Chatting/slashcommands.md) 子系统及自有 [脚本引擎](/For_Contributors/st-script.md)
 
-## Extensions
+## 扩展功能 🔌
 
-SillyTavern has extensibility support.
+SillyTavern 支持功能扩展。
 
-* [Character emotional expressions (sprites)](/extensions/Expression-Images.md)
-* [Auto-Summary of the chat history](/extensions/Summarize.md)
-* Automatic UI and [chat translation](extensions/Translation.md)
-* [Stable Diffusion/FLUX/DALL-E image generation](/extensions/Stable-Diffusion.md)
-* [Text-to-speech for AI response messages (via ElevenLabs, Silero, or the OS's System TTS)](/extensions/TTS.md)
-* [Web Search capabilities for adding additional real world context to your prompts](/extensions/WebSearch.md)
-* Many more are available to download from the "Download Extensions & Assets" menu.
+*   [角色情绪表情（立绘）](/extensions/Expression-Images.md)
+*   [聊天历史自动摘要](/extensions/Summarize.md)
+*   自动 UI 及 [聊天翻译](extensions/Translation.md)
+*   [Stable Diffusion/FLUX/DALL-E 图像生成](/extensions/Stable-Diffusion.md)
+*   [AI 回复消息的文本转语音（通过 ElevenLabs、Silero 或操作系统系统 TTS）](/extensions/TTS.md)
+*   [网络搜索功能，为您的提示词添加额外真实世界上下文](/extensions/WebSearch.md)
+*   更多扩展可从“下载扩展与资源”菜单中获取。
 
-## How can I get in touch with the developers directly?
+## 如何直接联系开发者？ 📞
 
-* Discord: cohee, rossascends, wolfsblvt
-* Reddit: [/u/RossAscends](https://www.reddit.com/user/RossAscends/), [/u/sillylossy](https://www.reddit.com/user/sillylossy/), [u/Wolfsblvt](https://www.reddit.com/user/Wolfsblvt/)
-* [Post a GitHub issue](https://github.com/SillyTavern/SillyTavern/issues)
+*   Discord: cohee, rossascends, wolfsblvt
+*   Reddit: [/u/RossAscends](https://www.reddit.com/user/RossAscends/), [/u/sillylossy](https://www.reddit.com/user/sillylossy/), [u/Wolfsblvt](https://www.reddit.com/user/Wolfsblvt/)
+*   [提交 GitHub Issue](https://github.com/SillyTavern/SillyTavern/issues)
 
-## I like your project! How do I contribute?
+## 我喜欢你们的项目！如何贡献？ 🤝
 
-* We welcome pull requests! Follow the [Contribution Guidelines](https://github.com/SillyTavern/SillyTavern/blob/release/CONTRIBUTING.md) to get started.
-* We also welcome helpful and informed bug reports that use the templates provided in our GitHub.
-* We do not accept monetary donations for the project itself.
+*   我们欢迎 Pull Requests！请遵循 [贡献指南](https://github.com/SillyTavern/SillyTavern/blob/release/CONTRIBUTING.md) 开始贡献。
+*   我们也欢迎使用 GitHub 提供模板的有益且详实的错误报告。
+*   我们不接受针对项目本身的货币捐赠。
 
-## Personal Donations
+## 个人捐赠 🙏
 
-Your support for individual contributors is appreciated, but it will not influence the overall development direction of SillyTavern.
+感谢您对个人贡献者的支持，但这不会影响 SillyTavern 的整体开发方向。
 
-* RossAscends has a personal [Patreon](https://www.patreon.com/RossAscends) & [Kofi](https://ko-fi.com/rossascends)
+*   RossAscends 拥有个人 [Patreon](https://www.patreon.com/RossAscends) 和 [Kofi](https://ko-fi.com/rossascends) 页面。
 
-## License
+## 许可证 📄
 
-SillyTavern is a free and open-source project released under the [AGPL-3.0 License](https://github.com/SillyTavern/SillyTavern/blob/release/LICENSE).
+SillyTavern 是一个免费开源项目，基于 [AGPL-3.0 许可证](https://github.com/SillyTavern/SillyTavern/blob/release/LICENSE) 发布。

@@ -211,9 +211,9 @@ Automatically reject and regenerate AI messages based on configurable criteria.
 
 Automatically continues a response if the model stopped before reaching a certain length.
 
-This lets your AI write a long response in multiple parts, so that you can have a short [response length setting](/Usage/Common-Settings.md#response-tokens) while still getting long replies. 
+This lets your AI write a long response in multiple parts, so that you can have a short [response length setting](/Usage/Common-Settings.md#生成长度词元数) while still getting long replies. 
 
-It will not make the AI write more than it would have otherwise. Asking the AI to continue a message that it considers "finished" does not usually work. See [How to make the AI write more?](/Usage/faq.md#how-to-make-the-ai-write-more) for other ideas.
+It will not make the AI write more than it would have otherwise. Asking the AI to continue a message that it considers "finished" does not usually work. See [How to make the AI write more?](/Usage/faq.md#如何让-ai-写更多) for other ideas.
 
 * **Enable Auto-continue**: Master toggle for automatic continuation
 * **Allow for Chat Completion APIs**: Enables auto-continue functionality for Chat Completion API endpoints
@@ -233,7 +233,7 @@ Controls how messages are formatted and what content is displayed.
 ### Prompt Inspection and Debugging
 
 * **Log prompts to console**: Output prompts to browser console
-* **Request token probabilities**: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> [Token Probabilities](../../Usage/Chatting/index.md#token-probabilities-panel).
+* **Request token probabilities**: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> [Token Probabilities](../../Usage/Chatting/index.md#-令牌概率面板).
 
 ### AutoComplete
 

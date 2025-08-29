@@ -3,113 +3,118 @@ order: 112
 route: /installation/st-1.12.0-migration-guide/
 ---
 
-# 1.12.0 Migration Guide
+# 🚀 1.12.0 迁移指南
 
-SillyTavern 1.12.0 (codename the "Neo Server" update) includes several critical changes that may affect the way you use SillyTavern.
+SillyTavern 1.12.0（代号「Neo Server」更新）包含多项重要变更，可能影响您的使用体验。
 
-This guide will prepare you for the update and provide some further guidance.
+本指南将帮助您做好准备，并提供详细操作说明。
 
-## Data storage update
+---
 
-1.12.0 changes the way SillyTavern handles the user data.
+## 📦 数据存储更新
 
-Previously, all of the persistent data was stored together with the frontend part in the `/public` directory, which created confusion and potential points of failure, as well as making containerization and system-wide app installation quite challenging.
+1.12.0 版本改变了用户数据的处理方式。
 
-### What's changed?
+此前，所有持久化数据都与前端文件一同存储在 `/public` 目录中，这导致了混淆和潜在的故障点，同时也使容器化和系统级应用安装变得复杂。
 
-All persistent information from `/public` such as settings and chats (full list below) was moved into a separate directory with the configurable path, making it portable and independent from the web server itself. When needed for compatibility purposes, for example, for hosting extensions, full-size character cards, user image uploads, etc. a smart redirect has been set up to automatically host user files from the data directory.
+### 变更内容
 
-### Setting a data root
+所有来自 `/public` 的持久化信息（完整列表见下文）现已移至可配置路径的独立目录，使其可移植且独立于 Web 服务器本身。为兼容性考虑（例如托管扩展、完整角色卡、用户图片上传等），已设置智能重定向，自动从数据目录提供用户文件。
 
-You can provide either an absolute or a relative (to the ST repository directory) path to the data root either by `config.yaml` or by starting the server with the `--dataRoot` console argument.
+### 设置数据根目录
 
-> YAML example
+您可以通过 `config.yaml` 或启动服务器时使用 `--dataRoot` 控制台参数，指定数据根目录的绝对路径或相对路径（相对于 ST 代码库目录）。
+
+> YAML 示例
 
 ```yaml
-# -- DATA CONFIGURATION --
-# Root directory for user data storage
+# -- 数据配置 --
+# 用户数据存储的根目录
 dataRoot: C:\Users\Harry\Documents\ST-Data
 ```
 
-> Console example
+> 控制台示例
 
 ```bash
 node server.js --dataRoot="/Users/harry/ST-Data"
-# OR
+# 或
 npm run start -- --dataRoot="/Users/harry/ST-Data"
 ```
 
-The default data root path is `./data`, which means the `data` directory in SillyTavern's repository.
+默认数据根目录路径为 `./data`，即 SillyTavern 代码库中的 `data` 目录。
 
-!!!info Note
-The data root path should be either a **full absolute** or a **full relative** path. You _can't_ use path shortcuts like `~` or `%APP_DATA%`, as these are resolved by a shell, not the operating system.
+!!!info 注意
+数据根目录路径应为**完整绝对路径**或**完整相对路径**。不能使用 `~` 或 `%APP_DATA%` 等路径快捷方式，因为这些由 shell 解析，而非操作系统。
 !!!
 
-### Migration
+### 迁移操作
 
-#### **IMPORTANT!** Before we begin
+#### ⚠️ **重要！开始前的准备**
 
-1. **Only if you want to move dataRoot from the default location. Otherwise, skip this part.** Set the data root _before_ first running the server after pulling an update. Run `npm install` for the `config.yaml` to populate with a new value, or pass a console argument.
-2. All data will be migrated into a `default-user` account. See more on [Users](#users) below.
+1. **仅当需要从默认位置移动 dataRoot 时执行此步骤，否则请跳过。** 在首次运行更新后的服务器之前设置数据根目录。运行 `npm install` 以使 `config.yaml` 填充新值，或传递控制台参数。
 
-#### Containerless (bare metal) installs
+2. 所有数据将迁移至 `default-user` 账户。详见下文[用户管理](#-用户管理)部分。
 
-You don't have to do anything! An automatic migration should handle everything for you when you start the ST server and it detects the old storage format (by checking the existence of the `/public/characters` directory).
+#### 无容器（裸机）安装
 
-Upon moving any files, an automatic backup will be created in the `/backups/_migration/YYYY-MM-DD` (resolved to the current date) directory, but it is always a good practice to make a full manual backup before running the migration.
+您无需任何操作！当 ST 服务器检测到旧存储格式（通过检查 `/public/characters` 目录是否存在）时，自动迁移将处理所有事宜。
 
-#### Containerized (Docker) installs
+移动任何文件前，系统会在 `/backups/_migration/YYYY-MM-DD`（解析为当前日期）目录中创建自动备份，但在运行迁移前手动完整备份仍是良好实践。
 
-Migrating the data in Docker volumes is a bit trickier but pretty straightforward. While `docker-compose.yml` provided with the repo was updated to reflect the changes, you may need to adjust your custom workflows/deployments.
+#### 容器化（Docker）安装
 
-**Step 1.** Create a new volume, and mount it to the "/home/node/app/data" path within the container. Don't remove the `config` volume.
+迁移 Docker 卷中的数据稍复杂但操作直接。虽然代码库提供的 `docker-compose.yml` 已更新以反映变更，但您可能需要调整自定义工作流/部署。
+
+**步骤 1.** 创建新卷，并将其挂载到容器内的 "/home/node/app/data" 路径。不要移除 `config` 卷。
 
 ```yaml
 volumes:
-    - "./config:/home/node/app/config"
-    - "./data:/home/node/app/data"
+  - "./config:/home/node/app/config"
+  - "./data:/home/node/app/data"
 ```
 
-**Step 2.** Move everything but the `config.yaml` file from the `config` volume into the `default-user` subdirectory of the `data` volume.
+**步骤 2.** 将 `config` 卷中除 `config.yaml` 文件外的所有内容移至 `data` 卷的 `default-user` 子目录。
 
-**Step 3.** Rebuild the container and start it up.
+**步骤 3.** 重新构建容器并启动。
 
-!!!info Note
-Soft links between the `/public` directory and the `config` volume are no longer needed and are not built into the Docker container!
+!!!info 注意
+不再需要 `/public` 目录与 `config` 卷之间的软链接，Docker 容器中也不再构建此链接！
 !!!
 
-#### What to migrate?
+#### 需要迁移哪些内容？
 
-The following files and directories are subject to the data migration. Assuming the default configuration, the before and after paths are provided in the table below.
+以下文件和目录属于数据迁移范围。假设为默认配置，下表中提供了迁移前后的路径对照。
 
-| Before                                 | After                                |
+| 迁移前路径 | 迁移后路径 |
 |----------------------------------------|--------------------------------------|
-| /secrets.json                          | /data/default-user/secrets.json      |
-| /thumbnails                            | /data/default-user/thumbnails        |
-| /vectors                               | /data/default-user/vectors           |
-| /public/settings.json                  | /data/default-user/settings.json     |
-| /public/stats.json                     | /data/default-user/stats.json        |
-| /public/assets                         | /data/default-user/assets            |
-| /public/backgrounds                    | /data/default-user/backgrounds       |
-| /public/characters                     | /data/default-user/characters        |
-| /public/chats                          | /data/default-user/chats             |
-| /public/context                        | /data/default-user/context           |
-| /public/scripts/extensions/third-party | /data/default-user/extensions        |
-| /public/group chats                    | /data/default-user/group chats       |
-| /public/groups                         | /data/default-user/groups            |
-| /public/instruct                       | /data/default-user/instruct          |
-| /public/KoboldAI Settings              | /data/default-user/KoboldAI Settings |
-| /public/movingUI                       | /data/default-user/movingUI          |
-| /public/NovelAI Settings               | /data/default-user/NovelAI Settings  |
-| /public/OpenAI Settings                | /data/default-user/OpenAI Settings   |
-| /public/QuickReplies                   | /data/default-user/QuickReplies      |
-| /public/TextGen Settings               | /data/default-user/TextGen Settings  |
-| /public/themes                         | /data/default-user/themes            |
-| /public/worlds                         | /data/default-user/worlds            |
-| /default/content/content.log           | /data/default-user/content.log       |
+| /secrets.json | /data/default-user/secrets.json |
+| /thumbnails | /data/default-user/thumbnails |
+| /vectors | /data/default-user/vectors |
+| /public/settings.json | /data/default-user/settings.json |
+| /public/stats.json | /data/default-user/stats.json |
+| /public/assets | /data/default-user/assets |
+| /public/backgrounds | /data/default-user/backgrounds |
+| /public/characters | /data/default-user/characters |
+| /public/chats | /data/default-user/chats |
+| /public/context | /data/default-user/context |
+| /public/scripts/extensions/third-party | /data/default-user/extensions |
+| /public/group chats | /data/default-user/group chats |
+| /public/groups | /data/default-user/groups |
+| /public/instruct | /data/default-user/instruct |
+| /public/KoboldAI Settings | /data/default-user/KoboldAI Settings |
+| /public/movingUI | /data/default-user/movingUI |
+| /public/NovelAI Settings | /data/default-user/NovelAI Settings |
+| /public/OpenAI Settings | /data/default-user/OpenAI Settings |
+| /public/QuickReplies | /data/default-user/QuickReplies |
+| /public/TextGen Settings | /data/default-user/TextGen Settings |
+| /public/themes | /data/default-user/themes |
+| /public/worlds | /data/default-user/worlds |
+| /default/content/content.log | /data/default-user/content.log |
 
-## Users
+---
 
-1.12.0 adds a (completely optional) ability to create a multi-user setup on the same server, allowing multiple users to use their own fully isolated SillyTavern instances even at the same time. User accounts can also be password-protected for an additional layer of privacy.
+## 👥 用户管理
 
-Please refer to the [Users](/Administration/multi-user.md) documentation for more information.
+1.12.0 新增了（完全可选的）在同一服务器上创建多用户设置的功能，允许多个用户使用自己完全隔离的 SillyTavern 实例，甚至可以同时使用。用户账户还可设置密码保护，增加隐私层。
+
+更多信息请参阅[用户管理](/Administration/multi-user.md)文档。

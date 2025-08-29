@@ -3,21 +3,23 @@ icon: rel-file-path
 route: /usage/core-concepts/slashcommands
 ---
 
-# Slash commands
+# 🔧 斜杠命令
 
-!!!warning
-**This is not an exhaustive list as it is updated rarely.**
+!!!warning 注意
+**此非完整列表，更新频率较低。**
 
-For the most up-to-date list of commands that will work in your instance, use the `/help slash` chat command in any SillyTavern chat.
+要获取您当前实例中最新的可用命令列表，请在任意 SillyTavern 聊天中使用 `/help slash` 命令。
 !!!
 
-- `/help` – displays the help message
-- `/api` - switches to a different API
-- `/sys` - sends a neutral message as a system narrator
-- `/send` - sends a message as the user without triggering the generation
-- `/sendas` – sends a message as a specific character
-- `/comment` - adds a comment to the chat invisible to the AI
-- `/impersonate` - ask AI to write as you with an optional prompt
-- `/persona` - set your user persona
-- `/imagine` - generate an image from a text prompt
-- `/bg` - set a background image by file name
+- `/help` – 显示帮助信息
+- `/api` - 切换至其他 API
+- `/sys` - 以系统中立旁白身份发送消息
+- `/send` - 以用户身份发送消息但不触发内容生成
+- `/sendas` – 以指定角色身份发送消息
+- `/comment` - 添加对 AI 不可见的聊天注释
+- `/impersonate` - 要求 AI 以您的身份进行回复（可提供提示词）
+- `/persona` - 设置您的用户角色设定
+- `/imagine` - 根据文本提示生成图像
+- `/bg` - 通过文件名设置背景图片
+
+---

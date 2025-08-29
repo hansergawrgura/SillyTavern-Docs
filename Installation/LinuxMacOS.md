@@ -3,37 +3,46 @@ label: MacOS & Linux
 order: 5
 ---
 
-# Linux/MacOS Install
+# 🐧 Linux & 🍎 macOS 安装指南
 
-## Manual Git install
+---
 
-For MacOS / Linux all of these will be done in a Terminal.
+## 📦 手动 Git 安装
 
-1. Install git and nodeJS (the method for doing this will vary depending on your OS)
-2. Clone the repo
+以下操作均需在终端中完成（🍎 macOS / 🐧 Linux 系统）。
 
-   - for Release Branch: `git clone https://github.com/SillyTavern/SillyTavern -b release`
-   - for Staging Branch: `git clone https://github.com/SillyTavern/SillyTavern -b staging`
+1. 安装 git 和 NodeJS（安装方法因操作系统而异）
+2. 克隆代码库：
 
-3. `cd SillyTavern` to navigate into the install folder.
-4. Run the `start.sh` script with one of these commands:
+   - 发布分支：`git clone https://github.com/SillyTavern/SillyTavern -b release`
+   - 开发分支：`git clone https://github.com/SillyTavern/SillyTavern -b staging`
 
-- `./start.sh`
-- `bash start.sh`
+3. 使用 `cd SillyTavern` 进入安装目录
+4. 通过以下任一命令运行 `start.sh` 脚本：
 
-## SillyTavern Launcher
+   - `./start.sh`
+   - `bash start.sh`
 
-### For Linux users
-1. Open your favorite terminal and install git
-2. Download Sillytavern Launcher with: `git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
-3. Navigate to the SillyTavern-Launcher with: `cd SillyTavern-Launcher`
-4. Start the install launcher with: `chmod +x install.sh && ./install.sh` and choose what you wanna install
-5. After installation start the launcher with: `chmod +x launcher.sh && ./launcher.sh`
+---
 
-### For Mac users
-1. Open a terminal and install brew with: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-2. Then install git with: `brew install git`
-3. Download Sillytavern Launcher with: `git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
-4. Navigate to the SillyTavern-Launcher with: `cd SillyTavern-Launcher`
-5. Start the install launcher with: `chmod +x install.sh && ./install.sh` and choose what you wanna install
-6. After installation start the launcher with: `chmod +x launcher.sh && ./launcher.sh`
+## 🚀 SillyTavern 启动器安装
+
+### 🐧 Linux 用户
+
+1. 打开终端并安装 git
+2. 下载启动器：`git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
+3. 进入目录：`cd SillyTavern-Launcher`
+4. 运行安装脚本：`chmod +x install.sh && ./install.sh` 并选择需要安装的内容
+5. 安装完成后启动：`chmod +x launcher.sh && ./launcher.sh`
+
+### 🍎 macOS 用户
+
+1. 打开终端，通过以下命令安装 Homebrew：
+   `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+2. 安装 git：`brew install git`
+3. 下载启动器：`git clone https://github.com/SillyTavern/SillyTavern-Launcher.git`
+4. 进入目录：`cd SillyTavern-Launcher`
+5. 运行安装脚本：`chmod +x install.sh && ./install.sh` 并选择需要安装的内容
+6. 安装完成后启动：`chmod +x launcher.sh && ./launcher.sh`
+
+---

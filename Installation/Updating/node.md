@@ -1,93 +1,113 @@
-# How to update Node.js
+# 🔄 如何更新 Node.js
 
-It's important to keep your Node.js runtime up to date for security and performance reasons. Below are the steps to update Node.js depending on your operating system.
+为确保安全性和性能，及时更新 Node.js 运行时十分重要。以下是根据操作系统更新 Node.js 的步骤指南。
 
-We recommend using the latest Long Term Support (LTS) version, which you can find on the [Node.js official website](https://nodejs.org/en/about/previous-releases).
+我们推荐使用最新的长期支持（LTS）版本，您可以在 [Node.js 官方网站](https://nodejs.org/en/about/previous-releases)上找到相关信息。
 
-## How to check your current Node.js version
+---
 
-1. Open your terminal or command prompt.
-2. Type the following command and press Enter:
+## 🔍 如何检查当前 Node.js 版本
+
+1. 打开终端或命令提示符
+2. 输入以下命令并按回车：
 
 ```bash
 node -v
 ```
 
-## nvm (Node Version Manager) - Cross-Platform
+---
 
-If you are using `nvm`:
+## 🔄 nvm（Node 版本管理器）- 跨平台方法
 
-1. Open your terminal.
-2. Type in the following command:
+如果您使用 `nvm`：
 
-[**Unix/Linux/macOS:**](https://github.com/nvm-sh/nvm)
+1. 打开终端
+2. 输入以下命令：
+
+[**Unix/Linux/macOS 系统：**](https://github.com/nvm-sh/nvm)
 
 ```bash
 nvm install --lts
 nvm use --lts
 ```
 
-[**Windows:**](https://github.com/coreybutler/nvm-windows)
+[**Windows 系统：**](https://github.com/coreybutler/nvm-windows)
 
 ```bash
 nvm install lts
 nvm use lts
 ```
 
-## Windows - Regular Installation
+---
 
-1. Go to the Node.js [download page](https://nodejs.org/en/download/).
-2. Download the Windows Installer for the LTS version.
-3. Run the installer and follow the prompts to complete the installation.
+## 🪟 Windows 系统 - 常规安装方法
 
-## Windows - SillyTavern Launcher
+1. 访问 Node.js [下载页面](https://nodejs.org/en/download/)
+2. 下载 LTS 版本的 Windows 安装程序
+3. 运行安装程序并按提示完成安装
 
-If you have installed using the SillyTavern Launcher:
+---
 
-1. Open the SillyTavern Launcher.
-2. Navigate to `Toolbox / App Installer / Core Utilities / Install Node.js`.
+## 🪟 Windows 系统 - SillyTavern 启动器
 
-**OR:**
+如果您使用 SillyTavern 启动器安装：
 
-Do it manually using winget in PowerShell:
+1. 打开 SillyTavern 启动器
+2. 导航至 `工具箱 / 应用安装器 / 核心工具 / 安装 Node.js`
+
+**或者：**
+
+在 PowerShell 中使用 winget 手动安装：
 
 ```powershell
-winget install --id=OpenJS.NodeJS.LTS  -e
+winget install --id=OpenJS.NodeJS.LTS -e
 ```
 
-## Android - Termux
+---
 
-1. Open the Termux app.
-2. Type the following commands:
+## 📱 Android 系统 - Termux
+
+1. 打开 Termux 应用
+2. 输入以下命令：
 
 ```bash
 pkg update
 pkg upgrade nodejs-lts
 ```
 
-Don't forget to accept any prompts that may appear during the update process by pressing `Y` on the virtual keyboard.
+更新过程中出现提示时，别忘了按虚拟键盘上的 `Y` 键确认。
 
-## macOS - Regular Installation
+---
 
-1. Go to the Node.js [download page](https://nodejs.org/en/download/).
-2. Download the macOS Installer for the LTS version.
-3. Run the `.pkg` file and follow the prompts to complete the installation.
+## 🍎 macOS 系统 - 常规安装方法
 
-## macOS - Homebrew
+1. 访问 Node.js [下载页面](https://nodejs.org/en/download/)
+2. 下载 LTS 版本的 macOS 安装程序
+3. 运行 `.pkg` 文件并按提示完成安装
 
-If you have Homebrew installed, you can update Node.js with the following commands:
+---
+
+## 🍎 macOS 系统 - Homebrew
+
+如果您已安装 Homebrew，可以使用以下命令更新 Node.js：
 
 ```bash
 brew update
 brew upgrade node
 ```
 
-## Linux - Package Manager
+---
 
-The method to update Node.js on Linux depends on your distribution.
+## 🐧 Linux 系统 - 包管理器
 
-But as the version of Node.js in the official repositories may not be the latest, we recommend using the [Node Version Manager (nvm)](https://github.com/nvm-sh/nvm) or the [NodeSource repository](https://github.com/nodesource/distributions).
+Linux 系统更新 Node.js 的方法取决于您的发行版。
 
-## Docker
+但由于官方仓库中的 Node.js 版本可能不是最新的，我们推荐使用 [Node 版本管理器 (nvm)](https://github.com/nvm-sh/nvm) 或 [NodeSource 仓库](https://github.com/nodesource/distributions)。
 
-No action required. The prebuilt Docker image we provide is compiled with the up-to-date version of Node.js.
+---
+
+## 🐳 Docker 容器
+
+无需任何操作。我们提供的预构建 Docker 镜像已使用最新版本的 Node.js 编译。
+
+---

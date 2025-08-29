@@ -19,7 +19,7 @@ Connection Profiles store the following selections.
 ### Common
 
 * [API type, model and the server URL](/Usage/API_Connections/index.md)
-* [Secret Key](/Usage/faq.md#where-are-my-api-keys-stored-why-cant-i-see-them)
+* [Secret Key](/Usage/faq.md#我的-api-密钥存储在哪里为什么我看不到它们)
 * [Settings preset](/Usage/Common-Settings.md)
 * [Start Reply With](/Usage/Prompts/advancedformatting.md#start-reply-with) (can be explicitly empty)
 * [Custom Stopping Strings](/Usage/Prompts/advancedformatting.md#custom-stopping-strings) (can be explicitly empty)

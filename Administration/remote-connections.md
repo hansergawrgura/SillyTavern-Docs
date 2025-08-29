@@ -228,7 +228,7 @@ root of SillyTavern folder.
 
 Still unable to connect?
 
-* If the connection attempt [appears in the console](#connection-logging), but is forbidden, it is a [whitelist issue](#access-control-by-whitelist).
+* If the connection attempt [appears in the console](#connection-logging), but is forbidden, it is a [whitelist issue](#whitelist-based-access-control).
 * If ST is listening for remote connections but the connection attempt does not appear in the console, it is a [network issue](#network-issues).
 * If ST is not listening for remote connections, it is a [reading issue](#allowing-remote-connections).
 

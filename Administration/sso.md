@@ -23,11 +23,11 @@ This augments or replaces the built-in [password management](/Usage/User_Setting
 
 ## Replacing HTTP BA
 
-SSO can also replace [HTTP Basic Authentication](/Administration/remote-connections.md#access-control-by-http-basic-authentication) as an access control mechanism for [remote connections](/Administration/remote-connections.md#access-control).
+SSO can also replace [HTTP Basic Authentication](/Administration/remote-connections.md#access-control-by-http-basic-authentication) as an access control mechanism for [remote connections](/Administration/remote-connections.md#access-control-configuration).
 
 This is recommended because SSO provides better security and functionality than HTTP BA.
 
-To use an SSO provider in place of HTTP BA, enable `securityOverride` in *config.yaml*. Otherwise, SillyTavern will [refuse to start](remote-connections.md#access-control).
+To use an SSO provider in place of HTTP BA, enable `securityOverride` in *config.yaml*. Otherwise, SillyTavern will [refuse to start](remote-connections.md#access-control-configuration).
 
 ```yaml
 autheliaAuth: true

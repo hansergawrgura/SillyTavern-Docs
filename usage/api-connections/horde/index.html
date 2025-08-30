@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809878592533">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>AI Horde | docs.ST.app</title>
-    <meta name="title" content="AI Horde | docs.ST.app">
-    <meta name="description" content="AI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.">
+    <title>&#129302; AI Horde（AI 群） | docs.ST.app</title>
+    <meta name="title" content="🤖 AI Horde（AI 群） | docs.ST.app">
+    <meta name="description" content="AI Horde 是一个完全由志愿者运营的、众包式的分布式 GPU 集群。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/usage/api-connections/horde/">
@@ -19,24 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/usage/api-connections/horde/">
-    <meta property="og:title" content="AI Horde | docs.ST.app">
-    <meta property="og:description" content="AI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.">
+    <meta property="og:title" content="🤖 AI Horde（AI 群） | docs.ST.app">
+    <meta property="og:description" content="AI Horde 是一个完全由志愿者运营的、众包式的分布式 GPU 集群。">
     <meta property="og:image" content="https://hansergawrgura.github.io/static/horde-worker.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/usage/api-connections/horde/">
-    <meta property="twitter:title" content="AI Horde | docs.ST.app">
-    <meta property="twitter:description" content="AI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.">
+    <meta property="twitter:title" content="🤖 AI Horde（AI 群） | docs.ST.app">
+    <meta property="twitter:description" content="AI Horde 是一个完全由志愿者运营的、众包式的分布式 GPU 集群。">
     <meta property="twitter:image" content="https://hansergawrgura.github.io/static/horde-worker.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.809878592533" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -226,25 +226,25 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="ai-horde" class="break-words">
+<doc-anchor-target id="-ai-hordeai-群" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-horde">#</doc-anchor-trigger>
-        <span>AI Horde</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-ai-hordeai-群">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F916;</span> AI Horde（AI 群）</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="disclaimer">
+<doc-anchor-target id="-免责声明">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#disclaimer">#</doc-anchor-trigger>
-        <span>Disclaimer</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-免责声明">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x26A0;&#xFE0F;</span> 免责声明</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>AI Horde is a crowdsourced, distributed GPU cluster run entirely by volunteers.</li>
-<li>By default, your inputs are anonymously sent and responses can not be seen by the person running the Horde Worker.</li>
-<li>However, since it is an open-sourced program, Malicious Workers could modify the code to:
+<li>AI Horde 是一个完全由志愿者运营的、众包式的分布式 GPU 集群。</li>
+<li>默认情况下，您的输入是匿名发送的，运行 Horde Worker 的人员无法看到响应。</li>
+<li>但是，由于它是一个开源程序，恶意工作者 (Malicious Workers) 可能会修改代码以：
 <ul>
-<li>log your activity (input prompts, AI responses).</li>
-<li>produce bad or offensive responses.</li>
+<li>记录您的活动（输入提示词、AI 响应）。</li>
+<li>产生不良或冒犯性的响应。</li>
 </ul>
 </li>
 </ul>
@@ -260,37 +260,37 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>When using Horde <strong>never send</strong> any personal information such as names, email addresses, etc.</p>
+<p>使用 Horde 时，<strong>切勿发送</strong>任何个人信息，例如姓名、电子邮件地址等。</p>
         </div>
     </div>
 </div>
-<p>Switching on the &quot;Trusted Workers Only&quot; checkbox will limit the selection of available workers to only those who have been hosting on Horde for a while and are generally considered trusted. But they could still be seeing prompts, for example by hosting using unaccounted software.</p>
-<p>To help reduce this problem, SillyTavern has built in the following feature:</p>
+<p>打开“仅受信任工作者 (Trusted Workers Only)”复选框将把可用工作者的选择限制为那些已在 Horde 上托管一段时间且通常被认为是可信的工作者。但他们仍然可能看到提示词，例如通过使用未经验证的软件进行托管。</p>
+<p>为了帮助减少此问题，SillyTavern 内置了以下功能：</p>
 <ul>
-<li>When a chat response is generated by a Horde Worker, SillyTavern records the Worker&#x27;s ID and what model they were using.</li>
-<li>This information can be seen by hovering your mouse cursor over the chat item (see image below).</li>
-<li>If you believe you received a malicious response, you can pass this information to the Horde admin on the <a href="https://discord.gg/3DxrhksKzn">AI Horde Discord</a> for review and possible disciplinary action against that Worker.</li>
+<li>当聊天响应由 Horde Worker 生成时，SillyTavern 会记录该工作者的 ID 以及他们使用的模型。</li>
+<li>将鼠标光标悬停在聊天项目上即可看到此信息（见下图）。</li>
+<li>如果您认为收到了恶意响应，可以将此信息传递给 <a href="https://discord.gg/3DxrhksKzn">AI Horde Discord</a> 上的 Horde 管理员，以供审查并可能对该工作者采取纪律处分。</li>
 </ul>
 <p><figure class="content-center">
-    <img src="../../../static/horde-worker.png" alt="Horde Worker Info Popup" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">Horde Worker Info Popup</figcaption>
+    <img src="../../../static/horde-worker.png" alt="Horde 工作者信息弹出窗口" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">Horde 工作者信息弹出窗口</figcaption>
 </figure>
 </p>
-<doc-anchor-target id="setup">
+<doc-anchor-target id="-设置">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#setup">#</doc-anchor-trigger>
-        <span>Setup</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-设置">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2699;&#xFE0F;</span> 设置</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>SillyTavern is able to connect with Horde out of the box with no additional setup required.</li>
-<li>Select &#x27;AI Horde&#x27; from the API Dropdown Selector in the ST API Panel.</li>
-<li>Select one or more Models (&#x27;AI brains&#x27; for the characters) from the Model Selector at the bottom of the panel.</li>
-<li>Select a character and begin chatting.</li>
+<li>SillyTavern 能够开箱即用地与 Horde 连接，无需任何额外设置。</li>
+<li>在 ST API 面板的 API 下拉选择器中选择 &#x27;AI Horde&#x27;。</li>
+<li>从面板底部的模型选择器中选择一个或多个模型（角色的“AI 大脑”）。</li>
+<li>选择一个角色并开始聊天。</li>
 </ul>
 <p><figure class="content-center">
-    <img src="../../../static/horde-config.png" alt="ST Kobold Horde API Connection Panel" class="rounded-image-rounded border-image-border border-image-border-width" />
-    <figcaption class="caption">ST Kobold Horde API Connection Panel</figcaption>
+    <img src="../../../static/horde-config.png" alt="ST Kobold Horde API 连接面板" class="rounded-image-rounded border-image-border border-image-border-width" />
+    <figcaption class="caption">ST Kobold Horde API 连接面板</figcaption>
 </figure>
 </p>
 <div class="flex mb-6">
@@ -305,32 +305,32 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p>By default, your SillyTavern instance connects to the Horde&#x27;s low priority &#x27;guest account&#x27;.
-This means you may have to wait a long time for a reply.
-To reduce wait times, follow the tips down below.</p>
+<p>默认情况下，您的 SillyTavern 实例连接到 Horde 的低优先级“访客帐户”。
+这意味着您可能需要等待很长时间才能收到回复。
+要减少等待时间，请遵循下面的提示。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="tips">
+<doc-anchor-target id="-提示">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tips">#</doc-anchor-trigger>
-        <span>Tips</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-提示">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4A1;</span> 提示</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="https://aihorde.net/register">Register an account on the Horde website</a> then add your Horde key into the SillyTavern Horde API Key box.</li>
-<li><a href="https://github.com/Haidra-Org/AI-Horde-Worker#readme">Set up a Horde Worker</a> to provide your GPU for others.
+<li><a href="https://aihorde.net/register">在 Horde 网站上注册一个帐户</a>，然后将您的 Horde 密钥添加到 SillyTavern 的 Horde API Key 框中。</li>
+<li><a href="https://github.com/Haidra-Org/AI-Horde-Worker#readme">设置一个 Horde Worker</a> 来为他人提供您的 GPU 算力。
 <ul>
-<li>Letting others use your GPU earns you <a href="https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#kudos">&#x27;Kudos&#x27;, a kind of Horde-only currency</a>.</li>
-<li>The more kudos your account has, the faster you will get chat responses from other Horde Workers.</li>
-<li>Kudos can also be used to create AI images on <a href="https://stablehorde.net">Stable Horde</a>.
+<li>让他人使用您的 GPU 可以为您赚取 <a href="https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#kudos">&#x27;Kudos&#x27;，一种 Horde 专属的积分</a>。</li>
+<li>您的帐户拥有的 Kudos 越多，您从其他 Horde Worker 获得聊天响应的速度就越快。</li>
+<li>Kudos 也可用于在 <a href="https://stablehorde.net">Stable Horde</a> 上创建 AI 图像。
 <ul>
-<li>SillyTavern supports Stable Horde image generation out of the box.</li>
+<li>SillyTavern 开箱即用地支持 Stable Horde 图像生成。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>If your GPU isn&#x27;t powerful enough to run an AI, or you don&#x27;t have a computer, you can still <a href="https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#i-dont-have-a-powerful-gpu-how-can-i-get-kudos">participate in the Horde community to earn Kudos in various ways</a>.</li>
+<li>如果您的 GPU 不够强大无法运行 AI，或者您没有电脑，您仍然可以<a href="https://github.com/Haidra-Org/AI-Horde/blob/main/FAQ.md#i-dont-have-a-powerful-gpu-how-can-i-get-kudos">通过多种方式参与 Horde 社区来赚取 Kudos</a>。</li>
 </ul>
 
                                 
@@ -347,20 +347,20 @@ To reduce wait times, follow the tips down below.</p>
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/openrouter/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/novelai/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Open​Router</span>
+                                                <span class="block mt-1">📖 Novel​AI</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/dreamgen/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/google/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Dream​Gen</span>
+                                                <span class="block mt-1">🤖 Google Gemini</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -404,6 +404,6 @@ To reduce wait times, follow the tips down below.</p>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "AI Horde", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "🤖 AI Horde（AI 群）", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

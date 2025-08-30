@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809878592533">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>KoboldCpp | docs.ST.app</title>
-    <meta name="title" content="KoboldCpp | docs.ST.app">
-    <meta name="description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
+    <title>&#128009; KoboldCpp | docs.ST.app</title>
+    <meta name="title" content="🐉 KoboldCpp | docs.ST.app">
+    <meta name="description" content="KoboldCpp 是一个用于 GGML 和 GGUF 模型的自包含 API。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/usage/api-connections/koboldcpp/">
@@ -19,24 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/usage/api-connections/koboldcpp/">
-    <meta property="og:title" content="KoboldCpp | docs.ST.app">
-    <meta property="og:description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
+    <meta property="og:title" content="🐉 KoboldCpp | docs.ST.app">
+    <meta property="og:description" content="KoboldCpp 是一个用于 GGML 和 GGUF 模型的自包含 API。">
     <meta property="og:image" content="https://hansergawrgura.github.io/static/koboldcpp.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/usage/api-connections/koboldcpp/">
-    <meta property="twitter:title" content="KoboldCpp | docs.ST.app">
-    <meta property="twitter:description" content="KoboldCpp is a self-contained API for GGML and GGUF models.">
+    <meta property="twitter:title" content="🐉 KoboldCpp | docs.ST.app">
+    <meta property="twitter:description" content="KoboldCpp 是一个用于 GGML 和 GGUF 模型的自包含 API。">
     <meta property="twitter:image" content="https://hansergawrgura.github.io/static/koboldcpp.png">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.809878592533" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -226,25 +226,25 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="koboldcpp" class="break-words">
+<doc-anchor-target id="-koboldcpp" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#koboldcpp">#</doc-anchor-trigger>
-        <span>KoboldCpp</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-koboldcpp">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F409;</span> KoboldCpp</span>
     </h1>
 </doc-anchor-target>
-<p>KoboldCpp is a self-contained API for GGML and GGUF models.</p>
-<p>This <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">VRAM Calculator</a> by Nyx will tell you approximately how much RAM/VRAM your model requires.</p>
-<doc-anchor-target id="nvidia-gpu-quickstart">
+<p>KoboldCpp 是一个用于 GGML 和 GGUF 模型的自包含 API。</p>
+<p>Nyx 制作的这个 <a href="https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator">VRAM 计算器</a> 会告诉您您的模型大约需要多少 RAM/VRAM。</p>
+<doc-anchor-target id="nvidia-gpu-快速入门">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nvidia-gpu-quickstart">#</doc-anchor-trigger>
-        <span>Nvidia GPU Quickstart</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nvidia-gpu-快速入门">#</doc-anchor-trigger>
+        <span>Nvidia GPU 快速入门</span>
     </h2>
 </doc-anchor-target>
-<p>This guide assumes you&#x27;re using Windows.</p>
+<p>本指南假设您使用的是 Windows。</p>
 <ul>
-<li>Download the latest release: <a href="https://github.com/LostRuins/koboldcpp/releases">https://github.com/LostRuins/koboldcpp/releases</a></li>
-<li>Launch KoboldCpp. You may see a pop-up from Microsoft Defender, click <code v-pre>Run Anyway</code>.</li>
-<li>As of version 1.58, KoboldCpp should look like this:</li>
+<li>下载最新版本：<a href="https://github.com/LostRuins/koboldcpp/releases">https://github.com/LostRuins/koboldcpp/releases</a></li>
+<li>启动 KoboldCpp。您可能会看到 Microsoft Defender 的弹出窗口，点击 <code v-pre>Run Anyway</code>（仍要运行）。</li>
+<li>截至版本 1.58，KoboldCpp 应如下图所示：</li>
 </ul>
 <p><figure class="content-center">
     <img src="../../../static/koboldcpp.png" alt="KoboldCpp 1.58" class="rounded-image-rounded border-image-border border-image-border-width" />
@@ -252,16 +252,16 @@
 </figure>
 </p>
 <ul>
-<li>Under the <code v-pre>Quick Launch</code> tab, select the model and your preferred <code v-pre>Context Size</code>.</li>
-<li>Select <code v-pre>Use CuBLAS</code> and make sure the yellow text next to <code v-pre>GPU ID</code> matches your GPU.</li>
-<li>Do not tick <code v-pre>Low VRAM</code>, even if you have low VRAM.</li>
-<li>Unless you have an Nvidia 10-series or older GPU, untick <code v-pre>Use QuantMatMul (mmq)</code>.</li>
-<li><code v-pre>GPU Layers</code> should have been populated when you loaded your model. Leave it there for now.</li>
-<li>Under the <code v-pre>Hardware</code> tab, tick <code v-pre>High Priority</code>.</li>
-<li>Click <code v-pre>Save</code> so you don&#x27;t have to configure KoboldCpp on every launch.</li>
-<li>Click <code v-pre>Launch</code> and wait for the model to load.</li>
+<li>在 <code v-pre>Quick Launch</code> 选项卡下，选择模型和您偏好的 <code v-pre>Context Size</code>（上下文大小）。</li>
+<li>选择 <code v-pre>Use CuBLAS</code> 并确保 <code v-pre>GPU ID</code> 旁边的黄色文本与您的 GPU 匹配。</li>
+<li>即使您的 VRAM 较低，也<strong>不要</strong>勾选 <code v-pre>Low VRAM</code>。</li>
+<li>除非您拥有 Nvidia 10 系列或更旧的 GPU，否则请取消勾选 <code v-pre>Use QuantMatMul (mmq)</code>。</li>
+<li><code v-pre>GPU Layers</code>（GPU 层数）应在您加载模型时已自动填充。暂时保持原样。</li>
+<li>在 <code v-pre>Hardware</code> 选项卡下，勾选 <code v-pre>High Priority</code>（高优先级）。</li>
+<li>点击 <code v-pre>Save</code>（保存），这样您就不必在每次启动时都配置 KoboldCpp。</li>
+<li>点击 <code v-pre>Launch</code>（启动）并等待模型加载。</li>
 </ul>
-<p>You should see something like this:</p>
+<p>您应该会看到类似这样的信息：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">Load Model OK: True
 Embedded Kobold Lite loaded.
@@ -270,16 +270,16 @@ Starting OpenAI Compatible API on port 5001 at http://localhost:5001/v1/
 ======
 Please connect to custom endpoint at http://localhost:5001</code></pre>
 </doc-codeblock></div>
-<p>You can now connect to KoboldCpp within SillyTavern with <code v-pre>http://localhost:5001</code> as the API URL and start chatting.</p>
-<p><strong>Congratulations! You&#x27;re done!</strong></p>
-<p>Kind of.</p>
-<doc-anchor-target id="gpu-layers">
+<p>您现在可以在 SillyTavern 中使用 <code v-pre>http://localhost:5001</code> 作为 API URL 连接到 KoboldCpp 并开始聊天。</p>
+<p><strong>恭喜！您完成了！</strong></p>
+<p>差不多完成了。</p>
+<doc-anchor-target id="gpu-层数-gpu-layers">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#gpu-layers">#</doc-anchor-trigger>
-        <span>GPU Layers</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gpu-层数-gpu-layers">#</doc-anchor-trigger>
+        <span>GPU 层数 (GPU Layers)</span>
     </h3>
 </doc-anchor-target>
-<p>KoboldCpp is working, but you can improve performance by ensuring that as many layers as possible are offloaded to the GPU. You should see something like this in the terminal:</p>
+<p>KoboldCpp 正在工作，但您可以通过确保尽可能多的层被卸载到 GPU 上来提高性能。您应该在终端中看到类似这样的信息：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">llm_load_tensors: offloading 9 repeating layers to GPU
 llm_load_tensors: offloaded 9/33 layers to GPU
@@ -289,15 +289,15 @@ llm_load_tensors:      CUDA0 buffer size =  7043.34 MiB
 llama_kv_cache_init:  CUDA_Host KV buffer size =  1479.19 MiB
 llama_kv_cache_init:      CUDA0 KV buffer size =   578.81 MiB</code></pre>
 </doc-codeblock></div>
-<p>Don&#x27;t be afraid of numbers; this part is easier than it looks. <code v-pre>CPU buffer size</code> refers to how much system RAM is being used. Ignore that. <code v-pre>CUDA0 buffer size</code> refers to how much GPU VRAM is being used. <code v-pre>CUDA_Host KV buffer size</code> and <code v-pre>CUDA0 KV buffer size</code> refer to how much GPU VRAM is being dedicated to your model&#x27;s context. In this case, KoboldCpp is using about 9 GB of VRAM.</p>
-<p>I have 12 GB of VRAM, and only 2 GB of VRAM is being used for context, so I have about 10 GB of VRAM left over to load the model. Because 9 layers used about 7 GB of VRAM and <code v-pre>7000 / 9 = 777.77</code> we can assume each layer uses approximately <code v-pre>777.77 MIB</code> of VRAM. <code v-pre>10,000 MIB / 777.77 = 12.8</code>, so I&#x27;ll round down and load 12 layers with this model from now on.</p>
-<p>Now do your own math using the model, context size, and VRAM for your system, and restart KoboldCpp:</p>
+<p>不要害怕数字；这部分比看起来容易。<code v-pre>CPU buffer size</code> 指的是正在使用的系统 RAM 量。忽略那个。<code v-pre>CUDA0 buffer size</code> 指的是正在使用的 GPU VRAM 量。<code v-pre>CUDA_Host KV buffer size</code> 和 <code v-pre>CUDA0 KV buffer size</code> 指的是专用于模型上下文的 GPU VRAM 量。在这种情况下，KoboldCpp 使用了大约 9 GB 的 VRAM。</p>
+<p>我有 12 GB 的 VRAM，并且只有 2 GB 的 VRAM 用于上下文，所以我还有大约 10 GB 的 VRAM 剩余来加载模型。因为 9 层使用了大约 7 GB 的 VRAM，并且 <code v-pre>7000 / 9 = 777.77</code>，我们可以假设每层使用大约 <code v-pre>777.77 MIB</code> 的 VRAM。<code v-pre>10,000 MIB / 777.77 = 12.8</code>，所以我将向下取整，从此使用此模型加载 12 层。</p>
+<p>现在根据您的模型、上下文大小和系统 VRAM 进行您自己的计算，然后重新启动 KoboldCpp：</p>
 <ul>
-<li>If you&#x27;re smart, you clicked <code v-pre>Save</code> before, and now you can load your previous configuration with <code v-pre>Load</code>. Otherwise, select the same settings you chose before.</li>
-<li>Change the <code v-pre>GPU Layers</code> to your new, VRAM-optimized number (12 layers in my case).</li>
-<li>Click <code v-pre>Save</code> to save your updated configuration.</li>
+<li>如果您够聪明，您之前点击了 <code v-pre>Save</code>，现在您可以使用 <code v-pre>Load</code> 加载您之前的配置。否则，选择您之前选择的相同设置。</li>
+<li>将 <code v-pre>GPU Layers</code> 更改为您新的、经过 VRAM 优化的数字（在我的例子中是 12 层）。</li>
+<li>点击 <code v-pre>Save</code> 以保存您更新的配置。</li>
 </ul>
-<p>You should now see something like this:</p>
+<p>您现在应该看到类似这样的信息：</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-none"><code v-pre class="language-none">llm_load_tensors: offloading 12 repeating layers to GPU
 llm_load_tensors: offloaded 12/33 layers to GPU
@@ -307,9 +307,9 @@ llm_load_tensors:      CUDA0 buffer size =  9391.12 MiB
 llama_kv_cache_init:  CUDA_Host KV buffer size =  1286.25 MiB
 llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
 </doc-codeblock></div>
-<p>KoboldCpp is using about 11.5 GB of my 12 GB VRAM. This should perform a lot better than the settings generated automatically by KoboldCpp.</p>
-<p><strong>Congratulations! You&#x27;re (actually) done!</strong></p>
-<p>For a more in-depth look at KoboldCpp settings, check out Kalomaze&#x27;s <a href="https://rentry.org/llama_v2_sillytavern">Simple Llama + SillyTavern Setup Guide</a>.</p>
+<p>KoboldCpp 使用了我 12 GB VRAM 中的大约 11.5 GB。这应该比 KoboldCpp 自动生成的设置性能好很多。</p>
+<p><strong>恭喜！您（真正）完成了！</strong></p>
+<p>要更深入地了解 KoboldCpp 设置，请查看 Kalomaze 的 <a href="https://rentry.org/llama_v2_sillytavern">Simple Llama + SillyTavern Setup Guide</a>（简易 Llama + SillyTavern 设置指南）。</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -325,20 +325,20 @@ llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
                             
                                 <nav id="retype-nextprev" class="print:hidden flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/google/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/dreamgen/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Google Gemini</span>
+                                                <span class="block mt-1">🎭 Dream​Gen</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/mancer/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/api-connections/novelai/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Mancer</span>
+                                                <span class="block mt-1">📖 Novel​AI</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -382,6 +382,6 @@ llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB</code></pre>
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "KoboldCpp", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "🐉 KoboldCpp", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

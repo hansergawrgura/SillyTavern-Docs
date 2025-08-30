@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809878592533">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Macros (replacement tags) | docs.ST.app</title>
-    <meta name="title" content="Macros (replacement tags) | docs.ST.app">
-    <meta name="description" content="This list may be incomplete or outdated. Use the /help macros slash command in any SillyTavern chat to get the list of macros that work in your...">
+    <title>&#128256; 宏（替换标签） | docs.ST.app</title>
+    <meta name="title" content="🔀 宏（替换标签） | docs.ST.app">
+    <meta name="description" content="此列表可能不完整或已过时。在任何SillyTavern聊天中使用 /help macros 斜杠命令可获取当前实例中可用的宏列表。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/usage/core-concepts/macros/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/usage/core-concepts/macros/">
-    <meta property="og:title" content="Macros (replacement tags) | docs.ST.app">
-    <meta property="og:description" content="This list may be incomplete or outdated. Use the /help macros slash command in any SillyTavern chat to get the list of macros that work in your...">
+    <meta property="og:title" content="🔀 宏（替换标签） | docs.ST.app">
+    <meta property="og:description" content="此列表可能不完整或已过时。在任何SillyTavern聊天中使用 /help macros 斜杠命令可获取当前实例中可用的宏列表。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/usage/core-concepts/macros/">
-    <meta property="twitter:title" content="Macros (replacement tags) | docs.ST.app">
-    <meta property="twitter:description" content="This list may be incomplete or outdated. Use the /help macros slash command in any SillyTavern chat to get the list of macros that work in your...">
+    <meta property="twitter:title" content="🔀 宏（替换标签） | docs.ST.app">
+    <meta property="twitter:description" content="此列表可能不完整或已过时。在任何SillyTavern聊天中使用 /help macros 斜杠命令可获取当前实例中可用的宏列表。">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.11.0.809878592533" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -224,10 +224,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="macros-replacement-tags" class="break-words">
+<doc-anchor-target id="-宏替换标签" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#macros-replacement-tags">#</doc-anchor-trigger>
-        <span>Macros (replacement tags)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-宏替换标签">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F500;</span> 宏（替换标签）</span>
     </h1>
 </doc-anchor-target>
 <div class="flex mb-6">
@@ -244,426 +244,426 @@
         </div>
         <div class="pr-5 ml-3 w-full">
             <h5>Note</h5>
-<p>This list may be incomplete or outdated. Use the <code v-pre>/help macros</code> slash command in any SillyTavern chat to get the list of macros that work in your instance.</p>
+<p>此列表可能不完整或已过时。在任何SillyTavern聊天中使用 <code v-pre>/help macros</code> 斜杠命令可获取当前实例中可用的宏列表。</p>
         </div>
     </div>
 </div>
-<p>Macros can be used in character description, author&#x27;s notes, world info and many other places and replaced with the corresponding values when generating a response. They can be used to insert dynamic content into the prompt, such as the user&#x27;s name, character&#x27;s description, or the current time. Macros are enclosed in double curly braces, e.g. <code v-pre>{{user}}</code> and are usually case-insensitive. <strong>Please keep in mind that macro nesting is currently not supported.</strong></p>
-<p>Note: some extensions may also add special context-specific macros that only work in certain areas (i.e. special placeholders for extension prompts). These will not be documented here unless the macro is not bound to a specific functionality.</p>
-<doc-anchor-target id="general-macros">
+<p>宏可用于角色描述、作者注释、世界信息等许多地方，并在生成回复时替换为相应值。它们可用于向提示词中插入动态内容，例如用户名称、角色描述或当前时间。宏由双花括号包裹，例如 <code v-pre>{{user}}</code>，且通常不区分大小写。<strong>请注意，目前不支持宏嵌套。</strong></p>
+<p>注意：某些扩展可能还会添加特殊的上下文相关宏，这些宏仅在特定区域有效（例如扩展提示词的特殊占位符）。除非宏不绑定特定功能，否则此处不会记录它们。</p>
+<doc-anchor-target id="-通用宏">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#general-macros">#</doc-anchor-trigger>
-        <span>General Macros</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-通用宏">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F310;</span> 通用宏</span>
     </h2>
 </doc-anchor-target>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Macro</th>
-<th>Description</th>
+<th>宏</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code v-pre>{{pipe}}</code></td>
-<td>Only for slash command batching. Replaced with the returned result of the previous command.</td>
+<td>仅用于斜杠命令批处理。替换为前一个命令返回的结果。</td>
 </tr>
 <tr>
 <td><code v-pre>{{newline}}</code></td>
-<td>Inserts a newline.</td>
+<td>插入换行符。</td>
 </tr>
 <tr>
 <td><code v-pre>{{trim}}</code></td>
-<td>Trims newlines surrounding this macro.</td>
+<td>修剪此宏周围的换行符。</td>
 </tr>
 <tr>
 <td><code v-pre>{{noop}}</code></td>
-<td>No operation, just an empty string.</td>
+<td>无操作，仅为空字符串。</td>
 </tr>
 <tr>
-<td><code v-pre>{{user}}</code> or <code v-pre>&lt;USER&gt;</code></td>
-<td>User&#x27;s name.</td>
+<td><code v-pre>{{user}}</code> 或 <code v-pre>&lt;USER&gt;</code></td>
+<td>用户名称。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charPrompt}}</code></td>
-<td>Character&#x27;s Main Prompt override.</td>
+<td>角色的主提示词覆盖内容。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charJailbreak}}</code></td>
-<td>Character&#x27;s Post-History Instructions Prompt override.</td>
+<td>角色的历史记录后指令提示词覆盖内容。</td>
 </tr>
 <tr>
-<td><code v-pre>{{group}}</code> or <code v-pre>{{charIfNotGroup}}</code></td>
-<td>Comma-separated list of group member names or character name in solo chats.</td>
+<td><code v-pre>{{group}}</code> 或 <code v-pre>{{charIfNotGroup}}</code></td>
+<td>群组成员名称的逗号分隔列表，或在单人聊天中为角色名称。</td>
 </tr>
 <tr>
 <td><code v-pre>{{groupNotMuted}}</code></td>
-<td>Same as <code v-pre>{{group}}</code> but excludes muted members.</td>
+<td>同 <code v-pre>{{group}}</code>，但排除被静音的成员。</td>
 </tr>
 <tr>
-<td><code v-pre>{{char}}</code> or <code v-pre>&lt;BOT&gt;</code></td>
-<td>Character&#x27;s name.</td>
+<td><code v-pre>{{char}}</code> 或 <code v-pre>&lt;BOT&gt;</code></td>
+<td>角色名称。</td>
 </tr>
 <tr>
 <td><code v-pre>{{description}}</code></td>
-<td>Character&#x27;s description.</td>
+<td>角色描述。</td>
 </tr>
 <tr>
 <td><code v-pre>{{scenario}}</code></td>
-<td>Character&#x27;s scenario or chat scenario override (if set).</td>
+<td>角色场景或聊天场景覆盖（如果已设置）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{personality}}</code></td>
-<td>Character&#x27;s personality.</td>
+<td>角色性格。</td>
 </tr>
 <tr>
 <td><code v-pre>{{persona}}</code></td>
-<td>User&#x27;s persona description.</td>
+<td>用户的角色描述。</td>
 </tr>
 <tr>
 <td><code v-pre>{{mesExamples}}</code></td>
-<td>Character&#x27;s examples of dialogue (instruct-formatted).</td>
+<td>角色的对话示例（指令格式）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{mesExamplesRaw}}</code></td>
-<td>Character&#x27;s examples of dialogue (unaltered and unsplit).</td>
+<td>角色的对话示例（未经更改和未拆分）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charVersion}}</code></td>
-<td>The character&#x27;s version number.</td>
+<td>角色的版本号。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charDepthPrompt}}</code></td>
-<td>The character&#x27;s at-depth prompt.</td>
+<td>角色的指定深度提示词。</td>
 </tr>
 <tr>
 <td><code v-pre>{{model}}</code></td>
-<td>Text generation model name for the currently selected API. <strong>Can be inaccurate!</strong></td>
+<td>当前所选API的文本生成模型名称。<strong>可能不准确！</strong></td>
 </tr>
 <tr>
 <td><code v-pre>{{lastMessageId}}</code></td>
-<td>Last chat message ID.</td>
+<td>最后一条聊天消息ID。</td>
 </tr>
 <tr>
 <td><code v-pre>{{lastMessage}}</code></td>
-<td>Last chat message text.</td>
+<td>最后一条聊天消息文本。</td>
 </tr>
 <tr>
 <td><code v-pre>{{firstIncludedMessageId}}</code></td>
-<td>The ID of the first message included in the context. Requires generation to be run at least once in the current session.</td>
+<td>上下文中包含的第一条消息的ID。需要在当前会话中至少运行一次生成。</td>
 </tr>
 <tr>
 <td><code v-pre>{{lastCharMessage}}</code></td>
-<td>Last chat message sent by character.</td>
+<td>角色发送的最后一条聊天消息。</td>
 </tr>
 <tr>
 <td><code v-pre>{{lastUserMessage}}</code></td>
-<td>Last chat message sent by user.</td>
+<td>用户发送的最后一条聊天消息。</td>
 </tr>
 <tr>
 <td><code v-pre>{{currentSwipeId}}</code></td>
-<td>1-based ID of the currently displayed last message swipe.</td>
+<td>当前显示的最后一条消息滑动选项的基于1的ID。</td>
 </tr>
 <tr>
 <td><code v-pre>{{lastSwipeId}}</code></td>
-<td>Number of swipes in the last chat message.</td>
+<td>最后一条聊天消息中的滑动选项数量。</td>
 </tr>
 <tr>
 <td><code v-pre>{{lastGenerationType}}</code></td>
-<td>Type of the last queued generation request. Values: &quot;normal&quot;, &quot;impersonate&quot;, &quot;regenerate&quot;, &quot;quiet&quot;, &quot;swipe&quot;, &quot;continue&quot;.</td>
+<td>最后排队的生成请求类型。值：&quot;normal&quot;（正常）、&quot;impersonate&quot;（冒充）、&quot;regenerate&quot;（重新生成）、&quot;quiet&quot;（安静）、&quot;swipe&quot;（滑动）、&quot;continue&quot;（继续）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{original}}</code></td>
-<td>Can be used in Prompt Overrides fields to include the default prompt from system settings. Applied to Chat Completion APIs and Instruct mode only.</td>
+<td>可在提示词覆盖字段中使用，以包含系统设置中的默认提示词。仅适用于聊天补全API和指令模式。</td>
 </tr>
 <tr>
 <td><code v-pre>{{time}}</code></td>
-<td>Current system time.</td>
+<td>当前系统时间。</td>
 </tr>
 <tr>
 <td><code v-pre>{{time_UTC±X}}</code></td>
-<td>Current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use <code v-pre>{{time_UTC+2}}</code>.</td>
+<td>指定UTC偏移（时区）的当前时间，例如对于UTC+02:00使用 <code v-pre>{{time_UTC+2}}</code>。</td>
 </tr>
 <tr>
 <td><code v-pre>{{timeDiff::(time1)::(time2)}}</code></td>
-<td>The time difference between time1 and time2. Accepts time and date macros.</td>
+<td>time1 和 time2 之间的时间差。接受时间和日期宏。</td>
 </tr>
 <tr>
 <td><code v-pre>{{date}}</code></td>
-<td>Current system date.</td>
+<td>当前系统日期。</td>
 </tr>
 <tr>
 <td><code v-pre>{{input}}</code></td>
-<td>Contents of the user input bar.</td>
+<td>用户输入栏的内容。</td>
 </tr>
 <tr>
 <td><code v-pre>{{weekday}}</code></td>
-<td>The current weekday.</td>
+<td>当前星期几。</td>
 </tr>
 <tr>
 <td><code v-pre>{{isotime}}</code></td>
-<td>The current ISO time (24-hour clock).</td>
+<td>当前ISO时间（24小时制）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{isodate}}</code></td>
-<td>The current ISO date (YYYY-MM-DD).</td>
+<td>当前ISO日期（YYYY-MM-DD）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{datetimeformat ...}}</code></td>
-<td>Current date/time in specified format (e.g. <code v-pre>{{datetimeformat DD.MM.YYYY HH:mm}}</code>).</td>
+<td>指定格式的当前日期/时间（例如 <code v-pre>{{datetimeformat DD.MM.YYYY HH:mm}}</code>）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{idle_duration}}</code></td>
-<td>Inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day).</td>
+<td>插入自最后一条用户消息发送以来时间范围的人性化字符串（例如：4小时、1天）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{random:(args)}}</code></td>
-<td>Returns a random item from the list (e.g. <code v-pre>{{random:1,2,3,4}}</code> will return 1 of the 4 numbers at random).</td>
+<td>从列表中返回一个随机项（例如 <code v-pre>{{random:1,2,3,4}}</code> 将随机返回4个数字中的1个）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{random::arg1::arg2}}</code></td>
-<td>Alternate syntax for random that supports commas in its arguments.</td>
+<td>支持参数中包含逗号的随机宏的替代语法。</td>
 </tr>
 <tr>
 <td><code v-pre>{{pick::(args)}}</code></td>
-<td>Alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged.</td>
+<td>随机的替代方案，但如果源字符串保持不变，则在当前聊天的后续评估中选定的参数是稳定的。</td>
 </tr>
 <tr>
 <td><code v-pre>{{roll:(formula)}}</code></td>
-<td>Generates a random value using D&amp;D dice syntax: XdY+Z (e.g. <code v-pre>{{roll:d6}}</code> generates a value 1-6).</td>
+<td>使用D&amp;D骰子语法生成随机值：XdY+Z（例如 <code v-pre>{{roll:d6}}</code> 生成1-6的值）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{bias &quot;text here&quot;}}</code></td>
-<td>Sets a behavioral bias for the AI until the next user input. Quotes around text are required.</td>
+<td>为AI设置行为偏差，直到下一次用户输入。文本周围的引号是必需的。</td>
 </tr>
 <tr>
 <td><code v-pre>{{// (note)}}</code></td>
-<td>Allows leaving a note that will be replaced with blank content. Not visible for the AI.</td>
+<td>允许留下将被替换为空白内容的注释。对AI不可见。</td>
 </tr>
 <tr>
 <td><code v-pre>{{banned &quot;text here&quot;}}</code></td>
-<td>Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required.</td>
+<td>动态将引用的文本添加到Text Generation WebUI后端的禁止词序列中。对其他后端无效。需要引号。</td>
 </tr>
 <tr>
 <td><code v-pre>{{reverse:(content)}}</code></td>
-<td>Reverses the content of the macro.</td>
+<td>反转宏的内容。</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="instruct-mode-and-context-template-macros">
+<doc-anchor-target id="-指令模式与上下文模板宏">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instruct-mode-and-context-template-macros">#</doc-anchor-trigger>
-        <span>Instruct Mode and Context Template Macros</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-指令模式与上下文模板宏">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CB;</span> 指令模式与上下文模板宏</span>
     </h2>
 </doc-anchor-target>
-<p>(enabled in the Advanced Formatting settings)</p>
+<p>（在高级格式化设置中启用）</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Macro</th>
-<th>Description</th>
+<th>宏</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code v-pre>{{exampleSeparator}}</code></td>
-<td>Context template example dialogues separator.</td>
+<td>上下文模板示例对话分隔符。</td>
 </tr>
 <tr>
 <td><code v-pre>{{chatStart}}</code></td>
-<td>Context template chat start line.</td>
+<td>上下文模板聊天开始行。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructSystemPrompt}}</code></td>
-<td>Instruct system prompt.</td>
+<td>指令系统提示词。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructSystemPromptPrefix}}</code></td>
-<td>System prompt prefix sequence.</td>
+<td>系统提示词前缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructSystemPromptSuffix}}</code></td>
-<td>System prompt suffix sequence.</td>
+<td>系统提示词后缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructUserPrefix}}</code></td>
-<td>User message prefix sequence.</td>
+<td>用户消息前缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructAssistantPrefix}}</code></td>
-<td>Assistant message prefix sequence.</td>
+<td>助理消息前缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructSystemPrefix}}</code></td>
-<td>System message prefix sequence.</td>
+<td>系统消息前缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructUserSuffix}}</code></td>
-<td>User message suffix sequence.</td>
+<td>用户消息后缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructAssistantSuffix}}</code></td>
-<td>Assistant message suffix sequence.</td>
+<td>助理消息后缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructSystemSuffix}}</code></td>
-<td>System message suffix sequence.</td>
+<td>系统消息后缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructFirstAssistantPrefix}}</code></td>
-<td>Assistant first output sequence.</td>
+<td>助理首次输出序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructLastAssistantPrefix}}</code></td>
-<td>Assistant last output sequence.</td>
+<td>助理最后输出序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructFirstUserPrefix}}</code></td>
-<td>Instruct user first input sequence.</td>
+<td>指令用户首次输入序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructLastUserPrefix}}</code></td>
-<td>Instruct user last input sequence.</td>
+<td>指令用户最后输入序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructSystemInstructionPrefix}}</code></td>
-<td>System instruction prefix sequence.</td>
+<td>系统指令前缀序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructUserFiller}}</code></td>
-<td>User filler message text.</td>
+<td>用户填充消息文本。</td>
 </tr>
 <tr>
 <td><code v-pre>{{instructStop}}</code></td>
-<td>Instruct stop sequence.</td>
+<td>指令停止序列。</td>
 </tr>
 <tr>
 <td><code v-pre>{{maxPrompt}}</code></td>
-<td>Max size of the prompt in tokens (context length reduced by response length).</td>
+<td>提示词的最大令牌大小（上下文长度减去响应长度）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{systemPrompt}}</code></td>
-<td>System prompt content, including character prompt override if allowed and available.</td>
+<td>系统提示词内容，包括角色提示词覆盖（如果允许且可用）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{defaultSystemPrompt}}</code></td>
-<td>System prompt content (excluding character prompt override).</td>
+<td>系统提示词内容（不包括角色提示词覆盖）。</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="chat-variables-macros">
+<doc-anchor-target id="-聊天变量宏">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chat-variables-macros">#</doc-anchor-trigger>
-        <span>Chat variables Macros</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-聊天变量宏">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4AC;</span> 聊天变量宏</span>
     </h2>
 </doc-anchor-target>
 <ul>
-<li>Local variables = unique to the current chat</li>
-<li>Global variables = works in any chat for any character</li>
+<li>局部变量 = 仅当前聊天独有</li>
+<li>全局变量 = 可在任何聊天中用于任何角色</li>
 </ul>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Macro</th>
-<th>Description</th>
+<th>宏</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code v-pre>{{getvar::name}}</code></td>
-<td>Replaced with the value of the local variable &quot;name&quot;.</td>
+<td>替换为局部变量“name”的值。</td>
 </tr>
 <tr>
 <td><code v-pre>{{setvar::name::value}}</code></td>
-<td>Replaced with empty string, sets the local variable &quot;name&quot; to &quot;value&quot;. Allows empty values.</td>
+<td>替换为空字符串，将局部变量“name”设置为“value”。允许空值。</td>
 </tr>
 <tr>
 <td><code v-pre>{{addvar::name::increment}}</code></td>
-<td>Replaced with empty string, adds a numeric value of &quot;increment&quot; to the local variable &quot;name&quot;.</td>
+<td>替换为空字符串，将数字值“increment”加到局部变量“name”上。</td>
 </tr>
 <tr>
 <td><code v-pre>{{incvar::name}}</code></td>
-<td>Replaced with the result of incrementing the value of variable &quot;name&quot; by 1.</td>
+<td>替换为将变量“name”的值增加1的结果。</td>
 </tr>
 <tr>
 <td><code v-pre>{{decvar::name}}</code></td>
-<td>Replaced with the result of decrementing the value of variable &quot;name&quot; by 1.</td>
+<td>替换为将变量“name”的值减少1的结果。</td>
 </tr>
 <tr>
 <td><code v-pre>{{getglobalvar::name}}</code></td>
-<td>Replaced with the value of the global variable &quot;name&quot;.</td>
+<td>替换为全局变量“name”的值。</td>
 </tr>
 <tr>
 <td><code v-pre>{{setglobalvar::name::value}}</code></td>
-<td>Replaced with empty string, sets the global variable &quot;name&quot; to &quot;value&quot;. Allows empty values.</td>
+<td>替换为空字符串，将全局变量“name”设置为“value”。允许空值。</td>
 </tr>
 <tr>
 <td><code v-pre>{{addglobalvar::name::value}}</code></td>
-<td>Replaced with empty string, adds a numeric value of &quot;increment&quot; to the global variable &quot;name&quot;.</td>
+<td>替换为空字符串，将数字值“increment”加到全局变量“name”上。</td>
 </tr>
 <tr>
 <td><code v-pre>{{incglobalvar::name}}</code></td>
-<td>Replaced with the result of incrementing the value of global variable &quot;name&quot; by 1.</td>
+<td>替换为将全局变量“name”的值增加1的结果。</td>
 </tr>
 <tr>
 <td><code v-pre>{{decglobalvar::name}}</code></td>
-<td>Replaced with the result of decrementing the value of global variable &quot;name&quot; by 1.</td>
+<td>替换为将全局变量“name”的值减少1的结果。</td>
 </tr>
 <tr>
 <td><code v-pre>{{var::name}}</code></td>
-<td>Replaced with the value of the scoped variable &quot;name&quot; (STscript only).</td>
+<td>替换为作用域变量“name”的值（仅限STscript）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{var::name::index}}</code></td>
-<td>Replaced with the value at index of the scoped variable &quot;name&quot; (for arrays/objects in STscript).</td>
+<td>替换为作用域变量“name”在索引处的值（用于STscript中的数组/对象）。</td>
 </tr>
 </tbody>
 </table>
 </div>
-<doc-anchor-target id="extension-specific-macros">
+<doc-anchor-target id="-扩展特定宏">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#extension-specific-macros">#</doc-anchor-trigger>
-        <span>Extension-specific Macros</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-扩展特定宏">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F527;</span> 扩展特定宏</span>
     </h2>
 </doc-anchor-target>
-<p>Added by extensions and only work under certain conditions.</p>
+<p>由扩展添加，仅在特定条件下工作。</p>
 <div class="table-wrapper scrollbar overflow-hidden">
 <table class="comfortable">
 <thead>
 <tr>
-<th>Macro</th>
-<th>Description</th>
+<th>宏</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code v-pre>{{summary}}</code></td>
-<td>Replaced with the summary of the current chat session (if available).</td>
+<td>替换为当前聊天会话的摘要（如果可用）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{authorsNote}}</code></td>
-<td>Replaced with the contents of the Author&#x27;s Note.</td>
+<td>替换为作者注释的内容。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charAuthorsNote}}</code></td>
-<td>Replaced with the contents of the Character&#x27;s Author&#x27;s Note.</td>
+<td>替换为角色作者注释的内容。</td>
 </tr>
 <tr>
 <td><code v-pre>{{defaultAuthorsNote}}</code></td>
-<td>Replaced with the contents of the default Author&#x27;s Note.</td>
+<td>替换为默认作者注释的内容。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charPrefix}}</code></td>
-<td>Replaced with a character-specific Image Generation positive prompt prefix (if available).</td>
+<td>替换为角色特定的图像生成正面提示词前缀（如果可用）。</td>
 </tr>
 <tr>
 <td><code v-pre>{{charNegativePrefix}}</code></td>
-<td>Replaced with a character-specific Image Generation negative prompt prefix (if available).</td>
+<td>替换为角色特定的图像生成负面提示词前缀（如果可用）。</td>
 </tr>
 </tbody>
 </table>
@@ -687,7 +687,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Character Design</span>
+                                                <span class="block mt-1">🎭 角色设计</span>
                                             </span>
                                         </a>
                                     </div>
@@ -696,7 +696,7 @@
                                         <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../usage/core-concepts/chatfilemanagement/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Chat File Management</span>
+                                                <span class="block mt-1">📁 聊天文件管理</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -740,6 +740,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Macros (replacement tags)", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "🔀 宏（替换标签）", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

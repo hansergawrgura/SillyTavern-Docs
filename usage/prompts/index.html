@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809795799056">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.11.0.809878592533">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.11.0">
 
     <!-- Primary Meta Tags -->
-    <title>Prompts | docs.ST.app</title>
-    <meta name="title" content="Prompts | docs.ST.app">
-    <meta name="description" content="When you send a message to your AI, the text you write is combined with other text to form a single request that's sent to the AI.">
+    <title>&#128221; 提示词 | docs.ST.app</title>
+    <meta name="title" content="📝 提示词 | docs.ST.app">
+    <meta name="description" content="当您向 AI 发送消息时，您编写的文本会与其他文本组合成一个单一的请求发送给 AI。这个组合文本称为“提示词”，有时也称为“请求”或“上下文”。">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://hansergawrgura.github.io/usage/prompts/">
@@ -19,22 +19,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hansergawrgura.github.io/usage/prompts/">
-    <meta property="og:title" content="Prompts | docs.ST.app">
-    <meta property="og:description" content="When you send a message to your AI, the text you write is combined with other text to form a single request that's sent to the AI.">
+    <meta property="og:title" content="📝 提示词 | docs.ST.app">
+    <meta property="og:description" content="当您向 AI 发送消息时，您编写的文本会与其他文本组合成一个单一的请求发送给 AI。这个组合文本称为“提示词”，有时也称为“请求”或“上下文”。">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://hansergawrgura.github.io/usage/prompts/">
-    <meta property="twitter:title" content="Prompts | docs.ST.app">
-    <meta property="twitter:description" content="When you send a message to your AI, the text you write is combined with other text to form a single request that's sent to the AI.">
+    <meta property="twitter:title" content="📝 提示词 | docs.ST.app">
+    <meta property="twitter:description" content="当您向 AI 发送消息时，您编写的文本会与其他文本组合成一个单一的请求发送给 AI。这个组合文本称为“提示词”，有时也称为“请求”或“上下文”。">
 
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
-    <link href="../../resources/css/retype.css?v=3.11.0.809795799056" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.11.0.809878592533" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.11.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809795799056" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.11.0.809878592533" data-turbo-eval="false" defer></script>
 
     <style>
         a {
@@ -224,93 +224,93 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="retype-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="prompts" class="break-words">
+<doc-anchor-target id="-提示词" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#prompts">#</doc-anchor-trigger>
-        <span>Prompts</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-提示词">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4DD;</span> 提示词</span>
     </h1>
 </doc-anchor-target>
-<p>When you send a message to your AI, the text you write is combined with other text to form a single request that&#x27;s sent to the AI. This combined text is called a &quot;prompt&quot; or sometimes the &quot;request&quot; or &quot;context.&quot;</p>
-<p>The prompt can include a variety of different types of text, including:</p>
+<p>当您向 AI 发送消息时，您编写的文本会与其他文本组合成一个单一的请求发送给 AI。这个组合文本称为“提示词”，有时也称为“请求”或“上下文”。</p>
+<p>提示词可以包含各种不同类型的文本，包括：</p>
 <ul>
-<li><doc-anchor-trigger to="#main-prompt-system-prompt">Main instructions</doc-anchor-trigger> to the AI about how to generate a response</li>
-<li>Definitions of the <a href="../core-concepts/characterdesign/">roles that the AI should take on</a></li>
-<li>Definitions of <a href="../core-concepts/personas/">the role that you are taking on</a></li>
-<li><a href="../core-concepts/worldinfo/">Information about the &quot;world&quot;</a> that the AI is interacting with</li>
-<li>Relevant documents or information from <a href="../core-concepts/data-bank/">Data Bank</a></li>
-<li><a href="../../extensions/summarize/">Summaries</a> of the past conversation</li>
-<li>Results of <a href="../../extensions/websearch/">web searches</a> or other <a href="../../for-contributors/function-calling/">external data sources</a></li>
-<li>Previous messages in the conversation</li>
-<li><strong>Your message to the AI</strong></li>
-<li><doc-anchor-trigger to="#post-history-instructions">Final instructions</doc-anchor-trigger> for the AI about how to generate a response</li>
+<li>关于 AI 如何生成响应的<doc-anchor-trigger to="#-%E4%B8%BB%E6%8F%90%E7%A4%BA%E8%AF%8D%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D">主要指令</doc-anchor-trigger></li>
+<li>AI 应承担的<a href="../core-concepts/characterdesign/">角色定义</a></li>
+<li><a href="../core-concepts/personas/">您所扮演角色的定义</a></li>
+<li>有关 AI 正在交互的“世界”的<a href="../core-concepts/worldinfo/">信息</a></li>
+<li>来自<a href="../core-concepts/data-bank/">数据库</a>的相关文档或信息</li>
+<li>过去对话的<a href="../../extensions/summarize/">摘要</a></li>
+<li><a href="../../extensions/websearch/">网络搜索</a>或其他<a href="../../for-contributors/function-calling/">外部数据源</a>的结果</li>
+<li>对话中的先前消息</li>
+<li><strong>您发送给 AI 的消息</strong></li>
+<li>关于 AI 如何生成响应的<doc-anchor-trigger to="#-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E5%90%8E%E6%8C%87%E4%BB%A4">最终指令</doc-anchor-trigger></li>
 </ul>
-<p>This can be a lot to manage! To help you understand how to structure and modify the request that&#x27;s sent to the AI, SillyTavern identifies different elements that you might want to include in your prompt. You can then structure your prompt to include the things that make sense for the way you want to interact with the AI.</p>
-<p>Many of these elements are explained in the sections where you will change them. For example, to describe the role that you would like the AI to take on, you could use the <a href="../core-concepts/characterdesign/#personality-summary">Description</a> field in <a href="../core-concepts/characterdesign/">Character Design</a>.</p>
-<doc-anchor-target id="viewing-the-prompt">
+<p>这可能需要大量管理！为了帮助您理解如何构建和修改发送给 AI 的请求，SillyTavern 识别了您可能希望包含在提示词中的不同元素。然后，您可以构建提示词，以包含对您与 AI 交互方式有意义的内容。</p>
+<p>这些元素中的许多都在您将更改它们的部分中进行了解释。例如，要描述您希望 AI 扮演的角色，您可以使用<a href="../core-concepts/characterdesign/">角色设计</a>中的<a href="../core-concepts/characterdesign/#%E6%80%A7%E6%A0%BC%E6%91%98%E8%A6%81">描述</a>字段。</p>
+<doc-anchor-target id="-查看提示词">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#viewing-the-prompt">#</doc-anchor-trigger>
-        <span>Viewing the Prompt</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-查看提示词">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F440;</span> 查看提示词</span>
     </h2>
 </doc-anchor-target>
-<p>Reading the final prompt that&#x27;s sent to the AI is very helpful for understanding what the AI was told, and why it generated the response that it did. You can view the prompt in several ways:</p>
+<p>阅读发送给 AI 的最终提示词对于理解 AI 被告知了什么以及它为何生成特定响应非常有帮助。您可以通过以下几种方式查看提示词：</p>
 <ul>
-<li>Using the Prompt Itemization icon on the reply message from the AI</li>
-<li>Using the <a href="https://github.com/SillyTavern/Extension-PromptInspector">Prompt Inspector</a> extension</li>
-<li>Checking the logs in the terminal window that you&#x27;re running SillyTavern in</li>
-<li>Checking the console in your browser&#x27;s developer tools</li>
+<li>使用 AI 回复消息上的“提示词明细”图标</li>
+<li>使用 <a href="https://github.com/SillyTavern/Extension-PromptInspector">提示词检查器</a> 扩展</li>
+<li>检查运行 SillyTavern 的终端窗口中的日志</li>
+<li>检查浏览器开发者工具中的控制台</li>
 </ul>
-<doc-anchor-target id="changing-how-the-prompt-is-built">
+<doc-anchor-target id="-更改提示词的构建方式">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#changing-how-the-prompt-is-built">#</doc-anchor-trigger>
-        <span>Changing how the Prompt is Built</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-更改提示词的构建方式">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F527;</span> 更改提示词的构建方式</span>
     </h2>
 </doc-anchor-target>
-<p>Presenting all the parts of your prompt to the AI in the right way is crucial for getting the best responses. You can control how the prompt is built.</p>
+<p>以正确的方式向 AI 呈现提示词的所有部分对于获得最佳响应至关重要。您可以控制提示词的构建方式。</p>
 <doc-tabs>
-<doc-tab v-cloak id="text-completion-apis">
-<template #title>Text Completion APIs</template>
-<p>Use the <a href="../core-concepts/advancedformatting/">Advanced Formatting</a> panel to customize prompt construction for Text Completion APIs.</p>
+<doc-tab v-cloak id="文本补全-api">
+<template #title>文本补全 API</template>
+<p>使用 <a href="../core-concepts/advancedformatting/">高级格式化</a> 面板自定义文本补全 API 的提示词构建。</p>
 </doc-tab>
-<doc-tab v-cloak id="chat-completion-apis">
-<template #title>Chat Completion APIs</template>
-<p>Use the <a href="prompt-manager/">Prompt Manager</a> to customize prompt construction for Chat Completion APIs.</p>
+<doc-tab v-cloak id="聊天补全-api">
+<template #title>聊天补全 API</template>
+<p>使用 <a href="prompt-manager/">提示词管理器</a> 自定义聊天补全 API 的提示词构建。</p>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="main-prompt-system-prompt">
+<doc-anchor-target id="-主提示词系统提示词">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#main-prompt-system-prompt">#</doc-anchor-trigger>
-        <span>Main Prompt (System Prompt)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-主提示词系统提示词">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F9ED;</span> 主提示词（系统提示词）</span>
     </h2>
 </doc-anchor-target>
-<p>The Main Prompt (or System Prompt) defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character.</p>
+<p>主提示词（或系统提示词）定义了模型需要遵循的一般指令。它为对话设定了基调和上下文。例如，它告诉模型充当 AI 助手、写作伙伴或虚构角色。</p>
 <doc-tabs>
-<doc-tab v-cloak id="text-completion-apis">
-<template #title>Text Completion APIs</template>
-<p>The <a href="../core-concepts/advancedformatting/#system-prompt">System Prompt</a> is a part of the <a href="context-template/#story-string">Story String</a> and usually the first part of the prompt that the model receives.</p>
+<doc-tab v-cloak id="文本补全-api">
+<template #title>文本补全 API</template>
+<p><a href="../core-concepts/advancedformatting/#-%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D">系统提示词</a> 是<a href="context-template/#-%E6%95%85%E4%BA%8B%E5%AD%97%E7%AC%A6%E4%B8%B2">故事字符串</a>的一部分，通常是模型接收到的提示词的第一部分。</p>
 </doc-tab>
-<doc-tab v-cloak id="chat-completion-apis">
-<template #title>Chat Completion APIs</template>
-<p>The Main Prompt is one of the default prompts in <a href="prompt-manager/">Prompt Manager</a>. It is usually the first message in the context that the model receives, attributed to (&quot;sent by&quot;) the system role.</p>
+<doc-tab v-cloak id="聊天补全-api">
+<template #title>聊天补全 API</template>
+<p>主提示词是<a href="prompt-manager/">提示词管理器</a>中的默认提示词之一。它通常是模型在上下文中接收到的第一条消息，归属于（“由”）系统角色。</p>
 </doc-tab>
 </doc-tabs>
-<p>The default Main Prompt is:</p>
+<p>默认的主提示词是：</p>
 <blockquote>
-<p>Write {{char}}&#x27;s next reply in a fictional chat between {{char}} and {{user}}.</p>
+<p>在 {{char}} 和 {{user}} 的虚构聊天中，编写 {{char}} 的下一个回复。</p>
 </blockquote>
-<p>The {{char}} and {{user}} placeholders are replaced with the names of the character and persona that you&#x27;ve defined in the conversation.</p>
-<p>You can use any of the supported <a href="../core-concepts/macros/">{{macro}}</a> tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.</p>
-<doc-anchor-target id="adjusting-the-main-prompt">
+<p>{{char}} 和 {{user}} 占位符会被替换为您在对话中定义的角色和人格的名称。</p>
+<p>您可以在主提示词中使用任何受支持的 <a href="../core-concepts/macros/">{{宏}}</a> 标签，以包含可能因对话而异或随着对话进行而变化的信息。</p>
+<doc-anchor-target id="调整主提示词">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adjusting-the-main-prompt">#</doc-anchor-trigger>
-        <span>Adjusting the Main Prompt</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#调整主提示词">#</doc-anchor-trigger>
+        <span>调整主提示词</span>
     </h3>
 </doc-anchor-target>
-<p>The default main prompt helps the model understand what it&#x27;s expected to do with the character and persona information that follows, how to interpret the past conversation, and what kind of response to generate. It&#x27;s a flexible general-purpose prompt that works well for many situations, because it establishes that the AI is writing as a character in a conversation with your persona.</p>
-<p>However, you can adjust the main prompt to better suit your needs. Here are some common reasons to adjust the main prompt:</p>
+<p>默认的主提示词帮助模型理解它应该如何处理后面的角色和人格信息，如何解释过去的对话，以及生成何种响应。它是一个灵活的通用提示词，在许多情况下都工作良好，因为它确立了 AI 是在以角色身份与您的人格进行对话中写作。</p>
+<p>但是，您可以调整主提示词以更好地满足您的需求。以下是一些调整主提示词的常见原因：</p>
 <ul>
-<li><strong>Provide additional instructions</strong>: for example, you want the AI to explain its reasoning, follow specific rules, or avoid certain topics</li>
-<li><strong>Clarify the role of the AI</strong>: for example, you want the AI to act as a narrator, a storyteller, or a guide</li>
-<li><strong>Change the context of the conversation</strong>: for example, you want the AI to respond as if it were an AI assistant, text adventure game, or a writing partner</li>
+<li><strong>提供额外指令</strong>：例如，您希望 AI 解释其推理、遵循特定规则或避免某些话题</li>
+<li><strong>阐明 AI 的角色</strong>：例如，您希望 AI 充当叙述者、讲故事的人或向导</li>
+<li><strong>更改对话的上下文</strong>：例如，您希望 AI 像 AI 助手、文字冒险游戏或写作伙伴一样响应</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -325,43 +325,43 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Try things out and see what works best for you</h5>
-<p>All the examples in this guide have worked well for other users, but the prompt that works for your needs and the model you&#x27;re using might be different. Experiment with different instructions and prompting styles to see what works best for you. If you&#x27;re not sure what to try, you can always ask for help in the <a href="https://discord.gg/sillytavern">SillyTavern Discord</a>.</p>
+            <h5>尝试不同方法，找到最适合您的</h5>
+<p>本指南中的所有示例对其他用户都很有效，但适合您需求和所用模型的提示词可能有所不同。尝试不同的指令和提示风格，看看什么最适合您。如果您不确定该尝试什么，可以随时在 <a href="https://discord.gg/sillytavern">SillyTavern Discord</a> 中寻求帮助。</p>
         </div>
     </div>
 </div>
-<p>Giving the AI additional instructions in the Main Prompt can help it understand what you want from the conversation.</p>
+<p>在主提示词中向 AI 提供额外指令可以帮助它理解您从对话中想要什么。</p>
 <blockquote>
-<p>Write one reply only. Write at least one paragraph, up to four.</p>
+<p>只写一个回复。至少写一段，最多四段。</p>
 </blockquote>
 <blockquote>
-<p>Markdown is enabled. Use it to format your response. Enclose code snippets in triple backticks.</p>
+<p>启用 Markdown。使用它来格式化您的回复。将代码片段用三个反引号括起来。</p>
 </blockquote>
 <blockquote>
-<p>Write character dialogue in quotation marks. Write {{char}}&#x27;s thoughts in parentheses.</p>
+<p>用引号书写角色对话。用括号书写 {{char}} 的想法。</p>
 </blockquote>
 <blockquote>
-<p>You are an anime roleplay generation model for users aged 13 to 17. You always generate fun, age-appropriate responses.</p>
+<p>您是一个面向 13 至 17 岁用户的动漫角色扮演生成模型。您始终生成有趣、适合年龄的响应。</p>
 </blockquote>
 <blockquote>
-<p>Answer truthfully and write out your thinking step by step to be sure you get the right answer.</p>
+<p>如实回答，并逐步写出您的思考过程以确保得到正确答案。</p>
 </blockquote>
-<p>The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it&#x27;s better to tell it how you want it to write instead. And while <em>&quot;Do not decide what {{user}} says or does&quot;</em> is commonly included in prompts to prevent the AI from controlling your persona, some users find <em>&quot;Write  {{char}}&#x27;s responses in a way that respects  {{user}}&#x27;s autonomy&quot;</em> is more effective.</p>
-<p>There is often a better place than the Main Prompt to include information about the user or characters, modify a character&#x27;s writing and speaking style, or give other specific instructions. The Main Prompt is best used for general instructions about the conversation as a whole, or about a type of conversation that you want to have.</p>
-<doc-anchor-target id="effect-of-message-history">
+<p>AI 更容易遵循关于它应该做什么的指令，而不是它不应该做什么。例如，如果您希望 AI 避免以某种方式写作，最好告诉它您希望它如何写作。虽然*“不要决定 {{user}} 说什么或做什么”* 通常包含在提示词中以防止 AI 控制您的人格，但一些用户发现 <em>“以尊重 {{user}} 自主权的方式编写 {{char}} 的响应”</em> 更有效。</p>
+<p>通常有比主提示词更好的地方来包含关于用户或角色的信息、修改角色的写作和说话风格，或提供其他特定指令。主提示词最好用于关于整个对话的一般指令，或关于您想要进行的某种类型的对话。</p>
+<doc-anchor-target id="消息历史的影响">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#effect-of-message-history">#</doc-anchor-trigger>
-        <span>Effect of Message History</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#消息历史的影响">#</doc-anchor-trigger>
+        <span>消息历史的影响</span>
     </h3>
 </doc-anchor-target>
-<p>When adjusting the main prompt to improve the AI&#x27;s responses, consder that the AI picks up a lot from the message history. The history is its memory of past events, character interactions and relationships, and its style guide for word choice and writing style.</p>
-<p>Use this to your advantage by also providing <a href="../core-concepts/characterdesign/#examples-of-dialogue">example messages</a> showing how you want the AI to respond. Showing what you want is often easier than trying to explain it!</p>
-<p>When your conversation already has history, changing the main prompt has a limited effect on the AI&#x27;s responses. In terms of events and relationships, the AI assumes that the main prompt occurred in the distant past, and the message history updates it. In terms of writing style and word choice, the AI assumes that all the messages in history were generated according to the rules in the <em>current</em> main prompt, and that it should continue to generate messages in the same way. Some suggestions for dealing with this are:</p>
+<p>在调整主提示词以改进 AI 的响应时，请考虑到 AI 从消息历史中获取了大量信息。历史是它对过去事件、角色互动和关系的记忆，以及其词汇选择和写作风格的风格指南。</p>
+<p>通过提供展示您希望 AI 如何响应的<a href="../core-concepts/characterdesign/#%E5%AF%B9%E8%AF%9D%E7%A4%BA%E4%BE%8B">示例消息</a>来利用这一点。展示您想要的内容通常比试图解释它更容易！</p>
+<p>当您的对话已有历史时，更改主提示词对 AI 响应的影响有限。在事件和关系方面，AI 假定主提示词发生在遥远的过去，而消息历史会更新它。在写作风格和词汇选择方面，AI 假定历史中的所有消息都是根据<em>当前</em>主提示词中的规则生成的，并且它应该继续以相同的方式生成消息。处理此事的一些建议：</p>
 <ul>
-<li>insert current instructions close to or after the end of message history, for example by using an <a href="../core-concepts/authors-note/">Author&#x27;s Note</a></li>
-<li>test your changes to the main prompt by starting a new conversation</li>
-<li>edit the message history to remove or correct examples of unwanted behaviour</li>
-<li>use the <doc-anchor-trigger to="#post-history-instructions">Post-History Instructions</doc-anchor-trigger> to provide final instructions to the AI</li>
+<li>将当前指令插入到消息历史的末尾或之后，例如使用<a href="../core-concepts/authors-note/">作者注记</a></li>
+<li>通过开始新对话来测试您对主提示词的更改</li>
+<li>编辑消息历史以删除或纠正不良行为的示例</li>
+<li>使用<doc-anchor-trigger to="#-%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%E5%90%8E%E6%8C%87%E4%BB%A4">历史记录后指令</doc-anchor-trigger>向 AI 提供最终指令</li>
 </ul>
 <div class="flex mb-6">
     <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
@@ -376,84 +376,84 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-            <h5>Get it right the first time!</h5>
-<p>Never let the AI &quot;get away&quot; with something you don&#x27;t want it to do. If you don&#x27;t like the AI&#x27;s response, don&#x27;t continue the conversation as if it was correct. Instead, modify the prompts, regenerate the message, and continue from there. This will help the AI learn what you want.</p>
+            <h5>第一次就做对！</h5>
+<p>绝不要让 AI“逃脱”您不希望它做的事情。如果您不喜欢 AI 的响应，不要像它是正确的那样继续对话。相反，修改提示词，重新生成消息，并从那里继续。这将帮助 AI 了解您想要什么。</p>
         </div>
     </div>
 </div>
-<doc-anchor-target id="removing-the-fictional-chat-context">
+<doc-anchor-target id="移除虚构聊天上下文">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#removing-the-fictional-chat-context">#</doc-anchor-trigger>
-        <span>Removing the &quot;Fictional Chat&quot; Context</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#移除虚构聊天上下文">#</doc-anchor-trigger>
+        <span>移除“虚构聊天”上下文</span>
     </h3>
 </doc-anchor-target>
-<p>There are situations where &quot;fictional chat&quot; might not be the right context for your conversation.</p>
-<p>You can remove the &quot;fictional&quot; context from the Main Prompt:</p>
+<p>在某些情况下，“虚构聊天”可能不是您对话的正确上下文。</p>
+<p>您可以从主提示词中移除“虚构”上下文：</p>
 <blockquote>
-<p>Write {{char}}&#x27;s next reply in a conversation with {{user}}.</p>
+<p>在 {{char}} 和 {{user}} 的对话中，编写 {{char}} 的下一个回复。</p>
 </blockquote>
-<p>You may not want the AI to think of itself as role-playing at all. Instead of removing the idea of a character, you can remove the idea of an AI:</p>
+<p>您可能根本不希望 AI 认为自己在进行角色扮演。除了移除角色的概念，您还可以移除 AI 的概念：</p>
 <blockquote>
-<p>You are {{char}}, a helpful assistant. You provide useful information and help {{user}} with their questions.</p>
+<p>您是 {{char}}，一个乐于助人的助手。您提供有用的信息并帮助 {{user}} 解答问题。</p>
 </blockquote>
-<doc-anchor-target id="ai-as-narrator-or-storyteller">
+<doc-anchor-target id="ai-作为叙述者或讲故事者">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-as-narrator-or-storyteller">#</doc-anchor-trigger>
-        <span>AI as Narrator or Storyteller</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ai-作为叙述者或讲故事者">#</doc-anchor-trigger>
+        <span>AI 作为叙述者或讲故事者</span>
     </h3>
 </doc-anchor-target>
-<p>What if you want the AI to act as a narrator, describing events from an omniscient perspective, inventing its own characters and settings?</p>
-<p>One approach is to create a named character for the AI to use as a narrator. This character could be called &quot;Narrator&quot; or &quot;AI&quot;, suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the <a href="../core-concepts/characterdesign/">Character</a> or in <a href="../core-concepts/worldinfo/">World Info</a>.</p>
-<p>You will need to adjust the default main prompt to reflect the AI&#x27;s role. For a general-purpose narrator, you might use:</p>
+<p>如果您希望 AI 充当叙述者，从全知视角描述事件，发明自己的角色和设置，该怎么办？</p>
+<p>一种方法是为 AI 创建一个命名角色作为叙述者。这个角色可以称为“叙述者”或“AI”，暗示 AI 是一个通用的讲故事者，或者可以以特定场景或设置命名，赋予 AI 在该设置中叙述故事的任务。然后，设置的细节可以在<a href="../core-concepts/characterdesign/">角色</a>或<a href="../core-concepts/worldinfo/">世界信息</a>中定义。</p>
+<p>您需要调整默认的主提示词以反映 AI 的角色。对于通用叙述者，您可以使用：</p>
 <blockquote>
-<p>You are {{char}}, a skilled and versatile storyteller. Narrate the story.</p>
+<p>您是 {{char}}，一个熟练且多才多艺的讲故事者。叙述故事。</p>
 </blockquote>
-<p>or for a specific setting:</p>
+<p>或者针对特定设置：</p>
 <blockquote>
-<p>You are the narrator of a fantasy scenario. Play as the characters that visit {{char}}.</p>
+<p>您是一个奇幻场景的叙述者。扮演访问 {{char}} 的角色。</p>
 </blockquote>
-<p>It helps to clarify the role of the user in the conversation. Are your messages part of the story, or are they instructions to the narrator about what your character does or says? An example that includes the user in the story:</p>
+<p>阐明用户在对话中的角色会有所帮助。您的消息是故事的一部分，还是给叙述者关于您角色行为或说话的指令？一个将用户包含在故事中的示例：</p>
 <blockquote>
-<p>The story should progress by responding to the actions and dialogue of {{user}}. Narrate the story in third person.</p>
+<p>故事应通过响应用户 {{user}} 的行为和对话来推进。以第三人称叙述故事。</p>
 </blockquote>
-<p>An example that keeps the user out of the story:</p>
+<p>一个将用户排除在故事之外的示例：</p>
 <blockquote>
-<p>Enter Adventure Mode. Narrate the story based on {{user}}&#x27;s dialogue and actions after &quot;&gt;&quot;. Describe the surroundings in vivid detail. Be detailed, creative, verbose, and proactive. Move the story forward by introducing fantasy elements and interesting characters.</p>
+<p>进入冒险模式。根据用户在“&gt;”之后的对话和动作叙述故事。生动详细地描述周围环境。要详细、有创意、冗长和主动。通过引入奇幻元素和有趣角色来推动故事发展。</p>
 </blockquote>
-<p>Defining the role of the user not only helps the AI understand how to respond to your messages, but also to what extent it is allowed to control your persona. This avoids situations where the AI makes decisions for your persona that you would rather make yourself.</p>
-<doc-anchor-target id="post-history-instructions">
+<p>定义用户的角色不仅有助于 AI 理解如何响应您的消息，还有助于理解它在多大程度上可以控制您的人格。这避免了 AI 为您的人格做出您宁愿自己做的决定的情况。</p>
+<doc-anchor-target id="-历史记录后指令">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#post-history-instructions">#</doc-anchor-trigger>
-        <span>Post-History Instructions</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-历史记录后指令">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x1F4CC;</span> 历史记录后指令</span>
     </h2>
 </doc-anchor-target>
-<p>Post-History Instructions (PHI) are additional instructions sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the message history.</p>
-<p>Since the Post-History Instructions are sent after the user message, they are the final instructions that the AI receives before generating a response. The AI usually gives them a higher priority than the main prompt, and they can override the main prompt&#x27;s instructions.</p>
-<p>To use per-character Post-History Instructions, add them to the character&#x27;s <a href="../core-concepts/characterdesign/">Post-History Instructions</a> and enable <a href="../user-settings/">Prefer Char. Instructions</a>. To preserve the globally defined PHI while using character-specific instructions, you can use the <code v-pre>{{original}}</code> macro in the character&#x27;s Post-History Instructions field.</p>
+<p>历史记录后指令 (PHI) 是在主提示词和用户消息之后发送给 AI 的附加指令。它们可用于根据消息历史向 AI 提供额外的上下文或指令。</p>
+<p>由于历史记录后指令是在用户消息之后发送的，它们是 AI 在生成响应之前收到的最终指令。AI 通常给予它们比主提示词更高的优先级，并且它们可以覆盖主提示词的指令。</p>
+<p>要使用每角色历史记录后指令，请将它们添加到角色的<a href="../core-concepts/characterdesign/">历史记录后指令</a>中并启用<a href="../user-settings/">偏好角色指令</a>。要在使用角色特定指令的同时保留全局定义的 PHI，您可以在角色的历史记录后指令字段中使用 <code v-pre>{{original}}</code> 宏。</p>
 <doc-tabs>
-<doc-tab v-cloak id="text-completion-apis">
-<template #title>Text Completion APIs</template>
-<p>Post-History Instructions are defined in the <a href="../core-concepts/advancedformatting/">Advanced Formatting</a> panel under the System Prompt category. The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message &quot;header&quot;). Note that the &quot;Enable System Prompt&quot; toggle must be enabled for the Post-History Instructions to be applied (even if the System Prompt itself is empty).</p>
+<doc-tab v-cloak id="文本补全-api">
+<template #title>文本补全 API</template>
+<p>历史记录后指令在<a href="../core-concepts/advancedformatting/">高级格式化</a>面板的系统提示词类别下定义。历史记录后指令作为一个不可见的用户角色注入添加，位于提示词最后一行（通常包含响应消息“头”）之前。请注意，“启用系统提示词”开关必须启用才能应用历史记录后指令（即使系统提示词本身为空）。</p>
 </doc-tab>
-<doc-tab v-cloak id="chat-completion-apis">
-<template #title>Chat Completion APIs</template>
-<p>Post-History Instructions is one of the default prompts in <a href="prompt-manager/">Prompt Manager</a>. It is usually the last message in the context that the model receives, attributed to (&quot;sent by&quot;) the system role. If your Chat Completion API does not support the system role, it will usually be attributed to the user role instead.</p>
+<doc-tab v-cloak id="聊天补全-api">
+<template #title>聊天补全 API</template>
+<p>历史记录后指令是<a href="prompt-manager/">提示词管理器</a>中的默认提示词之一。它通常是模型在上下文中接收到的最后一条消息，归属于（“由”）系统角色。如果您的聊天补全 API 不支持系统角色，它通常会被归属于用户角色。</p>
 </doc-tab>
 </doc-tabs>
-<doc-anchor-target id="adding-to-the-prompt-world-info">
+<doc-anchor-target id="-添加到提示词世界信息">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-to-the-prompt-world-info">#</doc-anchor-trigger>
-        <span>Adding to the Prompt (World Info)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#-添加到提示词世界信息">#</doc-anchor-trigger>
+        <span><span class="docs-emoji">&#x2795;</span> 添加到提示词（世界信息）</span>
     </h2>
 </doc-anchor-target>
-<p>You can insert additional information anywhere in the prompt using the <a href="../core-concepts/worldinfo/">World Info</a> feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.</p>
-<p>Some common uses of World Info include:</p>
+<p>您可以使用<a href="../core-concepts/worldinfo/">世界信息</a>功能在提示词中的任何位置插入附加信息。通过设置信息应何时插入的条件，您可以引导 AI 包含特定细节、更改其响应方式或将新元素添加到对话中。</p>
+<p>世界信息的一些常见用途包括：</p>
 <ul>
-<li>a &quot;lorebook&quot; or &quot;encyclopedia&quot; with information about the world or setting</li>
-<li>a way to manage different system prompts for various characters and situations</li>
-<li>a place to store memories that the AI should &quot;recall&quot; in the conversation</li>
-<li>a more modular system for creating, editing, and sharing character details</li>
-<li>a source of random events and surprises for the AI to react to, or to make you react to!</li>
+<li>包含有关世界或设置的信息的“传说书”或“百科全书”</li>
+<li>一种管理不同角色和情境的各种系统提示词的方法</li>
+<li>一个存储 AI 应在对话中“回忆”的记忆的地方</li>
+<li>一个用于创建、编辑和共享角色细节的更模块化的系统</li>
+<li>一个随机事件和惊喜的来源，让 AI 做出反应，或者让您做出反应！</li>
 </ul>
 
                                 
@@ -474,16 +474,16 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-base-text-muted">Previous</span>
-                                                <span class="block mt-1">Tabby​API</span>
+                                                <span class="block mt-1">🚀 Tabby​API</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/core-concepts/advancedformatting/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-body-link border border-base-border hover:border-base-border-hover rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../usage/prompts/reasoning/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-base-text-muted">Next</span>
-                                                <span class="block mt-1">Advanced Formatting</span>
+                                                <span class="block mt-1">🤔 推理</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -527,6 +527,6 @@
 
     <div id="retype-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Prompts", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "📝 提示词", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

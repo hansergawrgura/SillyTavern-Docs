@@ -19,7 +19,7 @@ To do this, enable `autheliaAuth` in *config.yaml*.
 autheliaAuth: true
 ```
 
-This augments or replaces the built-in [password management](/Usage/User_Settings/User_Settings.md#account-management) component of a [multi-user mode](/Administration/multi-user.md) setup.
+This augments or replaces the built-in [password management](/Usage/User_Settings/User_Settings.md#-账户管理) component of a [multi-user mode](/Administration/multi-user.md) setup.
 
 ## Replacing HTTP BA
 

@@ -5,145 +5,143 @@ route: /usage/core-concepts/personas
 templating: false
 ---
 
-# Personas
+# 👤 人设系统
 
-## What is a Persona?
+## 何为“人设”？
 
-A persona in SillyTavern is the identity you use to participate in chats — essentially a combination of your display name, avatar, and optional descriptive text. Personas allow you to easily switch roles or "characters" you speak as, without having to manually update your username/avatar each time.
+在 SillyTavern 中，人设（Persona）是您在聊天中所使用的身份——本质上是您的显示名称、头像及可选描述文本的组合。人设功能让您轻松切换扮演的角色或“人物”，无需每次都手动更新用户名和头像。
 
 !!!
-**Note:** Legacy user avatars/names that weren't tied to a persona have been removed. Existing data will be migrated to personas. If no name was specified, the persona will be named "[Unnamed Persona]".
+**注意：** 旧版中未与人设关联的用户头像/名称已被移除。现有数据将迁移至人设系统。若原未指定名称，人设将被命名为“【未命名人设】”。
 !!!
 
-## How to Create a Persona?
+## 如何创建人设？
 
-1. Open the **Persona Management** panel (<i class="fa-solid fa-face-smile"></i> button in the top menu).
-2. Create a blank persona with the **Create** button and give it a name.
-3. In the persona list, select the newly created persona.
-4. On the right side, you can fill in your description and set an avatar via the "Change Persona Image" button. Both are optional.
-5. Now your persona is ready to use in chats.
+1.  打开**人设管理**面板（顶部菜单中的 <i class="fa-solid fa-face-smile"></i> 按钮）。
+2.  点击**创建**按钮新建一个空白人设，并为其命名。
+3.  在人设列表中，选中新创建的人设。
+4.  在右侧，您可以填写描述并通过“更改人设图像”按钮设置头像。两者均为可选。
+5.  现在，您的人设即可在聊天中使用了。
 
-### Convert Character to Persona
+### 将角色转换为人设
 
-Personas can also be created by converting any existing character. Simply open the character, select "More..." and click "Convert to Persona". A persona with the same name and description will be created. Other character card fields like Scenario or Personality will not be used. The character will not be deleted.
+也可以通过转换任何现有角色来创建人设。只需打开角色，选择“更多…”，然后点击“转换为人设”。系统将创建一个具有相同名称和描述的人设。角色卡中的其他字段（如场景或性格）不会被使用。原角色不会被删除。
 
-!!! Note
-Since `{{user}}` and `{{char}}` macros have opposite meanings when used in Persona and Character descriptions, you'll be prompted to swap them if the converted description contains either of them.
+!!! 注意
+由于 `{{user}}` 和 `{{char}}` 宏在人设描述和角色描述中含义相反，如果转换后的描述包含任一宏，系统将提示您交换它们。
 !!!
 
-## Persona Description
+## 人设描述
 
-Each persona can store a custom text description — mental and physical traits, age, occupation, or any personal details. These can also include template macros such as `{{char}}` or `{{user}}` (see [Macros](/Usage/Characters/macros.md)).
+每个人设都可以存储一段自定义文本描述——包括心理和生理特征、年龄、职业或任何个人细节。这些描述也可包含模板宏，例如 `{{char}}` 或 `{{user}}`（参见[宏](/Usage/Characters/macros.md)）。
 
-Where your persona description is injected into the AI prompt depends on the **Position** setting in the Persona Management panel:
+您的人设描述注入到 AI 提示词（prompt）中的位置取决于**人设管理**面板中的**位置（Position）** 设置：
 
-- **None (disabled)**
-- **In Story String / Prompt Manager** (the default)
-- **Top of Author's Note** / **Bottom of Author's Note** (will only be added when an Author's Note exists)
-- **In Chat @ Depth** (this will open up configuration options to set depth and the role)
+-   **无（禁用）**
+-   **在故事字符串 / 提示管理器内**（默认）
+-   **作者笔记顶部** / **作者笔记底部**（仅在存在作者笔记时添加）
+-   **在聊天@深度**（这将打开配置选项以设置深度和角色）
 
-The position is saved **per persona**.
+该位置设置**按人设保存**。
 
-## Persona Title
+## 人设标题
 
-The title is an optional text field that can be used to store additional information about the persona and is not used in the prompt, but displayed in the Persona Management panel.
+标题是一个可选的文本字段，可用于存储关于人设的附加信息，它**不用于提示词**，但会在人设管理面板中显示。
 
-To set a title, click the **<i class="fa-solid fa-pencil"></i> Rename Persona** button in the Persona Management panel and enter the title in the "Persona Title" field, or specify it during persona creation. Setting an empty value when the title already exists will remove it.
+要设置标题，请点击人设管理面板中的**<i class="fa-solid fa-pencil"></i> 重命名人设**按钮，并在“人设标题”字段中输入，或在创建人设时指定。若标题已存在，将其设置为空值则会移除它。
 
-## Persona Connections / Locking
+## 人设关联 / 锁定
 
-Persona connections ensure that a given persona is automatically selected in certain situations. If no persona is connected, the currently chosen persona will stay selected.
+人设关联确保在特定情况下自动选用指定的人设。如果未关联任何人设，则将保持当前选中的人设。
 
-There are three types of locking:
+共有三种锁定类型：
 
-1. **<i class="fa-solid fa-unlock"></i> Chat lock** – The persona is locked to the current chat.
-2. **<i class="fa-solid fa-unlock"></i> Character lock** – The persona is locked to a specific character.
-3. **<i class="fa-solid fa-crown"></i> Default persona** – One persona that is used whenever no other locks apply.
+1.  **<i class="fa-solid fa-unlock"></i> 聊天锁定** – 将人设锁定到当前聊天。
+2.  **<i class="fa-solid fa-unlock"></i> 角色锁定** – 将人设锁定到特定角色。
+3.  **<i class="fa-solid fa-crown"></i> 默认人设** – 一个在没有其他锁适用时始终使用的人设。
 
-### 1. Lock to a Chat
+### 1. 锁定到聊天
 
-If a persona is locked to a chat, opening that chat in the future will automatically switch your active persona to the locked one.
+如果将人设锁定到某个聊天，则将来打开该聊天时会自动将您的活跃人设切换为锁定的那个人设。
 
-- **To lock**: Select the desired persona, then click the **<i class="fa-solid fa-unlock"></i> Chat** button under the "Connections" section (or use `/persona-lock type=chat on`).
-- **To unlock**: Click the button again (or use `/persona-lock type=chat off`).
+-   **锁定**：选中所需人设，然后点击“关联”部分下的 **<i class="fa-solid fa-unlock"></i> 聊天**按钮（或使用 `/persona-lock type=chat on`）。
+-   **解锁**：再次点击该按钮（或使用 `/persona-lock type=chat off`）。
 
-### 2. Lock to a Character
+### 2. 锁定到角色
 
-You can also link a persona to a specific character. Opening any chat with that character automatically selects your locked persona.
+您也可以将人设链接到特定角色。打开与该角色的任何聊天都会自动选择您锁定的人设。
 
-- **To lock**: Select the desired persona, then click the **<i class="fa-solid fa-unlock"></i> Character** button under the "Connections" section (or use `/persona-lock type=character on`).
-- **To unlock**: Click the button again (or use `/persona-lock type=character off`).
+-   **锁定**：选中所需人设，然后点击“关联”部分下的 **<i class="fa-solid fa-unlock"></i> 角色**按钮（或使用 `/persona-lock type=character on`）。
+-   **解锁**：再次点击该按钮（或使用 `/persona-lock type=character off`）。
 
-The Persona Management panel also shows which characters are linked to that persona (displayed as small avatars). Clicking them navigates directly to that character's chat.
+人设管理面板也会显示哪些角色链接到了该人设（显示为小头像）。点击它们可直接导航到该角色的聊天窗口。
 
-#### Locking Multiple Personas to the Same Character
+#### 将多个人设锁定到同一角色
 
-If another persona was already linked with that character, it will be automatically unlinked by default.
+如果该角色已链接了另一个人设，则默认情况下原链接会自动解除。
 
-To have multiple personas linked at once, the global setting **Allow multiple persona connections per character** can be used.  
-If multiple personas are linked to the same character, you'll see a popup asking which persona to use each time you open or start a new chat with that character (unless a persona is bound to the chat).
+若要允许多个人设同时链接，可使用全局设置**允许每个角色存在多个人设关联**。
+如果多个人设链接到同一角色，则每次打开或新建该角色的聊天时，您都会看到一个弹出窗口，询问要使用哪个人设（除非已有人设绑定到该聊天）。
 
-### 3. Default Persona
+### 3. 默认人设
 
-Your **default persona** is used whenever there's no other relevant lock. The default persona is recognizable by a yellow border around its avatar.
+您的**默认人设**会在没有其他相关锁定时使用。默认人设可通过其头像周围的黄色边框识别。
 
-- **To set/unset default**: Select the desired persona, then click the **<i class="fa-solid fa-crown"></i> Default** button under the "Connections" section (or use `/persona-lock type=default`).
+-   **设置/取消默认**：选中所需人设，然后点击“关联”部分下的 **<i class="fa-solid fa-crown"></i> 默认**按钮（或使用 `/persona-lock type=default`）。
 
-Only one persona can be chosen as the default persona.
+只能选择一个人设作为默认人设。
 
-### Temporary Persona
+### 临时人设
 
-If any of the three connection options connects a persona to the current character/chat, you can still choose to use a different persona. This persona will be marked in the persona panel as "Temporary Persona". Any reload of the browser window or switch to a different chat and back will reset it to the linked persona again.
+如果三种关联选项中的任何一种将某人设连接到当前角色/聊天，您仍然可以选择使用不同的人设。此人设将在人设面板中标记为“临时人设”。任何浏览器窗口的重载或切换到其他聊天再返回的操作都会将其重置回链接的人设。
 
-You can manually *convert* a Temporary Persona to be persistently connected by linking it to the chat.
+您可以通过将其链接到聊天，手动将*临时人设* *转换*为持久关联。
 
-## Global Persona Settings
+## 全局人设设置
 
-All settings under the **Current Persona** are saved per-persona. A few global settings exist too, those can be found under **Global Persona Settings** in the Persona Management panel.
+**当前人设**下的所有设置都是按人设保存的。也存在一些全局设置，这些可以在人设管理面板的**全局人设设置**下找到。
 
-1. **Show notifications on switching personas**
-   - Enables persona-related toast messages (e.g., "Persona Auto Selected", "Temporary Persona").
+1.  **切换人设时显示通知**
+    - 启用人设相关的提示消息（例如，“人设已自动选择”、“临时人设”）。
+2.  **允许每个角色存在多个人设关联**
+    - **启用**后，您可以将多个人设链接到单个角色。打开该角色的聊天时会提示您选择要使用的人设。若禁用，则一个角色一次只能连接一个人设。
+3.  **自动将选中的人设锁定到聊天**
+    - **启用**后，每当您选择一个人设（手动或自动选择）或创建新聊天时，都会将此人设锁定到该聊天。
+      结合“允许多个”设置，这提供了按角色选择人设，但一旦为聊天选定即保持绑定的选项。
 
-2. **Allow multiple persona connections per character**
-   - When **enabled**, you can link multiple personas to a single character. Opening that character's chat will prompt you which persona to use. If disabled, only one persona can be connected to a character at a time.
+## 人设相关斜杠命令
 
-3. **Auto-lock a chosen persona to the chat**
-   - When **enabled**, any time you select a persona (manually or by auto-selection) or create a new chat, it locks that persona to the chat.  
-   This combined with "Allow multiple" provides the option to have a persona selection per character, but keep it bound once chosen for a chat.
+### `/persona-lock type=<类型?>`
 
-## Slash Commands for Personas
+-   `chat` 将当前人设锁定到您的活跃聊天。
+-   `character` 将当前人设锁定到正在使用的角色。
+-   `none`（或无参数）解锁/清除当前上下文的人设锁定。
+-   如果无参数使用，则返回当前锁定状态（如果未设置则返回错误）。
+-   锁定状态可通过 `on`、`off` 或 `toggle` 选择。默认为 toggle。
 
-### `/persona-lock type=<type?>`
+### `/persona <名称>`
 
-- `chat` locks the current persona to your active chat.
-- `character` locks the current persona to the character in use.
-- `none` (or no argument) unlocks/clears the persona lock for the current context.
-- If used without arguments, it returns the current lock state (or an error if none is set).
-- The lock state can be chosen via `on`, `off` or `toggle`. Default is toggle.
-
-### `/persona <name>`
-
-- Quickly switch your active persona by name without opening the Persona Management panel.
-- Example: `/persona Blaze`.
-- Using `mode=temp` allows to temporarily set your name of the **current** persona, even though a persona with the same name might already exist (preserving your current avatar and description).
+-   无需打开人设管理面板，即可按名称快速切换您的活跃人设。
+-   示例：`/persona Blaze`。
+-   使用 `mode=temp` 允许临时设置**当前**人设的名称，即使同名人设可能已存在（会保留您当前的头像和描述）。
 
 ### `/persona-sync`
 
-- Re-attributes all user messages in the active chat to the **current** persona and its name.
+-   将活跃聊天中的所有用户消息重新归属（re-attribute）到**当前**人设及其名称。
 
-> **Note:** The older `/lock` and `/unlock` commands remain for backward compatibility but may be removed in the future. Use `/persona-lock` instead.
+> **注意：** 旧的 `/lock` 和 `/unlock` 命令为向后兼容而保留，但未来可能会移除。请使用 `/persona-lock`。
 
-## Pro Tips
+## 💡 高级技巧
 
-1. **Switching personas mid-chat** doesn't re-attribute your past user messages to the new persona; those remain attributed to whichever persona you were using at the time.
-2. **Batch re-attribution**: If you ever need all prior messages to match a new persona, hit the **sync** button or use `/persona-sync`.
-3. **Replace persona images** without losing description or locks by choosing your persona and clicking the **<i class="fa-solid fa-images"></i> Change Persona Image** button.
-4. **Character link popups**: If multiple personas are linked to the same character, you'll get a popup to pick which persona each time you open the chat. This is a handy way to have a small selection of personas to choose from for specific characters.
-5. **Backups**: You can back up your entire persona list (names, character connections, descriptions) with the **Backup** button in Persona Management, and restore it later if needed.
+1.  **在聊天中途切换人设**不会将您过去的用户消息重新归属到新的人设；这些消息仍归属于您发送时使用的人设。
+2.  **批量重新归属**：如果您需要所有先前的消息都匹配新的人设，请点击**同步**按钮或使用 `/persona-sync`。
+3.  **更换人设图像**而不丢失描述或锁定：选择您的人设并点击 **<i class="fa-solid fa-images"></i> 更改人设图像**按钮。
+4.  **角色链接弹出窗口**：如果多个人设链接到同一角色，每次打开聊天时都会弹出窗口让您选择人设。这是一种为特定角色准备少量人设以供选择的便捷方法。
+5.  **备份**：您可以使用人设管理中的**备份**按钮备份整个人设列表（名称、角色关联、描述），并在需要时恢复。
 
-!!!tip Backup Remarks
+!!!tip 备份说明
 
-- Images and chat connections are not saved together with personas and will not be backed up via this.
-- These backups are not designed to be shared, as they contain internal links.
+-   图像和聊天关联不会与人设一起保存，也不会通过此方式备份。
+-   这些备份包含内部链接，并非设计用于共享。
 
 !!!

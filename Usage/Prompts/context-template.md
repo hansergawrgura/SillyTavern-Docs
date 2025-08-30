@@ -3,109 +3,109 @@ order: prompts-20
 templating: false
 ---
 
-# Context Template
+# 🧩 上下文模板
 
-!!! Applies to: Text Completion APIs
-For equivalent settings in Chat Completion APIs, use [Prompt Manager](prompt-manager.md).
+!!! 适用范围：文本补全 API
+聊天补全 API 的等效设置，请使用 [提示词管理器](prompt-manager.md)。
 !!!
 
-Usually, AI models require you to provide the character data to them in some specific way. SillyTavern includes a list of pre-made conversion rules for different models, but you may customize them however you like.
+通常，AI 模型要求您以特定方式向其提供角色数据。SillyTavern 包含了一系列针对不同模型的预制转换规则，但您也可以按需自定义。
 
-Edit these settings in the "[Advanced Formatting](advancedformatting.md)" panel.
+请在“[高级格式化](advancedformatting.md)”面板中编辑这些设置。
 
-## Story String
+## 📖 故事字符串
 
-This field is a template for the prompt preamble (known internally as a story string). This is the main way to add the information defined in [Character Cards](/Usage/Characters/index.md) for text completion and instruct models.
+此字段是提示词前言（内部称为故事字符串）的模板。这是为文本补全和指令模型添加在 [角色卡](/Usage/Characters/index.md) 中定义信息的主要方式。
 
-The template supports Handlebars syntax, custom text injections or formatting, and any other [macros](/Usage/Characters/macros.md). See the language reference here: <https://handlebarsjs.com/guide/>
+该模板支持 Handlebars 语法、自定义文本注入或格式化，以及任何其他 [宏](/Usage/Characters/macros.md)。语言参考请见：<https://handlebarsjs.com/guide/>
 
-We provide the following parameters to the Handlebars evaluator (wrapped in double curly braces):
+我们向 Handlebars 求值器提供以下参数（用双花括号包裹）：
 
-1. `{{anchorBefore}}`: Prompts set to use the "Before Story String" position.
-2. `{{anchorAfter}}`: Prompts set to use the "After Story String" position.
-3. `{{description}}`: The character's [Description](/Usage/Characters/characterdesign.md#character-description).
-4. `{{scenario}}`: The character's [Scenario](/Usage/Characters/characterdesign.md#scenario).
-5. `{{personality}}`: The character's [Personality](/Usage/Characters/characterdesign.md#personality-summary).
-6. `{{system}}`: The [system prompt](advancedformatting.md#system-prompt) OR the character's [main prompt](/Usage/Characters/characterdesign.md#prompt-overrides) override (if it exists and "Prefer Char. Prompt" is enabled in User Settings).
-7. `{{persona}}`: The selected [persona's description](/Usage/personas.md#persona-description).
-8. `{{char}}`: The character's name.
-9. `{{user}}`: The selected persona's name.
-10. `{{wiBefore}}` or `{{loreBefore}}`: Combined activated [World Info](/Usage/worldinfo.md) entries with Position set to "Before Char Defs".
-11. `{{wiAfter}}` or `{{loreAfter}}`: Combined activated [World Info](/Usage/worldinfo.md) entries with Position set to "After Char Defs".
-12. `{{mesExamples}}`: (Optional) The character's [Example Dialogues](/Usage/Characters/characterdesign.md#examples-of-dialogue), instruct-formatted with a separator.
-13. `{{mesExamplesRaw}}`: The character's [Example Dialogues](/Usage/Characters/characterdesign.md#examples-of-dialogue) in raw format, without any formatting.
+1.  `{{anchorBefore}}`: 设置为使用“故事字符串前”位置的提示词。
+2.  `{{anchorAfter}}`: 设置为使用“故事字符串后”位置的提示词。
+3.  `{{description}}`: 角色的 [描述](/Usage/Characters/characterdesign.md#-角色描述)。
+4.  `{{scenario}}`: 角色的 [场景](/Usage/Characters/characterdesign.md#场景)。
+5.  `{{personality}}`: 角色的 [性格](/Usage/Characters/characterdesign.md#性格摘要)。
+6.  `{{system}}`: [系统提示词](advancedformatting.md#-系统提示词) **或** 角色的 [主提示词](/Usage/Characters/characterdesign.md#提示词覆盖) 覆盖项（如果存在且在用户设置中启用了“偏好角色提示词”）。
+7.  `{{persona}}`: 所选 [人格的描述](/Usage/personas.md#人设描述)。
+8.  `{{char}}`: 角色名称。
+9.  `{{user}}`: 所选人格的名称。
+10. `{{wiBefore}}` 或 `{{loreBefore}}`: 组合的已激活 [世界信息](/Usage/worldinfo.md) 条目，其位置设置为“角色定义前”。
+11. `{{wiAfter}}` 或 `{{loreAfter}}`: 组合的已激活 [世界信息](/Usage/worldinfo.md) 条目，其位置设置为“角色定义后”。
+12. `{{mesExamples}}`: (可选) 角色的 [示例对话](/Usage/Characters/characterdesign.md#对话示例)，以指令格式带分隔符呈现。
+13. `{{mesExamplesRaw}}`: 角色的 [示例对话](/Usage/Characters/characterdesign.md#对话示例) 原始格式，无任何格式化。
 
-!!!tip **Important**  
-When using `{{mesExamples}}` in the Story String, set **"Example Messages Behavior"** in the **<i class="fa-solid fa-user-cog"></i> User Settings** panel to **"Never include examples"** to avoid duplicating example messages in the prompt.
+!!!tip **重要**
+在故事字符串中使用 `{{mesExamples}}` 时，请在 **<i class="fa-solid fa-user-cog"></i> 用户设置** 面板中将 **“示例消息行为”** 设置为 **“永不包含示例”**，以避免在提示词中重复出现示例消息。
 !!!
 
-A special `{{trim}}` macro is supported to remove any newlines that surround it. Use it if you want a part of the text to not be separated from the previous line by a newline (_spaces **are not** trimmed_).
+支持一个特殊的 `{{trim}}` 宏，用于移除其周围的任何换行符。如果您希望某部分文本不与前一行被换行符分隔，请使用它（_空格**不会**被修剪_）。
 
-**WARNING**: If any of the above parameters are missing from the story string template, they will not be sent in the prompt at all.
+**警告**：如果故事字符串模板中缺少上述任何参数，它们将完全不会被发送到提示词中。
 
-### Prompt Anchors
+### 📍 提示词锚点
 
-The `{{anchorBefore}}` and `{{anchorAfter}}` are generic placeholders for prompts added by various extensions and miscellaneous features in a chosen static position, for example:
+`{{anchorBefore}}` 和 `{{anchorAfter}}` 是通用占位符，用于存放由各种扩展和杂项功能添加的、位于选定静态位置的提示词，例如：
 
-* [Author's Note](/Usage/Characters/Author's-Note.md)
-* [Summaries](/extensions/Summarize.md)
-* [Chat Vectorization](/extensions/Chat-vectorization.md) / [Data Bank](/Usage/Characters/data-bank.md)
-* [STscript injections](/For_Contributors/st-script.md#prompt-injections)
-* [Web Search](/extensions/WebSearch.md)
+*   [作者注记](/Usage/Characters/Author's-Note.md)
+*   [摘要](/extensions/Summarize.md)
+*   [聊天向量化](/extensions/Chat-vectorization.md) / [数据库](/Usage/Characters/data-bank.md)
+*   [STscript 注入](/For_Contributors/st-script.md#prompt-injections)
+*   [网络搜索](/extensions/WebSearch.md)
 
-### Story String position
+### 📍 故事字符串位置
 
-By default, the rendered story string (with all placeholders replaced) is placed at the very beginning of the prompt, followed by example messages and the visible chat history.
+默认情况下，渲染后的故事字符串（所有占位符已替换）放置在提示词的最开头，后面跟着示例消息和可见的聊天历史记录。
 
-Alternatively, you can move it to a dynamic position by choosing the "In-chat @ Depth" option, which places the story string at a specific depth in the chat context.
+或者，您可以通过选择“聊天中 @ 深度”选项将其移动到动态位置，该选项将故事字符串放置在聊天上下文中的特定深度。
 
-!!!warning **Attention**
-If the template contains static prompt elements (model-specific prefixes or suffixes) for wrapping the story string, using the "In-Chat @ Depth" position will cause it to be incorrectly double-wrapped with duplicate sequences, which may lead to unexpected results.
+!!!warning **注意**
+如果模板包含用于包装故事字符串的静态提示词元素（模型特定的前缀或后缀），使用“聊天中 @ 深度”位置将导致其被重复序列错误地双重包装，这可能会产生意外结果。
 
-In this case, you can fix the issue in one of the following ways:
+这种情况下，您可以通过以下方式之一修复此问题：
 
-1. **Built-in templates**: Reset the templates to their defaults using the steps described in [Advanced Formatting](/Usage/Prompts/advancedformatting.md#resetting-templates).
-2. **Custom templates**: Move the static elements from the story string template to [Story String Sequences](/Usage/Prompts/instructmode.md#sequences-story-string-wrapping).
+1.  **内置模板**：使用 [高级格式化](/Usage/Prompts/advancedformatting.md#-重置模板) 中描述的步骤将模板重置为默认值。
+2.  **自定义模板**：将静态元素从故事字符串模板移动到 [故事字符串序列](/Usage/Prompts/instructmode.md#-序列故事字符串包装)。
 !!!
 
-### Story String wrapping
+### 🎁 故事字符串包装
 
 !!!
-The following section only applies when **Instruct Mode** is ON.
+以下部分仅当**指令模式**开启时适用。
 !!!
 
-* **Default** position: The rendered Story String will be wrapped using the sequences defined in [Story String Sequences](/Usage/Prompts/instructmode.md#sequences-story-string-wrapping).
-* **In-chat @ Depth** position: The rendered Story String will be wrapped using the sequences defined in [Chat Messages Sequences](/Usage/Prompts/instructmode.md#sequences-chat-messages-wrapping) for a chosen role (default: System).
+*   **默认**位置：渲染后的故事字符串将使用 [故事字符串序列](/Usage/Prompts/instructmode.md#-序列故事字符串包装) 中定义的序列进行包装。
+*   **聊天中 @ 深度**位置：渲染后的故事字符串将使用 [聊天消息序列](/Usage/Prompts/instructmode.md#-序列聊天消息包装) 中为所选角色（默认为系统）定义的序列进行包装。
 
-## Example Separator
+## ➗ 示例分隔符
 
-Used as a block header and a separator between the example dialogue blocks. Any instance of `<START>` tags in the example dialogues will be replaced with the contents of this field.
+用作块标题和示例对话块之间的分隔符。示例对话中任何 `<START>` 标签的实例都将被此字段的内容替换。
 
-## Chat Start
+## 💬 聊天开始符
 
-Inserted as a separator after the rendered story string and after the example dialogues blocks, but before the first message in context.
+在渲染的故事字符串之后、示例对话块之后，但在上下文中第一条消息之前，作为分隔符插入。
 
-## Separators as Stop Strings
+## ⏹️ 将分隔符用作停止字符串
 
-Adds "Example Separator" and "Chat Start" to the list of stop strings.
+将“示例分隔符”和“聊天开始符”添加到停止字符串列表中。
 
-Helpful if the model tends to hallucinate or leak whole blocks of example dialogue preceded by the separator.
+如果模型倾向于幻觉或泄漏前面带有分隔符的整块示例对话，这会很有帮助。
 
-## Names as Stop Strings
+## 🔤 将名称用作停止字符串
 
-Adds Character and User Persona names to the list of stop strings.
+将角色和用户人格名称添加到停止字符串列表中。
 
-Recommended to keep it on to prevent model impersonation.
+建议保持开启，以防止模型冒名顶替。
 
-## Always add character's name to prompt
+## 📛 始终将角色名称添加到提示词
 
-!!!info  
-This setting has no effect when Instruct Mode is ON. The name behavior is instead defined by the selected [Include Names](/Usage/Prompts/instructmode.md#include-names) option.
+!!!info
+当指令模式开启时，此设置无效。名称行为由所选的 [包含名称](/Usage/Prompts/instructmode.md#包含名称) 选项定义。
 !!!
 
-Appends the character's name to the prompt to force the model to complete the message as the character:
+将角色名称附加到提示词中，以强制模型以该角色的身份完成消息：
 
 ```txt
-** OTHER CONTEXT HERE **
-Character:
+** 其他上下文内容在此 **
+角色名称：
 ```

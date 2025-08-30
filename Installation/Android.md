@@ -147,5 +147,3 @@ pkg install esbuild
 - ArroganceComplex#2659 提供的 Termux 使用指南：<https://rentry.org/STAI-Termux>
 - 使用 Material Files 访问 Termux 文件：<https://www.learntermux.tech/2020/10/Termux-File-Manager.html>
 - 防止 Termux 进程深度休眠：<https://wiki.termux.com/wiki/Termux-wake-lock>
-
----

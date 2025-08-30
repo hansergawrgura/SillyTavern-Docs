@@ -3,107 +3,109 @@ order: character-20
 route: /usage/core-concepts/groupchats
 ---
 
-# Group Chats
+# 💬 群聊功能
 
-## Reply order strategies
+## 🤖 回复顺序策略
 
-Decides how characters in group chats are drafted for their replies.
+决定群聊中角色回复的选定方式。
 
-### Manual
+### ✋ 手动
 
-You can select the character to reply manually from the menu or with the `/trigger` command. The selected group member will be the only one to reply. User messages won't trigger any replies automatically. Triggering a generation with an empty user input will trigger a random unmuted group member to reply.
+您可以从菜单中选择或使用 `/trigger` 命令手动选择回复的角色。选定的群成员将是唯一回复者。用户消息不会自动触发任何回复。使用空用户输入触发生成时，将随机触发一位未静音的群成员进行回复。
 
-### Natural Order
+### 🔄 自然顺序
 
-Tries to simulate the flow of a real human conversation. The algorithm is as follows:
+尝试模拟真实人类对话的流程。算法如下：
 
-1. Mentions of the group member names are extracted from the last message in chat.
+1.  从上一条聊天消息中提取群成员名称的提及（Mentions）。
 
-    Only whole words are recognized as mentions! If your character's name is "Misaka Mikoto", they will reply only activate on "Misaka" or "Mikoto", but never to "Misa", "Railgun", etc.
-    
-    Unless the "Allow Self Responses" setting is enabled, characters won't reply to mentions of their name in their own message!
+    > 只有完整单词才会被识别为提及！如果您的角色名为“Misaka Mikoto”，他们只会对“Misaka”或“Mikoto”作出反应，而永远不会对“Misa”、“Railgun”等作出反应。
+    >
+    > 除非启用了“允许自我回复”设置，否则角色不会对自己消息中提及自己名称作出回复！
 
-2. Characters are activated by the "Talkativeness" factor.
+2.  角色通过“健谈度”（Talkativeness）因素激活。
 
-    Talkativeness defines how often the character speaks if they were not mentioned. Adjust this value on the "Advanced Definitions" screen in the character editor. Slider values are on a linear scale from **0% / Shy** (character never talks unless mentioned) to **100% / Chatty** (character always replies). The default value for new characters is 50% chance.
+    健谈度定义了角色在未被提及时主动发言的频率。请在角色编辑器的“高级定义”界面调整此值。滑块值为**0% / 害羞**（除非被提及，否则从不发言）到**100% / 健谈**（总是回复）的线性比例。新角色的默认值为50%的几率。
 
-3. A random character is selected.
+3.  随机选择一名角色。
 
-    If no characters were activated at previous steps, one speaker is selected randomly, ignoring all other conditions.
+    如果前几步均未激活任何角色，则将忽略所有其他条件，随机选择一名发言者。
 
-### List Order
+### 📜 列表顺序
 
-Characters are drafted based on the order they are presented in the group members list. No other rules apply.
+角色根据其在群成员列表中的呈现顺序依次被选定回复。不适用其他规则。
 
-### Pooled Order
+### 🎱 轮盘顺序
 
-Activates one random character who have't spoken yet since the last user message. If all characters have spoken, selects one randomly until the next user message.
+激活一名自上次用户消息以来尚未发言的随机角色。如果所有角色都已发言，则随机选择一名，直到下一次用户消息。
 
-## Group generation handling mode
+## 🧠 群生成处理模式
 
-This setting decides how to handle the character information of the group chat members. No matter the choice, the group chat history is always shared between all the members.
+此设置决定如何处理群聊成员的角色信息。无论选择何种模式，群聊历史记录始终在所有成员之间共享。
 
-### Swap character cards
+### 🔄 切换角色卡
 
-Default mode. Every time the message is generated, only the character card information of the active speaker is included in the context.
+**默认模式**。每次生成消息时，上下文中仅包含当前活跃发言者的角色卡信息。
 
-### Join character cards
+### 🧩 合并角色卡
 
-The information of all of the group members is combined into one joint prompt in their list order. This can help in cases when altering large chunks of the context is undesirable, e.g. with llama.cpp prompt caching.
+将所有群成员的信息按其列表顺序合并到一个联合提示（joint prompt）中。这在需要避免大幅更改上下文的情况下（例如使用 llama.cpp 的提示缓存时）会有所帮助。
 
-This mode has two sub-modes (you must choose one):
+此模式有两种子模式（必须选择一种）：
 
-* Include muted - muted characters will always be included into the joint prompt.
-* Exclude muted - muted characters won't be included if they aren't the current speaker.
+*   `包含静音成员` - 静音角色将始终包含在联合提示中。
+*   `排除静音成员` - 静音角色如果并非当前发言者，则不会被包含。
 
-The following fields are being combined:
+以下字段会被合并：
 
-1. Description
-2. Scenario, if not overridden for the chat
-3. Personality
-4. Message examples
-5. Character notes / Depth prompts
+1.  描述（Description）
+2.  场景（Scenario），如果未在聊天中覆盖
+3.  人格（Personality）
+4.  消息示例（Message examples）
+5.  角色笔记 / 深度提示（Character notes / Depth prompts）
 
-**Important!** Please be aware that due to how the typical character card is structured, the use of this mode can lead to unexpected behavior, including but not limited to: characters being confused about themselves, having merged personalities, uncertain traits, etc.
+!!! [warning] 重要提示！
+请注意，由于典型角色卡的结构方式，使用此模式可能导致意外行为，包括但不限于：角色对自身感到困惑、人格融合、特质不确定等。
+!!!
 
-### Join Prefix and Suffix
+### 🧩 合并前缀与后缀
 
-When 'Join character cards' is selected, all respective fields of the characters are being joined together. This means that in the resulting prompt all character descriptions will be joined to one big blob of text. If you want those fields to be separated, you can define a prefix and/or suffix.
+当选择“合并角色卡”时，所有相应字段将被合并在一起。这意味着在最终的提示中，所有角色描述将合并成一大段文本。如果您希望这些字段是分开的，可以定义前缀（prefix）和/或后缀（suffix）。
 
-These options support normal macros and will also replace \{\{char\}\} with the relevant characters's name and \<FIELDNAME\> with the name of the part (e.g.: description, personality, scenario, etc.)
+这些选项支持普通宏（macros），并且会将 `{{char}}` 替换为相关角色的名称，将 `<FIELDNAME>` 替换为部分的名称（例如：description, personality, scenario 等）。
 
-## Other Group Chat menu options
+## ⚙️ 其他群聊菜单选项
 
-### Mute Character
+### 🔇 静音角色
 
-The struck-out speech bubble icon next to the character avatar in the group chat menu can disable or enable replies from a particular character in the chat.
+群聊菜单中角色头像旁划有斜线的语音气泡图标可禁用或启用特定角色在聊天中的回复。
 
-### Force Talk
+### 🗣️ 强制发言
 
-The speech bubble icon next to the character avatar in the group chat menu will trigger a reply only from a particular character, bypassing the reply order strategy. It will work even if the group member is muted.
+群聊菜单中角色头像旁的语音气泡图标将触发特定角色的回复，绕过回复顺序策略。即使该群成员被静音，此功能也会生效。
 
-### Auto-mode
+### 🤖 自动模式
 
-While auto-mode is enabled, the group chat will follow the reply order and trigger the message generation without user interaction. The next auto-mode turn is triggered after a 5-second delay when the last drafted character sends its message. When the user starts typing into the send message text area, the auto-mode will be disabled, but already queued generations are not stopped automatically.
+启用自动模式后，群聊将遵循回复顺序并在无需用户交互的情况下触发消息生成。在上一位选定的角色发送其消息后，经过 5 秒延迟会触发下一个自动模式回合。当用户开始在发送消息文本区域中输入时，自动模式将被禁用，但已排队的生成不会自动停止。
 
-### Allow Self Responses
+### 🔁 允许自我回复
 
-Will allow consecutive replies from the character who sent the latest message of each turn if they happen to be triggered due to being self-mentioned when the Natural Order is selected. Has no effect on List order.
+当选择“自然顺序”时，如果角色因被自我提及而触发，将允许其在每回合中连续回复（即上一条消息的发送者可以再次回复）。对列表顺序无效。
 
-### Group Chat Scenario Override
+### 📝 群聊场景覆盖
 
-All group members will use the entered scenario text instead of what is specified in their character cards. Branched chats inherit the scenario override from their parent and can be changed individually after that.
+所有群成员将使用此处输入的场景文本，而非其角色卡中指定的场景。分支聊天从其父级继承场景覆盖设置，之后可以单独更改。
 
-### Peek Character Definitions
+### 👀 查看角色定义
 
-Clicking on the character card icon next to the avatar in the group chat menu will quickly navigate to the usual character definitions screen. Any changes made here will be saved to the card itself.
+点击群聊菜单中头像旁的角色卡图标可快速导航至通常的角色定义界面。在此处进行的任何更改都将保存至角色卡本身。
 
-To return back to the group chat, click the Group Name title link.
+要返回群聊，请点击群组名称标题链接。
 
-### Member Management
+### 👥 成员管理
 
-Any of your existing characters can be added, removed, muted, or re-ordered within the group chat. By default, a new member is added to the top of the group members list and then can be re-ordered using the arrow icons.
+您现有的任何角色都可以在群聊中添加、移除、静音或重新排序。默认情况下，新成员会添加到群成员列表的顶部，之后可以使用箭头图标重新排序。
 
-### Group Chat pop-out
+### 🪟 群聊菜单弹出窗口
 
-The group chat menu pop-out can be activated by clicking on the icon next to the "Current Members" field. This creates a pop-out of the group chat menu. By enabling MovingUI from user settings, this menu can resized and dragged to any position within the interface and functions just like the regular group chat menu.
+点击“当前成员”字段旁的图标可激活群聊菜单弹出窗口。启用用户设置中的 MovingUI 后，可以调整此菜单的大小并将其拖动到界面内的任何位置，其功能与常规群聊菜单完全相同。

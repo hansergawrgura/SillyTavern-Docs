@@ -2,123 +2,117 @@
 order: prompts-50
 ---
 
-# CFG
+# 🧪 CFG（无分类器引导）
 
-Page written by: kingbri
+本文作者：kingbri
 
-Contributors: kingbri, Guillaume "Vermeille" Sanchez, AliCat
+贡献者：kingbri, Guillaume "Vermeille" Sanchez, AliCat
 
-## What is it?
+## 它是什么？
 
-CFG, or classifier-free guidance is a method that's used to help make parts of a prompt less or more prominent.
+CFG，即无分类器引导（Classifier-Free Guidance），是一种用于增强或减弱提示词中某些部分显著性的方法。
 
-### Supported Backend APIs
+### 支持的 API 后端
 
-Currently, the supported backends are oobabooga's textgen WebUI, NovelAI, and TabbyAPI. 
-NovelAI had its own [documentation for CFG](https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html).
+目前支持的后端有 oobabooga 的 textgen WebUI、NovelAI 和 TabbyAPI。
+NovelAI 有其自己的 [CFG 文档](https://web.archive.org/web/20240917150051/https://docs.novelai.net/text/cfg.html)。
 
-WARNING: CFG increases vram usage due to ingesting more than 1 prompt! If your GPU memory runs out while generating a prompt with CFG on, consider reducing your context size, using a lesser parameter model, or turning off CFG entirely.
-
----
-
-## Configuration
-
-Accessing CFG settings are the same as accessing Author's note:
-
-![CFGhamburgermenupng](/static/cfg-hamburger.png)
-
-And here's what the CFG panel looks like:
-
-![CFGchatpanelpng](/static/cfg-panel.png)
-
-There are four dropdowns in the CFG panel:
-
-- Chat CFG
-  
-  - Scopes the CFG scale and prompts to only this chat
-- Character CFG
-  
-  - Scopes the CFG scale and prompts to the specified character
-- Global CFG
-  
-  - Globally overrides the CFG scale and prompts (also overrides the model preset!)
-- CFG Advanced Settings (formerly called CFG Prompt Cascading)
-  
-  - A place to combine prompts from the previous 3 dropdowns and set insertion depth.
-
-NOTE: If the guidance scale is set to 1, nothing will be sent since that's when CFG is in an "off" state.
-
-#### Group Chats
-
-In group chats, the CFG scale panel looks like this:
-
-![CFGpanelgcpng](/static/cfg-groups.png)
-
-The main change is that character CFG is removed and a checkbox called `Use Character CFG Scales` is present in the chat CFG dropdown. This allows for the current character's guidance scale to be used instead of whatever the chat CFG scale is set to.
-
-The main utility of this feature is to alter the scale based on each character's individual needs.
-
-In addition, checking the `Character Negatives` box in prompt cascading will append the independent character negative prompts along with the chat ones (if enabled).
+**警告**：CFG 会因处理多于 1 个提示词而增加显存使用量！如果在启用 CFG 生成提示词时 GPU 内存耗尽，请考虑减小上下文大小、使用参数更少的模型或完全关闭 CFG。
 
 ---
 
-## Concepts
+## ⚙️ 配置
 
-### Isn't this in Stable Diffusion?
+访问 CFG 设置的方式与访问“作者注记”相同：
 
-Yes and no. CFG with LLMs works in a different way than what one might be used to in Stable Diffusion. LLM-based CFG works on the principle of "prompt mixing". The CFG formula takes a positive and negative prompt, then mixes the *differences* between them. From there, a combined prompt is sent and a response is generated!
+![CFG 汉堡菜单 png](/static/cfg-hamburger.png)
 
-Here's an illustration to help visualize this concept. The red represents the negative prompt, the blue represents the neutral prompt, and the purple represents the mixed result that's interpreted. All the white space is the same across all 3 prompts, so those are not used for CFG mixing.
+CFG 面板如下所示：
 
-![stcfgdiagrampng](/static/cfg-diagram.png)
+![CFG 聊天面板 png](/static/cfg-panel.png)
 
-If you want to know more about CFG and LLMs, Vermifuge's original paper is located here. I'd suggest giving it a read/listen:
+CFG 面板中有四个下拉菜单：
 
-- Paper - [[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)](https://arxiv.org/abs//2306.17806)
-  
-- Audio version - [https://www.youtube.com/watch?v=MGY00YFcyco](https://www.youtube.com/watch?v=MGY00YFcyco)
-  
+-   **聊天 CFG**
+    -   将 CFG 尺度（scale）和提示词的作用范围限定于此聊天。
+-   **角色 CFG**
+    -   将 CFG 尺度和提示词的作用范围限定于指定角色。
+-   **全局 CFG**
+    -   全局覆盖 CFG 尺度和提示词（也会覆盖模型预设！）。
+-   **CFG 高级设置**（原名为 CFG 提示词级联）
+    -   用于组合前 3 个下拉菜单中的提示词并设置插入深度。
 
-### Do I need CFG prompts?
+**注意**：如果引导尺度设置为 1，则不会发送任何内容，因为此时 CFG 处于“关闭”状态。
 
-No! CFG prompts are completely optional. Just adjusting the guidance scale above `1` will also help produce an effect on responses, which can accentuate chats and character interaction.
+#### 群聊
 
-### What makes a good CFG prompt?
+在群聊中，CFG 尺度面板如下所示：
 
-So, we established that CFG prompting is not the same as Stable Diffusion's negative tags and embeddings. How do we make a prompt?
+![CFG 面板群聊 png](/static/cfg-groups.png)
 
-Warning: This assumes that you have created a character using PLists and Ali:Chat. If you have not, feel free to experiment with various prompting techniques.
+主要变化是移除了角色 CFG，并在聊天 CFG 下拉菜单中提供了一个名为 `使用角色 CFG 尺度` 的复选框。这允许使用当前角色的引导尺度，而非聊天 CFG 所设置的尺度。
 
-Let's say I have a character named "John". John is supposed to feel happy and excited all the time from his example dialogues. However, when chatting with John, he's sometimes sad and depressed.
+此功能的主要用途是根据每个角色的个体需求来调整尺度。
 
-To remove this, CFG comes to the rescue! Just make the negative prompt `[John's feelings: sad, depressed]` to help remove the sadness portions. You can optionally make the positive prompt `[John's feelings: happy, joyful]` to further bring out John's happy parts.
+此外，在提示词级联中勾选 `角色负面提示词` 框，将附加独立的角色负面提示词以及聊天负面提示词（如果启用）。
 
-### Positive Prompts
+---
 
-I went over this in the previous section, but I'd like to touch on this a bit more. Positive prompts are used to further accentuate parts of a character. Let's use John again as our example. By making him happier with a positive prompt of `[John's feelings: happy, joyful]`, John should start outputting dialogue with a more happy feeling than if the positive prompt was not included.
+## 💡 概念
 
-### But...
+### 这和 Stable Diffusion 里的一样吗？
 
-These are just **loose guidelines** from experience with one specific character format. There are many other ways to create prompts that you should experiment with. Feel free to share your thoughts with other users!
+是，也不是。LLM 中的 CFG 其工作方式可能与大家在 Stable Diffusion 中习惯的方式不同。基于 LLM 的 CFG 基于“提示词混合”的原则。CFG 公式接收一个正面提示词和一个负面提示词，然后混合它们之间的*差异*。之后，发送一个组合提示词并生成回复！
 
-### Guidance Scale
+下面是一个示意图来帮助可视化这个概念。红色代表负面提示词，蓝色代表中性提示词，紫色代表被解释的混合结果。所有白色区域在三个提示词中是相同的，因此不用于 CFG 混合。
 
-Here's a rule of thumb. A guidance scale of `1` means that CFG is disabled. In fact, SillyTavern won't send anything to your backend if the guidance scale is 1. A guidance scale `>1` will give the results shown in the other sections at varying degrees.
+![st cfg 示意图 png](/static/cfg-diagram.png)
 
-However, a guidance scale of `<1` will give the *opposite* effect since the negative prompt is used as the primary prompt here.
+如果您想了解更多关于 CFG 和 LLM 的信息，Vermifuge 的原始论文在这里。建议阅读/收听：
 
-Let's use the example with John again. The negative prompt is `[John's feelings: sad, depressed]` and the positive prompt is `[John's feelings: happy, joyful]` with a guidance scale of `0.8`.
+-   论文 - [[2306.17806] Stay on topic with Classifier-Free Guidance (arxiv.org)](https://arxiv.org/abs//2306.17806)
+-   音频版本 - [https://www.youtube.com/watch?v=MGY00YFcyco](https://www.youtube.com/watch?v=MGY00YFcyco)
 
-This will in turn accentuate the *negative* prompt more and you'll see John start to act sadder than normal rather than happier.
+### 我需要 CFG 提示词吗？
 
-tldr; Use a guidance scale of `1.5` and work up and down from there based on your outputs.
+不需要！CFG 提示词完全是可选的。仅仅将引导尺度调整到 `1` 以上也会对回复产生影响，可以突出聊天和角色互动。
 
-### Prompt Cascading
+### 什么是好的 CFG 提示词？
 
-Negatives and positives can be cascaded between CFG types (the types being per-chat, per-character, and global overrides). See the Configuration header for more information.
+那么，我们已经确定 CFG 提示与 Stable Diffusion 的负面标签和嵌入不同。我们如何制作提示词呢？
 
-### Insertion Depth
+**警告**：此处假设您已使用 PLists 和 Ali:Chat 创建了一个角色。如果没有，请随意尝试各种提示技术。
 
-Follow the basic rule: The lower something is located in the prompt, the more influential it is to the response. For chatting, I recommend using the default depth of `1` since it's very flexible with other components of SillyTavern.
+假设我有一个名为“John”的角色。根据他的示例对话，John 应该总是感到快乐和兴奋。然而，在与 John 聊天时，他有时会悲伤和沮丧。
 
-However, if you want to experiment, an insertion depth of `0` is open. However, these can dramatically alter how your response will look and it's NOT recommended to use prompt cascading here!
+为了消除这种情况，CFG 来帮忙了！只需将负面提示词设为 `[John 的感受：悲伤，沮丧]` 以帮助消除悲伤部分。您还可以选择将正面提示词设为 `[John 的感受：快乐，高兴]` 以进一步突出 John 快乐的部分。
+
+### 正面提示词
+
+我在上一节中提到了这一点，但我想再谈一点。正面提示词用于进一步突出角色的某些部分。让我们再次以 John 为例。通过使用 `[John 的感受：快乐，高兴]` 作为正面提示词让他更快乐，John 输出的对话应该会比不包含正面提示词时更具快乐感。
+
+### 但是...
+
+这些只是基于一种特定角色格式的经验得出的**宽松指南**。还有许多其他创建提示词的方法值得尝试。请随时与其他用户分享您的想法！
+
+### 引导尺度
+
+这里有一个经验法则。引导尺度为 `1` 意味着 CFG 被禁用。实际上，如果引导尺度为 1，SillyTavern 不会向后端发送任何内容。引导尺度 `>1` 会在不同程度上产生其他部分所示的效果。
+
+然而，引导尺度 `<1` 会产生*相反*的效果，因为这里负面提示词被用作主要提示词。
+
+让我们再次使用 John 的例子。负面提示词是 `[John 的感受：悲伤，沮丧]`，正面提示词是 `[John 的感受：快乐，高兴]`，引导尺度为 `0.8`。
+
+这反过来会增强*负面*提示词的效果，你会看到 John 开始表现得比平时更悲伤，而不是更快乐。
+
+**tl;dr**：使用 `1.5` 的引导尺度，然后根据输出结果上下调整。
+
+### 提示词级联
+
+负面和正面提示词可以在 CFG 类型（即“每聊天”、“每角色”和“全局覆盖”）之间级联。更多信息请参见“配置”标题部分。
+
+### 插入深度
+
+遵循基本规则：某个内容在提示词中的位置越低，它对回复的影响就越大。对于聊天，我推荐使用默认深度 `1`，因为它与 SillyTavern 的其他组件非常灵活。
+
+但是，如果您想尝试，也可以使用插入深度 `0`。但是，这会极大地改变回复的外观，并且**不推荐**在此处使用提示词级联！

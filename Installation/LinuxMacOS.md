@@ -44,5 +44,3 @@ order: 5
 4. 进入目录：`cd SillyTavern-Launcher`
 5. 运行安装脚本：`chmod +x install.sh && ./install.sh` 并选择需要安装的内容
 6. 安装完成后启动：`chmod +x launcher.sh && ./launcher.sh`
-
----

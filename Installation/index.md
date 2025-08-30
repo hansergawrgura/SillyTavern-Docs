@@ -57,5 +57,3 @@ SillyTavern 有两种运行模式，区别在于配置和数据路径的处理�
 1. 向服务器启动命令传递 `--global` 参数（例如 `node server.js --global`）
 2. 向 shell 启动脚本传递 `--global` 参数（例如 `Start.bat --global` 或 `./start.sh --global`）
 3. 使用 `package.json` 文件中的 `start:global` 脚本（例如 `npm run start:global`）
-
----

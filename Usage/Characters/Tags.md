@@ -3,81 +3,83 @@ order: character-30
 route: /usage/core-concepts/tags
 ---
 
-# Tags
+# 🏷️ 标签管理
 
-Character cards and groups can be assigned zero or more tags. They are useful to organize quickly growing collections by themes, quality, provenance or whatever you like.
+角色卡和群组可以被分配零个或多个标签。它们可用于按主题、质量、来源或任何您喜欢的标准来快速整理日益增长的收藏。
 
-## Tagging
+## 🖍️ 添加标签
 
-There are several ways to add or remove tags to a character card:
+有几种方法可以为角色卡添加或移除标签：
 
-- Import embedded tags during the import.
-- Open a card from the Character Management panel. From there you will be able to assign tags to a character card.
-- Mass tagging.
+-   在导入过程中嵌入标签。
+-   从角色管理面板打开一张角色卡。在那里您可以为角色卡分配标签。
+-   批量添加标签。
 
-To do mass tagging, click the "Bulk edit characters" button (pencil icon), select the cards you want to tag, right click on any of them, then click "Tag" in the contextual menu.
+要进行批量添加标签，请点击“批量编辑角色”按钮（铅笔图标），选择要标记的角色卡，右键单击其中任意一张，然后在上下文菜单中点击“添加标签”。
 
-!!!info Note
-Please note that groups cannot be mass tagged.
+!!! [info] 注意
+请注意，群组无法进行批量添加标签。
 !!!
 
-From this screen you will be able to:
+在此界面，您可以：
 
-- Add or remove tags using the combo box.
-- Remove all tags from the selected cards ("All").
-- Remove the intersection of tags among all selected cards from those cards ("Mutual").
-- Import (create locally) all tags stored in the character card, in case you imported it ("Import All").
-- Import (create locally) tags stored in the character card which also exist locally with matching names ("Import Existing").
+-   使用组合框添加或移除标签。
+-   移除所选角色卡上的所有标签（“全部”）。
+-   从所选角色卡中移除所有卡共有的标签（“共有”）。
+-   导入（在本地创建）角色卡中存储的所有标签，以防您已导入该卡（“导入全部”）。
+-   导入（在本地创建）角色卡中存储的、且本地已存在同名标签（“导入现有”）。
 
-## Managing
+## 🗂️ 管理标签
 
-To view and manage all existing tags, open the Character Management panel then click on the "Manage tags" button (gear icon).
+要查看和管理所有现有标签，请打开角色管理面板，然后点击“管理标签”按钮（齿轮图标）。
 
-You can backup and restore all the information here (tag list, tag assignments to cards, colors, folder settings, etc) using the buttons on the top right.
+您可以使用右上角的按钮备份和恢复此处的所有信息（标签列表、标签分配给卡的情况、颜色、文件夹设置等）。
 
-You can use grip buttons on the left to reorder tags as they will appear in the tag filter in Character Management.
+您可以使用左侧的抓取按钮（grip buttons）重新排序标签，它们将按此顺序显示在角色管理的标签筛选器中。
 
-!!!warning Warning
-The tags backup JSON file is not intended for sharing with others as it contains information specific to your instance only, such as internal entity names!
+!!! [warning] 警告
+标签备份 JSON 文件不旨在与他人共享，因为它包含仅特定于您实例的信息，例如内部实体名称！
 !!!
 
-## Importing tags when importing character cards
+## 📥 导入角色卡时导入标签
 
-When importing external character cards from downloaded images (or from the "Import content from external URL" button), you'll be prompted to optionally import the tags that it contains. They are not required for the card to function; tags are simply organizational.
+当从下载的图像（或通过“从外部 URL 导入内容”按钮）导入外部角色卡时，系统会提示您选择性地导入其包含的标签。这些标签并非角色卡运行所必需；它们仅用于组织目的。
 
-Embedded card tags are stored in the "Creator's Metadata" section of "Advanced Definitions" menu of the character editor. If you wish to propose some tags to other users who would import that character, populate the "Tags to Embed" field with a comma-separated list of tags.
+嵌入的角色卡标签存储在角色编辑器“高级定义”菜单的“创作者元数据”部分。如果您希望向导入该角色的其他用户推荐一些标签，请在“要嵌入的标签”字段中填入一个逗号分隔的标签列表。
 
-!!!info Note
-This popup will appear only if a User Settings option "Import Card Tags" is set to "Ask". 
+!!! [info] 注意
+仅当用户设置中的“导入卡片标签”选项设置为“询问”时，此弹出窗口才会出现。
 !!!
 
-In the "Import tags for CHARACTER NAME" popup that opens, you'll see a list of Existing tags (which you already had locally with a matching name), and New tags (which you did not have locally).
+在打开的“为[角色名]导入标签”弹出窗口中，您将看到：
+*   `现有标签`列表（您本地已存在且名称匹配的标签）
+*   `新标签`列表（您本地尚未存在的标签）
 
-You can either:
+您可以：
 
-- Trim the lists as needed and then hit "Import" - remaining Existing tags will be added to the imported character card, and remaining New tags will be created locally and then added to the card.
-- Or simply hit "Import none" to ignore tags contained in the character card and import ONLY the card.
-- Or "Import All" as a shortcut to import all tags found in the character card (NOTE: including any that you trimmed from the lists above; use the "Import" button if you did).
-- Or "Import Existing" as a shortcut to only import tags that existed locally with a matching name.
+-   按需修剪列表，然后点击“导入”——剩余的`现有标签`将被添加到导入的角色卡中，剩余的`新标签`将在本地创建并添加到卡中。
+-   或者直接点击“不导入”以忽略角色卡中包含的标签，仅导入角色卡本身。
+-   或者点击“全部导入”作为快捷方式，导入在角色卡中找到的所有标签（注意：包括您从上述列表中修剪掉的任何标签；如果您修剪过，请使用“导入”按钮）。
+-   或者点击“导入现有”作为快捷方式，仅导入本地已存在且名称匹配的标签。
 
-## Filtering character cards
+## 🔍 筛选角色卡
 
-After you create tags, you will see them on a row in the Character Management panel. You can click these to switch tag filtering state; in order:
+创建标签后，您将在角色管理面板的一行中看到它们。您可以点击这些标签来切换标签筛选状态；依次为：
 
-- One click will show cards tagged with this tag.
-- Another click to only show cards NOT tagged with this tag.
-- Another click to reset filtering by this tag.
+-   点击一次将显示带有此标签的卡片。
+-   再次点击将仅显示未带此标签的卡片。
+-   再次点击将重置按此标签的筛选。
 
-You can filter by any number of tags at the same time.
+您可以同时按任意数量的标签进行筛选。
 
-## Tags as Folders
+## 📁 标签作为文件夹
 
-!!!info Note
-To use this functionality, it has to be enabled first in the User Settings, under the UI Theme column. The state of this toggle also saves with the UI theme.
+!!! [info] 注意
+要使用此功能，必须首先在“用户设置”中的“UI 主题”列下启用它。此开关的状态也会随 UI 主题保存。
 !!!
 
-From the "Manage tags" button (gear icon), each tag entry has a multi-state toggle button to cycle between these tags-as-folder modes (called "bogus folder" in the code):
+在“管理标签”按钮（齿轮图标）界面中，每个标签条目都有一个多状态切换按钮，用于在这些“标签即文件夹”模式（代码中称为“bogus folder”）之间循环：
 
-- one click to turn this tag into an "open folder". It will appear as a virtual entry in the card list; clicking into it will only show cards with that tag
-- another click to turn this tag into a "closed folder". As above, but cards tagged with this tag will not appear by default - you'll need to click into the folder to see them.
-- another click to reset tag-as-folder state for this tag.
+-   点击一次可将此标签变为“打开文件夹”模式。它将作为虚拟条目出现在卡片列表中；点击进入该虚拟条目将仅显示带有该标签的卡片。
+-   再点击一次可将此标签变为“关闭文件夹”模式。同上，但默认情况下不会显示带有此标签的卡片——您需要点击进入该文件夹才能看到它们。
+-   再点击一次可重置此标签的“标签即文件夹”状态。

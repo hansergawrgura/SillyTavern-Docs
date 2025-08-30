@@ -3,76 +3,76 @@ tags: ['>=1.13.0']
 icon: people
 ---
 
-# Welcome Page Assistants
+# 🎯 欢迎页面助手
 
-SillyTavern features a Welcome Screen that can greet you with a designated "Assistant" character. This screen appears when you launch SillyTavern without an active chat or after you close your last chat session.
-
-!!! Note
-If you don't see a Welcome Screen on app startup, make sure the "Auto-Load Last Chat" option is disabled in the "Chat/Message Handling" section of the **<i class="fa-solid fa-user-cog"></i> User Settings** panel. If this option is enabled, SillyTavern will automatically load your last chat instead of showing the Welcome Screen.
-!!!
-
-## The Welcome Screen
-
-When no chat is active, the Welcome Screen provides several useful elements:
-
-* **SillyTavern Version:** Displays the application's logo and current version.
-* **Quick Links:** Easy access to:
-  * **Docs:** Opens the official SillyTavern documentation (you're already here!).
-  * **GitHub:** Takes you to the SillyTavern GitHub repository (<https://github.com/SillyTavern/SillyTavern>).
-  * **Discord:** Provides a link to the official SillyTavern Discord server (<https://discord.gg/sillytavern>).
-* **Temporary Chat Button:** Allows you to quickly start a new, temporary chat session with the default neutral assistant, which won't be saved to your chat history unless you explicitly save it.
-* **Recent Chats Section:** Lists your recent conversations for quick access. You can:
-  * Show or hide this section.
-  * Expand the list if more than 3 chats are available (up to 15 recent chats).
-
-## Temporary Chat
+SillyTavern 设有欢迎屏幕功能，可通过指定的"助手"角色向您致意。当您启动 SillyTavern 时若无活跃聊天，或在关闭最后一个聊天会话后，此屏幕便会显现。
 
 !!! Note
-Due to a technical limitation, the Temporary Chat feature will not use your customized Welcome Page Assistant. It will always start an empty chat without any additional prompts or character information.
+若应用启动时未显示欢迎屏幕，请确保在 **<i class="fa-solid fa-user-cog"></i> 用户设置** 面板的"聊天/消息处理"章节中，"自动加载上次聊天"选项处于禁用状态。启用此选项后，SillyTavern 将自动加载您上次的聊天而非显示欢迎屏幕。
 !!!
 
-The Temporary Chat button allows you to quickly start a new chat session without saving it to your chat history. This is useful for testing or casual conversations without cluttering your saved chats. This chat will be deleted as soon as you close it or switch to another chat.
+## 🖥️ 欢迎屏幕
 
-* **Save** button will allow you to export the temporary chat as a JSONL file, which you can then import later.
-* **Load** button will allow you to restore a previously saved temporary chat file.
+当无活跃聊天时，欢迎屏幕提供多项实用元素：
 
-## What is a Welcome Page Assistant?
+*   **SillyTavern 版本：** 显示应用logo及当前版本号。
+*   **🔗 快捷链接：** 轻松访问：
+    *   **文档：** 打开官方 SillyTavern 文档（您正在此处查阅！）。
+    *   **GitHub：** 带您前往 SillyTavern GitHub 代码库 (<https://github.com/SillyTavern/SillyTavern>)。
+    *   **Discord：** 提供官方 SillyTavern Discord 服务器链接 (<https://discord.gg/sillytavern>)。
+*   **💬 临时聊天按钮：** 允许您快速与默认的中立助手开启一个新的临时聊天会话，此会话不会被保存至聊天历史记录，除非您明确保存它。
+*   **📃 最近聊天区：** 列出您最近的对话以供快速访问。您可以：
+    *   显示或隐藏此区域。
+    *   若有超过 3 个聊天可用（最多 15 个最近聊天），可展开列表。
 
-A Welcome Page Assistant is a character you choose to be featured on the Welcome Screen. This allows for a personalized greeting and a quick way to start a chat with a familiar character right from the start.
+## 💬 临时聊天
 
-### Setting and Unsetting an Assistant
+!!! Note
+由于技术限制，临时聊天功能**不会**使用您自定义的欢迎页面助手。它将始终启动一个不包含任何额外提示词或角色信息的空聊天。
+!!!
 
-You can choose any of your characters to act as your Welcome Page Assistant.
+“临时聊天”按钮允许您快速开始一个新的聊天会话，而不会将其保存到聊天历史记录中。这对于测试或临时对话非常有用，避免了已保存聊天记录的混乱。此聊天将在您关闭它或切换到另一个聊天时立即被删除。
 
-**To set an assistant:**
+*   **保存** 按钮允许您将临时聊天导出为 JSONL 文件，之后您可以再导入。
+*   **加载** 按钮允许您恢复之前保存的临时聊天文件。
 
-1. Navigate to the **Character Management** panel (usually found in the right-hand sidebar via the <i class="fa-solid fa-address-card"></i> icon).
-2. Find the character you wish to set as your assistant in the list.
-3. Click on "More..." and select **"Set / Unset as Welcome Page Assistant"** from the dropdown menu.
-4. A small icon (<i class="fa-solid fa-user-graduate"></i>) will appear next to the character's name, indicating they are now your active Welcome Page Assistant.
+## 🤔 何为欢迎页面助手？
 
-**To unset an assistant:**
+欢迎页面助手是您选择在欢迎屏幕上展示的角色。这能实现个性化问候，并提供一种直接从开始界面与熟悉角色快速展开聊天的方式。
 
-1. Go to the Character Management panel.
-2. Locate your current Welcome Page Assistant (they will have the <i class="fa-solid fa-user-graduate"></i> icon).
-3. Click on "More..." and select **"Set / Unset as Welcome Page Assistant"** again.
-4. The character will no longer be your assistant, and the <i class="fa-solid fa-user-graduate"></i> icon will disappear.
-5. SillyTavern will revert to using the Default Assistant (see below).
+### ⚙️ 设置与取消助手
 
-### Interacting with the Assistant
+您可以选择任意角色作为您的欢迎页面助手。
 
-Once the Welcome Screen is displayed with your chosen assistant, simply type your message into the chat input bar at the bottom of the screen and press Enter or click the send button. This will start a new chat session with your Welcome Page Assistant.
+**设置助手：**
 
-To open a previous chat with the assistant, use the Recent Chats section or find the chat in the **Manage chat files** dialog (accessible via the **<i class="fa-solid fa-bars"></i> Options** menu).
+1.  导航至 **角色管理** 面板（通常通过右侧边栏的 <i class="fa-solid fa-address-card"></i> 图标找到）。
+2.  在列表中找到您希望设为助手的角色。
+3.  点击“更多...”(More...) 并从下拉菜单中选择 **“设为/取消设为欢迎页面助手”**(Set / Unset as Welcome Page Assistant)。
+4.  一个小的 <i class="fa-solid fa-user-graduate"></i> 图标将出现在角色名称旁，表明其现在是您的活跃欢迎页面助手。
 
-## Default Assistant
+**取消设置助手：**
 
-SillyTavern will automatically create a default character named "Assistant" when you interact with the Welcome Screen for the first time. This character serves as a fallback option if you haven't set a specific character as your Welcome Page Assistant.
+1.  前往角色管理面板。
+2.  找到您当前的欢迎页面助手（其旁会有 <i class="fa-solid fa-user-graduate"></i> 图标）。
+3.  点击“更多...”(More...) 并再次选择 **“设为/取消设为欢迎页面助手”**(Set / Unset as Welcome Page Assistant)。
+4.  该角色将不再是您的助手，且 <i class="fa-solid fa-user-graduate"></i> 图标会消失。
+5.  SillyTavern 将恢复使用默认助手（见下文）。
 
-The default assistant doesn't have any specific prompts attached to it, and you're free to customize it as you like (e.g. renaming, adding a picture, or setting a personality).
+### 💬 与助手互动
 
-* If you haven't explicitly set a character as your Welcome Page Assistant, this default assistant will be used.
-* If you unset your chosen assistant, the system will revert to this default assistant.
-* If a character you had set as an assistant is deleted, the system will also revert to the default assistant.
+一旦欢迎屏幕显示出您选择的助手，只需在屏幕底部的聊天输入栏中输入您的消息并按 Enter 或点击发送按钮即可。这将开启一个与您欢迎页面助手的新聊天会话。
 
-**Note:** You cannot "unset" the default system assistant in the same way you unset a character you've chosen. To change from the default assistant, you must set one of your other characters as the assistant.
+要打开之前与该助手的聊天，请使用“最近聊天”区域，或在 **管理聊天文件** 对话框（通过 **<i class="fa-solid fa-bars"></i> 选项** 菜单访问）中找到该聊天。
+
+## ⚙️ 默认助手
+
+当您首次与欢迎屏幕互动时，SillyTavern 会自动创建一个名为“Assistant”（助手）的默认角色。此角色作为后备选项，以防您未设置特定角色为欢迎页面助手。
+
+该默认助手没有任何特定的提示词附加，您可以随意自定义它（例如重命名、添加图片或设置个性）。
+
+*   若您未明确设置某个角色为欢迎页面助手，则将使用此默认助手。
+*   若您取消了已选择的助手，系统将恢复使用此默认助手。
+*   若您设置为助手的角色被删除，系统同样将恢复使用默认助手。
+
+**注意：** 您无法以取消您所选角色的相同方式去“取消设置”这个默认的系统助手。要更改默认助手，您必须将您的另一个角色设置为助手。

@@ -3,61 +3,61 @@ order: character-15
 route: /usage/core-concepts/chatfilemanagement
 ---
 
-# Chat File Management
+# 📁 聊天文件管理
 
-This page describes the ways you can manage your AI chat files.
+本页介绍如何管理您的 AI 聊天文件。
 
-!!!info Note
-Some of these options are available in the "Manage chat files" dialog that opens from the bottom left options menu.
+!!!info 注意
+部分选项可在左下角选项菜单中的“管理聊天文件”对话框中找到。
 !!!
 
-## Solo Chats vs Group Chats
+## 私聊 🆚 群聊
 
-The simplest way to use a character card is a Solo chat; just click on their card and start chatting.
+使用角色卡最简单的方式是**私聊**：只需点击角色卡即可开始对话。
 
-Once you have a few character cards, you can also use the "Create New Chat Group" button to create a [group chat](/Usage/Characters/groupchats.md) including multiple characters which will then interact with each other and you.
+拥有多个角色卡后，您还可以使用“创建新聊天群组”按钮来创建包含多个角色的[群聊](/Usage/Characters/groupchats.md)，这些角色将相互互动并与您交流。
 
-## Chat import
+## 聊天记录导入
 
-**Import chats from Character.AI into SillyTavern.**
+**将 Character.AI 的聊天记录导入至 SillyTavern。**
 
-To import Character.AI chats and bots, use the CAI Tools browser extension: [https://github.com/irsat000/CAI-Tools](https://github.com/irsat000/CAI-Tools).
+要导入 Character.AI 的聊天记录和机器人，请使用 CAI Tools 浏览器扩展：[https://github.com/irsat000/CAI-Tools](https://github.com/irsat000/CAI-Tools)。
 
-Other programs and tools that you can import chats from include:
+其他支持导入聊天记录的程序和工具包括：
 
-* TavernAI (original): <https://github.com/TavernAI/TavernAI>
-* Text Generation WebUI (oobabooga): <https://github.com/oobabooga/text-generation-webui>
-* Agnai: <https://github.com/agnaistic/agnai>
-* KoboldAI Lite: <https://github.com/LostRuins/lite.koboldai.net>
-* RisuAI: <https://github.com/kwaroran/RisuAI>
+* TavernAI (原版)：<https://github.com/TavernAI/TavernAI>
+* Text Generation WebUI (oobabooga)：<https://github.com/oobabooga/text-generation-webui>
+* Agnai：<https://github.com/agnaistic/agnai>
+* KoboldAI Lite：<https://github.com/LostRuins/lite.koboldai.net>
+* RisuAI：<https://github.com/kwaroran/RisuAI>
 
-## Export as .jsonl
+## 导出为 .jsonl 📤
 
-When clicking on "Manage chat files", each entry on the the chat file list will have a button to export it in a format that can then be re-imported as is. Use this to share or migrate chats including all their metadata (but excluding images and file attachments).
+点击“管理聊天文件”后，聊天文件列表中的每个条目都有一个按钮，可将其导出为能够原样重新导入的格式。使用此功能可分享或迁移包含所有元数据（但不包括图片和文件附件）的聊天记录。
 
-If you're mindful of privacy, be sure to inspect the exported JSONL file and scrub anything you don't want to share.
+如果您注重隐私，请务必检查导出的 JSONL 文件并清理任何不希望分享的内容。
 
-## Export as .txt
+## 导出为 .txt 📝
 
-You can also export a simplified text-only version with the "Download chat as plain text document" button. It can't be re-imported again as it loses important metadata!
+您也可以使用“下载聊天记录为纯文本文档”按钮导出简化的纯文本版本。该版本无法重新导入，因为它丢失了重要的元数据！
 
-## Checkpoints
+## 检查点 ⚓
 
-"Checkpoints" are clones of the current chat, in that they copy all messages from the given chat up to a certain point, and they store a link to the source (by chat file name).
+“检查点”是当前聊天记录的克隆副本，它们会复制给定聊天记录截至某一时间点的所有消息，并存储指向源文件的链接（通过聊天文件名）。
 
-From the three dots button at the right of each chat message, you have two ways to create checkpoints:
+在每个聊天消息右侧的三点按钮中，您有两种创建检查点的方式：
 
-* "Create Branch" will clone the current chat up to that message and switch to it
-* "Create Checkpoint" will clone current chat up to that message, ask for a name and create it but NOT switch to it
+* **“创建分支”**：将克隆当前聊天记录至该消息，并切换至该分支
+* **“创建检查点”**：将克隆当前聊天记录至该消息，要求输入名称并创建，但**不会**切换至该检查点
 
-You can think of them as roughly as "open link in new tab" and "open link in new tab in the background" in a browser.
+您可以将其大致理解为浏览器中的“在新标签页中打开链接”和“在后台新标签页中打开链接”。
 
-You can go back to the parent from a checkpoint by entering the burger menu button on the left of the message text box, then clicking "Back to parent chat".
+您可以通过点击消息文本框左侧的汉堡菜单按钮，然后点击“返回父级聊天”，从检查点返回父级聊天。
 
-## Rename Chat
+## 重命名聊天 ✏️
 
-By default chat files are given a named with the date and time they were started.
+默认情况下，聊天文件会以开始聊天的日期和时间命名。
 
-You can change this by clicking the pencil icon and typing in a new name.
+您可以通过点击铅笔图标并输入新名称来更改它。
 
-Note that this will break links to that chat from checkpoints (since they are linked by chat file name).
+请注意，这将破坏从检查点指向该聊天的链接（因为它们是通过聊天文件名链接的）。

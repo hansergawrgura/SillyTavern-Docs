@@ -4,181 +4,181 @@ icon: typography
 templating: false
 ---
 
-# Prompts
+# 📝 提示词
 
-When you send a message to your AI, the text you write is combined with other text to form a single request that's sent to the AI. This combined text is called a "prompt" or sometimes the "request" or "context."
+当您向 AI 发送消息时，您编写的文本会与其他文本组合成一个单一的请求发送给 AI。这个组合文本称为“提示词”，有时也称为“请求”或“上下文”。
 
-The prompt can include a variety of different types of text, including:
+提示词可以包含各种不同类型的文本，包括：
 
-* [Main instructions](#main-prompt-system-prompt) to the AI about how to generate a response
-* Definitions of the [roles that the AI should take on](/Usage/Characters/characterdesign.md)
-* Definitions of [the role that you are taking on](/Usage/personas.md)
-* [Information about the "world"](/Usage/worldinfo.md) that the AI is interacting with
-* Relevant documents or information from [Data Bank](/Usage/Characters/data-bank.md)
-* [Summaries](/extensions/Summarize.md) of the past conversation
-* Results of [web searches](/extensions/WebSearch.md) or other [external data sources](/For_Contributors/Function-Calling.md)
-* Previous messages in the conversation
-* **Your message to the AI**
-* [Final instructions](#post-history-instructions) for the AI about how to generate a response
+*   关于 AI 如何生成响应的[主要指令](#-主提示词系统提示词)
+*   AI 应承担的[角色定义](/Usage/Characters/characterdesign.md)
+*   [您所扮演角色的定义](/Usage/personas.md)
+*   有关 AI 正在交互的“世界”的[信息](/Usage/worldinfo.md)
+*   来自[数据库](/Usage/Characters/data-bank.md)的相关文档或信息
+*   过去对话的[摘要](/extensions/Summarize.md)
+*   [网络搜索](/extensions/WebSearch.md)或其他[外部数据源](/For_Contributors/Function-Calling.md)的结果
+*   对话中的先前消息
+*   **您发送给 AI 的消息**
+*   关于 AI 如何生成响应的[最终指令](#-历史记录后指令)
 
-This can be a lot to manage! To help you understand how to structure and modify the request that's sent to the AI, SillyTavern identifies different elements that you might want to include in your prompt. You can then structure your prompt to include the things that make sense for the way you want to interact with the AI.
+这可能需要大量管理！为了帮助您理解如何构建和修改发送给 AI 的请求，SillyTavern 识别了您可能希望包含在提示词中的不同元素。然后，您可以构建提示词，以包含对您与 AI 交互方式有意义的内容。
 
-Many of these elements are explained in the sections where you will change them. For example, to describe the role that you would like the AI to take on, you could use the [Description](/Usage/Characters/characterdesign.md#personality-summary) field in [Character Design](/Usage/Characters/characterdesign.md).
+这些元素中的许多都在您将更改它们的部分中进行了解释。例如，要描述您希望 AI 扮演的角色，您可以使用[角色设计](/Usage/Characters/characterdesign.md)中的[描述](/Usage/Characters/characterdesign.md#性格摘要)字段。
 
-## Viewing the Prompt
+## 👀 查看提示词
 
-Reading the final prompt that's sent to the AI is very helpful for understanding what the AI was told, and why it generated the response that it did. You can view the prompt in several ways:
+阅读发送给 AI 的最终提示词对于理解 AI 被告知了什么以及它为何生成特定响应非常有帮助。您可以通过以下几种方式查看提示词：
 
-* Using the Prompt Itemization icon on the reply message from the AI
-* Using the [Prompt Inspector](https://github.com/SillyTavern/Extension-PromptInspector) extension
-* Checking the logs in the terminal window that you're running SillyTavern in
-* Checking the console in your browser's developer tools
+*   使用 AI 回复消息上的“提示词明细”图标
+*   使用 [提示词检查器](https://github.com/SillyTavern/Extension-PromptInspector) 扩展
+*   检查运行 SillyTavern 的终端窗口中的日志
+*   检查浏览器开发者工具中的控制台
 
-## Changing how the Prompt is Built
+## 🔧 更改提示词的构建方式
 
-Presenting all the parts of your prompt to the AI in the right way is crucial for getting the best responses. You can control how the prompt is built.
+以正确的方式向 AI 呈现提示词的所有部分对于获得最佳响应至关重要。您可以控制提示词的构建方式。
 
-+++ Text Completion APIs
++++ 文本补全 API
 
-Use the [Advanced Formatting](advancedformatting.md) panel to customize prompt construction for Text Completion APIs.
+使用 [高级格式化](advancedformatting.md) 面板自定义文本补全 API 的提示词构建。
 
-+++ Chat Completion APIs
++++ 聊天补全 API
 
-Use the [Prompt Manager](prompt-manager.md) to customize prompt construction for Chat Completion APIs.
-
-+++
-
-## Main Prompt (System Prompt)
-
-The Main Prompt (or System Prompt) defines the general instructions for the model to follow. It sets the tone and context for the conversation. For example, it tells the model to act as an AI assistant, a writing partner, or a fictional character. 
-
-+++ Text Completion APIs
-
-The [System Prompt](advancedformatting.md#system-prompt) is a part of the [Story String](context-template.md#story-string) and usually the first part of the prompt that the model receives.
-
-+++ Chat Completion APIs
-
-The Main Prompt is one of the default prompts in [Prompt Manager](prompt-manager.md). It is usually the first message in the context that the model receives, attributed to ("sent by") the system role.
+使用 [提示词管理器](prompt-manager.md) 自定义聊天补全 API 的提示词构建。
 
 +++
 
-The default Main Prompt is:
+## 🧭 主提示词（系统提示词）
 
-> Write \{\{char\}\}'s next reply in a fictional chat between \{\{char\}\} and \{\{user\}\}.
+主提示词（或系统提示词）定义了模型需要遵循的一般指令。它为对话设定了基调和上下文。例如，它告诉模型充当 AI 助手、写作伙伴或虚构角色。
 
-The \{\{char\}\} and \{\{user\}\} placeholders are replaced with the names of the character and persona that you've defined in the conversation. 
++++ 文本补全 API
 
-You can use any of the supported [\{\{macro\}\}](/Usage/Characters/macros.md) tags in the Main Prompt to include information that might vary between conversations or changes as the conversation progresses.
+[系统提示词](advancedformatting.md#-系统提示词) 是[故事字符串](context-template.md#-故事字符串)的一部分，通常是模型接收到的提示词的第一部分。
 
-### Adjusting the Main Prompt
++++ 聊天补全 API
 
-The default main prompt helps the model understand what it's expected to do with the character and persona information that follows, how to interpret the past conversation, and what kind of response to generate. It's a flexible general-purpose prompt that works well for many situations, because it establishes that the AI is writing as a character in a conversation with your persona.
+主提示词是[提示词管理器](prompt-manager.md)中的默认提示词之一。它通常是模型在上下文中接收到的第一条消息，归属于（“由”）系统角色。
 
-However, you can adjust the main prompt to better suit your needs. Here are some common reasons to adjust the main prompt:
++++
 
-* **Provide additional instructions**: for example, you want the AI to explain its reasoning, follow specific rules, or avoid certain topics
-* **Clarify the role of the AI**: for example, you want the AI to act as a narrator, a storyteller, or a guide
-* **Change the context of the conversation**: for example, you want the AI to respond as if it were an AI assistant, text adventure game, or a writing partner
+默认的主提示词是：
 
-!!! Try things out and see what works best for you
-All the examples in this guide have worked well for other users, but the prompt that works for your needs and the model you're using might be different. Experiment with different instructions and prompting styles to see what works best for you. If you're not sure what to try, you can always ask for help in the [SillyTavern Discord](https://discord.gg/sillytavern).
+> 在 \{\{char\}\} 和 \{\{user\}\} 的虚构聊天中，编写 \{\{char\}\} 的下一个回复。
+
+\{\{char\}\} 和 \{\{user\}\} 占位符会被替换为您在对话中定义的角色和人格的名称。
+
+您可以在主提示词中使用任何受支持的 [\{\{宏\}\}](/Usage/Characters/macros.md) 标签，以包含可能因对话而异或随着对话进行而变化的信息。
+
+### 调整主提示词
+
+默认的主提示词帮助模型理解它应该如何处理后面的角色和人格信息，如何解释过去的对话，以及生成何种响应。它是一个灵活的通用提示词，在许多情况下都工作良好，因为它确立了 AI 是在以角色身份与您的人格进行对话中写作。
+
+但是，您可以调整主提示词以更好地满足您的需求。以下是一些调整主提示词的常见原因：
+
+*   **提供额外指令**：例如，您希望 AI 解释其推理、遵循特定规则或避免某些话题
+*   **阐明 AI 的角色**：例如，您希望 AI 充当叙述者、讲故事的人或向导
+*   **更改对话的上下文**：例如，您希望 AI 像 AI 助手、文字冒险游戏或写作伙伴一样响应
+
+!!! 尝试不同方法，找到最适合您的
+本指南中的所有示例对其他用户都很有效，但适合您需求和所用模型的提示词可能有所不同。尝试不同的指令和提示风格，看看什么最适合您。如果您不确定该尝试什么，可以随时在 [SillyTavern Discord](https://discord.gg/sillytavern) 中寻求帮助。
 !!!
 
-Giving the AI additional instructions in the Main Prompt can help it understand what you want from the conversation.
+在主提示词中向 AI 提供额外指令可以帮助它理解您从对话中想要什么。
 
-> Write one reply only. Write at least one paragraph, up to four.
+> 只写一个回复。至少写一段，最多四段。
 
-> Markdown is enabled. Use it to format your response. Enclose code snippets in triple backticks.
+> 启用 Markdown。使用它来格式化您的回复。将代码片段用三个反引号括起来。
 
-> Write character dialogue in quotation marks. Write \{\{char\}\}'s thoughts in parentheses.
+> 用引号书写角色对话。用括号书写 \{\{char\}\} 的想法。
 
-> You are an anime roleplay generation model for users aged 13 to 17. You always generate fun, age-appropriate responses.
+> 您是一个面向 13 至 17 岁用户的动漫角色扮演生成模型。您始终生成有趣、适合年龄的响应。
 
-> Answer truthfully and write out your thinking step by step to be sure you get the right answer.
+> 如实回答，并逐步写出您的思考过程以确保得到正确答案。
 
-The AI will more easily follow instructions about what it should do than what it should not do. For example, if you want the AI to avoid writing in a certain way, it's better to tell it how you want it to write instead. And while *"Do not decide what \{\{user\}\} says or does"* is commonly included in prompts to prevent the AI from controlling your persona, some users find *"Write  \{\{char\}\}'s responses in a way that respects  \{\{user\}\}'s autonomy"* is more effective.
+AI 更容易遵循关于它应该做什么的指令，而不是它不应该做什么。例如，如果您希望 AI 避免以某种方式写作，最好告诉它您希望它如何写作。虽然*“不要决定 \{\{user\}\} 说什么或做什么”* 通常包含在提示词中以防止 AI 控制您的人格，但一些用户发现 *“以尊重 \{\{user\}\} 自主权的方式编写 \{\{char\}\} 的响应”* 更有效。
 
-There is often a better place than the Main Prompt to include information about the user or characters, modify a character's writing and speaking style, or give other specific instructions. The Main Prompt is best used for general instructions about the conversation as a whole, or about a type of conversation that you want to have.
+通常有比主提示词更好的地方来包含关于用户或角色的信息、修改角色的写作和说话风格，或提供其他特定指令。主提示词最好用于关于整个对话的一般指令，或关于您想要进行的某种类型的对话。
 
-### Effect of Message History
+### 消息历史的影响
 
-When adjusting the main prompt to improve the AI's responses, consder that the AI picks up a lot from the message history. The history is its memory of past events, character interactions and relationships, and its style guide for word choice and writing style.
+在调整主提示词以改进 AI 的响应时，请考虑到 AI 从消息历史中获取了大量信息。历史是它对过去事件、角色互动和关系的记忆，以及其词汇选择和写作风格的风格指南。
 
-Use this to your advantage by also providing [example messages](/Usage/Characters/characterdesign.md#examples-of-dialogue) showing how you want the AI to respond. Showing what you want is often easier than trying to explain it!
+通过提供展示您希望 AI 如何响应的[示例消息](/Usage/Characters/characterdesign.md#对话示例)来利用这一点。展示您想要的内容通常比试图解释它更容易！
 
-When your conversation already has history, changing the main prompt has a limited effect on the AI's responses. In terms of events and relationships, the AI assumes that the main prompt occurred in the distant past, and the message history updates it. In terms of writing style and word choice, the AI assumes that all the messages in history were generated according to the rules in the *current* main prompt, and that it should continue to generate messages in the same way. Some suggestions for dealing with this are:
+当您的对话已有历史时，更改主提示词对 AI 响应的影响有限。在事件和关系方面，AI 假定主提示词发生在遥远的过去，而消息历史会更新它。在写作风格和词汇选择方面，AI 假定历史中的所有消息都是根据*当前*主提示词中的规则生成的，并且它应该继续以相同的方式生成消息。处理此事的一些建议：
 
-* insert current instructions close to or after the end of message history, for example by using an [Author's Note](/Usage/Characters/Author's-Note.md)
-* test your changes to the main prompt by starting a new conversation
-* edit the message history to remove or correct examples of unwanted behaviour
-* use the [Post-History Instructions](#post-history-instructions) to provide final instructions to the AI
+*   将当前指令插入到消息历史的末尾或之后，例如使用[作者注记](/Usage/Characters/Author's-Note.md)
+*   通过开始新对话来测试您对主提示词的更改
+*   编辑消息历史以删除或纠正不良行为的示例
+*   使用[历史记录后指令](#-历史记录后指令)向 AI 提供最终指令
 
-!!! Get it right the first time!
-Never let the AI "get away" with something you don't want it to do. If you don't like the AI's response, don't continue the conversation as if it was correct. Instead, modify the prompts, regenerate the message, and continue from there. This will help the AI learn what you want.
+!!! 第一次就做对！
+绝不要让 AI“逃脱”您不希望它做的事情。如果您不喜欢 AI 的响应，不要像它是正确的那样继续对话。相反，修改提示词，重新生成消息，并从那里继续。这将帮助 AI 了解您想要什么。
 !!!
 
-### Removing the "Fictional Chat" Context
+### 移除“虚构聊天”上下文
 
-There are situations where "fictional chat" might not be the right context for your conversation. 
+在某些情况下，“虚构聊天”可能不是您对话的正确上下文。
 
-You can remove the "fictional" context from the Main Prompt:
+您可以从主提示词中移除“虚构”上下文：
 
-> Write \{\{char\}\}'s next reply in a conversation with \{\{user\}\}.
+> 在 \{\{char\}\} 和 \{\{user\}\} 的对话中，编写 \{\{char\}\} 的下一个回复。
 
-You may not want the AI to think of itself as role-playing at all. Instead of removing the idea of a character, you can remove the idea of an AI:
+您可能根本不希望 AI 认为自己在进行角色扮演。除了移除角色的概念，您还可以移除 AI 的概念：
 
-> You are \{\{char\}\}, a helpful assistant. You provide useful information and help \{\{user\}\} with their questions.
+> 您是 \{\{char\}\}，一个乐于助人的助手。您提供有用的信息并帮助 \{\{user\}\} 解答问题。
 
-### AI as Narrator or Storyteller
+### AI 作为叙述者或讲故事者
 
-What if you want the AI to act as a narrator, describing events from an omniscient perspective, inventing its own characters and settings?
+如果您希望 AI 充当叙述者，从全知视角描述事件，发明自己的角色和设置，该怎么办？
 
-One approach is to create a named character for the AI to use as a narrator. This character could be called "Narrator" or "AI", suggesting that the AI is a general-purpose storyteller, or it could be named after a specific scenario or setting, giving the AI the task of narrating a story in that setting. The details of the setting can then be defined in the [Character](/Usage/Characters/characterdesign.md) or in [World Info](/Usage/worldinfo.md).
+一种方法是为 AI 创建一个命名角色作为叙述者。这个角色可以称为“叙述者”或“AI”，暗示 AI 是一个通用的讲故事者，或者可以以特定场景或设置命名，赋予 AI 在该设置中叙述故事的任务。然后，设置的细节可以在[角色](/Usage/Characters/characterdesign.md)或[世界信息](/Usage/worldinfo.md)中定义。
 
-You will need to adjust the default main prompt to reflect the AI's role. For a general-purpose narrator, you might use:
+您需要调整默认的主提示词以反映 AI 的角色。对于通用叙述者，您可以使用：
 
-> You are \{\{char\}\}, a skilled and versatile storyteller. Narrate the story.
+> 您是 \{\{char\}\}，一个熟练且多才多艺的讲故事者。叙述故事。
 
-or for a specific setting:
+或者针对特定设置：
 
-> You are the narrator of a fantasy scenario. Play as the characters that visit \{\{char\}\}.
+> 您是一个奇幻场景的叙述者。扮演访问 \{\{char\}\} 的角色。
 
-It helps to clarify the role of the user in the conversation. Are your messages part of the story, or are they instructions to the narrator about what your character does or says? An example that includes the user in the story:
+阐明用户在对话中的角色会有所帮助。您的消息是故事的一部分，还是给叙述者关于您角色行为或说话的指令？一个将用户包含在故事中的示例：
 
-> The story should progress by responding to the actions and dialogue of \{\{user\}\}. Narrate the story in third person.
+> 故事应通过响应用户 \{\{user\}\} 的行为和对话来推进。以第三人称叙述故事。
 
-An example that keeps the user out of the story:
+一个将用户排除在故事之外的示例：
 
-> Enter Adventure Mode. Narrate the story based on \{\{user\}\}'s dialogue and actions after ">". Describe the surroundings in vivid detail. Be detailed, creative, verbose, and proactive. Move the story forward by introducing fantasy elements and interesting characters.
+> 进入冒险模式。根据用户在“>”之后的对话和动作叙述故事。生动详细地描述周围环境。要详细、有创意、冗长和主动。通过引入奇幻元素和有趣角色来推动故事发展。
 
-Defining the role of the user not only helps the AI understand how to respond to your messages, but also to what extent it is allowed to control your persona. This avoids situations where the AI makes decisions for your persona that you would rather make yourself.
+定义用户的角色不仅有助于 AI 理解如何响应您的消息，还有助于理解它在多大程度上可以控制您的人格。这避免了 AI 为您的人格做出您宁愿自己做的决定的情况。
 
-## Post-History Instructions
+## 📌 历史记录后指令
 
-Post-History Instructions (PHI) are additional instructions sent to the AI after the main prompt and the user message. They can be used to provide additional context or instructions to the AI based on the message history.
+历史记录后指令 (PHI) 是在主提示词和用户消息之后发送给 AI 的附加指令。它们可用于根据消息历史向 AI 提供额外的上下文或指令。
 
-Since the Post-History Instructions are sent after the user message, they are the final instructions that the AI receives before generating a response. The AI usually gives them a higher priority than the main prompt, and they can override the main prompt's instructions.
+由于历史记录后指令是在用户消息之后发送的，它们是 AI 在生成响应之前收到的最终指令。AI 通常给予它们比主提示词更高的优先级，并且它们可以覆盖主提示词的指令。
 
-To use per-character Post-History Instructions, add them to the character's [Post-History Instructions](/Usage/Characters/characterdesign.md) and enable [Prefer Char. Instructions](/Usage/User_Settings/User_Settings.md). To preserve the globally defined PHI while using character-specific instructions, you can use the `{{original}}` macro in the character's Post-History Instructions field.
+要使用每角色历史记录后指令，请将它们添加到角色的[历史记录后指令](/Usage/Characters/characterdesign.md)中并启用[偏好角色指令](/Usage/User_Settings/User_Settings.md)。要在使用角色特定指令的同时保留全局定义的 PHI，您可以在角色的历史记录后指令字段中使用 `{{original}}` 宏。
 
-+++ Text Completion APIs
++++ 文本补全 API
 
-Post-History Instructions are defined in the [Advanced Formatting](/Usage/Prompts/advancedformatting.md) panel under the System Prompt category. The Post-History Instructions is added as an invisible user role injection that precedes the last line of the prompt (usually containing a response message "header"). Note that the "Enable System Prompt" toggle must be enabled for the Post-History Instructions to be applied (even if the System Prompt itself is empty).
+历史记录后指令在[高级格式化](/Usage/Prompts/advancedformatting.md)面板的系统提示词类别下定义。历史记录后指令作为一个不可见的用户角色注入添加，位于提示词最后一行（通常包含响应消息“头”）之前。请注意，“启用系统提示词”开关必须启用才能应用历史记录后指令（即使系统提示词本身为空）。
 
-+++ Chat Completion APIs
++++ 聊天补全 API
 
-Post-History Instructions is one of the default prompts in [Prompt Manager](prompt-manager.md). It is usually the last message in the context that the model receives, attributed to ("sent by") the system role. If your Chat Completion API does not support the system role, it will usually be attributed to the user role instead.
+历史记录后指令是[提示词管理器](prompt-manager.md)中的默认提示词之一。它通常是模型在上下文中接收到的最后一条消息，归属于（“由”）系统角色。如果您的聊天补全 API 不支持系统角色，它通常会被归属于用户角色。
 
 +++
 
-## Adding to the Prompt (World Info)
+## ➕ 添加到提示词（世界信息）
 
-You can insert additional information anywhere in the prompt using the [World Info](/Usage/worldinfo.md) feature. By setting the conditions for when the information should be inserted, you can guide the AI to include specific details, change how it responds, or add new elements to the conversation.
+您可以使用[世界信息](/Usage/worldinfo.md)功能在提示词中的任何位置插入附加信息。通过设置信息应何时插入的条件，您可以引导 AI 包含特定细节、更改其响应方式或将新元素添加到对话中。
 
-Some common uses of World Info include:
+世界信息的一些常见用途包括：
 
-* a "lorebook" or "encyclopedia" with information about the world or setting
-* a way to manage different system prompts for various characters and situations
-* a place to store memories that the AI should "recall" in the conversation
-* a more modular system for creating, editing, and sharing character details
-* a source of random events and surprises for the AI to react to, or to make you react to!
+*   包含有关世界或设置的信息的“传说书”或“百科全书”
+*   一种管理不同角色和情境的各种系统提示词的方法
+*   一个存储 AI 应在对话中“回忆”的记忆的地方
+*   一个用于创建、编辑和共享角色细节的更模块化的系统
+*   一个随机事件和惊喜的来源，让 AI 做出反应，或者让您做出反应！

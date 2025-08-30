@@ -4,57 +4,57 @@ route: /usage/core-concepts/connection-profiles
 order: 100
 ---
 
-# Connection Profiles
+# 📁 连接配置文件
 
-Save Connection Profiles to quickly switch between different APIs, models and formatting templates. This is useful when you actively use multiple API connections or need to switch between different configurations without surfing through the menus.
+保存连接配置文件，以便快速在不同的 API、模型和格式化模板之间切换。这在您需要主动使用多个 API 连接，或无需浏览菜单即可在不同配置之间切换时非常有用。
 
-## Accessing Connection Profiles
+## 🔗 访问连接配置文件
 
-This feature is enabled by default starting from SillyTavern 1.12.6 or later as a built-in extension, and available in the API Connections menu. If you wish to *disable* it, open the Extensions panel, click on "Manager extensions", locate Connection Profiles in the list, uncheck the "Enabled" checkbox, and then click "Close".
+此功能自 SillyTavern 1.12.6 或更高版本起作为内置扩展默认启用，并可在 API 连接菜单中找到。如果您希望*禁用*它，请打开扩展面板，点击“管理扩展”，在列表中找到“连接配置文件”，取消选中“启用”复选框，然后点击“关闭”。
 
-## What is Saved
+## 💾 保存内容
 
-Connection Profiles store the following selections.
+连接配置文件存储以下选项。
 
-### Common
+### 通用设置
 
-* [API type, model and the server URL](/Usage/API_Connections/index.md)
-* [Secret Key](/Usage/faq.md#我的-api-密钥存储在哪里为什么我看不到它们)
-* [Settings preset](/Usage/Common-Settings.md)
-* [Start Reply With](/Usage/Prompts/advancedformatting.md#start-reply-with) (can be explicitly empty)
-* [Custom Stopping Strings](/Usage/Prompts/advancedformatting.md#custom-stopping-strings) (can be explicitly empty)
-* [Reasoning Formatting](/Usage/Prompts/reasoning.md#configuration)
+*   [API 类型、模型和服务器 URL](/Usage/API_Connections/index.md)
+*   [密钥 (Secret Key)](/Usage/faq.md#我的-api-密钥存储在哪里为什么我看不到它们)
+*   [设置预设 (Settings preset)](/Usage/Common-Settings.md)
+*   [起始回复词 (Start Reply With)](/Usage/Prompts/advancedformatting.md#-回复起始词) (可显式设置为空)
+*   [自定义停止字符串 (Custom Stopping Strings)](/Usage/Prompts/advancedformatting.md#-自定义停止字符串) (可显式设置为空)
+*   [推理格式化 (Reasoning Formatting)](/Usage/Prompts/reasoning.md#-配置)
 
-### Text Completion APIs
+### 文本补全 API
 
-* [System Prompt and its state](/Usage/Prompts/advancedformatting.md#system-prompt)
-* [Instruct Mode state and template](/Usage/Prompts/instructmode.md)
-* [Context Template](/Usage/Prompts/advancedformatting.md#context-template)
-* [Tokenizer](/Usage/Prompts/advancedformatting.md#tokenizer)
+*   [系统提示词及其状态 (System Prompt)](/Usage/Prompts/advancedformatting.md#-系统提示词)
+*   [指令模式状态和模板 (Instruct Mode)](/Usage/Prompts/instructmode.md)
+*   [上下文模板 (Context Template)](/Usage/Prompts/advancedformatting.md#-上下文模板)
+*   [分词器 (Tokenizer)](/Usage/Prompts/advancedformatting.md#-分词器)
 
-### Chat Completion APIs
+### 聊天补全 API
 
-* [Prompt Post-Processing](/Usage/API_Connections/openai.md#prompt-post-processing)
-* Proxy preset
+*   [提示词后处理 (Prompt Post-Processing)](/Usage/API_Connections/openai.md#提示词后处理)
+*   代理预设 (Proxy preset)
 
-## Managing Connection Profiles
+## 🛠️ 管理连接配置文件
 
-!!!info Note
-Profiles only save the selection in dropdown fields, without knowing anything about the underlying settings. This means that you will lose unsaved changes by switching to a different profile. To prevent this, make sure to update all presets and templates if you don't want to lose ephemeral changes.
+!!!info 注意
+配置文件仅保存下拉字段中的选择，对底层设置一无所知。这意味着通过切换到其他配置文件，您将丢失未保存的更改。为防止这种情况，如果您不想丢失临时更改，请确保更新所有预设和模板。
 !!!
 
-* To save a profile, set all the required settings and click the "Create" button. Then review the settings and provide a name for the profile. **A name should be unique.**
-* To view the detailed information about a chosen profile, click on the "Information" button. Click again to hide the details.
-* Connection Profile settings are saved into `settings.json` without altering the associated profile save file until you press the "Update" button. This means that if you setup a profile, but then switch to a different one without updating, you will lose all of your previous changes.
-* To restore the changed selections from a saved profile, click the "Reload" button.
-* To delete a profile, click the "Delete" button and confirm the deletion. **This action is irreversible.**
+*   **要保存配置文件**：设置所有必需的选项，然后单击“创建 (Create)”按钮。然后检查设置并为配置文件提供一个名称。**名称应是唯一的。**
+*   **要查看所选配置文件的详细信息**：单击“信息 (Information)”按钮。再次单击可隐藏详细信息。
+*   连接配置文件设置会保存到 `settings.json` 中，而不会更改关联的配置文件保存文件，除非您按下“更新 (Update)”按钮。这意味着如果您设置了一个配置文件，但在未更新的情况下切换到另一个配置文件，您将丢失之前的所有更改。
+*   **要从已保存的配置文件恢复更改的选项**：单击“重新加载 (Reload)”按钮。
+*   **要删除配置文件**：单击“删除 (Delete)”按钮并确认删除。**此操作不可逆。**
 
-## Slash Commands
+## ⌨️ 斜杠命令
 
-Connection profiles can be managed using the following slash commands.
+可以使用以下斜杠命令管理连接配置文件。
 
-1. `/profile [name]` - switch to a profile if the argument is provided, or get the name of the current profile if not.
-2. `/profile-create [name]` - saves the current settings as a new profile with the provided name.
-3. `/profile-list` - returns a JSON-serialized array of available profile names.
-4. `/profile-get [name]` - gets the details of the profile with the provided name as a JSON-serialized object.
-5. `/profile-update` - updates the selected profile with the current settings.
+1.  `/profile [名称]` - 如果提供了参数，则切换到指定名称的配置文件；如果未提供，则获取当前配置文件的名称。
+2.  `/profile-create [名称]` - 将当前设置另存为具有所提供名称的新配置文件。
+3.  `/profile-list` - 返回可用配置文件名称的 JSON 序列化数组。
+4.  `/profile-get [名称]` - 获取所提供名称的配置文件的详细信息，以 JSON 序列化对象形式返回。
+5.  `/profile-update` - 使用当前设置更新选定的配置文件。

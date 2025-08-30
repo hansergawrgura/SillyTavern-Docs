@@ -1,29 +1,29 @@
-# KoboldCpp
+# 🐉 KoboldCpp
 
-KoboldCpp is a self-contained API for GGML and GGUF models.
+KoboldCpp 是一个用于 GGML 和 GGUF 模型的自包含 API。
 
-This [VRAM Calculator](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) by Nyx will tell you approximately how much RAM/VRAM your model requires.
+Nyx 制作的这个 [VRAM 计算器](https://huggingface.co/spaces/NyxKrage/LLM-Model-VRAM-Calculator) 会告诉您您的模型大约需要多少 RAM/VRAM。
 
-## Nvidia GPU Quickstart
+## Nvidia GPU 快速入门
 
-This guide assumes you're using Windows.
+本指南假设您使用的是 Windows。
 
-* Download the latest release: <https://github.com/LostRuins/koboldcpp/releases>
-* Launch KoboldCpp. You may see a pop-up from Microsoft Defender, click `Run Anyway`.
-* As of version 1.58, KoboldCpp should look like this:
+*   下载最新版本：<https://github.com/LostRuins/koboldcpp/releases>
+*   启动 KoboldCpp。您可能会看到 Microsoft Defender 的弹出窗口，点击 `Run Anyway`（仍要运行）。
+*   截至版本 1.58，KoboldCpp 应如下图所示：
 
 ![KoboldCpp 1.58](/static/koboldcpp.png)
 
-* Under the `Quick Launch` tab, select the model and your preferred `Context Size`.
-* Select `Use CuBLAS` and make sure the yellow text next to `GPU ID` matches your GPU.
-* Do not tick `Low VRAM`, even if you have low VRAM.
-* Unless you have an Nvidia 10-series or older GPU, untick `Use QuantMatMul (mmq)`.
-* `GPU Layers` should have been populated when you loaded your model. Leave it there for now.
-* Under the `Hardware` tab, tick `High Priority`.
-* Click `Save` so you don't have to configure KoboldCpp on every launch.
-* Click `Launch` and wait for the model to load.
+*   在 `Quick Launch` 选项卡下，选择模型和您偏好的 `Context Size`（上下文大小）。
+*   选择 `Use CuBLAS` 并确保 `GPU ID` 旁边的黄色文本与您的 GPU 匹配。
+*   即使您的 VRAM 较低，也**不要**勾选 `Low VRAM`。
+*   除非您拥有 Nvidia 10 系列或更旧的 GPU，否则请取消勾选 `Use QuantMatMul (mmq)`。
+*   `GPU Layers`（GPU 层数）应在您加载模型时已自动填充。暂时保持原样。
+*   在 `Hardware` 选项卡下，勾选 `High Priority`（高优先级）。
+*   点击 `Save`（保存），这样您就不必在每次启动时都配置 KoboldCpp。
+*   点击 `Launch`（启动）并等待模型加载。
 
-You should see something like this:
+您应该会看到类似这样的信息：
 
 ```txt
 Load Model OK: True
@@ -34,15 +34,15 @@ Starting OpenAI Compatible API on port 5001 at http://localhost:5001/v1/
 Please connect to custom endpoint at http://localhost:5001
 ```
 
-You can now connect to KoboldCpp within SillyTavern with `http://localhost:5001` as the API URL and start chatting.
+您现在可以在 SillyTavern 中使用 `http://localhost:5001` 作为 API URL 连接到 KoboldCpp 并开始聊天。
 
-**Congratulations! You're done!**
+**恭喜！您完成了！**
 
-Kind of.
+差不多完成了。
 
-### GPU Layers
+### GPU 层数 (GPU Layers)
 
-KoboldCpp is working, but you can improve performance by ensuring that as many layers as possible are offloaded to the GPU. You should see something like this in the terminal:
+KoboldCpp 正在工作，但您可以通过确保尽可能多的层被卸载到 GPU 上来提高性能。您应该在终端中看到类似这样的信息：
 
 ```txt
 llm_load_tensors: offloading 9 repeating layers to GPU
@@ -54,17 +54,17 @@ llama_kv_cache_init:  CUDA_Host KV buffer size =  1479.19 MiB
 llama_kv_cache_init:      CUDA0 KV buffer size =   578.81 MiB
 ```
 
-Don't be afraid of numbers; this part is easier than it looks. `CPU buffer size` refers to how much system RAM is being used. Ignore that. `CUDA0 buffer size` refers to how much GPU VRAM is being used. `CUDA_Host KV buffer size` and `CUDA0 KV buffer size` refer to how much GPU VRAM is being dedicated to your model's context. In this case, KoboldCpp is using about 9 GB of VRAM.
+不要害怕数字；这部分比看起来容易。`CPU buffer size` 指的是正在使用的系统 RAM 量。忽略那个。`CUDA0 buffer size` 指的是正在使用的 GPU VRAM 量。`CUDA_Host KV buffer size` 和 `CUDA0 KV buffer size` 指的是专用于模型上下文的 GPU VRAM 量。在这种情况下，KoboldCpp 使用了大约 9 GB 的 VRAM。
 
-I have 12 GB of VRAM, and only 2 GB of VRAM is being used for context, so I have about 10 GB of VRAM left over to load the model. Because 9 layers used about 7 GB of VRAM and `7000 / 9 = 777.77` we can assume each layer uses approximately `777.77 MIB` of VRAM. `10,000 MIB / 777.77 = 12.8`, so I'll round down and load 12 layers with this model from now on.
+我有 12 GB 的 VRAM，并且只有 2 GB 的 VRAM 用于上下文，所以我还有大约 10 GB 的 VRAM 剩余来加载模型。因为 9 层使用了大约 7 GB 的 VRAM，并且 `7000 / 9 = 777.77`，我们可以假设每层使用大约 `777.77 MIB` 的 VRAM。`10,000 MIB / 777.77 = 12.8`，所以我将向下取整，从此使用此模型加载 12 层。
 
-Now do your own math using the model, context size, and VRAM for your system, and restart KoboldCpp:
+现在根据您的模型、上下文大小和系统 VRAM 进行您自己的计算，然后重新启动 KoboldCpp：
 
-* If you're smart, you clicked `Save` before, and now you can load your previous configuration with `Load`. Otherwise, select the same settings you chose before.
-* Change the `GPU Layers` to your new, VRAM-optimized number (12 layers in my case).
-* Click `Save` to save your updated configuration.
+*   如果您够聪明，您之前点击了 `Save`，现在您可以使用 `Load` 加载您之前的配置。否则，选择您之前选择的相同设置。
+*   将 `GPU Layers` 更改为您新的、经过 VRAM 优化的数字（在我的例子中是 12 层）。
+*   点击 `Save` 以保存您更新的配置。
 
-You should now see something like this:
+您现在应该看到类似这样的信息：
 
 ```txt
 llm_load_tensors: offloading 12 repeating layers to GPU
@@ -76,8 +76,8 @@ llama_kv_cache_init:  CUDA_Host KV buffer size =  1286.25 MiB
 llama_kv_cache_init:      CUDA0 KV buffer size =   771.75 MiB
 ```
 
-KoboldCpp is using about 11.5 GB of my 12 GB VRAM. This should perform a lot better than the settings generated automatically by KoboldCpp.
+KoboldCpp 使用了我 12 GB VRAM 中的大约 11.5 GB。这应该比 KoboldCpp 自动生成的设置性能好很多。
 
-**Congratulations! You're (actually) done!**
+**恭喜！您（真正）完成了！**
 
-For a more in-depth look at KoboldCpp settings, check out Kalomaze's [Simple Llama + SillyTavern Setup Guide](https://rentry.org/llama_v2_sillytavern).
+要更深入地了解 KoboldCpp 设置，请查看 Kalomaze 的 [Simple Llama + SillyTavern Setup Guide](https://rentry.org/llama_v2_sillytavern)（简易 Llama + SillyTavern 设置指南）。

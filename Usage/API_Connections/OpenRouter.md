@@ -1,33 +1,34 @@
 ---
 order: 10
 ---
-# OpenRouter
+
+# 🔗 OpenRouter
 
 !!!info
-OpenRouter is available as both a Text Completion and Chat Completion source. All models are available through either API, but their features may differ depending on the API type you choose. For example, image inlining and tool calling are only available with the Chat Completion API.
+OpenRouter 既可作为文本补全 (Text Completion) 源，也可作为聊天补全 (Chat Completion) 源。所有模型都可通过任一 API 使用，但它们的功能可能因您选择的 API 类型而异。例如，内联图像 (image inlining) 和工具调用 (tool calling) 仅适用于聊天补全 API。
 !!!
 
-Don't want to sign up for a dozen API services, but still want access to all the latest models? Use OpenRouter.
+不想注册十几个 API 服务，但仍想访问所有最新模型？使用 OpenRouter。
 
-OpenRouter works by letting you use a single endpoint to access models like DeepSeek, Claude, and Gemini, all in one service with a shared credit pool.
+OpenRouter 的工作原理是让您使用单个端点访问 DeepSeek、Claude 和 Gemini 等模型，所有这些都在一个服务中，共享信用额度。
 
-It has a free trial (about $1) and paid access afterward. No subscription or monthly bill - you pay for what you actually use. Some models have free access with a limited number of daily requests.
+它提供免费试用（约 1 美元），之后是付费访问。没有订阅费或月租费——您只需为实际使用的内容付费。某些模型提供免费访问，但有每日请求次数限制。
 
 !!!tip
-To get permanent access to free models with a generous daily limit, you need to buy at least $10 in credits **once**.
+要永久访问免费模型并获得慷慨的每日限制，您需要**一次性**购买至少 10 美元的信用额度。
 
-See more details on the [OpenRouter FAQ page](https://openrouter.ai/docs/faq).
+详见 [OpenRouter 常见问题页面](https://openrouter.ai/docs/faq)。
 !!!
 
-- Create an OpenRouter account: [openrouter.ai](https://openrouter.ai/)
-- [OpenRouter Models List](https://openrouter.ai/models?order=pricing-low-to-high)
+*   创建 OpenRouter 帐户：[openrouter.ai](https://openrouter.ai/)
+*   [OpenRouter 模型列表](https://openrouter.ai/models?order=pricing-low-to-high)
 
-![OpenRouter-ConnectionPanel](/static/openrouter-connection.png)
+![OpenRouter-连接面板](/static/openrouter-connection.png)
 
-From top to bottom (see image above):
+从上到下（见上图）：
 
-1. Select the 'Chat Completion' API.
-2. Select OpenRouter as the source.
-3. Click "Authorize" to get a key using the OAuth flow. Alternatively, generate an API key [here](https://openrouter.ai/keys) and paste it into the box.
-4. Click "Connect" and select a model.
-5. (Optional) Use the "Test Message" button to verify your connection.
+1.  选择 'Chat Completion' API。
+2.  选择 OpenRouter 作为来源。
+3.  点击 "Authorize" 使用 OAuth 流程获取密钥。或者，在此处[生成 API 密钥](https://openrouter.ai/keys)并将其粘贴到框中。
+4.  点击 "Connect" 并选择一个模型。
+5.  （可选）使用 "Test Message" 按钮验证您的连接。

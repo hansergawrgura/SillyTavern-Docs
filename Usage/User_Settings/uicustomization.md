@@ -3,123 +3,123 @@ order: user-settings-10
 route: /usage/core-concepts/uicustomization/
 ---
 
-# UI Customization
+# 🎨 界面自定义
 
-## UI Theme
+## 🎭 界面主题
 
-### Theme Management
+### 主题管理
 
-Theme files allow you to save, share, and reuse your UI customizations. You can maintain multiple themes for different moods or purposes, and switch between them instantly.
+主题文件允许您保存、共享和重复使用您的界面自定义设置。您可以维护多个主题以适应不同的心情或用途，并可以即时切换它们。
 
-* Import/Export theme files
-* Delete existing themes
-* Save changes to current theme
-* Save as new theme
+*   导入/导出主题文件
+*   删除现有主题
+*   将更改保存到当前主题
+*   另存为新主题
 
-All the settings in this section are saved to the current theme. If you switch themes, the settings will be replaced by the settings of the new theme.
+本节中的所有设置都会保存到当前主题中。如果您切换主题，设置将被新主题的设置替换。
 
-### Display Settings
+### 显示设置
 
-These display options affect how characters and messages are presented in the chat interface.
+这些显示选项会影响角色和消息在聊天界面中的呈现方式。
 
-#### Avatar Style
+#### 头像样式
 
-Choose between Circle, Square, Rectangle, or Rounded Square. This setting applies to both user and AI avatars.
+在圆形、方形、矩形或圆角方形之间选择。此设置同时适用于用户和 AI 头像。
 
-#### Chat Style
+#### 聊天样式
 
-| Style        | Description                                                                                                                                                    | [Slash command](/For_Contributors/st-script.md#ui-styling) |
-|--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
-| **Flat**     | Clean and continuous "chat log" style, a flat canvas for your AI interactions to come to life.                                                                 | `/flat`<br>`/default`                                      |
-| **Bubbles**  | "Instant messenger" style with distinct bubbles for each message, delightful rounded corners, and a subtle 3D effect.                                          | `/bubble`<br>`/bubbles`                                    |
-| **Document** | Compact, document-like appearance with a text-focused layout. Hides avatars, timestamps, and message control buttons for past messages. | `/single`<br>`/story`                                      |
+| 样式         | 描述                                                                                                                                 | [斜杠命令](/For_Contributors/st-script.md#ui-styling) |
+| :----------- | :----------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------- |
+| **扁平**     | 简洁连续的“聊天日志”风格，一个平坦的画布，让您的 AI 互动栩栩如生。                                                                     | `/flat`<br>`/default`                                 |
+| **气泡**     | “即时通讯器”风格，每条消息都有独特的气泡、令人愉悦的圆角和微妙的 3D 效果。                                                              | `/bubble`<br>`/bubbles`                               |
+| **文档**     | 紧凑、类似文档的外观，采用以文本为中心的布局。隐藏过去消息的头像、时间戳和消息控制按钮。                                       | `/single`<br>`/story`                                 |
 
-### Notifications
+### 通知
 
-Set a position where the notification popups (toast messages) will appear on the screen.
+设置通知弹出框（ toast 消息）在屏幕上出现的位置。
 
-* Top Left
-* Top Center (default)
-* Top Right
-* Bottom Left
-* Bottom Center
-* Bottom Right
+*   左上角
+*   顶部居中（默认）
+*   右上角
+*   左下角
+*   底部居中
+*   右下角
 
-### Theme Colors
+### 主题颜色
 
-Customize the color scheme of every UI element to create your perfect theme. Colors can be selected using a color picker, and include transparency options where applicable.
+自定义每个 UI 元素的配色方案，创建您完美的主题。可以使用颜色选择器选择颜色，并在适用的情况下包含透明度选项。
 
-* Main Text
-* Italics Text
-* Underlined Text
-* Quote Text
-* Text Shadow
-* Chat Background
-* UI Background
-* UI Border
-* User Message
-* AI Message
+*   主文本
+*   斜体文本
+*   下划线文本
+*   引用文本
+*   文本阴影
+*   聊天背景
+*   界面背景
+*   界面边框
+*   用户消息
+*   AI 消息
 
-### Layout & Visual Settings
+### 布局与视觉设置
 
-Fine-tune the visual presentation of the interface with these sliders.
+使用这些滑块微调界面的视觉呈现。
 
-* **Chat Width**: Adjust chat window width (25-100% of screen)
-* **Font Scale**: Customize text size (0.5-1.5x)
-* **Blur Strength**: Control UI panel blur (0-30)
-* **Shadow Width**: Adjust text shadow intensity (0-5)
+*   **聊天宽度**：调整聊天窗口宽度（屏幕的 25-100%）
+*   **字体缩放**：自定义文本大小（0.5-1.5 倍）
+*   **模糊强度**：控制 UI 面板模糊度（0-30）
+*   **阴影宽度**：调整文本阴影强度（0-5）
 
-### Theme Toggles
+### 主题切换开关
 
-These switches control various UI features and behaviors. Some options can improve performance on lower-end devices, while others add useful information or functionality to the chat interface.
+这些开关控制各种 UI 功能和行为。某些选项可以提高低端设备上的性能，而其他选项则为聊天界面添加有用的信息或功能。
 
-* **Reduced Motion**: Disable animations and transitions
-* **No Blur Effect**: Remove background blur for better performance
-* **No Text Shadows**: Disable text shadow effects
-* **[Visual Novel mode](Visual-Novel.md)**: Compact chat with background sprite
-* **Expand Message Actions**: Always show full message context menu
-* **Zen Sliders**: Simplified parameter controls
-* **Mad Lab Mode**: Unrestricted parameter ranges
-* **Message Timer**: Show AI response generation time
-* **Chat Timestamps**: Display message timestamps
-* **Model Icons**: Show AI model icons for messages
-* **Message IDs**: Display sequential message numbers
-* **Hide Chat Avatars**: Remove avatars from chat
-* **Message Token Count**: Show token counts per message
-* **Compact Input Area**: Single-row input (Mobile only)
-* **Swipe # for All Messages**: Show swipe numbers on all messages
-* **Characters Hotswap**: Quick-select buttons for favorite characters
-* **Avatar Hover Magnification**: Zoom effect on avatar hover
-* **Tags as Folders**: Organize characters using tags as folders
-* **Click to Edit**: Click on messages to quickly open a message editor
+*   **减少动效**：禁用动画和过渡效果
+*   **无模糊效果**：移除背景模糊以提高性能
+*   **无文本阴影**：禁用文本阴影效果
+*   **[视觉小说模式](Visual-Novel.md)**：紧凑聊天界面，带有背景立绘
+*   **展开消息操作**：始终显示完整的消息上下文菜单
+*   **禅意滑块**：简化的参数控件
+*   **疯狂实验室模式**：无限制的参数范围
+*   **消息计时器**：显示 AI 响应生成时间
+*   **聊天时间戳**：显示消息时间戳
+*   **模型图标**：为消息显示 AI 模型图标
+*   **消息 ID**：显示顺序消息编号
+*   **隐藏聊天头像**：从聊天中移除头像
+*   **消息词元计数**：显示每条消息的词元数量
+*   **紧凑输入区域**：单行输入（仅限移动设备）
+*   **所有消息显示滑动编号**：在所有消息上显示滑动编号
+*   **角色热切换**：收藏角色的快速选择按钮
+*   **头像悬停放大**：头像悬停时的缩放效果
+*   **标签作为文件夹**：使用标签作为文件夹来组织角色
+*   **点击编辑**：点击消息即可快速打开消息编辑器
 
-### Custom CSS
+### 自定义 CSS
 
-Allows you to apply custom CSS styles to further customize the appearance of the chat interface.
+允许您应用自定义 CSS 样式以进一步自定义聊天界面的外观。
 
-Use <i class="fa-fw fa-solid fa-maximize" title="Expand icon"></i> **Expand** to expand the editor window for better visibility and editing.
+使用 <i class="fa-fw fa-solid fa-maximize" title="Expand icon"></i> **展开** 来展开编辑器窗口，以获得更好的可见性和编辑体验。
 
-If you switch themes, your custom CSS will be replaced by the custom CSS of the new theme. Ensure you save your custom CSS to a theme if you want to keep it when switching themes.
+如果您切换主题，您的自定义 CSS 将被新主题的自定义 CSS 替换。如果您希望在切换主题时保留自定义 CSS，请确保将其保存到主题中。
 
-If you use a lot of custom CSS, or want to use the same custom CSS with several themes, the unofficial [CSS Snippets extension](https://github.com/LenAnderson/SillyTavern-CssSnippets) can help you manage and organize your custom CSS.
+如果您使用大量自定义 CSS，或者希望将相同的自定义 CSS 用于多个主题，非官方的 [CSS 代码片段扩展](https://github.com/LenAnderson/SillyTavern-CssSnippets) 可以帮助您管理和组织您的自定义 CSS。
 
 ---
 
-## Message Sound
+## 🔊 消息提示音
 
-To play your own custom sound on receiving a new message from bot, replace the following MP3 file in your SillyTavern folder:
+要在收到机器人的新消息时播放您自定义的声音，请在您的 SillyTavern 文件夹中替换以下 MP3 文件：
 
 `public/sounds/message.mp3`
 
-Plays at 80% volume.
+以 80% 的音量播放。
 
-If the "[Background Sound Only](User_Settings.md#miscellaneous)" option is enabled, the sound plays only if SillyTavern window is **unfocused**.
+如果启用了“[仅后台声音](User_Settings.md#-杂项)”选项，则仅在 SillyTavern 窗口**未聚焦**时播放声音。
 
-## Formulas Rendering
+## 📐 公式渲染
 
-To enable math formulas rendering, use the [LaTeX extension](https://github.com/SillyTavern/Extension-LaTeX). To get the extension, you need to install it via the "Download Extensions & Assets" menu in SillyTavern.
+要启用数学公式渲染，请使用 [LaTeX 扩展](https://github.com/SillyTavern/Extension-LaTeX)。要获取该扩展，您需要通过 SillyTavern 中的“下载扩展和资源”菜单进行安装。
 
-Type your formulas in code blocks with `latex` or `asciimath` language identifiers for LaTeX and AsciiMath respectively. The extension uses [KaTeX](https://katex.org/) for rendering.
+分别在代码块中使用 `latex` 或 `asciimath` 语言标识符来键入您的 LaTeX 和 AsciiMath 公式。该扩展使用 [KaTeX](https://katex.org/) 进行渲染。
 
 <pre><code>```latex
 \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
@@ -129,9 +129,9 @@ Type your formulas in code blocks with `latex` or `asciimath` language identifie
 int_{-oo}^{oo} e^{-x^2} dx = sqrt{pi}
 ```</code></pre>
 
-!!!info Deprecation notice
-The legacy `$` and `$$` wrapper syntax is no longer supported. Please use the following regex scripts to polyfill the old syntax:
+!!!info 弃用通知
+不再支持旧的 `$` 和 `$$` 包装语法。请使用以下正则表达式脚本来填充旧语法：
 
-* [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json)
-* [$ - AsciiMath](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$_-_asciimath.json)
+*   [$$ - LaTeX](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$$_-_latex.json)
+*   [$ - AsciiMath](https://github.com/SillyTavern/Extension-LaTeX/raw/refs/heads/main/assets/$_-_asciimath.json)
 !!!

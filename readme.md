@@ -1,4 +1,4 @@
-# 什么是 SillyTavern？ 🤖
+# 🍻 什么是 SillyTavern？
 
 ![SillyTavern - 面向高阶用户的LLM前端界面](/static/banner.png)
 

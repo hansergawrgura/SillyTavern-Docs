@@ -1,151 +1,152 @@
 ---
 order: 20
 ---
-# Chat Completions
 
-## Source-specific instructions
+# 💬 聊天补全
 
-!!!warning **Important!**
-Most API platforms allow to view the generated API key only once, at the time of its creation. If you lose it, you will need to generate a new one. Make sure to keep it safe!
+## 各来源具体说明
+
+!!!warning **重要提示！**
+大多数 API 平台仅在创建时允许查看一次生成的 API 密钥。如果丢失，您将需要生成一个新密钥。请务必妥善保管！
 !!!
 
 ### OpenAI
 
-Use OpenAI's developer platform to access various OpenAI models, including gpt-4o, gpt-4.1, o3, etc.
+使用 OpenAI 的开发平台访问各种 OpenAI 模型，包括 gpt-4o、gpt-4.1、o3 等。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Go to [OpenAI](https://platform.openai.com/) and sign in.
-2. Use "[View API keys](https://platform.openai.com/account/api-keys)" option to create a new API key.
+1.  前往 [OpenAI](https://platform.openai.com/) 并登录。
+2.  使用“[查看 API 密钥](https://platform.openai.com/account/api-keys)”选项创建新的 API 密钥。
 
 ### Claude
 
-Claude is a family of AI models developed by Anthropic. You can access Claude models through the Anthropic console.
+Claude 是由 Anthropic 开发的一系列 AI 模型。您可以通过 Anthropic 控制台访问 Claude 模型。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Go to [Anthropic Console](https://console.anthropic.com/) and sign in.
-2. Use the "[Get API Key](https://console.anthropic.com/settings/keys)" section to create a new API key.
+1.  前往 [Anthropic 控制台](https://console.anthropic.com/) 并登录。
+2.  使用“[获取 API 密钥](https://console.anthropic.com/settings/keys)”部分创建新的 API 密钥。
 
 ### Mistral AI
 
-Mistral AI is a team developing both open and proprietary models with high scientific standards and a focus on openness. You can run their models locally or through their API service, La Plateforme.
+Mistral AI 是一个团队，以高科学标准和对开放性的关注开发开源和专有模型。您可以在本地运行他们的模型，或通过他们的 API 服务 La Plateforme 来使用。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. The first step is to create an account on [La Plateforme](https://console.mistral.ai/).
-2. Once that's done, you can choose a [plan](https://console.mistral.ai/billing/plans) and set up your payment information or opt for the Free Tier.
-3. Next, you can create your [API key](https://console.mistral.ai/api-keys/). You may need to wait a couple of minutes before the key becomes valid!
+1.  第一步是在 [La Plateforme](https://console.mistral.ai/) 上创建一个帐户。
+2.  完成后，您可以选择一个[计划](https://console.mistral.ai/billing/plans)并设置您的付款信息或选择免费套餐。
+3.  接下来，您可以创建您的 [API 密钥](https://console.mistral.ai/api-keys/)。您可能需要等待几分钟密钥才会生效！
 
 ### DeepSeek
 
-DeepSeek Platform provides access to the latest DeepSeek models through an API. They offer a range of models, including DeepSeek V3 and DeepSeek R1.
+DeepSeek 平台通过 API 提供对最新 DeepSeek 模型的访问。他们提供一系列模型，包括 DeepSeek V3 和 DeepSeek R1。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Sign up on the [DeepSeek Platform](https://platform.deepseek.com/).
-2. After signing up and topping up your account, you can create an API key in the "[API keys](https://platform.deepseek.com/api_keys)" section.
+1.  在 [DeepSeek 平台](https://platform.deepseek.com/) 上注册。
+2.  注册并为帐户充值后，您可以在“[API 密钥](https://platform.deepseek.com/api_keys)”部分创建 API 密钥。
 
 ### AI21
 
-AI21 Labs offers a range of AI models, including their flagship Jamba series. You can access their models through the AI21 Studio API.
+AI21 Labs 提供一系列 AI 模型，包括其旗舰 Jamba 系列。您可以通过 AI21 Studio API 访问他们的模型。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Go to [AI21 Studio](https://studio.ai21.com/) and sign in.
-2. Navigate to the "Settings => API Keys" section to create a new API key.
+1.  前往 [AI21 Studio](https://studio.ai21.com/) 并登录。
+2.  导航到“Settings => API Keys”部分以创建新的 API 密钥。
 
 ### Cohere
 
-Cohere provides a suite of AI models for various tasks, including text generation and embeddings. You can access their models through the Cohere API.
+Cohere 提供一套用于各种任务的 AI 模型，包括文本生成和嵌入。您可以通过 Cohere API 访问他们的模型。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Go to [Cohere](https://cohere.com/) and sign in.
-2. Navigate to the "[API Keys](https://dashboard.cohere.com/api-keys)" section in your account settings to create a new API key.
+1.  前往 [Cohere](https://cohere.com/) 并登录。
+2.  导航到您帐户设置中的“[API 密钥](https://dashboard.cohere.com/api-keys)”部分以创建新的 API 密钥。
 
 ### Perplexity
 
-Perplexity AI offers access to online-enabled Sonar models through their API for real-time research and information retrieval.
+Perplexity AI 通过其 API 提供对支持在线的 Sonar 模型的访问，用于实时研究和信息检索。
 
-Official Getting Started guide: [Perplexity Quickstart](https://docs.perplexity.ai/getting-started/quickstart)
+官方入门指南：[Perplexity 快速入门](https://docs.perplexity.ai/getting-started/quickstart)
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Go to [Perplexity](https://perplexity.ai/) and sign in.
-2. Go to the "[API billing](https://www.perplexity.ai/account/api/billing)" section to purchase credits for API usage.
-3. Navigate to the "[API keys](https://www.perplexity.ai/account/api/keys)" section in the settings to create a new API key.
+1.  前往 [Perplexity](https://perplexity.ai/) 并登录。
+2.  前往“[API 计费](https://www.perplexity.ai/account/api/billing)”部分购买 API 使用额度。
+3.  导航到设置中的“[API 密钥](https://www.perplexity.ai/account/api/keys)”部分以创建新的 API 密钥。
 
 ### Fireworks AI
 
-Fireworks AI is a high-performance platform that provides fast, cost-effective access to state-of-the-art open-source language models. The platform offers serverless deployment with OpenAI-compatible APIs and supports context windows up to 256,000 tokens.
+Fireworks AI 是一个高性能平台，提供快速、经济高效的最新开源语言模型访问。该平台提供具有 OpenAI 兼容 API 的无服务器部署，并支持高达 256,000 tokens 的上下文窗口。
 
-**How to get an API key:**
+**如何获取 API 密钥：**
 
-1. Go to [Fireworks AI](https://fireworks.ai/) and create an account or sign in.
-2. Navigate to the [API Keys page](https://app.fireworks.ai/settings/users/api-keys) in your account settings.
-3. Click "Create API key" and provide a descriptive name (e.g., "SillyTavern").
+1.  前往 [Fireworks AI](https://fireworks.ai/) 创建帐户或登录。
+2.  导航到您帐户设置中的 [API 密钥页面](https://app.fireworks.ai/settings/users/api-keys)。
+3.  单击“Create API key”并提供描述性名称（例如“SillyTavern”）。
 
-## Custom OpenAI-compatible endpoint
+## 自定义 OpenAI 兼容端点
 
 !!!warning
-It is important to note that we do not provide support for possible issues that you may have!
-We do not guarantee compatibility with every possible API endpoint!
+请注意，对于您可能遇到的任何问题，我们不提供支持！
+我们不保证与每个可能的 API 端点的兼容性！
 !!!
 
 !!!
-If you intend to use this feature to use a local endpoint, like TabbyAPI, Oobabooga, Aphrodite, or any like those, you might want to check out the [built-in compatibility for those](/Usage/API_Connections/index.md) instead. The custom endpoint feature is mainly intended for use with other services and programs that expose an OpenAI-compatible API Chat Completion endpoint.
+如果您打算使用此功能来使用本地端点，如 TabbyAPI、Oobabooga、Aphrodite 或任何类似的端点，您可能需要查看[对这些端点的内置兼容性支持](/Usage/API_Connections/index.md)。自定义端点功能主要用于与其他服务和程序交互，这些服务和程序公开了 OpenAI 兼容的 API 聊天补全端点。
 
-Most Text Completion APIs support far greater customization options than OpenAI's standards allow for. These greater customization options, such as the Min-P sampler, may be worthwhile for SillyTavern users to check out, which can greatly improve the quality of generations.
+大多数文本补全 API 支持比 OpenAI 标准允许的更强大的自定义选项。这些更强大的自定义选项，例如 Min-P 采样器，可能值得 SillyTavern 用户探索，可以极大地提高生成质量。
 !!!
 
-You can configure an alternative endpoint for the Chat Completions backend. This custom endpoint can connect to any server that supports the generic OpenAI API schema.
+您可以为聊天补全后端配置一个替代端点。此自定义端点可以连接到任何支持通用 OpenAI API 架构的服务器。
 
-Examples of compatible backends include:
+兼容后端的示例包括：
 
-* [LM Studio](https://lmstudio.ai/)
-* [LiteLLM](https://www.litellm.ai/)
-* [LocalAI](https://localai.io/)
+*   [LM Studio](https://lmstudio.ai/)
+*   [LiteLLM](https://www.litellm.ai/)
+*   [LocalAI](https://localai.io/)
 
-### Connecting
+### 连接
 
-To access this feature:
+要访问此功能：
 
-1. Switch to the 'Chat Completion' API type
-2. Select 'Custom (OpenAI-compatible)' for 'Chat Completion Source'
+1.  切换到 'Chat Completion' API 类型
+2.  在 'Chat Completion Source' 中选择 'Custom (OpenAI-compatible)'
 
-Enter the custom endpoint URL and an API key if required. For example, TabbyAPI requires an API key for authentication.
+输入自定义端点 URL 以及所需的 API 密钥（如果需要）。例如，TabbyAPI 需要 API 密钥进行身份验证。
 
 !!!tip
-**Hint:** If you experience connection issues, try adding `/v1` to the end of the endpoint URL. Do NOT add the `/chat/completions` suffix.
+**提示：** 如果遇到连接问题，请尝试在端点 URL 末尾添加 `/v1`。请**不要**添加 `/chat/completions` 后缀。
 !!!
 
-### Selecting a Model
+### 选择模型
 
-If the custom API implements the `/v1/models` endpoint to provide a list of available models, you can choose from a dropdown list. Otherwise, use the text field to manually input a model ID.
+如果自定义 API 实现了 `/v1/models` 端点以提供可用模型列表，您可以从下拉列表中选择。否则，请使用文本字段手动输入模型 ID。
 
-Check 'Bypass API status check' to prevent SillyTavern from alerting you about a non-functioning API endpoint. Enable this option if your API endpoint works properly but SillyTavern continues to display warnings.
+选中“Bypass API status check”以阻止 SillyTavern 就非功能性 API 端点发出警报。如果您的 API 端点工作正常但 SillyTavern 持续显示警告，请启用此选项。
 
-Click "Test Message" to verify connectivity by sending a simple prompt to the model.
+点击“Test Message”通过向模型发送简单提示来验证连接性。
 
-## Prompt Post-Processing
+## 提示词后处理
 
 !!!warning
-**Note:** Tool Calling is not supported when Post-Processing option with "no tools" is used!
+**注意：** 当使用“无工具 (no tools)”的后处理选项时，不支持工具调用 (Tool Calling)！
 !!!
 
-Some endpoints may impose specific restrictions on the format of incoming prompts, such as requiring only one system message or strictly alternating roles.
+某些端点可能对传入提示的格式有特定限制，例如仅允许一条系统消息或严格交替的角色。
 
-SillyTavern provides built-in prompt converters to help meet these requirements (from least to most restrictive):
+SillyTavern 提供内置的提示转换器来帮助满足这些要求（从限制最少到最严格）：
 
-1. None - no explicit processing applied unless strictly required by the API
-2. Merge consecutive messages from the same role
-3. Semi-strict - merge roles and allow only one optional system message
-4. Strict - merge roles, allow only one optional system message, and require a user message to be first
-5. Single user message - merge all messages from all roles into a single user message
+1.  无 (None) - 除非 API 严格要求，否则不应用显式处理
+2.  合并来自同一角色的连续消息 (Merge consecutive messages from the same role)
+3.  半严格 (Semi-strict) - 合并角色并仅允许一条可选的系统消息
+4.  严格 (Strict) - 合并角色，仅允许一条可选的系统消息，并且要求第一条消息必须是用户消息
+5.  单条用户消息 (Single user message) - 将所有角色的所有消息合并为一条用户消息
 
-Merge, semi-strict, and strict additionally remove any tool calls from the prompt, unless the "with tools" variant is selected. This is useful for APIs that do not support tool calling and your existing prompts contain tool calls.
+合并 (Merge)、半严格和严格模式还会从提示中删除任何工具调用，除非选择了“带工具 (with tools)”的变体。这对于不支持工具调用的 API 以及您现有提示中包含工具调用的情况非常有用。
 
-Less restrictive options have no effect on more restrictive endpoints implemented in SillyTavern other than "Custom OpenAI-compatible"; Custom may error upon invalid request.
+限制较少的选项对 SillyTavern 中实现的限制更严格的端点（“自定义 OpenAI 兼容”端点除外）没有影响；自定义端点可能会在请求无效时报错。
 
-In strict mode, if no user message exists before the first assistant message, then `promptPlaceholder` from `config.yaml` will be inserted, which by default is "\[Start a new chat]".
+在严格模式下，如果第一条助手消息之前不存在用户消息，则将插入 `config.yaml` 中的 `promptPlaceholder`，默认情况下是“\[开始新聊天]”。

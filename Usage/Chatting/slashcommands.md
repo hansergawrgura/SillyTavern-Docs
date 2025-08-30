@@ -21,5 +21,3 @@ route: /usage/core-concepts/slashcommands
 - `/persona` - 设置您的用户角色设定
 - `/imagine` - 根据文本提示生成图像
 - `/bg` - 通过文件名设置背景图片
-
----

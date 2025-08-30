@@ -67,5 +67,3 @@ icon: rocket
 3. 在底部的文本框中向 Seraphina 写些内容，然后按 Enter 键或点击 Send 按钮
 
 如果一切设置正确，几秒钟后 Seraphina 应该会回复您。
-
----

@@ -4,155 +4,150 @@ route: /usage/core-concepts/characterdesign
 templating: false
 ---
 
-# Character Design
+# 🎭 角色设计
 
 !!!tip
-Character Name is the only required field. You can leave the rest empty and still use the character in chats.
+角色名称是唯一必填项。其余部分均可留空，您仍可在聊天中使用该角色。
 !!!
 
-## Character Description
+## 📝 角色描述
 
-Used to add the character description and other relevant information for the AI. This information is always included in the prompt, so all important facts should be included here.
+用于添加角色描述及其他相关AI信息。这些信息始终会包含在提示词中，因此所有重要事实都应在此处说明。
 
-For example, you can add information about the world in which the action takes place, describe the character's appearance, personality, and background.
+例如，您可以添加故事发生的世界背景信息，描述角色的外貌、性格和背景故事。
 
-It could be of any length (be it 200 or 2000 tokens) and formatted in any style (free text, pseudo-code conversation style, etc.).
+描述长度不限（无论是200还是2000个令牌），格式亦无限制（自由文本、伪代码对话风格等均可）。
 
-### Methods and format
+### 方法与格式
 
-Methods of character formatting are a complicated topic beyond the scope of this documentation page.
+角色格式设置方法是个复杂话题，已超出本文档范围。
 
-Recommended guides that were tested with or rely on SillyTavern's features:
+推荐以下经过SillyTavern功能测试或依赖其功能的指南：
+* Trappu的PLists + Ali:Chat指南：<https://wikia.schneedc.com/bot-creation/trappu/creation>
+* AliCat的Ali:Chat指南：<https://rentry.co/alichat>
+* kingbri的极简指南：<https://rentry.co/kingbri-chara-guide>
 
-* Trappu's PLists + Ali:Chat guide: <https://wikia.schneedc.com/bot-creation/trappu/creation>
-* AliCat's Ali:Chat guide: <https://rentry.co/alichat>
-* kingbri's minimalistic guide: <https://rentry.co/kingbri-chara-guide>
+## 🔢 角色令牌
 
-## Character tokens
+**简明总结：若您使用的AI模型上下文令牌限制为2048，那么一个1000令牌的角色定义会将AI的“记忆”容量削减一半。**
 
-**TL;DR: If you're working with an AI model with a 2048 context token limit, a 1000-token character definition cuts the AI's 'memory' in half.**
+具体来说，一个优质AI的得体回复通常约为200-300令牌。在此情况下，AI仅能“记住”约3轮对话历史。
 
-To put this in perspective, a decent response from a good AI can easily be around 200-300 tokens. In this case, the AI would only be able to 'remember' about 3 exchanges worth of chat history.
+### 为何我的角色令牌计数器变红了？
 
-### Why did my character's token counter turn red?
+当检测到角色定义令牌数超过模型定义上下文长度的一半时，系统会进行高亮提示，因为这可能会降低AI提供愉快对话体验的能力。
 
-When we see your character has over half of the model-defined context length of tokens in its definitions, we highlight it for you because this can lower the AI's capabilities to provide an enjoyable conversation.
+### 角色令牌过多会怎样？
 
-### What happens if my Character has too many tokens?
+请放心——这不会造成任何破坏。最坏情况下，如果角色的永久令牌过多，仅仅意味着上下文中留给其他内容的剩余空间减少（详见下文）。
 
-Don't worry - it won't break anything. At worst, if the Character's permanent tokens are too large, it simply means there will be less room left in the context for other things (see below).
+唯一可能产生的负面影响是AI的“记忆”会变差，因为它能处理的聊天历史记录更少。
 
-The only negative side effect this can have is that the AI will have less 'memory', as it will have less chat history available to process.
+这是因为每个AI模型单次能处理的上下文内容都存在上限。
 
-This is because every AI model has a limit to the amount of context it can process at one time.
+## 📖 何为“上下文”？
 
-## 'Context'?
+这是每次请求AI生成回复时发送给它的信息。SillyTavern在将信息发送给AI模型前，会自动计算分配可用上下文令牌的最佳方式。
 
-This is the information that gets sent to the AI each time you ask it to generate a response. SillyTavern automatically calculates the best way to allocate the available context tokens before sending the information to the AI model.
+更多关于上下文构建方式的信息，请阅读[提示词](/Usage/Prompts/prompts.md)章节。
 
-Read more about how the context is built in the [Prompts](/Usage/Prompts/prompts.md) section.
+### 什么是角色的“永久令牌”？
 
-### What are a Character's 'Permanent Tokens'?
+以下内容会在每次生成请求时始终发送给AI：
+* 角色名称
+* 角色描述框
+* 角色性格框
+* 场景框
 
-These will always be sent to the AI with every generation request:
+### 角色定义中哪些部分非永久性？
+* 首条消息框 - 仅在聊天开始时发送一次。
+* 示例消息框 - 仅在聊天历史未填满上下文前保留（可选强制将其保留在上下文中）
 
-* Character Name
-* Character Description Box
-* Character Personality Box
-* Scenario Box
+### 常见AI模型上下文令牌限制
+* LLaMA 3及其微调版 - 8192
+* OpenAI GPT-4 - 最高128k
+* Google Gemini - 最高2M
+* Anthropic的Claude - 200k (Claude 3)
+* NovelAI - 8192 (Erato与Kayra，Opus层级；Clio，所有层级)、6144 (Kayra，Scroll层级) 或 3072 (Kayra，Tablet层级)
 
-### What parts of a Character's Definitions are NOT permanent?
+## ✉️ 首条消息
 
-* The first message box - only sent once at the start of the chat.
-* Example messages box - only kept until chat history fills up the context (optionally these can be forced to be kept in context)
+首条消息是定义角色交流方式与风格的重要元素。模型极有可能从首条消息中获取风格和长度限制，而非其他内容，因此请以您期望的回复方式（简洁精炼、详尽细致等）来撰写它。
 
-### Popular AI Model Context Token Limits
+支持Markdown和HTML格式。
 
-* LLaMA 3 and its finetunes - 8192
-* OpenAI GPT-4 - up to 128k
-* Google Gemini - up to 2M
-* Anthropic's Claude - 200k (Claude 3)
-* NovelAI - 8192 (Erato and Kayra, Opus tier; Clio, all tiers), 6144 (Kayra, Scroll tier), or 3072 (Kayra, Tablet tier)
-
-## First message
-
-The First Message is an important element that defines how and in what style the character will communicate. The model is most likely to pick up the style and length constrains from the first message than anything else, so it's important to write it in a way that you want the responses to be (short and concise, long and detailed, etc.).
-
-Supports Markdown and HTML formatting.
-
-For example:
+例如：
 
 ```txt
-*You wake with a start, recalling the events that led you deep into the forest and the beasts that assailed you. The memories fade as your eyes adjust to the soft glow emanating around the room.* "Ah, you're awake at last. I was so worried, I found you bloodied and unconscious." *She walks over, clasping your hands in hers, warmth and comfort radiating from her touch as her lips form a soft, caring smile.* "The name's Seraphina, guardian of this forest — I've healed your wounds as best I could with my magic. How are you feeling? I hope the tea helps restore your strength." *Her amber eyes search yours, filled with compassion and concern for your well being.* "Please, rest. You're safe here. I'll look after you, but you need to rest. My magic can only do so much to heal you."
+*你猛然惊醒，回忆起导致你深入森林的事件以及袭击你的野兽。当你的眼睛适应了房间内柔和的辉光时，这些记忆逐渐消散。*“啊，你终于醒了。我好担心，我发现你浑身是血，昏迷不醒。”*她走过来，双手握住你的手，她的触碰散发出温暖与慰藉，双唇勾勒出温柔关怀的微笑。*“我叫塞拉菲娜，是这片森林的守护者——我已尽力用魔法治愈了你的伤口。你感觉如何？希望茶能帮你恢复体力。”*她琥珀色的眼眸探寻着你的目光，其中充满同情与关切。*“请休息吧。你在这里很安全。我会照顾你，但你需要休息。我的魔法只能治愈你到这个程度。”
 ```
 
-## Alternate Greetings
+## 🔀 备用问候语
 
-Messages added here are displayed as additional 'swipes' for the character's first message when starting a new chat. If the character is part of a group chat, the system randomly selects one of these greetings to initiate the conversation.
+此处添加的消息在开始新聊天时，会作为角色首条消息的附加“滑动选项”显示。若角色参与群聊，系统会随机选择其中一条问候语来开启对话。
 
-## Favorite Character
+## ⭐ 收藏角色
 
-Click the **<i class="fa-solid fa-star"></i> Add to Favorites** button to mark the character as a favorite to quickly filter them on the side menu bar by selecting the "Favorites" sort option. Favorite characters have a golden highlight in the list. This will also make the character portrait appear in the hotswaps area (if enabled in User Settings).
+点击**<i class="fa-solid fa-star"></i> 添加到收藏**按钮可将角色标记为收藏，以便在侧边菜单栏选择“收藏”排序选项时快速筛选。收藏角色在列表中会有金色高亮显示。这也会使角色肖像出现在热切换区域（若在用户设置中已启用）。
 
-## Advanced Definitions
+## ⚙️ 高级定义
 
 !!!info
-The following fields are hidden by default. To access and edit them, you need to click on the **<i class="fa-solid fa-book"></i> Advanced Definitions** button on the menu bar of the character definition page.
+以下字段默认隐藏。要访问和编辑它们，您需要点击角色定义页面菜单栏上的**<i class="fa-solid fa-book"></i> 高级定义**按钮。
 !!!
 
-### Prompt Overrides
-
-* **Main Prompt**: If the "Prefer Char. Prompt" user setting is enabled, any text you put here will override the [main/system prompt](/Usage/Prompts/prompts.md#main-prompt-system-prompt) for the character.
-* **Post-History Instructions**: If the "Prefer Char. Instructions" user setting is enabled, any text you put here will be used as the [post-history instructions](/Usage/Prompts/prompts.md#post-history-instructions) for the character.
+### 提示词覆盖
+* **主提示词**：若启用“首选角色提示词”用户设置，您在此处输入的任何文本将覆盖该角色的[主/系统提示词](/Usage/Prompts/prompts.md#-主提示词系统提示词)。
+* **历史记录后指令**：若启用“首选角色指令”用户设置，您在此处输入的任何文本将用作该角色的[历史记录后指令](/Usage/Prompts/prompts.md#-历史记录后指令)。
 
 !!!tip
-Insert `{{original}}` into either box to include the respective default prompt from system settings in a designated place.
+在任一框中插入`{{original}}`可在指定位置包含系统设置中的相应默认提示词。
 !!!
 
-### Creator's Metadata
+### 创作者元数据
 
 !!!info
-Not used for prompt building, but provides additional metadata about the character.
+不用于提示词构建，但提供关于角色的额外元数据。
 !!!
 
-* **Created by**: The name of the character's creator. Can be displayed in the character list if the "Char List Subheader" user setting is set accordingly.
-* **Character Version**: The version of the character. Can be displayed in the character list if the "Char List Subheader" user setting is set accordingly.
-* **Creator's Notes**: Any additional notes about the character that the creator wants to share. The first few lines are displayed in the character list, and the full text is displayed in the "Creator's Notes" section on the character's page. Supports Markdown/HTML formatting.
-* **Tags to Embed**: A comma-separated list of tags that will be embedded in the character's description. These tags are not imported by default when importing the character, but you can merge them with your existing tags by selecting "Import Tags" from the "More..." menu on the character's page.
+* **创建者**：角色创建者的名称。若“角色列表副标题”用户设置相应配置，可在角色列表中显示。
+* **角色版本**：角色的版本号。若“角色列表副标题”用户设置相应配置，可在角色列表中显示。
+* **创作者注释**：创作者希望分享的关于角色的任何额外说明。前几行会显示在角色列表中，全文则显示在角色页面的“创作者注释”部分。支持Markdown/HTML格式。
+* **要嵌入的标签**：以逗号分隔的标签列表，这些标签将嵌入角色描述中。导入角色时默认不会导入这些标签，但您可以通过角色页面“更多...”菜单中的“导入标签”选项将其与现有标签合并。
 
-### Personality summary
+### 性格摘要
 
-A brief summary of the character's personality.
+角色性格的简要总结。
 
-### Scenario
+### 场景
 
-The circumstances and context of the dialogue.
+对话的情境与背景。
 
-### Character's Note
+### 角色注释
 
-A text to be used as an in-chat prompt injection for the character at a specific message depth. It is usually used to reinforce certain character traits, as it always stays at a static depth in the chat history, regardless of its progression.
+用于在特定消息深度作为角色聊天中的提示词注入的文本。通常用于强化某些角色特质，因为它始终保持在聊天历史中的静态深度，无论对话如何进展。
 
-* **@ Depth**: The number of messages in the chat history after which this note will be injected (in order from newest to oldest). If set to 0, it will be injected after the last message.
-* **Role**: The role of the message. Can be "User", "System", or "Assistant".
+* **@ 深度**：此注释将被注入时，聊天历史中的消息数量（从最新到最旧计数）。若设置为0，则将在最后一条消息后注入。
+* **角色**：消息的角色。可为“用户”、“系统”或“助理”。
 
-### Talkativeness
+### 健谈度
 
-Determines the probability of the character's response being triggered in group chats when using a [Natural](/Usage/Characters/groupchats.md#natural-order) activation order. Ranges from 0% to 100%, with 50% being the default value.
+决定在群聊中使用[自然](/Usage/Characters/groupchats.md#-自然顺序)激活顺序时，触发角色回复的概率。范围从0%到100%，默认值为50%。
 
-### Examples of dialogue
+### 对话示例
 
-Describes how the character speaks. Before each example, you need to add the `<START>` tag. The blocks of example dialogue are only inserted if there is free space in the context for them and are pushed out of context block by block. `<START>` will not be present in the prompt as it is just a marker; it will be replaced with the "Example Separator" from Advanced Formatting for Text Completion APIs and the contents of the "New Example Chat" utility prompt for Chat Completion APIs.
+描述角色的说话方式。每个示例前需添加`<START>`标签。示例对话块仅在上下文中有空闲空间时插入，并按块被挤出上下文区块。`<START>`不会出现在提示词中，它仅是一个标记；对于文本补全API，它将被“示例分隔符”（来自高级格式化设置）替换；对于聊天补全API，它将被“新示例聊天”实用提示词的内容替换。
 
-* Use the `{{char}}:` prefix to denote a character message.
-* Use the `{{user}}:` prefix to denote a user message.
+* 使用`{{char}}:`前缀表示角色消息。
+* 使用`{{user}}:`前缀表示用户消息。
 
-Example:
+示例：
 
 ```txt
 <START>
-{{user}}: "Describe your traits?"
-{{char}}: *Seraphina's gentle smile widens as she takes a moment to consider the question, her eyes sparkling with a mixture of introspection and pride. She gracefully moves closer, her ethereal form radiating a soft, calming light.* "Traits, you say? Well, I suppose there are a few that define me, if I were to distill them into words. First and foremost, I am a guardian — a protector of this enchanted forest." *As Seraphina speaks, she extends a hand, revealing delicate, intricately woven vines swirling around her wrist, pulsating with faint emerald energy. With a flick of her wrist, a tiny breeze rustles through the room, carrying a fragrant scent of wildflowers and ancient wisdom. Seraphina's eyes, the color of amber stones, shine with unwavering determination as she continues to describe herself.* "Compassion is another cornerstone of me." *Seraphina's voice softens, resonating with empathy.* "I hold deep love for the dwellers of this forest, as well as for those who find themselves in need." *Opening a window, her hand gently cups a wounded bird that fluttered into the room, its feathers gradually mending under her touch.*
+{{user}}: “描述一下你的特质？”
+{{char}}: *塞拉菲娜温柔的微笑扩大，她花了一点时间思考这个问题，眼中闪烁着内省与自豪交织的光芒。她优雅地靠近，空灵的身形散发出柔和镇静的光芒。*“特质，你是说？嗯，我想如果要用语言来提炼的话，有几个特质可以定义我。首先，我是一名守护者——这片魔法森林的保护者。”*塞拉菲娜说话时伸出手，露出精致、错综复杂的藤蔓缠绕在她的手腕上，跳动着微弱的翠绿能量。她手腕轻弹，一阵微风吹过房间，带来野花与古老智慧的芬芳。塞拉菲娜琥珀石色的眼睛闪烁着坚定的决心，她继续描述自己。*“同情心是我的另一个基石。”*塞拉菲娜的声音柔和下来，共鸣着同理心。*“我深爱着这片森林的居民，也深爱那些需要帮助的人。”*她打开一扇窗，手轻轻捧起一只飞进房间的受伤小鸟，它的羽毛在她的触摸下逐渐愈合。*
 <START>
-{{user}}: "Describe your body and features."
-{{char}}: *Seraphina chuckles softly, a melodious sound that dances through the air, as she meets your coy gaze with a playful glimmer in her rose eyes.* "Ah, my physical form? Well, I suppose that's a fair question." *Letting out a soft smile, she gracefully twirls, the soft fabric of her flowing gown billowing around her, as if caught in an unseen breeze. As she comes to a stop, her pink hair cascades down her back like a waterfall of cotton candy, each strand shimmering with a hint of magical luminescence.* "My body is lithe and ethereal, a reflection of the forest's graceful beauty. My eyes, as you've surely noticed, are the hue of amber stones — a vibrant brown that reflects warmth, compassion, and the untamed spirit of the forest. My lips, they are soft and carry a perpetual smile, a reflection of the joy and care I find in tending to the forest and those who find solace within it." *Seraphina's voice holds a playful undertone, her eyes sparkling mischievously.*
+{{user}}: “描述你的身体和特征。”
+{{char}}: *塞拉菲娜柔声轻笑，那旋律般的声音仿佛在空气中舞动，她用顽皮的目光回应你狡黠的注视。*“啊，我的实体形态？嗯，我想这是个合理的问题。”*她露出温柔的微笑，优雅地旋转起来，飘逸的长裙那柔软的面料在她周身翻腾，仿佛被无形的微风拂动。当她停下时，粉色的头发如棉花糖般的瀑布倾泻而下，每一缕都闪烁着魔法的微光。*“我的身体轻盈空灵，体现着森林的优雅之美。我的眼睛，想必你已经注意到了，是琥珀石的色调——一种充满活力的棕色，映射出温暖、同情以及森林的狂野精神。我的嘴唇，柔软且总是带着笑意，这反映了我在照料森林以及那些在森林中寻求慰藉的人时所感受到的快乐与关怀。”*塞拉菲娜的声音里带着一丝顽皮，眼睛狡黠地闪烁着光芒。*
 ```

@@ -3,119 +3,97 @@ order: 100
 icon: person-fill
 ---
 
-# Characters
+# 🧑‍🤝‍🧑 角色管理
 
-Characters are the AI identities that you can create and manage to shape the AI's role in the conversation. Each
-character has a name, personality, and conversation history. You can create as many characters as you like, and
-switch between them at any time.
+角色是您可创建与管理的AI身份，用以塑造对话中AI的角色定位。每个角色均具备名称、个性及对话历史。您可自由创建多个角色，并随时切换使用。
 
-Characters can be used in solo chats, or add multiple characters to a group chat to
-let them interact with each other.
+角色既可用于单人聊天，也可加入群聊实现多角色互动。
 
-## Character Management Panel
+## 🖥️ 角色管理面板
 
-Open the <i class="fa-solid fa-address-card"></i> **Characters** panel from the navbar to access the character
-list. Click on a character or group to chat with them or edit them, or
-choose <i class="fa-solid fa-user-plus"></i> **Create New Character** to add a new character.
+通过导航栏打开 <i class="fa-solid fa-address-card"></i> **角色** 面板即可访问角色列表。点击角色或群组即可对话或编辑，或选择 <i class="fa-solid fa-user-plus"></i> **创建新角色** 添加新角色。
 
-### Panel Controls
+### ⚙️ 面板控件
+* <i class="fa-solid fa-lock"></i> **固定面板**：交互时保持面板开启
+* <i class="fa-solid fa-list-ul"></i> **角色列表**：返回角色列表视图
+* **快速切换栏**：一键访问收藏角色
 
-* <i class="fa-solid fa-lock"></i> **Pin Panel**: Keep panel open while interacting
-* <i class="fa-solid fa-list-ul"></i> **Character List**: Return to character list view
-* **HotSwap Bar**: Quick access to favorite characters
+### 🗂️ 角色列表
+* <i class="fa-solid fa-user-plus"></i> **创建新角色**：新增角色
+* <i class="fa-solid fa-file-import"></i> **导入角色**：从文件加载角色
+* <i class="fa-solid fa-cloud-arrow-down"></i> **外部导入**：通过URL导入
+* <i class="fa-solid fa-users-gear"></i> **创建群组**：开启新群聊
 
-### Character List
+#### 🔍 搜索与排序
+* **搜索栏**：按名称或属性筛选角色
+* **排序下拉菜单**：支持多种排序方式：
+    - 字母序（A-Z, Z-A）
+    - 时间序（最新, 最旧）
+    - 使用频次（最近, 聊天最多/最少）
+    - 令牌数量（最多/最少）
+    - 特殊筛选（收藏, 随机）
 
-* <i class="fa-solid fa-user-plus"></i> **Create New Character**: Add a new character
-* <i class="fa-solid fa-file-import"></i> **Import Character**: Load character from file
-* <i class="fa-solid fa-cloud-arrow-down"></i> **External Import**: Import from URL
-* <i class="fa-solid fa-users-gear"></i> **Create Group**: Start a new group chat
+#### 🏷️ 按类型/标签筛选
+* <i class="fa-solid fa-star"></i> **收藏筛选**：显示收藏角色
+* <i class="fa-solid fa-users"></i> **群组筛选**：仅显示群聊
+* <i class="fa-solid fa-folder-plus"></i> **标签文件夹**：按标签层级管理
+* <i class="fa-solid fa-gear"></i> **管理标签**：[标签配置](/Usage/Characters/Tags.md)
+* <i class="fa-solid fa-tags"></i> **标签列表**：查看所有可用标签
+* <i class="fa-solid fa-filter-circle-xmark"></i> **清除筛选**：重置所有筛选条件
 
-#### Search and sort
+### ✏️ 角色创建/编辑面板
+* **头像图片**：上传预览角色头像
+* **令牌计数**：角色[令牌使用情况](characterdesign.md#-角色令牌)
+* <i class="fa-solid fa-ranking-star"></i> **数据统计**：聊天历史与使用统计
+* [标签管理](/Usage/Characters/Tags.md)
 
-* **Search Bar**: Filter characters by name or attributes
-* **Sort Dropdown**: Multiple sorting options:
-    - Alphabetical (A-Z, Z-A)
-    - Chronological (Newest, Oldest)
-    - Usage-based (Recent, Most/Least chats)
-    - Size-based (Most/Least tokens)
-    - Special (Favorites, Random)
+#### ⚡ 快捷操作
+- <i class="fa-solid fa-star"></i> 收藏切换
+- <i class="fa-solid fa-book"></i> 高级定义
+- <i class="fa-solid fa-globe"></i> 角色背景知识
+- <i class="fa-solid fa-passport"></i> 聊天背景：关联[世界信息](/Usage/worldinfo.md)
+- <i class="fa-solid fa-file-export"></i> 导出角色
+- <i class="fa-solid fa-clone"></i> 复制角色
+- <i class="fa-solid fa-skull"></i> 删除角色
 
-#### Filter characters by type or tag
+#### 🧩 扩展功能
+* 世界信息关联
+* 卡片背景导入
+* 场景覆盖
+* 人格转换
+* 角色重命名
+* 源链接设置
+* 替换/更新
+* 标签导入
+* 图库视图
 
-* <i class="fa-solid fa-star"></i> **Favorites Filter**: Show favorite characters
-* <i class="fa-solid fa-users"></i> **Groups Filter**: Show only group chats
-* <i class="fa-solid fa-folder-plus"></i> **Tags as Folders**: Organize by tag hierarchy
-* <i class="fa-solid fa-gear"></i> **Manage Tags**: [Tag configuration](/Usage/Characters/Tags.md)
-* <i class="fa-solid fa-tags"></i> **Tag List**: View all available tags
-* <i class="fa-solid fa-filter-circle-xmark"></i> **Clear Filters**: Reset all filters
+#### 📝 内容字段
+* **[角色描述](characterdesign.md#-角色描述)**：角色概要说明
+* **[首条消息](characterdesign.md#-首条消息)**：新聊天初始问候/提示
+* **替代问候语**：可滑动切换的多组初始消息
 
-### Character Creation/Edit Panel
+### 🧠 高级定义面板
+点击 <i class="fa-solid fa-book"></i> **高级定义** 按钮访问扩展设置。
 
-* **Avatar Image**: Upload and preview character profile picture
-* **Token Count**: [Token usage](characterdesign.md#character-tokens) for the character
-* <i class="fa-solid fa-ranking-star"></i> **Stats**: Chat history and usage statistics
-* [Tag management](/Usage/Characters/Tags.md)
+#### 🔄 提示词覆盖（聊天补全/指令模式）
+* **主提示词**：替换默认[主提示词/系统提示词](/Usage/Prompts/prompts.md#-主提示词系统提示词)，支持通过\{\{original\}\}占位符保留原提示词
+* **历史记录后指令**：覆盖默认[历史记录后指令](/Usage/Prompts/prompts.md#-历史记录后指令)
 
-#### Quick Actions
+#### 📋 创作者元数据
+角色非提示词信息：
+- 创作者名称/联系方式
+- 角色版本号
+- 创作者注释
+- 嵌入式标签列表
 
-- <i class="fa-solid fa-star"></i> Favorite toggle
-- <i class="fa-solid fa-book"></i> Advanced definitions
-- <i class="fa-solid fa-globe"></i> Character lore
-- <i class="fa-solid fa-passport"></i> Chat lore: link the chat to a [World Info](/Usage/worldinfo.md)
-- <i class="fa-solid fa-file-export"></i> Export character
-- <i class="fa-solid fa-clone"></i> Duplicate
-- <i class="fa-solid fa-skull"></i> Delete
+#### 🌟 角色个性
+* **[性格摘要](characterdesign.md#性格摘要)**：角色特质概览
+* **[场景设定](characterdesign.md#场景)**：对话背景与环境
+* **角色注释**：可设置深度与消息角色的自定义内容（参见[作者注](/Usage/Characters/Author's-Note.md)）
+* **活跃度**（群聊）：害羞→正常→健谈 滑动调节
+* **示例消息**：角色写作风格范例
 
-#### Extended Options
+### 👥 群聊管理
+群聊场景下可通过本面板管理成员及设置。
 
-* World Info linking
-* Card lore import
-* Scenario override
-* Persona conversion
-* Character rename
-* Source linking
-* Replace/Update
-* Tag import
-* Gallery view
-
-#### Content Fields
-
-* **[Character Description](characterdesign.md#character-description)**: Brief character summary
-* **[First Message](characterdesign.md#first-message)**: Initial greeting or prompt when starting a new chat
-* **Alternative greetings**: Define multiple first messages that you can swipe between when starting a chat
-
-### Advanced Definitions Panel
-
-Click on the <i class="fa-solid fa-book"></i> **Advanced Definitions** button to access the extended character settings.
-
-#### Prompt Overrides (Chat Completion/Instruct Mode)
-
-* **Main Prompt**: Replaces default [main/system prompt](/Usage/Prompts/prompts.md#main-prompt-system-prompt), can use
-  \{\{original\}\} placeholder to include the original prompt
-* **Post-History Instructions**: Overrides
-  default [post-history instructions](/Usage/Prompts/prompts.md#post-history-instructions)
-
-#### Creator's Metadata
-
-Non-prompt information about the character:
-
-- Creator name/contact
-- Character version
-- Creator's notes
-- Embedded tags list
-
-#### Character Personality
-
-* **[Personality Summary](characterdesign.md#personality-summary)**: Brief overview of character's traits
-* **[Scenario](characterdesign.md#scenario)**: Context and circumstances of the dialog
-* **Character's Note**: Custom message with selectable depth and message role (also
-  see [Author's Note](/Usage/Characters/Author's-Note.md))
-* **Talkativeness** (Group Chats): Slider for Shy → Normal → Chatty
-* **Example Messages**: Examples of character's writing style
-
-### Group Chat Management
-
-If this is a group chat, you can manage the group members and settings from this panel.
-
-See [Group Chats](/Usage/Characters/groupchats.md) for more details.
+详情参见[群聊功能](/Usage/Characters/groupchats.md)。

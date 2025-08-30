@@ -2,125 +2,125 @@
 tags: ['>=1.12.12']
 ---
 
-# Reasoning
+# 🤔 推理
 
-In language models, reasoning (also known as model thinking) refers to a chain-of-thought (CoT) technique that mirrors human problem-solving through step-by-step analysis. SillyTavern provides several features that make the use of reasoning models more efficient and consistent across supported backends.
+在语言模型中，推理（也称为模型思考）指的是一种思维链（CoT）技术，通过逐步分析来模拟人类解决问题的方式。SillyTavern 提供了多项功能，使得在使用支持推理的后端时，推理模型的运用更加高效和一致。
 
-## Common issues
+## ⚠️ 常见问题
 
-1. When using reasoning models, the model's internal reasoning process consumes part of your response token allowance, even if this reasoning isn't shown in the final output (e.g. o3-mini or Gemini Thinking). If you notice your responses are coming back incomplete or empty, you should try adjusting the Max Response Length setting found in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel. For reasoning models, it's typical to use significantly higher token limits - anywhere from 1024 to 4096 tokens - compared to standard conversational models.
+1.  使用推理模型时，模型的内部推理过程会消耗您的一部分响应词元额度，即使此推理未在最终输出中显示（例如 o3-mini 或 Gemini Thinking）。如果您发现回复不完整或为空，应尝试调整 **<i class="fa-solid fa-sliders"></i> AI 响应配置** 面板中的“最大响应长度”设置。对于推理模型，通常使用的词元限制要比标准对话模型高得多——从 1024 到 4096 个词元不等。
 
-## Configuration
+## ⚙️ 配置
 
 !!!
-Most reasoning-related settings can be configured in the "Reasoning" section of **<i class="fa-solid fa-font"></i> Advanced Formatting** panel.
+大多数与推理相关的设置可以在 **<i class="fa-solid fa-font"></i> 高级格式化** 面板的“推理”部分进行配置。
 !!!
 
-Reasoning blocks appear in the chat as collapsible message sections. They can be added manually, automatically by the backend, or through response parsing (see below).
+推理块在聊天中显示为可折叠的消息部分。它们可以通过手动添加、由后端自动添加或通过响应解析添加（见下文）。
 
-By default, reasoning blocks are collapsed to save space. Click a block to expand and view its contents. You can set blocks to expand automatically by enabling **Auto-Expand** in the reasoning settings.
+默认情况下，推理块是折叠的以节省空间。单击块可展开并查看其内容。您可以通过在推理设置中启用**自动展开**来设置块自动展开。
 
-When a reasoning block is expanded, you can copy or edit its contents using the **<i class="fa-solid fa-copy"></i> Copy** and **<i class="fa-solid fa-pencil"></i> Edit** buttons.
+当推理块展开时，您可以使用 **<i class="fa-solid fa-copy"></i> 复制** 和 **<i class="fa-solid fa-pencil"></i> 编辑** 按钮来复制或编辑其内容。
 
-Some models models support reasoning, but will not send their thoughts back. It is possible to still show the reasoning block with reasoning time for those by toggling the **Show Hidden** setting.
+有些模型支持推理，但不会将其思考过程发送回来。通过切换**显示隐藏**设置，仍然可以为这些模型显示带有推理时间的推理块。
 
-## Adding Reasoning
+## ➕ 添加推理
 
-### Manually
+### 手动添加
 
-Add a reasoning block to any message through the **<i class="fa-solid fa-pencil"></i> Message Edit** menu. Click **<i class="fa-solid fa-lightbulb"></i>** while editing to add a reasoning section. Third-party extensions can also add reasoning by writing to the `extra.reasoning` field of the message object before adding it to the chat.
+通过 **<i class="fa-solid fa-pencil"></i> 消息编辑** 菜单，可以向任何消息添加推理块。编辑时点击 **<i class="fa-solid fa-lightbulb"></i>** 以添加推理部分。第三方扩展也可以通过在处理消息对象并将其添加到聊天之前，写入 `extra.reasoning` 字段来添加推理。
 
-### With a Command
+### 使用命令
 
-Use the `/reasoning-set` STscript command to add reasoning to a message. The command takes `at` (message ID, defaults to the last message) and reasoning text as arguments.
+使用 `/reasoning-set` STscript 命令向消息添加推理。该命令接受 `at`（消息 ID，默认为最后一条消息）和推理文本作为参数。
 
 ```stscript
-/reasoning-set at=0 This is the reasoning for the first message.
+/reasoning-set at=0 这是第一条消息的推理。
 ```
 
-### By Backend
+### 通过后端
 
-If your chosen LLM backend and model support reasoning output, enabling "Request model reasoning" in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel will add a reasoning block containing the model's thinking process.
+如果您选择的 LLM 后端和模型支持推理输出，在 **<i class="fa-solid fa-sliders"></i> AI 响应配置** 面板中启用“请求模型推理”将添加一个包含模型思考过程的推理块。
 
-Supported sources:
+支持的源：
 
-- Claude
-- DeepSeek
-- Google AI Studio
-- Google Vertex AI
-- OpenRouter
-- xAI (Grok)
-- AI/ML API
+-   Claude
+-   DeepSeek
+-   Google AI Studio
+-   Google Vertex AI
+-   OpenRouter
+-   xAI (Grok)
+-   AI/ML API
 
-"Request model reasoning" does not determine whether a model does reasoning. Claude and Google (2.5 Flash) allow thinking mode to be toggled; see [Reasoning Effort](#reasoning-effort).
+“请求模型推理”并不决定模型是否进行推理。Claude 和 Google (2.5 Flash) 允许切换思考模式；参见[推理力度](#-推理力度)。
 
-### By Parsing
+### 通过解析
 
-Enable "Auto-Parse" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel to automatically parse reasoning from the model's output.
+在 **<i class="fa-solid fa-font"></i> 高级格式化** 面板中启用“自动解析”，以自动从模型的输出中解析推理。
 
-The response must contain a reasoning section wrapped in configured Prefix and Suffix sequences. The sequences provided by default correspond to the DeepSeek R1 reasoning format.
+响应必须包含一个推理部分，该部分包裹在配置的前缀和后缀序列中。默认提供的序列对应于 DeepSeek R1 推理格式。
 
-Example with prefix `<think>` and suffix `</think>`:
+使用前缀 `<think>` 和后缀 `</think>` 的示例：
 
 ```txt
 <think>
-This is the reasoning.
+这是推理过程。
 </think>
 
-This is the main content.
+这是主要内容。
 ```
 
-## Prompting with Reasoning
+## 📝 使用推理的提示
 
-By default, recognized reasoning block contents are not sent back to the model. To include reasoning in prompts, enable "Add to Prompts" in the **<i class="fa-solid fa-font"></i> Advanced Formatting** panel. Reasoning content will be wrapped in configured Prefix and Suffix sequences and separated by a Separator from the main context. The Max Additions numeric setting controls how many reasoning blocks can be included, counting from the end of the prompt.
+默认情况下，识别出的推理块内容不会发送回模型。要在提示中包含推理，请在 **<i class="fa-solid fa-font"></i> 高级格式化** 面板中启用“添加到提示词”。推理内容将包裹在配置的前缀和后缀序列中，并通过分隔符与主上下文分开。“最大添加数”数字设置控制可以包含多少个推理块，从提示词的末尾开始计数。
 
 !!!
-Most model providers do not recommend sending CoT back to the model in multi-turn conversations.
+大多数模型提供商不建议在多轮对话中将 CoT 发送回模型。
 !!!
 
-### Continuing from Reasoning
+### 从推理继续
 
-A special case when the reasoning can be sent back to the model without having the "Add to Prompts" toggle enabled is when the generation is continued (e.g. by pressing "Continue" from the **<i class="fa-solid fa-bars"></i> Options** menu), but the message being continued contains only the reasoning without an actual content. This gives the model an opportunity to finish an incomplete reasoning and start generating the main content. The prompt will be sent as follows:
+一个特殊情况是，即使未启用“添加到提示词”开关，推理也可以发送回模型，即当生成被继续时（例如，从 **<i class="fa-solid fa-bars"></i> 选项** 菜单按下“继续”），但被继续的消息仅包含推理而没有实际内容。这为模型提供了一个完成不完整推理并开始生成主要内容的机会。提示词将按如下方式发送：
 
 ```txt
 <think>
-Incomplete reasoning...
+不完整的推理...
 ```
 
-## Regex Scripts
+## 🔍 正则表达式脚本
 
-Regular expression scripts from the [Regex extension](/extensions/Regex.md) can be applied to the contents of reasoning blocks. Check "Reasoning" in the "Affects" section of the script editor to target reasoning blocks specifically.
+来自[正则表达式扩展](/extensions/Regex.md)的正则表达式脚本可以应用于推理块的内容。在脚本编辑器的“影响范围”部分勾选“推理”，以专门针对推理块。
 
-Different ephemerality options affect reasoning blocks in the following ways:
+不同的临时性选项对推理块的影响如下：
 
-1. No ephemerality: reasoning content is permanently changed.
-2. Run on edit: regex script will be re-evaluated when the reasoning block is edited.
-3. Alter chat display: regex is applied to the reasoning block's display text, not the underlying content.
-4. Alter outgoing prompts: regex is only applied to reasoning blocks before they are sent to the model.
+1.  非临时性：推理内容被永久更改。
+2.  编辑时运行：当推理块被编辑时，重新评估正则表达式脚本。
+3.  改变聊天显示：正则表达式应用于推理块的显示文本，而非底层内容。
+4.  改变外发提示词：正则表达式仅在推理块发送到模型之前应用于它们。
 
-## Reasoning Effort
+## ⚖️ 推理力度
 
-Reasoning Effort is a Chat Completion setting in the **<i class="fa-solid fa-sliders"></i> AI Response Configuration** panel that influences how many tokens may potentially be used on reasoning. The effect of each option depends on the source connected to. For the sources below, Auto simply means the relevant parameter is not included in the request.
+推理力度是 **<i class="fa-solid fa-sliders"></i> AI 响应配置** 面板中的一个聊天补全设置，它影响可能用于推理的词元数量。每个选项的效果取决于所连接的源。对于下面列出的源，“自动”仅意味着相关参数不包含在请求中。
 
-| Option  | Claude (≤ 21333 if no streaming) | OpenAI (keyword)     | OpenRouter (keyword)             | xAI (Grok) (keyword) | Perplexity (keyword) |
-| ------- | -------------------------------- | -------------------- | -------------------------------- | -------------------- | -------------------- |
-| Models  | Opus 4, Sonnet 4/3.7             | o4-mini, o3\*, o1\*  | applicable models                | grok-3-mini          | sonar-deep-research  |
-| Auto    | not specified, **no thinking**   | not specified        | not specified, effect depends    | not specified        | not specified        |
-| Minimum | budgets 1024 tokens              | "low"                | "low", or 20% of max response    | "low"                | "low"                |
-| Low     | 15% of max response, min 1024    | "low"                | "low", or 20% of max response    | "low"                | "low"                |
-| Medium  | 25% of max response, min 1024    | "medium"             | "medium", or 50% of max response | "low"                | "medium"             |
-| High    | 50% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               |
-| Maximum | 95% of max response, min 1024    | "high"               | "high", or 80% of max response   | "high"               | "high"               | 
+| 选项     | Claude (≤ 21333 如果不流式传输) | OpenAI (关键词) | OpenRouter (关键词)          | xAI (Grok) (关键词) | Perplexity (关键词) |
+| :------- | :------------------------------ | :-------------- | :--------------------------- | :------------------ | :------------------ |
+| 模型     | Opus 4, Sonnet 4/3.7            | o4-mini, o3\*, o1\* | 适用模型                     | grok-3-mini         | sonar-deep-research |
+| 自动     | 未指定，**不思考**              | 未指定          | 未指定，效果取决于模型       | 未指定              | 未指定              |
+| 最小     | 预算 1024 词元                  | "low"           | "low", 或最大响应的 20%      | "low"               | "low"               |
+| 低       | 最大响应的 15%，最小 1024       | "low"           | "low", 或最大响应的 20%      | "low"               | "low"               |
+| 中       | 最大响应的 25%，最小 1024       | "medium"        | "medium", 或最大响应的 50%   | "low"               | "medium"            |
+| 高       | 最大响应的 50%，最小 1024       | "high"          | "high", 或最大响应的 80%     | "high"              | "high"              |
+| 最大     | 最大响应的 95%，最小 1024       | "high"          | "high", 或最大响应的 80%     | "high"              | "high"              |
 
-- For Claude, budget is capped to 21333 if streaming is disabled. If the calculated budget would be less than 1024, then max response is changed to 2048.
-- For OpenRouter, Perplexity and AI/ML API, only an OpenAI-style keyword is sent.
+-   对于 Claude，如果禁用流式传输，预算上限为 21333。如果计算的预算少于 1024，则最大响应更改为 2048。
+-   对于 OpenRouter、Perplexity 和 AI/ML API，仅发送 OpenAI 风格的关键词。
 
-Google AI Studio and Vertex AI are as follows:
+Google AI Studio 和 Vertex AI 如下：
 
-| Model          | Auto (dynamic thinking) | Minimum            | Low                          | Medium     | High       | Maximum               |
-| -------------- | ----------------------- | ------------------ | ---------------------------- | ---------- | ---------- | --------------------- | 
-| 2.5 Pro        | thinkingBudget = -1     | 128                | 15% of max response, min 128 | 25% of max | 50% of max | lower of max or 32768 |
-| 2.5 Flash      | thinkingBudget = -1     | 0, **no thinking** | 15% of max response          | 25% of max | 50% of max | lower of max or 24576 |
-| 2.5 Flash Lite | thinkingBudget = -1     | 0, **no thinking** | 15% of max response, min 512 | 25% of max | 50% of max | lower of max or 24576 |
+| 模型           | 自动 (动态思考)    | 最小             | 低                           | 中         | 高         | 最大                 |
+| :------------- | :----------------- | :--------------- | :--------------------------- | :--------- | :--------- | :------------------- |
+| 2.5 Pro        | thinkingBudget = -1 | 128              | 最大响应的 15%，最小 128     | 最大响应的 25% | 最大响应的 50% | 最大响应与 32768 的较小值 |
+| 2.5 Flash      | thinkingBudget = -1 | 0, **不思考**    | 最大响应的 15%               | 最大响应的 25% | 最大响应的 50% | 最大响应与 24576 的较小值 |
+| 2.5 Flash Lite | thinkingBudget = -1 | 0, **不思考**    | 最大响应的 15%，最小 512     | 最大响应的 25% | 最大响应的 50% | 最大响应与 24576 的较小值 |
 
-- For Gemini 2.5 Pro and 2.5 Flash/Lite, budget is capped to 32768 or 24576 tokens respectively, regardless of the streaming setting.
+-   对于 Gemini 2.5 Pro 和 2.5 Flash/Lite，无论流式传输设置如何，预算分别上限为 32768 或 24576 个词元。

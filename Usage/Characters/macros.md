@@ -3,124 +3,124 @@ order: character-14
 route: /usage/core-concepts/macros
 ---
 
-# Macros (replacement tags)
+# 🔀 宏（替换标签）
 
 !!! Note
-This list may be incomplete or outdated. Use the `/help macros` slash command in any SillyTavern chat to get the list of macros that work in your instance.
+此列表可能不完整或已过时。在任何SillyTavern聊天中使用 `/help macros` 斜杠命令可获取当前实例中可用的宏列表。
 !!!
 
-Macros can be used in character description, author's notes, world info and many other places and replaced with the corresponding values when generating a response. They can be used to insert dynamic content into the prompt, such as the user's name, character's description, or the current time. Macros are enclosed in double curly braces, e.g. `{{user}}` and are usually case-insensitive. **Please keep in mind that macro nesting is currently not supported.**
+宏可用于角色描述、作者注释、世界信息等许多地方，并在生成回复时替换为相应值。它们可用于向提示词中插入动态内容，例如用户名称、角色描述或当前时间。宏由双花括号包裹，例如 `{{user}}`，且通常不区分大小写。**请注意，目前不支持宏嵌套。**
 
-Note: some extensions may also add special context-specific macros that only work in certain areas (i.e. special placeholders for extension prompts). These will not be documented here unless the macro is not bound to a specific functionality.
+注意：某些扩展可能还会添加特殊的上下文相关宏，这些宏仅在特定区域有效（例如扩展提示词的特殊占位符）。除非宏不绑定特定功能，否则此处不会记录它们。
 
-## General Macros
+## 🌐 通用宏
 
-| Macro | Description |
+| 宏 | 描述 |
 |-------|-------------|
-| `{{pipe}}` | Only for slash command batching. Replaced with the returned result of the previous command. |
-| `{{newline}}` | Inserts a newline. |
-| `{{trim}}` | Trims newlines surrounding this macro. |
-| `{{noop}}` | No operation, just an empty string. |
-| `{{user}}` or `<USER>` | User's name. |
-| `{{charPrompt}}` | Character's Main Prompt override. |
-| `{{charJailbreak}}` | Character's Post-History Instructions Prompt override. |
-| `{{group}}` or `{{charIfNotGroup}}` | Comma-separated list of group member names or character name in solo chats. |
-| `{{groupNotMuted}}` | Same as `{{group}}` but excludes muted members. |
-| `{{char}}` or `<BOT>` | Character's name. |
-| `{{description}}` | Character's description. |
-| `{{scenario}}` | Character's scenario or chat scenario override (if set). |
-| `{{personality}}` | Character's personality. |
-| `{{persona}}` | User's persona description. |
-| `{{mesExamples}}` | Character's examples of dialogue (instruct-formatted). |
-| `{{mesExamplesRaw}}`  | Character's examples of dialogue (unaltered and unsplit). |
-| `{{charVersion}}` | The character's version number. |
-| `{{charDepthPrompt}}` | The character's at-depth prompt. |
-| `{{model}}` | Text generation model name for the currently selected API. **Can be inaccurate!** |
-| `{{lastMessageId}}` | Last chat message ID. |
-| `{{lastMessage}}` | Last chat message text. |
-| `{{firstIncludedMessageId}}` | The ID of the first message included in the context. Requires generation to be run at least once in the current session. |
-| `{{lastCharMessage}}` | Last chat message sent by character. |
-| `{{lastUserMessage}}` | Last chat message sent by user. |
-| `{{currentSwipeId}}` | 1-based ID of the currently displayed last message swipe. |
-| `{{lastSwipeId}}` | Number of swipes in the last chat message. |
-| `{{lastGenerationType}}` | Type of the last queued generation request. Values: "normal", "impersonate", "regenerate", "quiet", "swipe", "continue". |
-| `{{original}}` | Can be used in Prompt Overrides fields to include the default prompt from system settings. Applied to Chat Completion APIs and Instruct mode only. |
-| `{{time}}` | Current system time. |
-| `{{time_UTC±X}}` | Current time in the specified UTC offset (timezone), e.g. for UTC+02:00 use `{{time_UTC+2}}`. |
-| `{{timeDiff::(time1)::(time2)}}` | The time difference between time1 and time2. Accepts time and date macros. |
-| `{{date}}` | Current system date. |
-| `{{input}}` | Contents of the user input bar. |
-| `{{weekday}}` | The current weekday. |
-| `{{isotime}}` | The current ISO time (24-hour clock). |
-| `{{isodate}}` | The current ISO date (YYYY-MM-DD). |
-| `{{datetimeformat ...}}` | Current date/time in specified format (e.g. `{{datetimeformat DD.MM.YYYY HH:mm}}`). |
-| `{{idle_duration}}` | Inserts a humanized string of the time range since the last user message was sent (examples: 4 hours, 1 day). |
-| `{{random:(args)}}` | Returns a random item from the list (e.g. `{{random:1,2,3,4}}` will return 1 of the 4 numbers at random). |
-| `{{random::arg1::arg2}}` | Alternate syntax for random that supports commas in its arguments. |
-| `{{pick::(args)}}` | Alternative to random, but the selected argument is stable on subsequent evaluations in the current chat if the source string remains unchanged. |
-| `{{roll:(formula)}}` | Generates a random value using D&D dice syntax: XdY+Z (e.g. `{{roll:d6}}` generates a value 1-6). |
-| `{{bias "text here"}}` | Sets a behavioral bias for the AI until the next user input. Quotes around text are required. |
-| `{{// (note)}}` | Allows leaving a note that will be replaced with blank content. Not visible for the AI. |
-| `{{banned "text here"}}` | Dynamically adds quoted text to banned word sequences for Text Generation WebUI backend. Does nothing for other backends. Quotes required. |
-| `{{reverse:(content)}}` | Reverses the content of the macro. |
+| `{{pipe}}` | 仅用于斜杠命令批处理。替换为前一个命令返回的结果。 |
+| `{{newline}}` | 插入换行符。 |
+| `{{trim}}` | 修剪此宏周围的换行符。 |
+| `{{noop}}` | 无操作，仅为空字符串。 |
+| `{{user}}` 或 `<USER>` | 用户名称。 |
+| `{{charPrompt}}` | 角色的主提示词覆盖内容。 |
+| `{{charJailbreak}}` | 角色的历史记录后指令提示词覆盖内容。 |
+| `{{group}}` 或 `{{charIfNotGroup}}` | 群组成员名称的逗号分隔列表，或在单人聊天中为角色名称。 |
+| `{{groupNotMuted}}` | 同 `{{group}}`，但排除被静音的成员。 |
+| `{{char}}` 或 `<BOT>` | 角色名称。 |
+| `{{description}}` | 角色描述。 |
+| `{{scenario}}` | 角色场景或聊天场景覆盖（如果已设置）。 |
+| `{{personality}}` | 角色性格。 |
+| `{{persona}}` | 用户的角色描述。 |
+| `{{mesExamples}}` | 角色的对话示例（指令格式）。 |
+| `{{mesExamplesRaw}}`  | 角色的对话示例（未经更改和未拆分）。 |
+| `{{charVersion}}` | 角色的版本号。 |
+| `{{charDepthPrompt}}` | 角色的指定深度提示词。 |
+| `{{model}}` | 当前所选API的文本生成模型名称。**可能不准确！** |
+| `{{lastMessageId}}` | 最后一条聊天消息ID。 |
+| `{{lastMessage}}` | 最后一条聊天消息文本。 |
+| `{{firstIncludedMessageId}}` | 上下文中包含的第一条消息的ID。需要在当前会话中至少运行一次生成。 |
+| `{{lastCharMessage}}` | 角色发送的最后一条聊天消息。 |
+| `{{lastUserMessage}}` | 用户发送的最后一条聊天消息。 |
+| `{{currentSwipeId}}` | 当前显示的最后一条消息滑动选项的基于1的ID。 |
+| `{{lastSwipeId}}` | 最后一条聊天消息中的滑动选项数量。 |
+| `{{lastGenerationType}}` | 最后排队的生成请求类型。值："normal"（正常）、"impersonate"（冒充）、"regenerate"（重新生成）、"quiet"（安静）、"swipe"（滑动）、"continue"（继续）。 |
+| `{{original}}` | 可在提示词覆盖字段中使用，以包含系统设置中的默认提示词。仅适用于聊天补全API和指令模式。 |
+| `{{time}}` | 当前系统时间。 |
+| `{{time_UTC±X}}` | 指定UTC偏移（时区）的当前时间，例如对于UTC+02:00使用 `{{time_UTC+2}}`。 |
+| `{{timeDiff::(time1)::(time2)}}` | time1 和 time2 之间的时间差。接受时间和日期宏。 |
+| `{{date}}` | 当前系统日期。 |
+| `{{input}}` | 用户输入栏的内容。 |
+| `{{weekday}}` | 当前星期几。 |
+| `{{isotime}}` | 当前ISO时间（24小时制）。 |
+| `{{isodate}}` | 当前ISO日期（YYYY-MM-DD）。 |
+| `{{datetimeformat ...}}` | 指定格式的当前日期/时间（例如 `{{datetimeformat DD.MM.YYYY HH:mm}}`）。 |
+| `{{idle_duration}}` | 插入自最后一条用户消息发送以来时间范围的人性化字符串（例如：4小时、1天）。 |
+| `{{random:(args)}}` | 从列表中返回一个随机项（例如 `{{random:1,2,3,4}}` 将随机返回4个数字中的1个）。 |
+| `{{random::arg1::arg2}}` | 支持参数中包含逗号的随机宏的替代语法。 |
+| `{{pick::(args)}}` | 随机的替代方案，但如果源字符串保持不变，则在当前聊天的后续评估中选定的参数是稳定的。 |
+| `{{roll:(formula)}}` | 使用D&D骰子语法生成随机值：XdY+Z（例如 `{{roll:d6}}` 生成1-6的值）。 |
+| `{{bias "text here"}}` | 为AI设置行为偏差，直到下一次用户输入。文本周围的引号是必需的。 |
+| `{{// (note)}}` | 允许留下将被替换为空白内容的注释。对AI不可见。 |
+| `{{banned "text here"}}` | 动态将引用的文本添加到Text Generation WebUI后端的禁止词序列中。对其他后端无效。需要引号。 |
+| `{{reverse:(content)}}` | 反转宏的内容。 |
 
-## Instruct Mode and Context Template Macros
+## 📋 指令模式与上下文模板宏
 
-(enabled in the Advanced Formatting settings)
+（在高级格式化设置中启用）
 
-| Macro | Description |
+| 宏 | 描述 |
 |-------|-------------|
-| `{{exampleSeparator}}` | Context template example dialogues separator. |
-| `{{chatStart}}` | Context template chat start line. |
-| `{{instructSystemPrompt}}` | Instruct system prompt. |
-| `{{instructSystemPromptPrefix}}` | System prompt prefix sequence. |
-| `{{instructSystemPromptSuffix}}` | System prompt suffix sequence. |
-| `{{instructUserPrefix}}` | User message prefix sequence. |
-| `{{instructAssistantPrefix}}` | Assistant message prefix sequence. |
-| `{{instructSystemPrefix}}` | System message prefix sequence. |
-| `{{instructUserSuffix}}` | User message suffix sequence. |
-| `{{instructAssistantSuffix}}` | Assistant message suffix sequence. |
-| `{{instructSystemSuffix}}` | System message suffix sequence. |
-| `{{instructFirstAssistantPrefix}}` | Assistant first output sequence. |
-| `{{instructLastAssistantPrefix}}` | Assistant last output sequence. |
-| `{{instructFirstUserPrefix}}` | Instruct user first input sequence. |
-| `{{instructLastUserPrefix}}` | Instruct user last input sequence. |
-| `{{instructSystemInstructionPrefix}}` | System instruction prefix sequence. |
-| `{{instructUserFiller}}` | User filler message text. |
-| `{{instructStop}}` | Instruct stop sequence. |
-| `{{maxPrompt}}` | Max size of the prompt in tokens (context length reduced by response length). |
-| `{{systemPrompt}}` | System prompt content, including character prompt override if allowed and available. |
-| `{{defaultSystemPrompt}}` | System prompt content (excluding character prompt override). |
+| `{{exampleSeparator}}` | 上下文模板示例对话分隔符。 |
+| `{{chatStart}}` | 上下文模板聊天开始行。 |
+| `{{instructSystemPrompt}}` | 指令系统提示词。 |
+| `{{instructSystemPromptPrefix}}` | 系统提示词前缀序列。 |
+| `{{instructSystemPromptSuffix}}` | 系统提示词后缀序列。 |
+| `{{instructUserPrefix}}` | 用户消息前缀序列。 |
+| `{{instructAssistantPrefix}}` | 助理消息前缀序列。 |
+| `{{instructSystemPrefix}}` | 系统消息前缀序列。 |
+| `{{instructUserSuffix}}` | 用户消息后缀序列。 |
+| `{{instructAssistantSuffix}}` | 助理消息后缀序列。 |
+| `{{instructSystemSuffix}}` | 系统消息后缀序列。 |
+| `{{instructFirstAssistantPrefix}}` | 助理首次输出序列。 |
+| `{{instructLastAssistantPrefix}}` | 助理最后输出序列。 |
+| `{{instructFirstUserPrefix}}` | 指令用户首次输入序列。 |
+| `{{instructLastUserPrefix}}` | 指令用户最后输入序列。 |
+| `{{instructSystemInstructionPrefix}}` | 系统指令前缀序列。 |
+| `{{instructUserFiller}}` | 用户填充消息文本。 |
+| `{{instructStop}}` | 指令停止序列。 |
+| `{{maxPrompt}}` | 提示词的最大令牌大小（上下文长度减去响应长度）。 |
+| `{{systemPrompt}}` | 系统提示词内容，包括角色提示词覆盖（如果允许且可用）。 |
+| `{{defaultSystemPrompt}}` | 系统提示词内容（不包括角色提示词覆盖）。 |
 
-## Chat variables Macros
+## 💬 聊天变量宏
 
-- Local variables = unique to the current chat
-- Global variables = works in any chat for any character
+- 局部变量 = 仅当前聊天独有
+- 全局变量 = 可在任何聊天中用于任何角色
 
-| Macro | Description |
+| 宏 | 描述 |
 |-------|-------------|
-| `{{getvar::name}}` | Replaced with the value of the local variable "name". |
-| `{{setvar::name::value}}` | Replaced with empty string, sets the local variable "name" to "value". Allows empty values. |
-| `{{addvar::name::increment}}` | Replaced with empty string, adds a numeric value of "increment" to the local variable "name". |
-| `{{incvar::name}}` | Replaced with the result of incrementing the value of variable "name" by 1. |
-| `{{decvar::name}}` | Replaced with the result of decrementing the value of variable "name" by 1. |
-| `{{getglobalvar::name}}` | Replaced with the value of the global variable "name". |
-| `{{setglobalvar::name::value}}` | Replaced with empty string, sets the global variable "name" to "value". Allows empty values. |
-| `{{addglobalvar::name::value}}` | Replaced with empty string, adds a numeric value of "increment" to the global variable "name". |
-| `{{incglobalvar::name}}` | Replaced with the result of incrementing the value of global variable "name" by 1. |
-| `{{decglobalvar::name}}` | Replaced with the result of decrementing the value of global variable "name" by 1. |
-| `{{var::name}}` | Replaced with the value of the scoped variable "name" (STscript only). |
-| `{{var::name::index}}` | Replaced with the value at index of the scoped variable "name" (for arrays/objects in STscript). |
+| `{{getvar::name}}` | 替换为局部变量“name”的值。 |
+| `{{setvar::name::value}}` | 替换为空字符串，将局部变量“name”设置为“value”。允许空值。 |
+| `{{addvar::name::increment}}` | 替换为空字符串，将数字值“increment”加到局部变量“name”上。 |
+| `{{incvar::name}}` | 替换为将变量“name”的值增加1的结果。 |
+| `{{decvar::name}}` | 替换为将变量“name”的值减少1的结果。 |
+| `{{getglobalvar::name}}` | 替换为全局变量“name”的值。 |
+| `{{setglobalvar::name::value}}` | 替换为空字符串，将全局变量“name”设置为“value”。允许空值。 |
+| `{{addglobalvar::name::value}}` | 替换为空字符串，将数字值“increment”加到全局变量“name”上。 |
+| `{{incglobalvar::name}}` | 替换为将全局变量“name”的值增加1的结果。 |
+| `{{decglobalvar::name}}` | 替换为将全局变量“name”的值减少1的结果。 |
+| `{{var::name}}` | 替换为作用域变量“name”的值（仅限STscript）。 |
+| `{{var::name::index}}` | 替换为作用域变量“name”在索引处的值（用于STscript中的数组/对象）。 |
 
-## Extension-specific Macros
+## 🔧 扩展特定宏
 
-Added by extensions and only work under certain conditions.
+由扩展添加，仅在特定条件下工作。
 
-| Macro | Description |
+| 宏 | 描述 |
 |-------|-------------|
-| `{{summary}}` | Replaced with the summary of the current chat session (if available). |
-| `{{authorsNote}}` | Replaced with the contents of the Author's Note. |
-| `{{charAuthorsNote}}` | Replaced with the contents of the Character's Author's Note. |
-| `{{defaultAuthorsNote}}` | Replaced with the contents of the default Author's Note. |
-| `{{charPrefix}}` | Replaced with a character-specific Image Generation positive prompt prefix (if available). |
-| `{{charNegativePrefix}}` | Replaced with a character-specific Image Generation negative prompt prefix (if available). |
+| `{{summary}}` | 替换为当前聊天会话的摘要（如果可用）。 |
+| `{{authorsNote}}` | 替换为作者注释的内容。 |
+| `{{charAuthorsNote}}` | 替换为角色作者注释的内容。 |
+| `{{defaultAuthorsNote}}` | 替换为默认作者注释的内容。 |
+| `{{charPrefix}}` | 替换为角色特定的图像生成正面提示词前缀（如果可用）。 |
+| `{{charNegativePrefix}}` | 替换为角色特定的图像生成负面提示词前缀（如果可用）。 |

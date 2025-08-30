@@ -3,218 +3,218 @@ order: prompts-100
 templating: false
 ---
 
-# Prompt Manager
+# 🧠 提示词管理器
 
-The Prompt Manager is a system that provides more control over the [prompt-building](prompts.md) strategy for Chat Completion APIs.
+提示词管理器是一个系统，它为聊天补全 API 提供了对[提示词构建](prompts.md)策略的更多控制。
 
-!!! Applies to: Chat Completion APIs
-For equivalent settings in Text Completion APIs, use [Advanced Formatting](advancedformatting.md).
+!!! 适用范围：聊天补全 API
+文本补全 API 的等效设置，请使用 [高级格式化](advancedformatting.md)。
 !!!
 
-!!!tip Naming Presets
-If a preset shares a name with one of your character cards, it will be automatically selected when starting a chat with that character. Name presets something unique to avoid this behavior.
+!!!tip 预设命名
+如果一个预设与您的某个角色卡共享名称，则在开始与该角色聊天时会自动选择该预设。为避免此行为，请为预设命名一个独特的名称。
 !!!
 
-Access the Prompt Manager by clicking on the "AI Response Configuration" button in the navigation bar. The Prompt Manager is located below the [common settings](/Usage/Common-Settings.md) panel.
+通过点击导航栏中的“AI 响应配置”按钮访问提示词管理器。提示词管理器位于[通用设置](/Usage/Common-Settings.md)面板下方。
 
-## Quick Prompts Edit
+## ✏️ 快速提示词编辑
 
-Provides space to quickly edit common prompt sections, such as **Main Prompt**, **Auxiliary Prompt**, and **Post-History Instructions**. More information on these prompts can be found on the [prompt-building](prompts.md) page.
+提供空间以快速编辑常见的提示词部分，例如**主提示词**、**辅助提示词**和**历史记录后指令**。关于这些提示词的更多信息可以在[提示词构建](prompts.md)页面上找到。
 
-## Utility Prompts
+## 🛠️ 功能提示词
 
-These prompts are sent to the Chat Completion model to help it understand the information being sent to it, or to instruct it to act in specific ways during certain types of interactions.
+这些提示词被发送到聊天补全模型，以帮助其理解发送给它的信息，或指示其在特定类型的交互中以特定方式行事。
 
-### Format Templates
+### 格式模板
 
 !!!tip
-If the format template is not set, the information will be sent as-is, without any wrapping.
+如果未设置格式模板，信息将按原样发送，不做任何包装。
 !!!
 
-These are string templates used to wrap the information pulled from [World Info](/Usage/worldinfo.md) and [Character Cards](/Usage/Characters/characterdesign.md).
+这些是字符串模板，用于包装从[世界信息](/Usage/worldinfo.md)和[角色卡](/Usage/Characters/characterdesign.md)中提取的信息。
 
-A special marker is used to indicate where the information should be inserted:
+使用特殊标记来指示信息应插入的位置：
 
-- `{0}` for the World Info format template.
-- `{{scenario}}` for the Scenario format template.
-- `{{personality}}` for the Personality format template.
+-   `{0}` 用于世界信息格式模板。
+-   `{{scenario}}` 用于场景格式模板。
+-   `{{personality}}` 用于性格格式模板。
 
-### Group Nudge Prompt Template
+### 群聊推动提示词模板
 
-Used only in group chats. Placed at the end of the prompt to force a reply from a specific character.
+仅在群聊中使用。放置在提示词的末尾，以强制特定角色回复。
 
-Leave this empty to disable Group Nudge functionality.
+留空以禁用群聊推动功能。
 
-### New Chat, New Group Chat, New Example Chat
+### 新聊天、新群聊、新示例聊天
 
-These are sent before the chat history and before each [Example Dialogue](/Usage/Characters/characterdesign.md#examples-of-dialogue) block to inform the model where background information ends and chat history begins.
+这些内容在聊天历史记录之前和每个[示例对话](/Usage/Characters/characterdesign.md#对话示例)块之前发送，以告知模型背景信息结束和聊天历史开始的位置。
 
-- **New Chat:** Used for individual chats.
-- **New Group Chat:** Used for group chats.
-- **New Example Chat:** Used for example dialogue blocks.
+-   **新聊天：** 用于单人聊天。
+-   **新群聊：** 用于群聊。
+-   **新示例聊天：** 用于示例对话块。
 
-Leave these empty to disable this functionality.
+留空以禁用此功能。
 
-### Continue Nudge
+### 继续推动提示词
 
-Sent at the end of the prompt to instruct the model on what to do when Continue is triggered, such as when the Continue button is pressed or when triggered by STScript.
+在提示词末尾发送，以指示模型在触发“继续”时该做什么，例如按下继续按钮或由 STScript 触发时。
 
-!!! Chat Completion 'Continues'
-Keep in mind that Chat Completion models handle Continues differently than **Text Completion** models, and may not always deliver seamless results regardless of your Continue Nudge.
+!!! 聊天补全的“继续”
+请记住，聊天补全模型处理“继续”的方式与**文本补全**模型不同，并且无论您的继续推动提示词如何，都可能无法始终提供无缝的结果。
 !!!
 
-### Replace Empty Message
+### 替换空消息
 
-Sends the contents of this field instead of a blank message when the text box is empty and **Send a message** is pressed.
+当文本框为空且按下**发送消息**时，发送此字段的内容而不是空白消息。
 
-## Character Names Behavior
+## 👥 角色名称行为
 
-Provides different strategies for instructing the model on how to associate messages with characters. If a Chat Completion model is having trouble determining which messages belong to which character, it may need a different strategy selected.
+提供不同的策略来指示模型如何将消息与角色关联。如果聊天补全模型在确定哪些消息属于哪个角色时遇到问题，则可能需要选择不同的策略。
 
-## Continue Postfix
+## ➕ 继续后缀
 
-When Continue is triggered, the 'continued' message returned by the model will have the selected Continue Postfix prepended to the beginning. For example, it can add a space before the continued text.
+当触发“继续”时，模型返回的“已继续”消息将在开头添加所选的继续后缀。例如，它可以在继续的文本前添加一个空格。
 
-## Additional Settings
+## ⚙️ 附加设置
 
-### Wrap in Quotes
+### 用引号包裹
 
 !!!warning
-Deprecated option. Prefer [Regex scripts](/extensions/Regex.md) instead.
+已弃用选项。建议改用[正则表达式脚本](/extensions/Regex.md)。
 !!!
 
-Wraps the entire user message in hidden quotation marks before sending. This is useful for sessions where characters do not use quotes to indicate speech. If your session uses quotation marks to indicate speech, leave this unchecked.
+在发送前将整个用户消息用隐藏的引号包裹。这对于角色不使用引号来表示说话的会话非常有用。如果您的会话使用引号来表示说话，请勿勾选此项。
 
-### Continue Prefill
+### 继续预填充
 
 !!!warning
-May not work with all Chat Completion sources.
+可能不适用于所有聊天补全源。
 !!!
 
-Sends the Continue Nudge as an Assistant role message instead of a System message. If this is enabled, the Continue Nudge prompt will not be used.
+将继续推动提示词作为助手角色消息而非系统消息发送。如果启用此功能，则不会使用继续推动提示词。
 
-### Squash system messages
+### 压缩系统消息
 
 !!!warning
-Deprecated option. Prefer [Prompt Post-Processing](/Usage/API_Connections/openai.md#prompt-post-processing) instead.
+已弃用选项。建议改用[提示词后处理](/Usage/API_Connections/openai.md#提示词后处理)。
 !!!
 
-Combines consecutive System messages into a single combined message (excluding Example Dialogue).
+将连续的系统消息合并为一条组合消息（不包括示例对话）。
 
-### Enable web search
-
-!!!
-Not to be confused with the [Web Search extension](/extensions/WebSearch.md).
-!!!
-
-Enables web search capabilities provided by the Chat Completion backend. The prompt is usually enriched with search results by the model provider and may incur additional costs.
-
-### Enable function calling
-
-See [Function Calling](/For_Contributors/Function-Calling.md)
-
-### Send inline images, Send inline videos
+### 启用网络搜索
 
 !!!
-Not to be confused with the [Image Captioning extension](/extensions/captioning.md).
+不要与[网络搜索扩展](/extensions/WebSearch.md)混淆。
 !!!
 
-If the Chat Completion model has multimodal capabilities to process submitted images and videos, this toggles its ability to do so. To append media to the prompt, use the **Attach A File** option in the "Magic Wand" menu.
+启用由聊天补全后端提供的网络搜索功能。提示词通常由模型提供商使用搜索结果进行丰富，并可能产生额外费用。
 
-### Request inline images
+### 启用函数调用
 
-!!!
-Not to be confused with the [Image Generation extension](/extensions/Stable-Diffusion.md).
-!!!
+参见[函数调用](/For_Contributors/Function-Calling.md)
 
-Allows the model to return image attachments.
-
-### Use system prompt
+### 发送内联图片、发送内联视频
 
 !!!
-Only supported by Google Gemini and Anthropic Claude backends.
-
-Despite having very similar settings for these two, they are technically separate options, so they can be configured separately.
+不要与[图片说明扩展](/extensions/captioning.md)混淆。
 !!!
 
-Merges all system messages up until the first message with a non-system role (User/Assistant) and sends them as a separate system instruction field.
+如果聊天补全模型具有处理所提交图片和视频的多模态能力，此选项将切换其执行此操作的能力。要将媒体附加到提示词，请使用“魔法棒”菜单中的**附加文件**选项。
 
-## Reasoning Settings
-
-If the Chat Completion model uses reasoning, these settings affect its visibility and functionality.
-
-### Request model reasoning
-
-See [Adding Reasoning: By Backend](/Usage/Prompts/reasoning.md#by-backend).
-
-### Reasoning Effort
-
-See [Reasoning Effort](/Usage/Prompts/reasoning.md#reasoning-effort).
-
-## "Prompts"
-
-The Prompt Manager forms the backbone of the prompt sent to the Chat Completion model. It controls what is sent as well as the *order* in which it is sent.
-
-### The 'Prompts' Dropdown
-
-Contains a dropdown list of all (non-default) prompts that the current Chat Completion preset includes. For one of these prompts to be added to the outgoing message, it needs to be selected from the dropdown list and then added to the Prompt Manager by pressing the **Insert prompt** button. To create a new prompt to add to this dropdown list, press the **New prompt** button. Once the new prompt is written and saved, it is added to the dropdown and can then be inserted.
-
-### Prompts List
-
-This is a drag-and-drop interface that lists the prompts selected to potentially be sent to the Chat Completion model. Prompts placed closer to the **top** of the interface are sent earlier. The **bottom** of the list is the **last thing** sent to the model (typically, this would be your **Post-History Instructions**).
-
-!!! 'Pinned' prompts = Default prompts
-The default prompts cannot be removed from the list of selected prompts. This includes Main Prompt, World Info (before/after), Persona Description, Character Description, Character Personality, Scenario, Enhance Definitions, Auxiliary Prompt, Chat Examples, Chat History, and Post-History Instructions. If these are not desired, they can be **toggled 'OFF'**, but not removed or deleted outright.
-!!!
-
-## Editing a Prompt
-
-Clicking the **pencil button** on a prompt will bring you to the **Edit interface**. Here, you can edit the prompt directly.
-
-!!! Make sure to save your changes!
-To permanently save changes to these prompts in your Chat Completion preset, you must click the **Save** button in the bottom right of the **Edit interface**, as well as save the preset itself by using the **Save** button located at the top of the **AI Response Configuration** section! Otherwise, changes made will be lost when the Chat Completion preset is switched to a different one.
-!!!
-
-### Name
-
-The name of the prompt. This is not sent to the Chat Completion model; it is for your reference within the Prompt Manager only.
-
-### Role
-
-Which role sends the prompt. You can choose between System, AI Assistant, or User.
-
-### Triggers
-
-The generation types for which this prompt is sent. If nothing is selected, the prompt will be sent for all generation types. If one or more are selected, the prompt will only be sent for those specific generation types:
-
-- **Normal:** Regular message generation request.
-- **Continue:** When the Continue button is pressed.
-- **Impersonate:** When the Impersonate button is pressed.
-- **Swipe:** When the generation is triggered by swiping.
-- **Regenerate:** When the Regenerate button is pressed in solo chats.
-- **Quiet:** Background generation requests, usually triggered by [extensions](/extensions/index.md) or [STscript](/For_Contributors/st-script.md) commands.
+### 请求内联图片
 
 !!!
-The "Regenerate" trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the "Normal" generation type according to the chosen [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies).
+不要与[图片生成扩展](/extensions/Stable-Diffusion.md)混淆。
 !!!
 
-### Position
+允许模型返回图片附件。
 
-When Position is set to **Relative**, this prompt is sent where it's located in the drag-and-drop interface with all other prompts. When it is set to **In-Chat** and given a **Depth**, it is instead sent **within the Chat History** as the selected Role, and **ignores** the order of the drag-and-drop interface.
-
-### Depth
-
-When Position is set to **In-Chat**, this defines how deep the prompt is sent within the chat history. The higher the number, the deeper it is sent. For example, a Depth of 0 will be sent after the last chat message, a Depth of 1 will be sent before the last chat message, and a Depth of 2 will be sent before the second-to-last chat message, and so on.
-
-### Order
+### 使用系统提示词
 
 !!!
-Prompts that have the same Role and Depth will be grouped together and ordered by their Order value.
-The order is as follows (from top to bottom): User, AI Assistant, System.
+仅由 Google Gemini 和 Anthropic Claude 后端支持。
+
+尽管这两者的设置非常相似，但它们在技术上是独立的选项，因此可以分别配置。
 !!!
 
-When Position is set to **In-Chat**, this defines the order in which the prompt is sent within the chat history. The lower the number, the earlier it is sent.
+将所有系统消息合并，直到第一条具有非系统角色（用户/助手）的消息，并将它们作为单独的系统指令字段发送。
 
-## Building Your Prompt: Tips and Tricks
+## 🤔 推理设置
 
-Visit the [prompt-building](prompts.md) section of the SillyTavern documentation for more information on how to write effective prompts. The information can largely be applied to Chat Completion presets.
+如果聊天补全模型使用推理，这些设置会影响其可见性和功能。
+
+### 请求模型推理
+
+参见[按后端添加推理](/Usage/Prompts/reasoning.md#通过后端)。
+
+### 推理力度
+
+参见[推理力度](/Usage/Prompts/reasoning.md#-推理力度)。
+
+## 📋 “提示词”部分
+
+提示词管理器构成了发送给聊天补全模型的提示词的主干。它控制发送的内容以及发送的*顺序*。
+
+### “提示词”下拉菜单
+
+包含当前聊天补全预设包含的所有（非默认）提示词的下拉列表。要将这些提示词之一添加到外发消息中，需要从下拉列表中选择它，然后按**插入提示词**按钮将其添加到提示词管理器中。要创建新提示词并将其添加到此下拉列表中，请按**新建提示词**按钮。新提示词编写并保存后，它将被添加到下拉列表中，然后可以插入。
+
+### 提示词列表
+
+这是一个拖放界面，列出了选择要发送给聊天补全模型的提示词。放置在界面**顶部**的提示词会较早发送。列表的**底部**是**最后发送**给模型的内容（通常，这将是您的**历史记录后指令**）。
+
+!!! “固定”提示词 = 默认提示词
+默认提示词无法从选定的提示词列表中移除。这包括主提示词、世界信息（前/后）、人格描述、角色描述、角色性格、场景、增强定义、辅助提示词、聊天示例、聊天历史记录和历史记录后指令。如果不需要这些，可以将它们**切换为“关闭”**，但不能完全移除或删除。
+!!!
+
+## ✍️ 编辑提示词
+
+点击提示词上的**铅笔按钮**将进入**编辑界面**。在这里，您可以直接编辑提示词。
+
+!!! 请确保保存您的更改！
+要永久保存对这些提示词在聊天补全预设中的更改，您必须点击**编辑界面**右下角的**保存**按钮，并通过使用**AI 响应配置**部分顶部的**保存**按钮来保存预设本身！否则，当切换到其他聊天补全预设时，所做的更改将会丢失。
+!!!
+
+### 名称
+
+提示词的名称。这不会发送给聊天补全模型；仅用于您在提示词管理器中的参考。
+
+### 角色
+
+发送提示词的角色。您可以在系统、AI 助手或用户之间选择。
+
+### 触发器
+
+发送此提示词的生成类型。如果未选择任何内容，则该提示词将针对所有生成类型发送。如果选择了一个或多个，则该提示词仅针对那些特定的生成类型发送：
+
+-   **普通：** 常规消息生成请求。
+-   **继续：** 当按下继续按钮时。
+-   **模拟：** 当按下模拟按钮时。
+-   **滑动：** 当通过滑动触发生成时。
+-   **重新生成：** 在单人聊天中按下重新生成按钮时。
+-   **静默：** 后台生成请求，通常由[扩展](/extensions/index.md)或[STscript](/For_Contributors/st-script.md)命令触发。
+
+!!!
+“重新生成”触发器在群聊中不可用，因为它使用不同的重新生成逻辑：删除最后一条回复的所有消息，并根据所选的[群聊回复策略](/Usage/Characters/groupchats.md#-回复顺序策略)使用“普通”生成类型对消息进行排队。
+!!!
+
+### 位置
+
+当位置设置为**相对**时，此提示词与所有其他提示词一起在拖放界面中的位置发送。当设置为**聊天中**并给定**深度**时，它反而作为所选角色**在聊天历史记录中**发送，并**忽略**拖放界面的顺序。
+
+### 深度
+
+当位置设置为**聊天中**时，这定义了提示词在聊天历史记录中发送的深度。数字越高，发送得越深。例如，深度为 0 将在最后一条聊天消息之后发送，深度为 1 将在最后一条聊天消息之前发送，深度为 2 将在倒数第二条聊天消息之前发送，依此类推。
+
+### 顺序
+
+!!!
+具有相同角色和深度的提示词将分组在一起，并按它们的顺序值排序。
+顺序如下（从上到下）：用户、AI 助手、系统。
+!!!
+
+当位置设置为**聊天中**时，这定义了提示词在聊天历史记录中发送的顺序。数字越低，发送得越早。
+
+## 🏗️ 构建您的提示词：提示与技巧
+
+访问 SillyTavern 文档的[提示词构建](prompts.md)部分，了解更多关于如何编写有效提示词的信息。这些信息在很大程度上可以应用于聊天补全预设。

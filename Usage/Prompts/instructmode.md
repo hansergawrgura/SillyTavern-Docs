@@ -3,172 +3,172 @@ order: prompts-30
 route: /usage/core-concepts/instructmode/
 ---
 
-# Instruct Mode
+# 🧠 指令模式
 
-Instruct Mode allows you to adjust the prompting for instruction-following models trained on various prompt formats, such as Alpaca, ChatML, Llama2, etc.
+指令模式允许您调整针对各种提示格式（如 Alpaca、ChatML、Llama2 等）训练的指令遵循模型的提示方式。
 
-!!! Applies to: Text Completion APIs
-For equivalent settings in Chat Completion APIs, use [Prompt Manager](prompt-manager.md).
+!!! 适用范围：文本补全 API
+聊天补全 API 的等效设置，请使用 [提示词管理器](prompt-manager.md)。
 !!!
 
-## API support
+## API 支持
 
-### Text Completion API
+### 文本补全 API
 
-Fully supported. This includes:
+完全支持。这包括：
 
-* All of the sources under Text Completion
-* KoboldAI Classic
-* AI Horde
+*   文本补全下的所有来源
+*   KoboldAI Classic
+*   AI Horde
 
-#### Choosing a formatting
+#### 选择格式化方式
 
-A chosen instruct template must match the expectations of an actual model that is running on a backend.
+所选的指令模板必须与后端运行的实际模型的期望相匹配。
 
-This is usually reflected in a model card on HuggingFace, and some even provide SillyTavern-compatible JSON files.
+这通常在 HuggingFace 的模型卡中有所反映，有些甚至提供与 SillyTavern 兼容的 JSON 文件。
 
-Example: [NeverSleep/Noromaid-13b-v0.1.1](https://huggingface.co/NeverSleep/Noromaid-13b-v0.1.1#prompt-template-custom-format-or-alpaca)
+示例：[NeverSleep/Noromaid-13b-v0.1.1](https://huggingface.co/NeverSleep/Noromaid-13b-v0.1.1#prompt-template-custom-format-or-alpaca)
 
-### Chat Completion API (OpenAI, Claude, etc)
+### 聊天补全 API (OpenAI, Claude 等)
 
-This is not supported **(and not needed)** for Chat Completion APIs. They use an entirely different prompt builder.
+聊天补全 API **不支持（也不需要）** 此功能。它们使用完全不同的提示词构建器。
 
 ### NovelAI
 
-While *technically* supported for NovelAI, none of their models were trained to understand instruct formatting. NovelAI models can use a special instruct module that is activated *automatically* when an instruction wrapped in curly braces is encountered in chat messages, so using Instruct Mode for the entire prompt will lead to **degraded quality** of the outputs.
+虽然 NovelAI *技术上* 支持，但其模型均未经过训练以理解指令格式。NovelAI 模型可以使用一个特殊的指令模块，当在聊天消息中遇到用花括号包裹的指令时会*自动*激活，因此对整个提示词使用指令模式将导致输出质量**下降**。
 
-Here's an example that auto-activates the instruct module for NovelAI:
+以下是一个为 NovelAI 自动激活指令模块的示例：
 
 ```txt
-User: { Write a happy song about Nintendo Switch. }
+用户：{ 写一首关于 Nintendo Switch 的快乐歌曲。 }
 ```
 
-## Instruct Mode Settings
+## ⚙️ 指令模式设置
 
-### System Prompt
+### 系统提示词
 
-!!!warning Recent change
-The System Prompt is now a separate entity. See the [Advanced Formatting](advancedformatting.md#system-prompt) page for more details.
+!!!warning 近期变更
+系统提示词现在是一个独立的实体。详情请参阅 [高级格式化](advancedformatting.md#-系统提示词) 页面。
 !!!
 
-### Templates
+### 模板
 
-Provides ready-made templates with sequences for some well-known instruct models.
+提供一些知名指令模型的、带有序列的现成模板。
 
-*Changing a template resets the unsaved settings to the last saved state! Don't forget to save your template if you made any changes you don't want to lose.*
+*更改模板会将未保存的设置重置为上次保存的状态！如果您进行了任何不想丢失的更改，请不要忘记保存您的模板。*
 
-### Activation Regex
+### 激活正则表达式
 
-If defined as a valid regular expression, when connected to a model and its name matches this regex, will automatically select this template.
+如果定义为有效的正则表达式，当连接到模型且其名称匹配此正则表达式时，将自动选择此模板。
 
-Instruct mode needs to be enabled prior. Only the first regex match across templates will be selected (evaluated in alphabetical order).
+需要预先启用指令模式。只有按字母顺序评估的第一个匹配的模板会被选中。
 
-### Wrap Sequences with Newline
+### 使用换行符包裹序列
 
-Each sequence text will be wrapped with newline characters when inserted into the prompt. Required for Alpaca and its derivatives.
+每个序列文本在插入提示词时将被换行符包裹。Alpaca 及其衍生格式需要此选项。
 
-Disable if you want to have full control over line terminators.
+如果您想完全控制行终止符，请禁用此选项。
 
-### Replace Macro in Sequences
+### 替换序列中的宏
 
-If enabled, known \{\{macro\}\} substitutions will be replaced if defined in message wrapping sequences.
+如果启用，已知的 \{\{宏\}\} 替换将在消息包装序列中被替换（如果已定义）。
 
-Also, a special \{\{name\}\} macro can be used in message prefixes to reference the actual name attached to a message (rather than a currently active \{\{char\}\} or \{\{user\}\}), which can be helpful when using group chats or /sendas command. If the name can't be determined, "System" is used as a fallback placeholder.
+此外，可以在消息前缀中使用特殊的 \{\{name\}\} 宏来引用附加到消息的实际名称（而不是当前活动的 \{\{char\}\} 或 \{\{user\}\}}），这在群聊或 /sendas 命令时很有帮助。如果无法确定名称，则使用“System”作为后备占位符。
 
-### Include Names
+### 包含名称
 
-If enabled, prepend characters and user names to chat history logs after the prefix sequence.
+如果启用，将在聊天历史记录日志的前缀序列之后附加角色和用户名称。
 
-The following options are available:
+可用选项如下：
 
-* **Never**: Do not add name prefixes before the message contents.
-* **Groups and Past Personas**: Only add name prefixes to messages from group characters and past personas.
-* **Always**: Always add name prefixes before the message contents.
+*   **从不**：不在消息内容前添加名称前缀。
+*   **群组和过往人格**：仅对来自群组角色和过往人格的消息添加名称前缀。
+*   **总是**：总是在消息内容前添加名称前缀。
 
-### Sequences: Story String Wrapping
+### 🔄 序列：故事字符串包装
 
-!!!warning Recent change
-System Prompt wrapping has been removed and replaced with Story String wrapping.
+!!!warning 近期变更
+系统提示词包装已被移除，并替换为故事字符串包装。
 !!!
 
-Define how the Story String will be wrapped when the Position is set to "Default (top of context)"
+定义当位置设置为“默认（上下文顶部）”时，故事字符串将如何被包装。
 
-#### Story String Prefix
+#### 故事字符串前缀
 
-Inserted before a Story String.
+插入到故事字符串之前。
 
-#### Story String Suffix
+#### 故事字符串后缀
 
-Inserted after a Story String.
+插入到故事字符串之后。
 
-### Sequences: Chat Messages Wrapping
+### 🔄 序列：聊天消息包装
 
-These settings define how messages belonging to different roles will be wrapped upon building a prompt.
+这些设置定义了在构建提示词时，属于不同角色的消息将如何被包装。
 
-All prefix sequences will also be automatically used as stopping strings.
+所有前缀序列也会自动用作停止字符串。
 
-#### User Message Prefix
+#### 用户消息前缀
 
-Inserted before a User message and as a last prompt line when impersonating.
+插入到用户消息之前，以及在模拟（impersonating）时作为最后的提示词行。
 
-#### User Message Suffix
+#### 用户消息后缀
 
-Inserted after a User message.
+插入到用户消息之后。
 
-#### Assistant Message Prefix
+#### 助手消息前缀
 
-Inserted before an Assistant message and as a last prompt line when generating an AI reply.
+插入到助手消息之前，以及在生成 AI 回复时作为最后的提示词行。
 
-#### Assistant Message Suffix
+#### 助手消息后缀
 
-Inserted after an Assistant message
+插入到助手消息之后。
 
-#### System Message Prefix
+#### 系统消息前缀
 
-Inserted before a System (added by slash commands or extensions) message.
+插入到系统消息（由斜杠命令或扩展添加）之前。
 
-#### System Message Suffix
+#### 系统消息后缀
 
-Inserted after a System message.
+插入到系统消息之后。
 
-#### System same as User
+#### 系统同用户
 
-If checked true, System messages will be using User role message sequences.
+如果勾选为真，系统消息将使用用户角色消息序列。
 
-Otherwise, System messages use their own sequences (if not empty) or will not do any wrapping at all (if empty).
+否则，系统消息将使用其自己的序列（如果不为空）或根本不做任何包装（如果为空）。
 
-### Misc. Sequences
+### 🔧 其他序列
 
-Various advanced configurations for finer tuning of the prompt building
+用于微调提示词构建的各种高级配置。
 
-#### First Assistant Prefix
+#### 首个助手前缀
 
-Inserted before the first Assistant's message.
+插入到第一个助手消息之前。
 
 !!!info
-Only the first message of the **chat history** counts, not the message that actually goes into the prompt first!
+仅计算**聊天历史**中的第一条消息，而不是实际首先进入提示词的消息！
 !!!
 
-#### Last Assistant Prefix
+#### 最后助手前缀
 
-Inserted before the last Assistant's message or as a last prompt line when generating an AI reply.
+插入到最后一条助手消息之前，或在生成 AI 回复时作为最后的提示词行。
 
 !!!info
-Not used when generating text in a background (e.g. Stable Diffusion prompts or Summaries). System Instruction Prefix or Regular Assistant Prefix will be used instead.
+在后台生成文本时（例如，Stable Diffusion 提示词或摘要）不使用。将改用系统指令前缀或常规助手前缀。
 !!!
 
-#### System Instruction Prefix
+#### 系统指令前缀
 
-Inserted as a last prompt line when generating neutral/system text in a background (e.g. Stable Diffusion prompts or Summaries).
+在后台生成中性/系统文本时（例如，Stable Diffusion 提示词或摘要），作为最后的提示词行插入。
 
-#### User Filler Message
+#### 用户填充消息
 
-Will be inserted at the start of the chat history if it doesn't start with a User message.
+如果聊天历史不是以用户消息开头，则将在其开头插入此消息。
 
-**Use case:** when an instruct format *strictly requires* prompts to be user-first and have messages with alternating roles only, examples: Llama 2 Chat, Mistral Instruct.
+**用例：** 当指令格式*严格要求*提示词必须以用户消息开头并且消息角色必须严格交替时，例如：Llama 2 Chat, Mistral Instruct。
 
-#### Stop Sequence
+#### ⏹️ 停止序列
 
-Text that denotes the end of the reply. Also sent as a stopping string to the backend API.
+表示回复结束的文本。也会作为停止字符串发送到后端 API。
 
-If a stop sequence is generated, everything past it will be removed from the output (including the sequence itself).
+如果生成了停止序列，则其后的所有内容（包括序列本身）将从输出中删除。

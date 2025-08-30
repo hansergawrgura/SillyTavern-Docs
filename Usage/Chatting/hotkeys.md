@@ -1,11 +1,7 @@
 ---  
-
 order: -60  
-
 icon: key-asterisk  
-
 route: /usage/hotkeys  
-
 ---  
 
 # 🚀 快捷键指南  

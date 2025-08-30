@@ -1,11 +1,7 @@
 --- 
-
 icon: report
-
 order: 170
-
 expanded: false
-
 ---
 
 
@@ -39,7 +35,7 @@ AI 将回复一条消息以继续对话。
 
 通过消息上的省略号 (•••) 按钮管理单个聊天消息。
 
-要在所有聊天消息中显示这些选项，请在用户设置中启用 [展开消息操作](/Usage/User_Settings/uicustomization.md#theme-toggles) 设置。
+要在所有聊天消息中显示这些选项，请在用户设置中启用 [展开消息操作](/Usage/User_Settings/uicustomization.md#主题切换开关) 设置。
 
 ### 核心功能
 
@@ -55,7 +51,7 @@ AI 将回复一条消息以继续对话。
 
 ### 内容管理
 
-*   <i class="fa-solid fa-paperclip"></i> **嵌入**：[附加文件或图像](/Usage/Characters/data-bank.md#about-documents)
+*   <i class="fa-solid fa-paperclip"></i> **嵌入**：[附加文件或图像](/Usage/Characters/data-bank.md#-关于文档)
 *   <i class="fa-solid fa-flag-checkered"></i> **检查点**：创建故事检查点
 *   <i class="fa-solid fa-flag"></i> **检查点导航**：点击打开检查点聊天，Shift+点击更新现有检查点
 *   <i class="fa-solid fa-code-branch"></i> **分支**：开始替代故事路径
@@ -90,7 +86,7 @@ AI 将回复一条消息以继续对话。
 ### 显示控制
 
 *   <i class="fa-lg fa-solid fa-times"></i> **关闭聊天**：退出当前聊天会话
-*   <i class="fa-lg fa-solid fa-cog"></i> **切换面板**：显示/隐藏[界面面板](/Usage/index.md#control-panels)
+*   <i class="fa-lg fa-solid fa-cog"></i> **切换面板**：显示/隐藏[界面面板](/Usage/index.md#-控制面板)
 
 ### 生成设置
 
@@ -168,7 +164,7 @@ AI 将回复一条消息以继续对话。
 
 ### 可用性
 
-您必须在 [用户设置](/Usage/User_Settings/User_Settings.md#chatmessage-handling) 中选择 **请求令牌概率** 才能启用此功能。
+您必须在 [用户设置](/Usage/User_Settings/User_Settings.md#-聊天消息处理) 中选择 **请求令牌概率** 才能启用此功能。
 
 令牌概率仅对最新消息可用，并且不会保存到聊天中。如果消息的令牌概率信息不再可用，面板将显示一条指示消息。
 

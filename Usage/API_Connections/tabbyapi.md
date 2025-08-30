@@ -1,38 +1,45 @@
-# TabbyAPI
-A FastAPI based application that allows for generating text using an LLM using the Exllamav2 backend, with support for Exl2, GPTQ, and FP16 models.
+# 🚀 TabbyAPI
 
-* [GitHub](https://github.com/theroyallab/tabbyAPI)
+基于 FastAPI 的应用，支持通过 Exllamav2 后端使用 LLM 生成文本，兼容 Exl2、GPTQ 及 FP16 模型。
 
-### Quickstart
-1. Follow the [installation instructions](https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started) on the official TabbyAPI GitHub.
-2. [Create your config.yml](https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options) to set your model path, default model, sequence length, etc. You can ignore most (if not all) of these settings if you want.
-3. Launch TabbyAPI. If it worked, you should see something like this:
+* [GitHub 项目地址](https://github.com/theroyallab/tabbyAPI)
 
-    ![TabbyAPI terminal](/static/tabby-terminal.png)
+---
 
-4. Under the Text Completion API in SillyTavern, select TabbyAPI.
-5. Copy your API key from the TabbyAPI terminal into `Tabby API key` and make sure your `API URL` is correct (it should be `http://127.0.0.1:5000` by default).
+### 🚀 快速开始
+1. 按照官方 TabbyAPI GitHub 中的[安装说明](https://github.com/theroyallab/tabbyAPI/wiki/01.-Getting-Started)进行操作。
+2. [创建 config.yml 配置文件](https://github.com/theroyallab/tabbyAPI/wiki/02.-Server-options)，设置模型路径、默认模型、序列长度等。若无需调整，可忽略大部分（甚至全部）设置。
+3. 启动 TabbyAPI。若成功，将看到类似如下界面：
 
-If you did everything correctly, you should see something like this in SillyTavern:
+    ![TabbyAPI 终端显示](/static/tabby-terminal.png)
 
-![TabbyAPI SillyTavern](/static/tabby-config.png)
+4. 在 SillyTavern 的文本补全 API 选项中，选择 TabbyAPI。
+5. 将 TabbyAPI 终端中的 API 密钥复制到 `Tabby API key` 字段，并确保 `API URL` 正确（默认为 `http://127.0.0.1:5000`）。
 
-You can now chat using TabbyAPI!
+若一切正确，SillyTavern 中将显示如下内容：
 
-### TabbyAPI Loader
-The developers of TabbyAPI created an official extension to load/unload models directly from SillyTavern. Installation is simple:
-1. In SillyTavern, click on the Extensions tab and navigate to Download Extensions & Assets.
-2. Copy `https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json` into Assets URL and click the plug button to the right.
-3. You should see something like this. Click the download button next to Tabby Loader.
+![SillyTavern 配置页](/static/tabby-config.png)
 
-    ![Tabby Loader](/static/tabby-assets.png)
+现在即可使用 TabbyAPI 进行对话！
 
-4. If the installation was successful, you should see a green pop-up message at the top of your screen. Under the extensions tab, navigate to TabbyAPI Loader and copy your admin key from the TabbyAPI terminal into Admin Key.
-5. Click the refresh button next to Model Select. When you click on the textbox just below it, you should see all of the models in your model directory.
+---
 
-![Tabby Loader Extension](/static/tabby-loader.png)
+### 📦 TabbyAPI 加载器
+TabbyAPI 开发者提供了官方扩展，可直接在 SillyTavern 中加载/卸载模型。安装步骤如下：
+1. 在 SillyTavern 中点击 Extensions 标签页，进入 Download Extensions & Assets。
+2. 将 `https://raw.githubusercontent.com/theroyallab/ST-repo/main/index.json` 复制到 Assets URL 中，并点击右侧的插件按钮。
+3. 界面将显示如下内容。点击 Tabby Loader 旁的下载按钮。
 
-You can now load and unload your models directly from SillyTavern!
+    ![Tabby 加载器资产页](/static/tabby-assets.png)
 
-### Support
-Still need help? Visit the [TabbyAPI GitHub](https://github.com/theroyallab/tabbyAPI) for a link to the developer's official Discord server and [read the wiki](https://github.com/theroyallab/tabbyAPI/wiki/1.-Getting-Started).
+4. 安装成功后，屏幕顶部将显示绿色提示消息。在扩展标签页中进入 TabbyAPI Loader，并将 TabbyAPI 终端中的管理员密钥复制到 Admin Key 字段。
+5. 点击 Model Select 旁的刷新按钮。点击下方文本框时，将显示模型目录中的所有模型。
+
+![Tabby 加载器扩展界面](/static/tabby-loader.png)
+
+现在可直接在 SillyTavern 中加载和卸载模型！
+
+---
+
+### ❓ 支持与帮助
+仍需帮助？请访问 [TabbyAPI GitHub](https://github.com/theroyallab/tabbyAPI) 获取开发者官方 Discord 服务器链接，并[查阅维基文档](https://github.com/theroyallab/tabbyAPI/wiki/1.-Getting-Started)。

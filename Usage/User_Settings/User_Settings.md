@@ -4,376 +4,372 @@ icon: gear
 route: /usage/user-settings
 ---
 
-# User Settings
-
-
-:::callout
-**[UI Customization](uicustomization.md)**
-
-Change the theme, look and feel of the chat interface to suit your preferences.
-:::
-
-
+# ⚙️ 用户设置
 
 :::callout
-**[Visual Novel mode](Visual-Novel.md)**
+**[🎨 界面自定义](uicustomization.md)**
 
-Chat to characters with sprites, like in visual novels such as Doki Doki Literature Club and other famous VN games.
+根据您的偏好更改聊天界面的主题和外观。
 :::
 
+:::callout
+**[🎮 视觉小说模式](Visual-Novel.md)**
 
-## General Settings
+像《心跳文学部》等著名视觉小说游戏一样，与带有立绘的角色聊天。
+:::
 
-These are the core settings that affect your overall SillyTavern experience.
+## 🧩 通用设置
 
-### UI Language
+这些是影响您整体 SillyTavern 体验的核心设置。
 
-SillyTavern's user interface is available in multiple languages. The language selector provides these options:
-* **Default**: Uses your system language if available
-* **English**: Forces English UI regardless of system settings
-* Other languages available through the dropdown
+### 🌐 界面语言
 
-Note: This setting only affects the user interface text. For AI conversation translation, please use the [Chat Translation](../../extensions/Translation.md) extension.
+SillyTavern 的用户界面支持多种语言。语言选择器提供以下选项：
+*   **默认**：如果可用，则使用您的系统语言
+*   **English**：无论系统设置如何，强制使用英语界面
+*   通过下拉菜单可选择其他语言
 
-### Software Version
+注意：此设置仅影响用户界面文本。如需进行 AI 对话翻译，请使用 [聊天翻译](../../extensions/Translation.md) 扩展。
 
-Your current version of SillyTavern is displayed in the top-right corner. This information is essential for:
-* Troubleshooting problems
-* Ensuring compatibility with extensions
-* Determining if updates are available
+### 🔄 软件版本
 
-To update SillyTavern to the latest version, please refer to the [Updating](/Installation/Updating) documentation.
+您当前的 SillyTavern 版本显示在右上角。此信息对于以下情况至关重要：
+*   故障排除
+*   确保与扩展的兼容性
+*   确定是否有可用的更新
 
-### Account Management
+要将 SillyTavern 更新到最新版本，请参阅 [更新](/Installation/Updating) 文档。
 
-Control your SillyTavern user account, back up your settings and user data, and manage user roles and permissions in [multi-user mode](/Administration/multi-user.md).
+### 👥 账户管理
 
-#### <i class="fa-fw fa-solid fa-user-shield"></i> Account
+在 [多用户模式](/Administration/multi-user.md) 下控制您的 SillyTavern 用户账户、备份设置和用户数据，并管理用户角色和权限。
 
-In the Account dialog, you can view and edit your profile information, change your password, and manage account settings.
+#### <i class="fa-fw fa-solid fa-user-shield"></i> 账户
 
-**Profile Information**
+在“账户”对话框中，您可以查看和编辑您的个人资料信息、更改密码和管理账户设置。
 
-* Display name (editable via pencil icon)
-* User avatar (can also be changed using [Personas](/Usage/personas.md))
-* Account handle
-* User role
-* Account creation date
-* Password status (locked/unlocked icon indicates protection)
+**个人资料信息**
 
-**Account Actions**
+*   显示名称（可通过铅笔图标编辑）
+*   用户头像（也可使用 [人物角色](/Usage/personas.md) 更改）
+*   账户句柄 (Handle)
+*   用户角色
+*   账户创建日期
+*   密码状态（锁定/未锁定图标表示保护状态）
 
-* **Settings Snapshots**: Create, manage, and restore backups of your user settings
-* **Download Backup**: Export a complete backup of all your user data
-* **Change Password**: Update your account security credentials
+**账户操作**
 
-**Danger Zone**
+*   **设置快照**：创建、管理和恢复用户设置的备份
+*   **下载备份**：导出所有用户数据的完整备份
+*   **更改密码**：更新您的账户安全凭证
 
-Critical account operations that should be used with caution:
-* **Reset Settings**: Restore all settings to factory defaults
-* **Reset Everything**: Complete account wipe and factory reset
+**⚠️ 危险区域**
 
-#### <i class="fa-fw fa-solid fa-user-tie"></i> Admin Panel
+需要谨慎使用的关键账户操作：
+*   **重置设置**：将所有设置恢复为出厂默认值
+*   **重置所有内容**：完全清除账户并恢复出厂设置
 
-!!! Applies to: [multi-user mode](/Administration/multi-user.md)
+#### <i class="fa-fw fa-solid fa-user-tie"></i> 管理面板
 
-Multi-account features require `enableUserAccounts` to be set to true in config.yaml. 
+!!! 适用于: [多用户模式](/Administration/multi-user.md)
+
+多账户功能要求在 config.yaml 中将 `enableUserAccounts` 设置为 true。
 !!!
 
-Select **Manage Users** to view and manage existing user accounts.
+选择 **管理用户** 以查看和管理现有用户账户。
 
-##### User Profile
+##### 用户资料
 
-- Custom avatar management (upload/remove)
-- Display name and handle
-- Role and status information
-- Account creation date
-- Password protection status
+-   自定义头像管理（上传/删除）
+-   显示名称和句柄
+-   角色和状态信息
+-   账户创建日期
+-   密码保护状态
 
-##### Account Controls
+##### 账户控制
 
-- <i class="fa-fw fa-solid fa-pencil"></i> Edit display name
-- <i class="fa-fw fa-solid fa-check"></i> Enable account
-- <i class="fa-fw fa-solid fa-ban"></i> Disable account
-- <i class="fa-fw fa-solid fa-arrow-up"></i> Promote to admin
-- <i class="fa-fw fa-solid fa-arrow-down"></i> Demote to regular user
+-   <i class="fa-fw fa-solid fa-pencil"></i> 编辑显示名称
+-   <i class="fa-fw fa-solid fa-check"></i> 启用账户
+-   <i class="fa-fw fa-solid fa-ban"></i> 禁用账户
+-   <i class="fa-fw fa-solid fa-arrow-up"></i> 提升为管理员
+-   <i class="fa-fw fa-solid fa-arrow-down"></i> 降级为普通用户
 
-##### Management Actions
+##### 管理操作
 
-- <i class="fa-fw fa-solid fa-download"></i> Download user data backup
-- <i class="fa-fw fa-solid fa-key"></i> Change user password
-- <i class="fa-fw fa-solid fa-trash"></i> Delete account
+-   <i class="fa-fw fa-solid fa-download"></i> 下载用户数据备份
+-   <i class="fa-fw fa-solid fa-key"></i> 更改用户密码
+-   <i class="fa-fw fa-solid fa-trash"></i> 删除账户
 
-##### New User
+##### 新用户
 
-Select **New User** to create a new user account.
+选择 **新用户** 以创建新的用户账户。
 
-* Display Name* (e.g., "John Snow")
-* User Handle* (lowercase letters, numbers, and dashes only)
-* Password (optional)
-* Password Confirmation
+*   显示名称* (例如："John Snow")
+*   用户句柄* (仅限小写字母、数字和破折号)
+*   密码 (可选)
+*   确认密码
 
-Creating a new user automatically generates a subfolder in the /data/ directory using the user's handle as the folder name.
+创建新用户会自动在 /data/ 目录中生成一个子文件夹，使用用户句柄作为文件夹名称。
 
-#### <i class="fa-fw fa-solid fa-right-from-bracket"></i> Logout
+#### <i class="fa-fw fa-solid fa-right-from-bracket"></i> 注销
 
-!!! Applies to: [multi-user mode](/Administration/multi-user.md)
+!!! 适用于: [多用户模式](/Administration/multi-user.md)
 !!!
 
-Sign out of your current session.
+注销您当前的会话。
 
-### Settings Search
+### 🔍 设置搜索
 
-A convenient search bar that helps you quickly find specific settings:
-* Type any keyword to filter and highlight settings anywhere in User Settings
-* Searches through setting names and descriptions
-* Helps navigate complex settings more efficiently
+一个便捷的搜索栏，帮助您快速找到特定设置：
+*   输入任何关键词即可筛选并高亮显示“用户设置”中任何位置的设置
+*   搜索设置名称和描述
+*   帮助更高效地浏览复杂设置
 
-## UI Theme
+## 🎨 界面主题
 
-Change the appearance of the chat interface to suit your preferences.
+更改聊天界面的外观以适应您的偏好。
 
-For more information on the settings in this section of <i class="fa-fw fa-solid fa-user-gear" title="User Settings icon"></i> **User Settings**, see [UI Customization](uicustomization.md#ui-theme).
+有关 <i class="fa-fw fa-solid fa-user-gear" title="用户设置图标"></i> **用户设置** 中此部分设置的更多信息，请参阅 [界面自定义](uicustomization.md#-界面主题)。
 
-## Character Handling
+## 🧑‍🤝‍🧑 角色处理
 
-* **Char List Subheader**: Choose what additional information to display under character names in the [<i class="fa-fw fa-solid fa-address-card" title="Characters icon"></i> Characters](/Usage/Characters/characterdesign.md) list:
-    - Character Version
-    - Created by
-* **Import Card Tags**: Controls how tags are handled when importing character cards:
-    - Ask - Show dialog for each import
-    - None - Don't import any tags
-    - All - Import all tags
-    - Existing - Only import tags that already exist
-* **Advanced Character Search**: When enabled, uses fuzzy matching and searches all character data fields, not just names.
-* **Prefer Char. Prompt**: If enabled, uses the character card's System Prompt override when available.
-* **Prefer Char. Instructions**: If enabled, uses the character card's Post-History Instructions override when available.
-* **Never resize avatars**: Prevents cropping/resizing of imported character images. When disabled, images are resized to 512x768.
-* **Show avatar filenames**: Displays actual filenames of character avatars in the character list.
-* **Spoiler Free Mode**: Hides character definitions behind a spoiler button in the editor panel.
+*   **角色列表副标题**：选择在 [<i class="fa-fw fa-solid fa-address-card" title="角色图标"></i> 角色](/Usage/Characters/characterdesign.md) 列表中角色名称下显示哪些附加信息：
+    -   角色版本
+    -   创建者
+*   **导入卡片标签**：控制导入角色卡片时如何处理标签：
+    -   询问 - 每次导入时显示对话框
+    -   无 - 不导入任何标签
+    -   全部 - 导入所有标签
+    -   仅现有 - 仅导入已存在的标签
+*   **高级角色搜索**：启用后，使用模糊匹配并搜索所有角色数据字段，而不仅仅是名称。
+*   **优先角色提示词**：如果启用，则在可用时使用角色卡的系统提示词覆盖。
+*   **优先角色指令**：如果启用，则在可用时使用角色卡的历史记录后指令覆盖。
+*   **永不调整头像大小**：防止导入的角色图片被裁剪/调整大小。禁用时，图片将调整为 512x768。
+*   **显示头像文件名**：在角色列表中显示角色头像的实际文件名。
+*   **无剧透模式**：在编辑器面板中将角色定义隐藏在剧透按钮后面。
 
-## Miscellaneous
+## 🧰 杂项
 
-* **Reload Chat**: Reloads and redraws the current chat.
-* **[Debug Menu](#debug-menu)**: Access debugging options.
-* **Smooth Streaming**: Experimental feature for smoother text generation. Includes speed control slider.
-* **[Message Sound](uicustomization.md#message-sound)**: Plays a sound when message generation completes.
-    - **Background Sound Only**: Only plays sounds when browser tab is unfocused.
-* **Relaxed API URLs**: Reduces formatting requirements for API URLs.
-* **Lorebook Import Dialog**: Shows import dialog for World Info/Lorebook when importing characters with embedded lore.
-* **Auto-select Input Text**: Automatically selects text in certain input fields when clicked.
-* **Markdown Hotkeys**: Enables keyboard shortcuts for markdown formatting.
-* **Restore User Input**: Preserves unsaved user input when page is refreshed.
-* **MovingUI**: Allows repositioning UI elements by dragging (PC only).
-    - <i class="fa-solid fa-recycle" title="Reset icon"></i> **Reset** button to restore default positions
-    - Preset system for saving/loading UI layouts
+*   **重新加载聊天**：重新加载并重绘当前聊天。
+*   **[调试菜单](#-调试菜单)**：访问调试选项。
+*   **平滑流式传输**：实现更流畅文本生成的实验性功能。包含速度控制滑块。
+*   **[消息提示音](uicustomization.md#-消息提示音)**：消息生成完成时播放声音。
+    -   **仅后台提示音**：仅在浏览器标签页未聚焦时播放声音。
+*   **宽松的 API URL**：减少对 API URL 格式的要求。
+*   **背景知识库导入对话框**：导入包含嵌入式背景知识的角色时，显示世界信息/背景知识库的导入对话框。
+*   **自动选择输入文本**：单击时自动选择某些输入字段中的文本。
+*   **Markdown 热键**：启用用于 Markdown 格式化的键盘快捷键。
+*   **恢复用户输入**：刷新页面时保留未保存的用户输入。
+*   **可移动UI**：允许通过拖动重新定位 UI 元素（仅限 PC）。
+    -   <i class="fa-solid fa-recycle" title="重置图标"></i> **重置** 按钮可恢复默认位置
+    -   用于保存/加载 UI 布局的预设系统
 
-## Chat/Message Handling
+## 💬 聊天/消息处理
 
-### Message Display Settings
+### 📄 消息显示设置
 
-Controls how messages are loaded and displayed in the chat interface. These settings affect the overall chat experience and performance.
-* **# Messages to Load**: Number of chat history messages to load before pagination (0 = All)
-* **Streaming FPS**: Update speed of streamed text (5-100 FPS)
-* **Example Messages Behavior**:
-    - Gradual push-out
-    - Always include examples
-    - Never include examples
+控制消息在聊天界面中的加载和显示方式。这些设置影响整体聊天体验和性能。
+*   **加载消息数**：分页前加载的聊天历史消息数量 (0 = 全部)
+*   **流式传输 FPS**：流式文本的更新速度 (5-100 FPS)
+*   **示例消息行为**：
+    -   逐步推出
+    -   始终包含示例
+    -   从不包含示例
 
-### Input & Response Controls
+### ⌨️ 输入与响应控制
 
-Settings that determine how messages are sent and how the AI continues its responses.
-* **Enter to Send**: Choose between Disabled, Automatic (PC), or Enabled
-* **"Send" to Continue**: Use Send button to continue AI responses
-* **Quick "Continue" button**: Show button to extend AI's last message
-* **Quick "Impersonate" button**: Show button for single-message character impersonation
-* **Swipes**: Show arrow buttons for alternative AI responses (PC and mobile)
-* **Gestures**: Enable swipe gestures for generation (Mobile only)
+决定消息发送方式以及 AI 如何继续其响应的设置。
+*   **按 Enter 发送**：在禁用、自动（PC）或启用之间选择
+*   **按“发送”继续**：使用发送按钮继续 AI 响应
+*   **快速“继续”按钮**：显示用于扩展 AI 最后消息的按钮
+*   **快速“扮演”按钮**：显示用于单条消息角色扮演的按钮
+*   **滑动**：显示用于获取 AI 替代响应的箭头按钮（PC 和移动设备）
+*   **手势**：启用用于生成的手势（仅限移动设备）
 
-### Auto-Management
+### 🤖 自动管理
 
-Automated features that help manage chat flow and content.
-* **Auto-load Last Chat**: Automatically load the most recent chat on startup
-* **Auto-scroll Chat**: Automatically scroll to newest messages
-* **Auto-save Message Edits**: Save message edits without confirmation
-* **Confirm message deletion**: Prompt before deleting messages
-* **Auto-fix Markdown**: Automatically correct markdown formatting
+有助于管理聊天流程和内容的自动化功能。
+*   **自动加载上次聊天**：启动时自动加载最近的聊天
+*   **自动滚动聊天**：自动滚动到最新消息
+*   **自动保存消息编辑**：无需确认即可保存消息编辑
+*   **确认删除消息**：删除消息前提示
+*   **自动修复 Markdown**：自动更正 Markdown 格式
 
-#### Auto-swipe
+#### 🔄 自动滑动 (Auto-swipe)
 
-Automatically reject and regenerate AI messages based on configurable criteria.
-* **Enable Auto-swipe**: Master toggle for the auto-swipe function
-* **Minimum generated message length**: Triggers an auto-swipe if the message is shorter than this value
-* **Blacklisted words**: List of words that can trigger auto-swipe, separated by commas
-* **Blacklisted word count to swipe**: Minimum number of blacklisted words that must be detected to trigger an auto-swipe
+根据可配置的标准自动拒绝并重新生成 AI 消息。
+*   **启用自动滑动**：自动滑动功能的主开关
+*   **生成消息的最小长度**：如果消息短于此值，则触发自动滑动
+*   **黑名单词**：可以触发自动滑动的单词列表，用逗号分隔
+*   **触发滑动的黑名单词数量**：必须检测到的最小黑名单词数量才能触发自动滑动
 
-#### Auto-Continue
+#### 🔄 自动继续 (Auto-Continue)
 
-Automatically continues a response if the model stopped before reaching a certain length.
+如果模型在达到一定长度之前停止，则自动继续响应。
 
-This lets your AI write a long response in multiple parts, so that you can have a short [response length setting](/Usage/Common-Settings.md#生成长度词元数) while still getting long replies. 
+这让您的 AI 可以分多个部分编写长响应，这样您可以在保持较短的 [响应长度设置](/Usage/Common-Settings.md#生成长度词元数) 的同时，仍然获得长回复。
 
-It will not make the AI write more than it would have otherwise. Asking the AI to continue a message that it considers "finished" does not usually work. See [How to make the AI write more?](/Usage/faq.md#如何让-ai-写更多) for other ideas.
+它不会让 AI 写出比原本更多的内容。要求 AI 继续一条它认为“已完成”的消息通常不起作用。有关其他想法，请参阅 [如何让 AI 写更多？](/Usage/faq.md#如何让-ai-写更多)。
 
-* **Enable Auto-continue**: Master toggle for automatic continuation
-* **Allow for Chat Completion APIs**: Enables auto-continue functionality for Chat Completion API endpoints
-* **Target length (tokens)**: The desired message length in tokens - will trigger continue if message is shorter than this value (0-1024)
+*   **启用自动继续**：自动继续功能的主开关
+*   **允许用于聊天补全 API**：为聊天补全 API 端点启用自动继续功能
+*   **目标长度（词元）**：期望的消息长度（以词元为单位）- 如果消息短于此值，将触发继续 (0-1024)
 
-### Message Formatting & Display
+### 📝 消息格式与显示
 
-Controls how messages are formatted and what content is displayed.
-* **Forbid External Media**: Block embedded media from external domains
-* **Show {\{char}}: in responses**: Retain character name prefix in responses if generated
-* **Show {\{user}}: in responses**: Retain user name prefix in responses if generated
-* **Show tags in responses**: Allow (some) HTML tags in responses to be displayed as HTML 
-* **Relax message trim in Groups**: Allow AI to speak for other characters in group chats, rather than stopping the response generation
-* **Show group chat queue**: Display response order in the character list for group chats
-* **Pin greeting message styles**: Always render style tags from greetings, even if the message is unloaded due to lazy loading.
+控制消息的格式以及显示的内容。
+*   **禁止外部媒体**：阻止来自外部域的嵌入式媒体
+*   **在响应中显示 {\{char}}：**：如果生成了，则在响应中保留角色名称前缀
+*   **在响应中显示 {\{user}}：**：如果生成了，则在响应中保留用户名称前缀
+*   **在响应中显示标签**：允许（部分）HTML 标签在响应中显示为 HTML
+*   **在群聊中放宽消息修剪**：允许 AI 在群聊中代表其他角色发言，而不是停止响应生成
+*   **显示群聊队列**：在群聊的角色列表中显示响应顺序
+*   **固定问候消息样式**：即使消息因延迟加载而未加载，也始终渲染问候语中的样式标签。
 
-### Prompt Inspection and Debugging
+### 🔍 提示词检查与调试
 
-* **Log prompts to console**: Output prompts to browser console
-* **Request token probabilities**: Request token probabilities for AI responses from the API. Where available, these can be viewed in <i class="fa-solid fa-bars" title="Burger Menu icon"></i> [Token Probabilities](../../Usage/Chatting/index.md#-令牌概率面板).
+*   **将提示词记录到控制台**：将提示词输出到浏览器控制台
+*   **请求词元概率**：向 API 请求 AI 响应的词元概率。在可用的情况下，可以在 <i class="fa-solid fa-bars" title="汉堡菜单图标"></i> [词元概率面板](../../Usage/Chatting/index.md#-令牌概率面板) 中查看这些概率。
 
-### AutoComplete
+### 🔤 自动完成 (AutoComplete)
 
-- Auto-hide details
-- Matching style (Starts with/Includes/Fuzzy)
-- Visual style (Theme/Dark/Light)
-- Keyboard selection options
-- Font scaling
-- Width controls
+-   自动隐藏详细信息
+-   匹配样式（开头为/包含/模糊）
+-   视觉样式（主题/深色/浅色）
+-   键盘选择选项
+-   字体缩放
+-   宽度控制
 
-## STscript Settings
+## 📜 STscript 设置
 
-Configuration options for the [STscript parser](/For_Contributors/st-script.md#parser-flags).
+[STscript 解析器](/For_Contributors/st-script.md#parser-flags) 的配置选项。
 
 ### STRICT_ESCAPING
 
-* Pipes don't need to be escaped in quoted values.
-* A backslash in front of a symbol can be escaped to provide the literal backslash followed by the functional symbol.
+*   在带引号的值中，管道符不需要转义。
+*   符号前面的反斜杠可以被转义，以提供字面意义上的反斜杠后跟功能符号。
 
-See [Strict Escaping](/For_Contributors/st-script.md#strict-escaping) for more information.
+更多信息请参阅 [严格转义](/For_Contributors/st-script.md#strict-escaping)。
 
 ### REPLACE_GETVAR
 
-Helps to avoid double-substitutions when the variable values contain text that could be interpreted as macros.
+当变量值包含可能被解释为宏的文本时，有助于避免双重替换。
 
-See [Replace Variable Macros](/For_Contributors/st-script.md#replace-variable-macros) for more information.
+更多信息请参阅 [替换变量宏](/For_Contributors/st-script.md#replace-variable-macros)。
 
-## Clean-Up Menu
+## 🧹 清理菜单
 
-The Clean-Up menu provides a data maintenance tool that helps you identify and remove unnecessary files from your SillyTavern installation. This feature helps keep your data directory organized and can free up significant disk space.
+清理菜单提供了一个数据维护工具，可帮助您识别和删除 SillyTavern 安装中不必要的文件。此功能有助于保持数据目录井然有序，并可释放大量磁盘空间。
 
-!!! warning "Important Warning"
-The Clean-up tool will permanently delete files. **This action cannot be undone!**
+!!! warning "重要警告"
+清理工具将永久删除文件。**此操作无法撤销！**
 
-Manual uploads to the `/data/user/files/` and `/data/user/images/` directories will be deleted if they are not associated with chat messages or Data Bank entries.
+手动上传到 `/data/user/files/` 和 `/data/user/images/` 目录的文件，如果未与聊天消息或资料库条目关联，将被删除。
 
-If unsure, make a backup of your data before using the Clean-up menu.
+如果不确定，请在使用清理菜单前备份您的数据。
 !!!
 
-### How to Use Clean-Up
+### 🛠️ 如何使用清理
 
-1. Click the **Clean-Up** button under the **Miscellaneous** section
-2. Click **Scan** to analyze your installation. This may take some time depending on the size of your data directory
-3. Review the categories of files found
-4. Use **View** to preview file contents before deletion
-5. Use **Download** to save files before deletion
-6. Delete individual files or entire categories as needed
+1.  单击 **杂项** 部分下的 **清理** 按钮
+2.  单击 **扫描** 以分析您的安装。根据数据目录的大小，这可能需要一些时间
+3.  查看找到的文件类别
+4.  使用 **查看** 在删除前预览文件内容
+5.  使用 **下载** 在删除前保存文件
+6.  根据需要删除单个文件或整个类别
 
-### Clean-Up Categories
+### 📂 清理类别
 
-The Clean-Up tool scans for loose files into the following categories:
+清理工具将松散文件扫描到以下类别中：
 
-#### Files
+#### 文件
 
-* **What it finds**: Files that are not associated with chat messages or Data Bank entries
-* **Location**: `/data/<user-handle>/user/files/`
-* **Risk**: ⚠️ **WILL DELETE MANUAL UPLOADS** that aren't referenced in chats
-* **When to clean**: Safe to delete if you don't need unreferenced files
+*   **查找内容**：未与聊天消息或资料库条目关联的文件
+*   **位置**：`/data/<用户句柄>/user/files/`
+*   **风险**：⚠️ **将删除未在聊天中引用的手动上传文件**
+*   **清理时机**：如果不需要未引用的文件，可以安全删除
 
-#### Images
+#### 图片
 
-* **What it finds**: Images that are not associated with chat messages
-* **Location**: `/data/<user-handle>/user/images/`
-* **Risk**: ⚠️ **WILL DELETE MANUAL UPLOADS** that aren't referenced in chats
-* **When to clean**: Safe to delete if you don't need unreferenced images
+*   **查找内容**：未与聊天消息关联的图片
+*   **位置**：`/data/<用户句柄>/user/images/`
+*   **风险**：⚠️ **将删除未在聊天中引用的手动上传图片**
+*   **清理时机**：如果不需要未引用的图片，可以安全删除
 
-#### Chats
+#### 聊天记录
 
-* **What it finds**: Chat files associated with deleted characters
-* **Location**: `data/<user-handle>/chats/`
-* **Risk**: ⚠️ **Orphaned chats will be permanently lost**
-* **When to clean**: Safe to delete if you've intentionally deleted characters and no longer need their chat histories
+*   **查找内容**：与已删除角色关联的聊天文件
+*   **位置**：`data/<用户句柄>/chats/`
+*   **风险**：⚠️ **孤立的聊天记录将永久丢失**
+*   **清理时机**：如果您已故意删除角色且不再需要其聊天历史，可以安全删除
 
-#### Group Chats
+#### 群聊记录
 
-* **What it finds**: Chat files associated with deleted groups
-* **Location**: `data/<user-handle>/group chats/`
-* **Risk**: ⚠️ **Orphaned group chats will be permanently lost**
-* **When to clean**: Safe to delete if you've intentionally deleted groups and no longer need their chat histories
+*   **查找内容**：与已删除群组关联的聊天文件
+*   **位置**：`data/<用户句柄>/group chats/`
+*   **风险**：⚠️ **孤立的群聊记录将永久丢失**
+*   **清理时机**：如果您已故意删除群组且不再需要其聊天历史，可以安全删除
 
-#### Avatar Thumbnails
+#### 头像缩略图
 
-* **What it finds**: Thumbnails for avatars of missing or deleted characters
-* **Location**: `data/<user-handle>/thumbnails/avatar`
-* **Risk**: ✅ **Safe to delete** - thumbnails are automatically regenerated when needed
-* **When to clean**: Always safe to clean, helps free up space
+*   **查找内容**：缺失或已删除角色的头像缩略图
+*   **位置**：`data/<用户句柄>/thumbnails/avatar`
+*   **风险**：✅ **可安全删除** - 需要时会自动重新生成缩略图
+*   **清理时机**：始终可以安全清理，有助于释放空间
 
-#### Background Thumbnails
+#### 背景缩略图
 
-* **What it finds**: Thumbnails for missing or deleted backgrounds
-* **Location**: `data/<user-handle>/thumbnails/bg`
-* **Risk**: ✅ **Safe to delete** - thumbnails are automatically regenerated when needed
-* **When to clean**: Always safe to clean, helps free up space
+*   **查找内容**：缺失或已删除背景的缩略图
+*   **位置**：`data/<用户句柄>/thumbnails/bg`
+*   **风险**：✅ **可安全删除** - 需要时会自动重新生成缩略图
+*   **清理时机**：始终可以安全清理，有助于释放空间
 
-#### Chat Backups
+#### 聊天备份
 
-* **What it finds**: Automatically generated chat backups
-* **Location**: `data/<user-handle>/backups/chat_*`
-* **Risk**: ⚠️ **Backup files will be permanently lost**
-* **When to clean**: Consider keeping recent backups, but older ones can be safely deleted
+*   **查找内容**：自动生成的聊天备份
+*   **位置**：`data/<用户句柄>/backups/chat_*`
+*   **风险**：⚠️ **备份文件将永久丢失**
+*   **清理时机**：考虑保留最近的备份，但可以安全删除较旧的备份
 
-#### Settings Backups
+#### 设置备份
 
-* **What it finds**: Automatically generated settings backups
-* **Location**: `data/<user-handle>/backups/settings_*`
-* **Risk**: ⚠️ **Settings backup files will be permanently lost**
-* **When to clean**: Consider keeping recent backups, but older ones can be safely deleted
+*   **查找内容**：自动生成的设置备份
+*   **位置**：`data/<用户句柄>/backups/settings_*`
+*   **风险**：⚠️ **设置备份文件将永久丢失**
+*   **清理时机**：考虑保留最近的备份，但可以安全删除较旧的备份
 
-## Debug menu
+## 🐞 调试菜单
 
-!!!warning These functions are intended for advanced users only.
+!!!warning 这些功能仅供高级用户使用。
 
-Do not use them unless you fully understand their consequences.
+除非您完全了解其后果，否则请勿使用。
 !!!
 
-The Debug Menu provides functionality for troubleshooting, maintenance, and development purposes. These functions should be used with caution as they can significantly impact your SillyTavern installation.
+调试菜单提供用于故障排除、维护和开发目的的功能。应谨慎使用这些功能，因为它们会严重影响您的 SillyTavern 安装。
 
-Because extensions can add debug functions, the available options will vary depending on the extensions you have installed.
+由于扩展可以添加调试功能，可用选项将根据您安装的扩展而有所不同。
 
-### Translation & Locale Functions
-* **Get missing translations**: Analyzes the current locale (or all locales if English is selected) for missing translations and outputs results to browser console
-* **Apply locale**: Forces a refresh of the current language settings by reapplying the selected locale
-### Cache & Storage Management
-* **Clear WebSearch cache**: Removes all stored search results from local cache
-* **Purge all vector indices**: Completely removes all stored vectors across all sources
-* **Reset token cache**: Clears stored token counts, forcing complete re-tokenization of all chats
-* **Delete itemized prompts**: Removes all itemized prompts from local storage
-### Data & Statistics
-* **Refresh Stat File**: Rebuilds the statistics file using existing chat data
-* **Backfill token counters**: Recalculates token counts for all messages in current chat
-    - Useful when switching between models with different tokenizers
-    - Triggers chat reload after completion
-    - Visual changes only, does not modify chat content
-### API & Extension Testing
-* **Change Mancer base URL**: Modify the base URL for Mancer API server
-* **Test WebSearch extension**: Performs a test search using current settings
-* **Send a generation request**: Tests text generation using the currently selected API
-### System & Debug Tools
-* **Force onboarding**: Restarts the onboarding process
-* **Toggle event tracing**: Enables/disables event tracking for debugging
-* **Copy ST setup**: [Work in Progress] Copies system configuration data to clipboard for bug reports
+### 🌐 翻译与区域设置功能
+*   **获取缺失的翻译**：分析当前区域设置（如果选择英语，则分析所有区域设置）以查找缺失的翻译，并将结果输出到浏览器控制台
+*   **应用区域设置**：通过重新应用选定的区域设置，强制刷新当前语言设置
+### 💾 缓存与存储管理
+*   **清除网络搜索缓存**：从本地缓存中删除所有存储的搜索结果
+*   **清除所有向量索引**：完全删除所有来源中存储的所有向量
+*   **重置词元缓存**：清除存储的词元计数，强制对所有聊天进行完整的重新词元化
+*   **删除分项提示词**：从本地存储中删除所有分项提示词
+### 📊 数据与统计
+*   **刷新统计文件**：使用现有聊天数据重建统计文件
+*   **回填词元计数器**：重新计算当前聊天中所有消息的词元计数
+    -   在切换使用不同分词器的模型时很有用
+    -   完成后触发聊天重新加载
+    -   仅视觉更改，不修改聊天内容
+### 🔌 API 与扩展测试
+*   **更改 Mancer 基础 URL**：修改 Mancer API 服务器的基础 URL
+*   **测试网络搜索扩展**：使用当前设置执行测试搜索
+*   **发送生成请求**：使用当前选定的 API 测试文本生成
+### 🖥️ 系统与调试工具
+*   **强制引导**：重新启动引导过程
+*   **切换事件跟踪**：启用/禁用用于调试的事件跟踪
+*   **复制 ST 设置**：[进行中] 将系统配置数据复制到剪贴板以用于错误报告
 
-Each function can be executed using the "Execute" button beneath its description. Consider backing up your data before using these tools, as some operations cannot be undone.
+每个功能都可以使用其描述下方的“执行”按钮来运行。在使用这些工具之前，请考虑备份您的数据，因为某些操作无法撤销。

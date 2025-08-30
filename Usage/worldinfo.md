@@ -5,403 +5,401 @@ route: /usage/core-concepts/worldinfo/
 templating: false
 ---
 
-# World Info
+# 🌍 世界信息
 
-**World Info (also known as Lorebooks or Memory Books) is a powerful tool available in ST to insert prompts dynamically into your chat to help guide the AI replies.**
+**世界信息（也称为传说书或记忆书）是 ST 中一个强大的工具，可动态将提示词插入您的聊天中，以帮助引导 AI 回复。**
 
-Commonly, World Info (WI for short) is used to  enhance the AI's understanding of the details in your fictional world, however you could use a World Info entry to insert ANYTHING that you would like to insert into the prompt.
+通常，世界信息（简称 WI）用于增强 AI 对您虚构世界中细节的理解，但您也可以使用世界信息条目插入您希望插入提示词中的**任何内容**。
 
-It functions like a dynamic dictionary that only inserts relevant information from World Info entries when keywords associated with the entries are present in the message text.
+它就像一个动态词典，只有当与条目关联的关键词出现在消息文本中时，才会插入世界信息条目中的相关信息。
 
-The SillyTavern engine activates and seamlessly integrates the appropriate lore into the prompt, providing background information to the AI.
+SillyTavern 引擎会激活并无缝地将相应的背景知识集成到提示词中，为 AI 提供背景信息。
 
-*It is important to note that while World Info helps guide the AI toward the desired content, it does not guarantee its appearance in the generated output messages. That depends on how good your model is at making use of additional information!*
+*需要注意的是，虽然世界信息有助于引导 AI 生成期望的内容，但它并不保证其一定会出现在生成的输出消息中。这取决于您的模型利用附加信息的能力！*
 
-## Pro Tips
+## 💡 专业提示
 
-* The World Info engine is a very powerful prompt management tool. Don't fixate on adding character lore alone, feel free to experiment.
-* Activation keywords, titles, and other information that is not in the **Content** field is not inserted into context, so each World Info entry should have a comprehensive, standalone description.
-* To create rich and detailed world lore, entries can be interlinked and reference one another by using recursive activation. See more on [Recursion](#recursive-scanning) below.
-* SillyTavern offers flexible context budgeting for inserted background information. To conserve prompt tokens, it is advisable to keep entry contents concise.
+*   世界信息引擎是一个非常强大的提示词管理工具。不要只局限于添加角色背景知识，请随意尝试。
+*   激活关键词、标题以及**内容**字段以外的其他信息不会被插入上下文中，因此每个世界信息条目都应包含一个全面的、独立的描述。
+*   要创建丰富详细的世界背景知识，条目可以通过递归激活相互链接和引用。详见下文关于[递归扫描](#递归扫描-recursive-scanning)的内容。
+*   SillyTavern 为插入的背景信息提供了灵活的上下文预算。为节省提示词词元，建议保持条目内容简洁。
 
-## Further reading
+## 📚 延伸阅读
 
-* [World Info Encyclopedia](https://rentry.co/world-info-encyclopedia): Exhaustive in-depth guide to World Info and Lorebooks. By kingbri, Alicat, Trappu.
+*   [世界信息百科全书](https://rentry.co/world-info-encyclopedia): 关于世界信息和传说书的详尽深入指南。作者：kingbri, Alicat, Trappu。
 
-## Character Lore
+## 👤 角色背景知识
 
-Optionally, one World Info file could be assigned to a character to serve as a dedicated lore source across all chats with that character (including groups).
+可以选择将一个世界信息文件分配给一个角色，作为与该角色所有聊天（包括群组）的专用背景知识来源。
 
-To do that, navigate to a Character Management panel and click a globe button, then pick World Info from a dropdown list and click "Ok".
+操作方法：导航到角色管理面板，点击地球仪按钮，然后从下拉列表中选择世界信息，点击“确定”。
 
-To unbind or change character lore, Shift-click the globe button. If on mobile, click "More..." and then "Link World Info".
+要解除绑定或更改角色背景知识，请按住 Shift 键点击地球仪按钮。如果在移动设备上，请点击“更多...”，然后点击“链接世界信息”。
 
-### Character Lore Insertion Strategy
+### 角色背景知识插入策略
 
-When generating an AI reply, entries from the character World Info will be combined with the entries from a global World Info selector using one of the following strategies:
+生成 AI 回复时，角色世界信息中的条目将与全局世界信息选择器中的条目使用以下策略之一组合：
 
-#### Sorted Evenly (default)
+#### 均匀排序（默认）
 
-All entries will be sorted according to their Insertion Order as if they a part of one big file, ignoring the source.
+所有条目将根据其插入顺序进行排序，就好像它们是一个大文件的一部分，忽略来源。
 
-#### Character Lore First
+#### 角色背景知识优先
 
-Entries from the Character World Info would be included first by their Insertion Order, then entries from the Global World Info.
+首先按插入顺序包含角色世界信息中的条目，然后是全局世界信息中的条目。
 
-#### Global Lore First
+#### 全局背景知识优先
 
-Entries from the Global World Info Info would be included first by their Insertion Order, then entries from the Character World Info.
+首先按插入顺序包含全局世界信息中的条目，然后是角色世界信息中的条目。
 
-### World Info Entry
+## 📝 世界信息条目
 
-#### Key
+#### 关键词 (Key)
 
-A list of keywords that trigger the activation of a World Info entry. Keys are not case-sensitive by default (this is [configurable](#case-sensitive-keys)).
+触发世界信息条目激活的关键词列表。默认情况下关键词不区分大小写（此功能[可配置](#区分大小写的关键词-case-sensitive-keys)）。
 
-##### Regular Expression (Regex) as Keys
+##### 将正则表达式 (Regex) 用作关键词
 
-Keys allow a more flexible approach to matching by supporting regex. This makes it possible to match more dynamic content with optional words or characters, spacing, and all the other utilities that regex provides.  
-If a defined key is a valid regex (Javascript regex style, with `/` as delimiters. All flags are allowed), it will be treated as such when checking whether an entry should be triggered. Multiple regexes can be entered as separate keys and will work alongside each other. Inside a regex, commas are possible. Plaintext keys do not support commas, as they are treated as key separators.  
+关键词支持通过正则表达式进行更灵活的匹配。这使得可以匹配更具动态性的内容，包括可选单词或字符、空格以及正则表达式提供的所有其他功能。
+如果定义的关键词是有效的正则表达式（JavaScript 正则表达式风格，以 `/` 作为分隔符。允许所有标志），则在检查是否应触发条目时将其视为正则表达式。多个正则表达式可以作为单独的关键词输入，并且可以协同工作。在正则表达式内部，可以使用逗号。纯文本关键词不支持逗号，因为它们被视为关键词分隔符。
 
-An example of a use-case for advanced regex matching:  
-An entry/instruction that should be inserted, when char is doing a weather-related action
+高级正则表达式匹配的使用示例：
+一个应在角色执行与天气相关的动作时插入的条目/指令
 
 ```js
 /(?:{{char}}|he|she) (?:is talking about|is noticing|is checking whether|observes) (?:the )?(rainy weather|heavy wind|it is going to rain|cloudy sky)/i
 ```
 
-For more information on Regex syntax and possibilities: [Regular expressions - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
+有关正则表达式语法和可能性的更多信息：[正则表达式 - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
-###### Advanced Regex Per-Message Matching
+###### 高级正则表达式逐消息匹配
 
-ST prefixes every chat message in the WI scan buffer with `character name:` and after v1.12.6, concatenates prepends them using the character value 1 (`\x01`).  
-This means you can match specific input or output from a certain character using a regex tied to that separation character.
+ST 在世界信息扫描缓冲区中的每条聊天消息前添加 `角色名称:`，并在 v1.12.6 之后使用字符值 1 (`\x01`) 连接它们。
+这意味着您可以使用绑定到该分隔字符的正则表达式来匹配特定角色的特定输入或输出。
 
-For example, to match only the user saying "hello", you could use the following regex:
+例如，要仅匹配用户说“hello”，您可以使用以下正则表达式：
 
 ```js
 /\x01{{user}}:[^\x01]*?hello/
 ```
 
-##### Key Input
+##### 关键词输入
 
-There are two modes to enter keywords, each with a slightly different UI. In ⌨️ *plaintext mode* (default), keys can be entered as a comma-separated list in a single text field. Regexes can be included too, but they don't have any special highlighting. In ✨ *fancy mode*, the keys appear as separate elements and regexes will be highlighted as such. The control supports editing and deleting keys. The mode can be switched via the inline button inside the input control.
+有两种输入关键词的模式，每种模式的用户界面略有不同。在 ⌨️ *纯文本模式*（默认）下，关键词可以在单个文本字段中以逗号分隔列表的形式输入。也可以包含正则表达式，但它们没有任何特殊高亮显示。在 ✨ *高级模式*下，关键词显示为单独的元素，正则表达式将如此高亮显示。该控件支持编辑和删除关键词。可以通过输入控件内的行内按钮切换模式。
 
-#### Optional Filter
+#### 可选过滤器 (Optional Filter)
 
-Comma-separated list of additional keywords in conjunction with the primary key.
-If no arguments are provided, this flag is ignored.
-Supports logic for AND ANY, NOT ANY, or NOT ALL
+与主关键词结合使用的附加关键词的逗号分隔列表。
+如果未提供参数，则忽略此标志。
+支持 AND ANY、NOT ANY 或 NOT ALL 逻辑
 
-1. AND ANY = Activates the entry only if the primary key and Any one of the optional filter keys are in scanned context.
-2. AND ALL = Activates the entry only if the primary key and ALL of the optional filter keys are present.
-3. NOT ANY = Activates the entry only if the primary key and None of the optional filter keys are in scanned context.
-4. NOT ALL = Prevents activation of the entry despite primary key trigger, if all of the optional filters are in scanned context.
+1.  AND ANY = 仅当主关键词**和**可选过滤器关键词中的**任何一个**存在于扫描的上下文中时才激活条目。
+2.  AND ALL = 仅当主关键词**和**所有可选过滤器关键词都存在时才激活条目。
+3.  NOT ANY = 仅当主关键词存在**且**可选过滤器关键词中的**任何一个都未**出现在扫描的上下文中时才激活条目。
+4.  NOT ALL = 如果所有可选过滤器都出现在扫描的上下文中，则**阻止**条目激活，尽管主关键词已触发。
 
-These keys also support [regex](#regular-expression-regex-as-keys).
+这些关键词也支持[正则表达式](#将正则表达式-regex-用作关键词)。
 
-#### Entry Content
+#### 条目内容 (Entry Content)
 
-The text that is inserted into the prompt upon entry activation.
+条目激活时插入到提示词中的文本。
 
-#### Insertion Order
+#### 插入顺序 (Insertion Order)
 
-Numeric value. Defines a priority of the entry if multiple were activated at once. Entries with higher order numbers will be inserted closer to the end of the context as they will have more impact on the output.
+数字值。定义多个条目同时激活时的优先级。插入顺序值较高的条目将插入到上下文的更靠近末尾的位置，因为它们对输出的影响更大。
 
-#### Insertion Position
+#### 插入位置 (Insertion Position)
 
-* **Before Char Defs:** World Info entry is inserted before the character's description and scenario. Has a moderate impact on the conversation.
-* **After Char Defs:** World Info entry is inserted after the character's description and scenario. Has a greater impact on the conversation.
-* **Before Example Messages:** The World Info entry is parsed as an example dialogue block and inserted before the examples provided by the character card.
-* **After Example Messages:** The World Info entry is parsed as an example dialogue block and inserted after the examples provided by the character card.
-* **Top of AN:** World Info entry is inserted at the top of Author's Note content. Has a variable impact depending on the Author's Note position.
-* **Bottom of AN:** World Info entry is inserted at the bottom of Author's Note content. Has a variable impact depending on the Author's Note position.
-* **@ D:** World Info entry is inserted at a specific depth in the chat (Depth 0 being the bottom of the prompt).
-  * ⚙️ - as a system role message
-  * 👤 - as a user role message
-  * 🤖 - as an assistant role message
+*   **角色定义前 (Before Char Defs):** 世界信息条目插入在角色描述和场景之前。对对话有中等影响。
+*   **角色定义后 (After Char Defs):** 世界信息条目插入在角色描述和场景之后。对对话有较大影响。
+*   **示例消息前 (Before Example Messages):** 世界信息条目被解析为示例对话块，并插入在角色卡提供的示例之前。
+*   **示例消息后 (After Example Messages):** 世界信息条目被解析为示例对话块，并插入在角色卡提供的示例之后。
+*   **作者注记顶部 (Top of AN):** 世界信息条目插入在作者注记内容的顶部。影响程度取决于作者注记的位置。
+*   **作者注记底部 (Bottom of AN):** 世界信息条目插入在作者注记内容的底部。影响程度取决于作者注记的位置。
+*   **@ 深度 (@ D):** 世界信息条目插入到聊天中的特定深度（深度 0 为提示词的底部）。
+    *   ⚙️ - 作为系统角色消息
+    *   👤 - 作为用户角色消息
+    *   🤖 - 作为助手角色消息
 
-Example Message entries will be formatted according to the prompt-building settings: Instruct Mode or Chat Completion prompt manager. They also follow the Example Messages Behavior rules: being gradually pushed out on full context, always kept, or disabled altogether.
+示例消息条目将根据提示词构建设置进行格式化：指令模式或聊天补全提示词管理器。它们也遵循示例消息行为规则：在上下文满时逐渐被推出、始终保留或完全禁用。
 
-If your Author's Note is disabled (Insertion Frequency = 0), World Info entries in A/N positions will be ignored!
+如果您的作者注记被禁用（插入频率 = 0），则位于作者注记位置的世界信息条目将被忽略！
 
-#### Entry Title / Memo
+#### 条目标题 / 备忘录 (Entry Title / Memo)
 
-A text field for your convenience to label your entries, which is not utilized by the AI or any of the trigger logics.
+一个方便的文本字段，用于标记您的条目，AI 或任何触发逻辑都不会使用它。
 
-If empty, can be backfilled using the entries' first key by clicking on the "Fill empty memos" button.
+如果为空，可以通过点击“填充空备忘录”按钮使用条目的第一个关键词来回填。
 
-#### Strategy
+#### 策略 (Strategy)
 
-1. 🔵 (Blue Circle) = The entry would always be present in the prompt.
-2. 🟢 (Green Circle) = The entry will be triggered only in the presence of the keyword.
-3. 🔗 (Chain Link) = The entry is allowed to be inserted by embedding similarity.
+1.  🔵 (蓝色圆圈) = 该条目将始终存在于提示词中。
+2.  🟢 (绿色圆圈) = 该条目仅在存在关键词时触发。
+3.  🔗 (链条链接) = 允许通过嵌入相似性插入该条目。
 
-Each Entry also has a toggle that allows you to enable or disable the entry.
+每个条目还有一个切换开关，允许您启用或禁用该条目。
 
-#### Probability (Trigger %)
+#### 概率 (触发%) (Probability (Trigger %))
 
-This value acts like an additional filter that adds a chance for the entry NOT to be inserted when it is activated by any means (constant, primary key, recursion).
+此值就像一个附加过滤器，当条目通过任何方式（常量、主关键词、递归）激活时，增加一个不插入该条目的机会。
 
-1. Probability = 100 means that the entry will be inserted on every activation.
-2. Probability = 50 means that the entry will be inserted with a 1:1 chance.
-3. Probability = 0 means that the entry will NOT be inserted (essentially disabling it).
+1.  概率 = 100 意味着该条目将在每次激活时插入。
+2.  概率 = 50 意味着该条目有 1:1 的机会被插入。
+3.  概率 = 0 意味着该条目将**不**被插入（实质上禁用它）。
 
-Use this to create random events in your chats. For example, every message could have a 1% chance of waking up an Elder God if its name is mentioned in the message.
+使用此功能在聊天中创建随机事件。例如，每条消息都有 1% 的几率在消息中提到其名字时唤醒一个上古之神。
 
-#### Inclusion Group
+#### 包含组 (Inclusion Group)
 
-Inclusion groups control how entries are selected when multiple entries with the same group label are triggered simultaneously. If multiple entries having the same group label were activated, only one will be inserted into the prompt.
+包含组控制当多个具有相同组标签的条目同时被触发时如何选择条目。如果多个具有相同组标签的条目被激活，则只有一个会插入到提示词中。
 
-By default, the chosen entry is selected randomly based on their Group Weight (default is 100 points) — the higher the number, the higher the probability of selection. This allows for a random selection among the triggered entries, adding an element of surprise and variety to interactions.
+默认情况下，根据它们的组权重（默认是 100 点）随机选择条目——数字越高，被选中的概率越高。这允许在触发的条目中进行随机选择，为交互增加惊喜和多样性。
 
-A single entry can be part of multiple inclusion groups if they are defined as a comma-separated list. The same logic as explained above will apply. If that entry is triggered, it will *disable* all other entries that are part of any of its groups. Therefore, if any of the groups are activated, this entry will not be activated.
+如果一个条目被定义为逗号分隔的列表，则它可以属于多个包含组。将应用上述相同的逻辑。如果该条目被触发，它将*禁用*属于其任何组的所有其他条目。因此，如果任何组被激活，此条目将不会被激活。
 
-#### Prioritize Inclusion
+#### 优先包含 (Prioritize Inclusion)
 
-To provide more control over which entries are activated via [Inclusion Group](/Usage/worldinfo.md#inclusion-group), you can use the 'Prioritize Inclusion' setting. This option allows you to specify deterministically which entry to choose instead of randomly rolling Group Weight chances.
+为了提供对通过[包含组](/Usage/worldinfo.md#包含组-inclusion-group)激活哪些条目的更多控制，您可以使用“优先包含”设置。此选项允许您确定性地选择要选择的条目，而不是随机滚动组权重机会。
 
-If multiple entries having the same group label and this setting turned on were activated, the one with the highest 'Order' value will be selected. This is useful for creating fallback sequences via inclusion groups. For example to prioritize low-depth entries with more emphasis, or to choose a specific instruction on setting the scene over another if both are valid.
+如果多个具有相同组标签且启用此设置的条目被激活，则将选择具有最高“顺序”值的条目。这对于通过包含组创建后备序列很有用。例如，优先处理深度较低、更强调的条目，或者在两者都有效时选择特定的场景设置指令。
 
-#### Use Group Scoring
+#### 使用组评分 (Use Group Scoring)
 
-When this setting is enabled globally or per entry, the number of activated entry keys determines the group winner selection. Only the subset of a group with the highest number of key matches will be left to be activated by Group Weight or Inclusion Priority - the rest will be deactivated and removed from the group.
+当全局或每个条目启用此设置时，激活的条目关键词数量决定组获胜者的选择。只有具有最多关键词匹配的组子集才会留待通过组权重或包含优先级激活 - 其余的将被停用并从组中移除。
 
-Use this to give more specificity for individual entries in large groups. For example, they can have a common key and a specific key. A random entry will be inserted when a specific key is not provided, and vice versa.
+使用此功能为大型组中的单个条目提供更多特异性。例如，它们可以有一个通用关键词和一个特定关键词。当未提供特定关键词时，将插入随机条目，反之亦然。
 
-The score calculation logic for primary keys is 1 match = 1 point.
+主关键词的分数计算逻辑是：1 次匹配 = 1 分。
 
-For secondary keys, the interaction depends on the chosen Selective Logic:
+对于辅助关键词，交互取决于所选的筛选逻辑：
 
-1. AND ANY: 1 secondary match = 1 point.
-2. AND ALL: 1 point for every secondary key if they all match.
-3. NOT ANY and NOT ALL: no change.
+1.  AND ANY: 1 次辅助匹配 = 1 分。
+2.  AND ALL: 如果所有辅助关键词都匹配，则每个辅助关键词得 1 分。
+3.  NOT ANY 和 NOT ALL: 无变化。
 
-Example:
+示例：
 
-* Entry 1. Keys: song, sing, Black Cat. Group: songs
-* Entry 2. Keys: song, sing, Ghosts. Group: songs
+*   条目 1. 关键词: song, sing, Black Cat. 组: songs
+*   条目 2. 关键词: song, sing, Ghosts. 组: songs
 
-The input `sing me a song` can activate either entry (both activated 2 keys), but `sing me a song about Ghosts` will activate only Entry 2 (activated 3 keys).
+输入 `sing me a song` 可以激活任一条目（两者都激活了 2 个关键词），但 `sing me a song about Ghosts` 将仅激活条目 2（激活了 3 个关键词）。
 
-#### Automation ID
+#### 自动化 ID (Automation ID)
 
-Allows to integrate World Info entries with [STscripts](/For_Contributors/st-script.md) from Quick Replies extension. If both the quick reply command and the WI entry have the same Automation ID, the command will be executed automatically when the entry with a matching ID is activated.
+允许将世界信息条目与快速回复扩展中的 [STscripts](/For_Contributors/st-script.md) 集成。如果快速回复命令和 WI 条目具有相同的自动化 ID，则在激活具有匹配 ID 的条目时将自动执行该命令。
 
-Automations are executed in the order they are triggered, adhering to your designated sorting strategy, combining the [Character Lore Insertion Strategy](#character-lore-insertion-strategy) with the 'Priority' sorting. Which leads to [Blue Circle](#strategy) entries processed first, followed by others in their specified 'Order'. Recursively triggered entries will be processed after in the same order.
+自动化按照它们被触发的顺序执行，遵循您指定的排序策略，结合[角色背景知识插入策略](#角色背景知识插入策略)和“优先级”排序。这导致[蓝色圆圈](#策略-strategy)条目首先被处理，然后是其他条目按其指定的“顺序”处理。递归触发的条目将在之后以相同的顺序处理。
 
-The script command will run only once if multiple entries with the same Automation ID are activated.
+如果多个具有相同自动化 ID 的条目被激活，脚本命令将仅运行一次。
 
-#### Character Filter
+#### 角色过滤器 (Character Filter)
 
-A list of character names for which this entry can be activated. If this list is not empty, the entry will only be activated for characters whose names are on the list. When a tag is selected, the entry will only be activated for characters that have that specific tag.
+此条目可以为其激活的角色名称列表。如果此列表不为空，则该条目仅对名称在列表中的角色激活。当选择一个标签时，该条目将仅对具有该特定标签的角色激活。
 
-"Exclude" mode inverts the filter, meaning that the entry will be activated for all characters except those that are added to the list or that have the selected tag(s).
+“排除”模式会反转过滤器，意味着该条目将对所有角色激活，除了添加到列表中的角色或具有所选标签的角色。
 
-#### Triggers
+#### 触发器 (Triggers)
 
-The generation types for which this World Info entry can be activated. If nothing is selected, the entry can be activated for all generation types. If one or more are selected, the entry will only be activated for those specific generation types:
+可以激活此世界信息条目的生成类型。如果未选择任何内容，则该条目可以针对所有生成类型激活。如果选择了一个或多个，则该条目将仅针对那些特定的生成类型激活：
 
-* **Normal:** Regular message generation request.
-* **Continue:** When the Continue button is pressed.
-* **Impersonate:** When the Impersonate button is pressed.
-* **Swipe:** When the generation is triggered by swiping.
-* **Regenerate:** When the Regenerate button is pressed in solo chats.
-* **Quiet:** Background generation requests, usually triggered by [extensions](/extensions/index.md) or [STscript](/For_Contributors/st-script.md) commands.
+*   **普通 (Normal):** 常规消息生成请求。
+*   **继续 (Continue):** 当按下继续按钮时。
+*   **模拟 (Impersonate):** 当按下模拟按钮时。
+*   **滑动 (Swipe):** 当通过滑动触发生成时。
+*   **重新生成 (Regenerate):** 在单人聊天中按下重新生成按钮时。
+*   **静默 (Quiet):** 后台生成请求，通常由[扩展](/extensions/index.md)或[STscript](/For_Contributors/st-script.md)命令触发。
 
 !!!
-The "Regenerate" trigger is not available in group chats as it uses different regeneration logic: all messages from the last reply are deleted, and messages are queued using the "Normal" generation type according to the chosen [Group reply strategy](/Usage/Characters/groupchats.md#reply-order-strategies).
+“重新生成”触发器在群聊中不可用，因为它使用不同的重新生成逻辑：删除最后一条回复的所有消息，并根据所选的[群聊回复策略](/Usage/Characters/groupchats.md#-回复顺序策略)使用“普通”生成类型对消息进行排队。
 !!!
 
-#### Additional matching sources
+#### 附加匹配源 (Additional matching sources)
 
-By default World Info Entries are matched only against content from the current conversation. These options allow you to match the entry against different character information that does not show up in the chat, or even persona information. This is useful when you want to have a wide range of entries that are to be used between several characters but don't want to have to manage large lists of tags, or don't want to have to update character filter lists every time you create a new one. This also allows you to match entries based on the persona you have active.
+默认情况下，世界信息条目仅针对当前对话的内容进行匹配。这些选项允许您针对不显示在聊天中的不同角色信息，甚至人格信息进行匹配。当您希望拥有范围广泛的条目用于多个角色之间，但又不想管理庞大的标签列表，或者不想在每次创建新角色时更新角色过滤器列表时，这非常有用。这也允许您根据当前活动的人格进行匹配。
 
-* **Character Description**: Matches against the character description.
-* **Character Personality**: Matches against the character personality summary, found under Advanced Definitions.
-* **Scenario**: Matches against the character specified scenario, found under Advanced Definitions.
-* **Persona Description**: Matches against the current selected persona's description.
-* **Character's Note**: Matches against the character's note, which can be found under Advanced Definitions.
-* **Creator's Notes**: Matches against the character creator's notes, which can be found under Advanced Definitions. The creator's notes are usually not included in the prompt.
+*   **角色描述 (Character Description)**: 针对角色描述进行匹配。
+*   **角色性格 (Character Personality)**: 针对角色性格摘要进行匹配，可在高级定义下找到。
+*   **场景 (Scenario)**: 针对角色指定的场景进行匹配，可在高级定义下找到。
+*   **人格描述 (Persona Description)**: 针对当前所选人格的描述进行匹配。
+*   **角色的注释 (Character's Note)**: 针对角色的注释进行匹配，可在高级定义下找到。
+*   **创作者注释 (Creator's Notes)**: 针对角色创作者的注释进行匹配，可在高级定义下找到。创作者的注释通常不包含在提示词中。
 
-## Vector Storage Matching
+## 🔢 向量存储匹配 (Vector Storage Matching)
 
-The Vector Storage extension provides an alternative to keyword matching by using the similarity between the recent chat messages and World Info entry contents.
+向量存储扩展提供了一种替代关键词匹配的方法，它使用最近聊天消息与世界信息条目内容之间的相似性。
 
-To enable and use this, the following prerequisites need to be met:
+要启用和使用此功能，需要满足以下先决条件：
 
-1. Vector Storage extension is enabled and is configured to use one of the available embedding sources.
-2. The "Enable for World Info" checkbox is ticked in the Vector Storage extension settings.
-3. Either the World Info entries that are allowed for keyless matching have the "Vectorized" (🔗) status or the "Enabled for all entries" option is checked in the Vector Storage settings.
+1.  向量存储扩展已启用，并配置为使用可用的嵌入源之一。
+2.  向量存储扩展设置中勾选了“为世界信息启用”复选框。
+3.  要么允许进行无关键词匹配的世界信息条目具有“向量化”(🔗) 状态，要么在向量存储设置中勾选“为所有条目启用”选项。
 
-The choice of the vectorization model in the extension and the theoretical meaning behind the term "embeddings" won't be covered here. Check out the [Data Bank](/Usage/Characters/data-bank.md#vector-storage) guide if you require more info on this topic.
+扩展中选择的向量化模型以及术语“嵌入”背后的理论含义在此不做介绍。如果您需要有关此主题的更多信息，请查看[数据库](/Usage/Characters/data-bank.md#-向量存储)指南。
 
-Vector Storage matching adheres to this set of rules:
+向量存储匹配遵循以下规则集：
 
-* The maximum number of entries that are allowed to be matched with the Vector Storage can be adjusted with the "Max Entries" setting. This number only sets the limit and does not influence the token budget set in the activation settings for World Info. All of the budgeting rules still apply.
-* This feature only replaces the check for keywords. All additional checks must be met for the entry to be inserted: trigger%, character filters, inclusion groups, etc.
-* The "Scan Depth" setting from Activation Settings or entry overrides is not used. The Vector Storage "Query messages" value is utilized instead to get the text to match against. This allows for a configuration like "Scan Depth" set to 0, so no regular keyword matches will be made, but entries still can be activated by vectors.
-* A "Vectorized" status is only an additional marker. The entry would still behave like a normal, enabled, non-constant record that will be activated by keywords if they are set. Remove the keywords if you want them to be activated only by vectors.
+*   允许与向量存储匹配的最大条目数可以通过“最大条目数”设置进行调整。此数字仅设置限制，不影响为世界信息激活设置中设置的词元预算。所有预算规则仍然适用。
+*   此功能仅替代对关键词的检查。条目要插入，必须满足所有附加检查：触发%、角色过滤器、包含组等。
+*   不使用来自激活设置或条目覆盖的“扫描深度”设置。而是使用向量存储的“查询消息”值来获取要匹配的文本。这允许进行诸如将“扫描深度”设置为 0 的配置，这样就不会进行常规的关键词匹配，但条目仍然可以被向量激活。
+*   “向量化”状态只是一个附加标记。该条目仍然表现得像一个正常的、已启用的、非常量记录，如果设置了关键词，它将被关键词激活。如果您希望它们仅由向量激活，请移除关键词。
 
-!!!info Note
-Since the retrieval quality depends entirely on the outputs of the embedding model, it's impossible to predict exactly what entries will be inserted. If you want deterministic and predictable results, stick to keyword matching.
+!!!info 注意
+由于检索质量完全取决于嵌入模型的输出，因此无法准确预测将插入哪些条目。如果您需要确定性和可预测的结果，请坚持使用关键词匹配。
 !!!
 
-## Timed Effects
+## ⏱️ 定时效果 (Timed Effects)
 
-Usually, World Info evaluation is stateless, meaning that the result of the evaluation is the same, only depending on the current chat context. However, with the introduction of Timed Effects, you can create entries that have an activation delay, stay active after being triggered, or can't be triggered after the activation.
+通常，世界信息评估是无状态的，这意味着评估结果相同，仅取决于当前的聊天上下文。但是，随着定时效果的引入，您可以创建具有激活延迟、触发后保持活动状态或在激活后无法触发的条目。
 
-### Timed Effects Rules
+### 定时效果规则
 
-1. The time frames for the effects are measured in messages (not pairs of messages/exchanges), with 0 meaning there is no effect.
-2. Effects only apply in the chat where the entry was activated. Branches inherit the state of the parent chat.
-3. Active timed effects are removed if the chat doesn't advance, e.g. if the last message was swiped or deleted.
-4. Making any changes to the entry that is currently on timed effect will cause the effect to be forcibly removed.
-5. Consequent triggering of keywords does not refresh the effect duration if it's already active.
+1.  效果的时间范围以消息数（不是消息对/交换）衡量，0 表示没有效果。
+2.  效果仅适用于条目被激活的聊天。分支继承父聊天的状态。
+3.  如果聊天没有进展，例如最后一条消息被滑动或删除，则活动的定时效果将被移除。
+4.  对当前具有定时效果的条目进行任何更改将导致效果被强制移除。
+5.  关键词的后续触发不会刷新效果持续时间（如果它已经处于活动状态）。
 
-### Types of Timed Effects
+### 定时效果类型
 
-1. Sticky - the entry stays active for N messages after being activated. Stickied entries ignore probability checks on consequent scans until they expire.
-2. Cooldown - the entry can't be activated for N messages after being activated. Can be used together with sticky: the entry goes on cooldown when the sticky duration ends.
-3. Delay - the entry can't be activated unless there are at least N messages in the chat at the moment of evaluation.
-    * Delay = 0 -> The entry can be activated at any time.
-    * Delay = 1 -> The entry can't be activated if the chat is empty (no greeting).
-    * Delay = 2 -> The entry can't be activated if there is zero or only one message in the chat, etc.
+1.  粘性 (Sticky) - 条目在激活后保持活动状态 N 条消息。粘性条目在后续扫描中忽略概率检查，直到它们过期。
+2.  冷却 (Cooldown) - 条目在激活后的 N 条消息内无法被激活。可以与粘性一起使用：条目在粘性持续时间结束后进入冷却。
+3.  延迟 (Delay) - 除非在评估时聊天中至少有 N 条消息，否则无法激活条目。
+    *   延迟 = 0 -> 条目可以随时激活。
+    *   延迟 = 1 -> 如果聊天为空（没有问候语），则无法激活条目。
+    *   延迟 = 2 -> 如果聊天中有零条或仅一条消息，则无法激活条目，依此类推。
 
-### Timed Effects Example
+### 定时效果示例
 
-Entry configuration: sticky = 3, cooldown = 2, delay = 2.
+条目配置：粘性 = 3，冷却 = 2，延迟 = 2。
 
 ```txt
-Message 0: delay
-Message 1: entry activated
-Message 2: sticky
-Message 3: sticky
-Message 4: sticky
-Message 5: cooldown
-Message 6: cooldown
-Message 7: entry can be activated again
+消息 0: 延迟
+消息 1: 条目激活
+消息 2: 粘性
+消息 3: 粘性
+消息 4: 粘性
+消息 5: 冷却
+消息 6: 冷却
+消息 7: 条目可以再次激活
 ```
 
-## Activation Settings
+## ⚙️ 激活设置 (Activation Settings)
 
-Collapsible menu at the top of the World Info screen.
+世界信息屏幕顶部的可折叠菜单。
 
-### Scan Depth
+### 扫描深度 (Scan Depth)
 
-> Can be overridden on an entry level.
+> 可在条目级别覆盖。
 
-Defines how many messages in the chat history should be scanned for World Info keys.
+定义应扫描聊天历史中的多少条消息以查找世界信息关键词。
 
-* If set to 0, then only recursed entries and Author's Note are evaluated.
-* If set to 1, then SillyTavern only scans the last message.
-* 2 = two last messages, etc.
+*   如果设置为 0，则仅评估递归条目和作者注记。
+*   如果设置为 1，则 SillyTavern 仅扫描最后一条消息。
+*   2 = 最后两条消息，依此类推。
 
-### Include Names
+### 包含名称 (Include Names)
 
-Defines if the names of the chat participants should be included in the scanned text buffer as message prefixes. This allows activating entries that use names as keywords without directly mentioning the names in messages.
+定义是否应将聊天参与者的名称作为消息前缀包含在扫描的文本缓冲区中。这允许激活使用名称作为关键词的条目，而无需直接在消息中提及名称。
 
-See an example of the text to be scanned below, assuming the chat participants are named Alice and Bob.
+参见下面要扫描的文本示例，假设聊天参与者名为 Alice 和 Bob。
 
-Enabled (default):
+启用（默认）：
 
 ```txt
 Alice: Hello! Good to see you.
 Bob: How is the weather today?
 ```
 
-Disabled:
+禁用：
 
 ```txt
 Hello! Good to see you.
 How is the weather today?
 ```
 
-### Context % / Budget
+### 上下文 % / 预算 (Context % / Budget)
 
-**Defines how many tokens could be used by World Info entries at once.**
-You can define a threshold relative to your API's max-context settings (Context %) or an objective token threshold (Budget)
+**定义世界信息条目一次可以使用的词元数量。**
+您可以定义相对于 API 最大上下文设置（上下文%）的阈值或客观的词元阈值（预算）
 
-If the budget is exhausted, then no more entries are activated even if the keys are present in the prompt.
+如果预算耗尽，那么即使提示词中存在关键词，也不会激活更多条目。
 
-Constant entries will be inserted first. Then entries with higher order numbers.
+常量条目将首先插入。然后是插入顺序值较高的条目。
 
-Entries inserted by directly mentioning their keys have higher priority than those that were mentioned in other entries' contents.
+通过直接提及其关键词插入的条目比那些在其他条目内容中提到的条目具有更高的优先级。
 
-### Min Activations
+### 最小激活数 (Min Activations)
 
-**This setting is mutually exclusive with Max Recursion Steps.**
+**此设置与最大递归步骤互斥。**
 
-Minimum Activations: If set to a non-zero value, this will disregard the limitation of "scan-depth", seeking all of the chat log backward from the latest message for keywords until as many entries as specified in min activations have been triggered. This will still be limited by the Max Depth setting or your overall Budget cap.
+最小激活数：如果设置为非零值，这将忽略“扫描深度”的限制，从最新消息向后搜索所有聊天记录以查找关键词，直到触发指定数量的条目。这仍将受到最大深度设置或您的总体预算上限的限制。
 
-*Additional scan sweeps triggered by Min Activations will not check entries added by recursion on previous steps. Only chat messages and extension prompts can trigger these additional activations. However, the entries activated by Min Activations can trigger other entries as usual.*
+*由最小激活数触发的额外扫描不会检查在前几步通过递归添加的条目。只有聊天消息和扩展提示词可以触发这些额外的激活。但是，由最小激活数激活的条目可以像往常一样触发其他条目。*
 
-### Max Depth
+### 最大深度 (Max Depth)
 
-Maximum Depth to scan for when using the Min Activations setting.
+使用最小激活数设置时扫描的最大深度。
 
-### Recursive scanning
+### 递归扫描 (Recursive scanning)
 
-Recursive scanning allows for entries to activate other entries or be activated by others, enabling complex interactions and dependencies between different World Info entries. This feature can significantly enhance the dynamic nature of your creative scenarios.  
-Whether recursive scanning is enabled can be controlled with the global setting **Recursive Scan**.  
-There are three options available to control recursion for each entry:
+递归扫描允许条目激活其他条目或被其他条目激活，从而实现不同世界信息条目之间的复杂交互和依赖关系。此功能可以显著增强创意场景的动态性。
+是否启用递归扫描可以通过全局设置**递归扫描 (Recursive Scan)** 来控制。
+每个条目有三个选项可用于控制递归：
 
-8 **Non-recursable**: When this checkbox is selected, the entry will not be activated by other entries. This is useful for static information that should not change or be influenced by other world info entries.
-  
-* **Prevent further recursion**: Selecting this option ensures that once this entry is activated, it will not trigger any other entries. This is helpful to avoid unintended chains of activations.
+1.  **不可递归 (Non-recursable)**: 选中此复选框后，该条目不会被其他条目激活。这对于不应更改或受其他世界信息条目影响的静态信息很有用。
+2.  **阻止进一步递归 (Prevent further recursion)**: 选择此选项可确保一旦此条目被激活，它将不会触发任何其他条目。这有助于避免意外的激活链。
+3.  **延迟至递归 (Delay until recursion)**: 此条目仅在递归检查期间激活，这意味着它不会在初始过程中触发，但可以被启用了递归的其他条目激活。现在，为这些延迟添加了**递归级别**，条目按级别分组。最初，只有第一级（最小数字）会匹配。一旦找不到匹配项，下一级就有资格进行匹配，重复此过程直到检查完所有级别。这允许更好地控制如何在递归期间揭示更深层次的信息，特别是与 NOT ANY 或 NOT ALL 关键词匹配组合等条件结合使用时。
 
-* **Delay until recursion**: This entry will only be activated during recursive checks, meaning it won't be triggered in the initial pass but can be activated by other entries that have recursion enabled. Now, with the added **Recursion Level** for those delays, entries are grouped by levels. Initially, only the first level (smallest number) will match. Once no matches are found, the next level becomes eligible for matching, repeating the process until all levels are checked. This allows for more control over how and when deeper layers of information are revealed during recursion, especially in combination with criteria as NOT ANY or NOT ALL combination of key matches.
+**条目可以通过在其内容文本中提及其他条目的关键词来激活它们。**
 
-**Entries can activate other entries by mentioning their keywords in the content text.**
-
-For example, if your World Info contains two entries:
+例如，如果您的世界信息包含两个条目：
 
 ```txt
-Entry #1
-Keyword: Bessie
-Content: Bessie is a cow and is friends with Rufus.
+条目 #1
+关键词: Bessie
+内容: Bessie 是一头牛，是 Rufus 的朋友。
 ```
 
 ```txt
-Entry #2
-Keyword: Rufus
-Content: Rufus is a dog.
+条目 #2
+关键词: Rufus
+内容: Rufus 是一条狗。
 ```
 
-**Both** of them will be pulled into the context if the message text mentions **just Bessie**.
+如果消息文本**仅提及 Bessie**，则**两者**都将被拉入上下文。
 
-### Max Recursion Steps
+### 最大递归步骤 (Max Recursion Steps)
 
-**This setting is mutually exclusive with Min Activations.**
+**此设置与最小激活数互斥。**
 
-When set to zero, recursion nesting is only limited by your prompt budget. When set to a non-zero value, limits the total number of scan sweeps to desired maximum "nesting level".
+当设置为零时，递归嵌套仅受您的提示词预算限制。当设置为非零值时，将总扫描次数限制为所需的最大“嵌套级别”。
 
-Example values:
+示例值：
 
-* 1 effectively disables recursion as the check stops after the first step.
-* 2 can only activate recursive entries once.
-* 3 can trigger recursion twice...
+*   1 有效地禁用递归，因为检查在第一步后停止。
+*   2 只能激活递归条目一次。
+*   3 可以触发递归两次...
 
-### Case-sensitive keys
+### 区分大小写的关键词 (Case-sensitive keys)
 
-> Can be overridden on an entry level.
+> 可在条目级别覆盖。
 
-**To get pulled into the context, entry keys need to match the case as they are defined in the World Info entry.**
+**要拉入上下文，条目关键词需要与世界信息条目中定义的大小写匹配。**
 
-This is useful when your keys are common words or parts of common words.
+当您的关键词是常见单词或常见单词的一部分时，这很有用。
 
-For example, when this setting is active, keys 'rose' and 'Rose' will be treated differently, depending on the inputs.
+例如，当此设置处于活动状态时，关键词 'rose' 和 'Rose' 将根据输入进行不同的处理。
 
-### Match whole words
+### 匹配完整单词 (Match whole words)
 
-> Can be overridden on an entry level.
+> 可在条目级别覆盖。
 
-Entries with keys containing only one word will be matched only if the entire word is present in the search text. Enabled by default.
+仅包含一个单词的关键词的条目仅当整个单词出现在搜索文本中时才会匹配。默认启用。
 
-For example, if the setting is enabled and the entry key is "king", then text such as "long live the king" would be matched, but "it's not to my liking" wouldn't.
+例如，如果启用此设置且条目关键词是 "king"，那么像 "long live the king" 这样的文本将被匹配，但 "it's not to my liking" 则不会。
 
-**Important:** this setting can have a detrimental effect when used with languages that don't use whitespace to separate words (e.g. Japanese or Chinese). If you write entries in these languages, it is advised to keep it off.
+**重要提示：** 此设置可能对不使用空格分隔单词的语言（例如日语或中文）产生不利影响。如果您使用这些语言编写条目，建议保持关闭。
 
-### Alert on overflow
+### 溢出警报 (Alert on overflow)
 
-Shows an alert if the activated World Info exceeds the allocated token budget.
+如果激活的世界信息超过分配的词元预算，则显示警报。

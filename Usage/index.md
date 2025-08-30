@@ -4,128 +4,123 @@ icon: plus
 expanded: true
 ---
 
-# Usage
+# 🚀 使用指南
 
-Interact with AI, your way. Build your world, your work, or your dreams.
-
-:::callout
-## Getting Started
-
-**[Quick Start](/Usage/quick-start.md)**
-
-Send your first message to the AI and get a response
-
-**[Chatting](/Usage/Chatting/index.md)**
-
-How to chat with the AI and use the chat interface
-
-**[FAQ](/Usage/Common-Settings.md)**
-
-Frequently asked questions about SillyTavern, AI models, making characters, getting better responses, and more
-:::
-
+以您的方式与 AI 互动。构筑您的世界、您的工作，或您的梦想。
 
 :::callout
-## Fundamentals
+## 🎯 快速上手
 
-**[API Connections](/Usage/API_Connections/index.md)**
+**[🚀 快速开始](/Usage/quick-start.md)**
 
-Connect to AI models for generating text, images, and more
+向 AI 发送您的第一条消息并获取回复
 
-**[Characters](/Usage/Characters/index.md)** and **[Personas](/Usage/personas.md)**
+**[💬 聊天交互](/Usage/Chatting/index.md)**
 
-Create and use characters to shape the AI's role, and personas to define your identities
+如何与 AI 聊天并使用聊天界面
 
-**[Response Configuration](/Usage/Common-Settings.md)** and **[Prompts](/Usage/Prompts/prompts.md)**
+**[❓ 常见问题](/Usage/Common-Settings.md)**
 
-Control the requests that you send to the AI and how it responds
-
-**[Welcome Page Assistants](/Usage/welcome-assistants.md)**
-
-Learn how to set up and use Welcome Page Assistants to greet you with a designated character on the Welcome Screen.
+关于 SillyTavern、AI 模型、角色创建、获取更佳回复等的常见问题解答
 :::
 
 :::callout
-## Building on SillyTavern
+## 🧱 核心功能
 
-**[World Info](/Usage/worldinfo.md)**
+**[🔌 API 连接](/Usage/API_Connections/index.md)**
 
-Manage information and when to insert it into the prompt
+连接 AI 模型以生成文本、图像等
 
-**[Data Bank](/Usage/Characters/data-bank.md)**
+**[🧑‍🤝‍🧑 角色](/Usage/Characters/index.md)** 与 **[👤 人物角色](/Usage/personas.md)**
 
-Store and retrieve information for use in the AI's responses
+创建和使用角色来塑造 AI 的行为，定义您自己的身份
 
-**[Extensions](/extensions/index.md)**
+**[⚙️ 响应配置](/Usage/Common-Settings.md)** 与 **[📝 提示词](/Usage/Prompts/prompts.md)**
 
-Add new features and capabilities to the AI or the interface
+控制您发送给 AI 的请求及其响应方式
 
-**[Development and Automation](/For_Contributors/index.md)**
+**[🎯 欢迎页面助手](/Usage/welcome-assistants.md)**
 
-Automate tasks, let your AI interact with the world, and write your own extensions
+了解如何设置和使用欢迎页面助手，在欢迎屏幕上用指定角色迎接您。
+:::
+
+:::callout
+## 🧩 功能扩展
+
+**[🌍 世界信息](/Usage/worldinfo.md)**
+
+管理信息并控制其插入提示词的时机
+
+**[🗃️ 资料库](/Usage/Characters/data-bank.md)**
+
+存储和检索信息以供 AI 在响应中使用
+
+**[🔌 扩展功能](/extensions/index.md)**
+
+为 AI 或界面添加新特性和能力
+
+**[🤖 开发与自动化](/For_Contributors/index.md)**
+
+自动化任务，让您的 AI 与世界互动，并编写您自己的扩展
 :::
 
 ---
 
-## Control Panels
+## 🎛️ 控制面板
 
-What all the buttons do, from the left to the right:
+从左到右，所有按钮的功能说明：
 
 :::callout
-<i class="fa-solid fa-sliders fa-2xl fa-fw"></i> **[Response Configuration](/Usage/Common-Settings.md)**
-and **[Prompt Manager](/Usage/Prompts/prompt-manager.md)**
+<i class="fa-solid fa-sliders fa-2xl fa-fw"></i> **[⚙️ 响应配置](/Usage/Common-Settings.md)**
+与 **[📝 提示词管理](/Usage/Prompts/prompt-manager.md)**
 
-Control text generation and sampling. Customize prompt construction for Chat Completion APIs.
+控制文本生成与采样。为聊天补全 API 自定义提示词构建。
 :::
 
 :::callout
-<i class="fa-solid fa-plug fa-2xl fa-fw"></i> **[API Connections](/Usage/API_Connections/index.md)**
+<i class="fa-solid fa-plug fa-2xl fa-fw"></i> **[🔌 API 连接](/Usage/API_Connections/index.md)**
 
-Connect to AI models for generating text, images, and more
+连接 AI 模型以生成文本、图像等
 :::
 
 :::callout
-<i class="fa-solid fa-font fa-2xl fa-fw"></i> **[Advanced Formatting](/Usage/Prompts/advancedformatting.md)**
+<i class="fa-solid fa-font fa-2xl fa-fw"></i> **[🎨 高级格式化](/Usage/Prompts/advancedformatting.md)**
 
-Customize prompt construction for Text Completion APIs
+为文本补全 API 自定义提示词构建
 :::
 
 :::callout
-<i class="fa-solid fa-book-atlas fa-2xl fa-fw"></i> **[World Info](/Usage/worldinfo.md)**
+<i class="fa-solid fa-book-atlas fa-2xl fa-fw"></i> **[🌍 世界信息](/Usage/worldinfo.md)**
 
-Manage information and when to insert it into the prompt
+管理信息并控制其插入提示词的时机
 :::
 
 :::callout
-<i class="fa-solid fa-user-gear fa-2xl fa-fw"></i> **[User Settings](/Usage/User_Settings/User_Settings.md)**
+<i class="fa-solid fa-user-gear fa-2xl fa-fw"></i> **[👤 用户设置](/Usage/User_Settings/User_Settings.md)**
 
-Change the theme, and the look and feel of messages and chats
+更改主题，以及消息和聊天的外观与感觉
 :::
 
 :::callout
-<i class="fa-solid fa-panorama fa-2xl fa-fw"></i> **Backgrounds**
+<i class="fa-solid fa-panorama fa-2xl fa-fw"></i> **🖼️ 背景**
 
-Change the background image
+更改背景图片
 :::
 
 :::callout
-<i class="fa-solid fa-cubes fa-2xl fa-fw"></i> **[Extensions](/extensions/index.md)**
+<i class="fa-solid fa-cubes fa-2xl fa-fw"></i> **[🔌 扩展功能](/extensions/index.md)**
 
-Add new features and capabilities to the AI or the interface
+为 AI 或界面添加新特性和能力
 :::
 
 :::callout
-<i class="fa-solid fa-face-smile fa-2xl fa-fw"></i> **[Personas](/Usage/personas.md)**
+<i class="fa-solid fa-face-smile fa-2xl fa-fw"></i> **[👤 人物角色](/Usage/personas.md)**
 
-Create and manage personas to use with the AI
+创建和管理与 AI 一起使用的人物角色
 :::
 
 :::callout
-<i class="fa-solid fa-address-card fa-2xl fa-fw"></i> **[Characters](/Usage/Characters/index.md)**
+<i class="fa-solid fa-address-card fa-2xl fa-fw"></i> **[🧑‍🤝‍🧑 角色管理](/Usage/Characters/index.md)**
 
-Create and manage characters for the AI to use
+创建和管理供 AI 使用的角色
 :::
-
-
-
-
